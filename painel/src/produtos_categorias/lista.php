@@ -141,7 +141,7 @@
             categoria = $(this).attr("produtos");
             categoria_nome = $(this).attr("categoria");
             $.ajax({
-                url:"src/produtos/lista.php",
+                url:"src/produtos/index.php",
                 type:"POST",
                 data:{
                   categoria,
