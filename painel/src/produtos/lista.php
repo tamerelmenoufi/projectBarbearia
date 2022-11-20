@@ -35,6 +35,11 @@
           <h5 class="card-header">Lista de Produtos / Serviços <?=$_SESSION['categoriaProdutoNome']?></h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
+
+                <button voltar class="btn btn-secundary btn-sm">
+                  <i class="fa-solid fa-chevron-left"></i> Voltar
+                </button>
+
                 <button
                     novoCadastro
                     class="btn btn-success"
@@ -211,7 +216,14 @@
         });
 
 
-
+        $("button[voltar]").click(function(){
+            $.ajax({
+                url:"src/produtos_categorias/lista.php",
+                success:function(dados){
+                  $("#paginaHome").html(dados);
+                }
+            })
+        })
 
 
 
