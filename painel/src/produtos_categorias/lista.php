@@ -80,9 +80,17 @@
                     >
                     <i class="fa-regular fa-pen-to-square"></i> Editar
                     </button>
+
                     <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
                     <i class="fa-solid fa-trash-can"></i> Excluir
                     </button>
+
+                    <button class="btn btn-success btn-sm" produtos="<?=$d->codigo?>">
+                    <i class="fa-solid fa-box-open"></i> Produtos
+                    </button>
+
+
+
                   </td>
                 </tr>
                 <?php
