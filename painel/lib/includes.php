@@ -4,7 +4,7 @@
     // include("connect_local.php");
 
     include("/appinc/connect.php");
-    $con = AppConnect('portal');
+    $con = AppConnect('barbearia');
 
     // include("/appinc/connect.php");
     include("fn.php");
