@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Produtos / Serviços <?=$_SESSION['categoriaProdutoNome']?></h5>
+          <h5 class="card-header">Lista de Produtos / Serviços (<?=$_SESSION['categoriaProdutoNome']?>)</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
 
