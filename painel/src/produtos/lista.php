@@ -3,15 +3,15 @@
 
     if($_POST['delete']){
         if($_POST['imagem']){
-            unlink("../volume/produtos_categorias/".$_POST['imagem']);
+            unlink("../volume/produtos/".$_POST['imagem']);
         }
-        $query = "delete from produtos_categorias where codigo = '{$_POST['delete']}'";
+        $query = "delete from produtos where codigo = '{$_POST['delete']}'";
         mysqli_query($con, $query);
       }
 
       if($_POST['situacao']){
-        // mysqli_query($con, "update produtos_categorias set situacao = '0'");
-        $query = "update produtos_categorias set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+        // mysqli_query($con, "update produtos set situacao = '0'");
+        $query = "update produtos set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
         mysqli_query($con, $query);
         exit();
       }
@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Categorias de Produtos / Serviços</h5>
+          <h5 class="card-header">Lista de Produtos / Serviços <?=$_SESSION['categoriaProdutoNome']?></h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
@@ -49,19 +49,19 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col" style="width:100%">Categoria</th>
+                  <th scope="col" style="width:100%">Produto</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from produtos_categorias order by categoria asc";
+                  $query = "select * from produtos order by produto asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td style="white-space: nowrap;"><?=$d->categoria?></td>
+                  <td style="white-space: nowrap;"><?=$d->produto?></td>
                   <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
@@ -71,9 +71,9 @@
                   </td>
                   <td style="white-space: nowrap;">
 
-                    <button class="btn btn-success btn-sm" produtos="<?=$d->codigo?>" nome="<?=$d->categoria?>">
-                    <i class="fa-solid fa-box-open"></i> Produtos
-                    </button>
+                    <!-- <button class="btn btn-success btn-sm" produtos="<?=$d->codigo?>">
+                      <i class="fa-solid fa-box-open"></i> Produtos
+                    </button> -->
 
                     <button
                       class="btn btn-primary btn-sm"
@@ -116,7 +116,7 @@
 
         $("button[novoCadastro]").click(function(){
             $.ajax({
-                url:"src/produtos_categorias/form.php",
+                url:"src/produtos/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
@@ -126,7 +126,7 @@
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
-                url:"src/produtos_categorias/index.php",
+                url:"src/produtos/form.php",
                 type:"POST",
                 data:{
                   cod
@@ -137,21 +137,19 @@
             })
         })
 
-        $("button[produtos]").click(function(){
-            categoria = $(this).attr("produtos");
-            categoria_nome = $(this).attr("categoria");
-            $.ajax({
-                url:"src/produtos/lista.php",
-                type:"POST",
-                data:{
-                  categoria,
-                  categoria_nome
-                },
-                success:function(dados){
-                  $("#paginaHome").html(dados);
-                }
-            })
-        })
+        // $("button[produtos]").click(function(){
+        //     cod = $(this).attr("produtos");
+        //     $.ajax({
+        //         url:"src/produtos/lista.php",
+        //         type:"POST",
+        //         data:{
+        //           cod
+        //         },
+        //         success:function(dados){
+        //             $(".LateralDireita").html(dados);
+        //         }
+        //     })
+        // })
 
         $("button[delete]").click(function(){
             deletar = $(this).attr("delete");
@@ -166,7 +164,7 @@
                         btnClass:'btn btn-danger',
                         action:function(){
                             $.ajax({
-                                url:"src/produtos_categorias/lista.php",
+                                url:"src/produtos/lista.php",
                                 type:"POST",
                                 data:{
                                     delete:deletar,
@@ -199,7 +197,7 @@
             }
 
             $.ajax({
-                url:"src/produtos_categorias/lista.php",
+                url:"src/produtos/lista.php",
                 type:"POST",
                 data:{
                     situacao,
