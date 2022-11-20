@@ -46,7 +46,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from colaboradores order by nome asc";
+                  echo $query = "select * from colaboradores order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
