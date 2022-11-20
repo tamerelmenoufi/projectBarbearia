@@ -76,9 +76,9 @@
                   </td>
                   <td style="white-space: nowrap;">
 
-                    <!-- <button class="btn btn-success btn-sm" produtos="<?=$d->codigo?>">
-                      <i class="fa-solid fa-box-open"></i> Produtos
-                    </button> -->
+                    <button class="btn btn-success btn-sm" estoque="<?=$d->codigo?>">
+                      <i class="fa-solid fa-dolly"></i> Estoque
+                    </button>
 
                     <button
                       class="btn btn-primary btn-sm"
@@ -142,19 +142,19 @@
             })
         })
 
-        // $("button[produtos]").click(function(){
-        //     cod = $(this).attr("produtos");
-        //     $.ajax({
-        //         url:"src/produtos/lista.php",
-        //         type:"POST",
-        //         data:{
-        //           cod
-        //         },
-        //         success:function(dados){
-        //             $(".LateralDireita").html(dados);
-        //         }
-        //     })
-        // })
+        $("button[estoque]").click(function(){
+            produto = $(this).attr("estoque");
+            $.ajax({
+                url:"src/estoque/lista.php",
+                type:"POST",
+                data:{
+                  produto
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
 
         $("button[delete]").click(function(){
             deletar = $(this).attr("delete");
