@@ -36,7 +36,7 @@
           <div class="card-body">
             <div style="display:flex; justify-content:end">
 
-                <button voltar class="btn btn-secundary btn-sm">
+                <button voltar class="btn btn-secondary btn-sm mh-3">
                   <i class="fa-solid fa-chevron-left"></i> Voltar
                 </button>
 
