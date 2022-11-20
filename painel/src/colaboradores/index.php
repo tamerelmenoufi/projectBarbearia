@@ -2,12 +2,12 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
 
     if($_POST['delete']){
-      $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+      $query = "delete from colaboradores where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
     }
 
     if($_POST['situacao']){
-      $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+      $query = "update colaboradores set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
       mysqli_query($con, $query);
       exit();
     }
@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Usuários</h5>
+          <h5 class="card-header">Lista de Colaboradores</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
@@ -46,7 +46,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from usuarios order by nome asc";
+                  $query = "select * from colaboradores order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -103,7 +103,7 @@
         Carregando('none');
         $("button[novoCadastro]").click(function(){
             $.ajax({
-                url:"src/usuarios/form.php",
+                url:"src/colaboradores/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
@@ -113,7 +113,7 @@
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
-                url:"src/usuarios/form.php",
+                url:"src/colaboradores/form.php",
                 type:"POST",
                 data:{
                   cod
@@ -132,7 +132,7 @@
                 buttons:{
                     'SIM':function(){
                         $.ajax({
-                            url:"src/usuarios/index.php",
+                            url:"src/colaboradores/index.php",
                             type:"POST",
                             data:{
                                 delete:deletar
@@ -165,7 +165,7 @@
 
 
             $.ajax({
-                url:"src/usuarios/index.php",
+                url:"src/colaboradores/index.php",
                 type:"POST",
                 data:{
                     situacao,

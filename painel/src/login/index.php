@@ -2,10 +2,10 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
 
     if($_POST['acao'] == 'login'){
-        $login = $_POST['login'];
+        $email = $_POST['email'];
         $senha = md5($_POST['senha']);
 
-        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
+        $query = "select * from colaboradores where email = '{$email}' and senha = '{$senha}'";
         $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
@@ -149,8 +149,8 @@
             <p id="profile-name" class="profile-name-card"></p>
 
             <div class="form-floating mb-2">
-                <input type="text" class="form-control" id="login" placeholder="Digite seu login" required autofocus>
-                <label for="login">Login</label>
+                <input type="text" class="form-control" id="email" placeholder="Digite seu E-mail" required autofocus>
+                <label for="email">Digite seu E-mail</label>
             </div>
 
             <div class="form-floating mb-2">
@@ -186,7 +186,7 @@
     $(function(){
         Carregando('none');
         AcaoBotao = ()=>{
-            login = $("#login").val();
+            email = $("#email").val();
             senha = $("#senha").val();
             Carregando();
             $.ajax({
@@ -195,7 +195,7 @@
                 dataType:"json",
                 data:{
                     acao:'login',
-                    login,
+                    email,
                     senha
                 },
                 success:function(dados){

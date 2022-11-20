@@ -19,8 +19,8 @@
 
     <div class="row mb-1">
       <div class="col">
-        <a url="src/usuarios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Usuários do Sistema
+        <a url="src/colaboradores/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Usuários/Colaboradores
         </a>
       </div>
     </div>
