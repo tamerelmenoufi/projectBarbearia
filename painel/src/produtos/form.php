@@ -45,9 +45,9 @@
       }
 
       if($acao){
-        echo $query ."Atualização realizada com sucesso!";
+        echo "Atualização realizada com sucesso!";
       }else{
-        echo $query ."Nenhuma alteração foi registrada!";
+        echo "Nenhuma alteração foi registrada!";
       }
 
       exit();
