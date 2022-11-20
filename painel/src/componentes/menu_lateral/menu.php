@@ -25,6 +25,13 @@
       </div>
     </div>
 
+    <div class="row mb-1">
+      <div class="col">
+        <a url="src/produtos_categorias/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Produtos / Serviços
+        </a>
+      </div>
+    </div>
 
 
   </div>
