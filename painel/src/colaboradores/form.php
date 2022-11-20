@@ -21,11 +21,11 @@
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
-            $query = "update usuarios set {$attr} where codigo = '{$_POST['codigo']}'";
+            $query = "update colaboradores set {$attr} where codigo = '{$_POST['codigo']}'";
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
-            $query = "insert into usuarios set data_cadastro = NOW(), {$attr}";
+            $query = "insert into colaboradores set data_cadastro = NOW(), {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
@@ -41,7 +41,7 @@
     }
 
 
-    $query = "select * from usuarios where codigo = '{$_POST['cod']}'";
+    $query = "select * from colaboradores where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
@@ -104,7 +104,7 @@
                     <select name="coordenador" id="coordenador" class="form-control" placeholder="Coordenador">
                         <option value="">::Selecione o Coordenador::</option>
                         <?php
-                            $q = "select * from usuarios where perfil in ('adm', 'crd') and situacao = '1' order by nome";
+                            $q = "select * from colaboradores where perfil in ('adm', 'crd') and situacao = '1' order by nome";
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
@@ -162,7 +162,7 @@
                 Carregando();
 
                 $.ajax({
-                    url:"src/usuarios/form.php",
+                    url:"src/colaboradores/form.php",
                     type:"POST",
                     typeData:"JSON",
                     mimeType: 'multipart/form-data',
@@ -170,7 +170,7 @@
                     success:function(dados){
                         // if(dados.status){
                             $.ajax({
-                                url:"src/usuarios/index.php",
+                                url:"src/colaboradores/index.php",
                                 type:"POST",
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
