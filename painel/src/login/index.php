@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/lib/includes.php");
 
     if($_POST['acao'] == 'login'){
         $email = $_POST['email'];
