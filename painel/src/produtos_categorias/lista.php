@@ -126,7 +126,7 @@
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
-                url:"src/produtos_categorias/index.php",
+                url:"src/produtos_categorias/form.php",
                 type:"POST",
                 data:{
                   cod
