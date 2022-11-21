@@ -99,6 +99,7 @@
         <div class="input-group">
           <span class="input-group-text" id="inputGroup-sizing-default">Valor R$ </span>
           <input type="number" class="form-control" value="<?=$d->valor?>" id="valor" name="valor" />
+          <span class="input-group-text" id="inputGroup-sizing-default">Estoque</span>
           <div class="form-control"><?=$d->estoque?></div>
         </div>
       </div>
