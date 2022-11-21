@@ -35,11 +35,11 @@
                     </div>
                     <?=$d->produto?>
                 </span>
-                <select class="form-control">
+                <select class="form-control" style="width:70px;">
                     <option value="p">%</option>
                     <option value="v">$</option>
                 </select>
-                <input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input style="width:70px;" type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <?php
             }
