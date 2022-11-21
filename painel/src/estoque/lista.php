@@ -58,6 +58,7 @@
                   <th scope="col" style="width:100%">Título</th>
                   <th scope="col">Data</th>
                   <th scope="col">Entrada</th>
+                  <th scope="col">Comprovante</th>
                   <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
@@ -73,7 +74,7 @@
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
                   <td style="white-space: nowrap;">+<?=$d->estoque?></td>
-                  <td style="white-space: nowrap;"><a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Comprovante</a></td>
+                  <td style="white-space: nowrap;"><a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</a></td>
                   <!-- <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
