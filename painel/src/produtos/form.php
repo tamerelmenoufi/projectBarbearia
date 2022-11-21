@@ -98,7 +98,7 @@
       <div class="form-floating mb-3">
         <div class="input-group">
           <span class="input-group-text" id="inputGroup-sizing-default">Valor R$ </span>
-          <input type="number" class="form-control" value="<?=$d->valor?>" id="valor" name="valor" />
+          <input type="number" class="form-control" value="<?=$d->valor?>" id="valor" name="valor">
           <span class="input-group-text" id="inputGroup-sizing-default">Estoque</span>
           <div class="form-control"><?=$d->estoque?></div>
         </div>
@@ -116,7 +116,7 @@
 
 
 
-      <button type="submit"  class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
+      <button type="submit" data-bs-dismiss="offcanvas" class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
       <button cancelar type="button" data-bs-dismiss="offcanvas" class="btn btn-danger mt-3"> <i class="fa fa-cancel"></i> Cancelar</button>
 
       <input type="hidden" id="acao" name="acao" value="salvar" >
