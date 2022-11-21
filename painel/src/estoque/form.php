@@ -82,9 +82,15 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="titulo" name="titulo" placeholder="Data do comprovante" value="<?=$d->data_cadastro?>">
-        <label for="titulo">Data</label>
+        <input type="date" class="form-control" id="data_cadastro" name="data_cadastro" placeholder="Data do comprovante" value="<?=$d->data_cadastro?>">
+        <label for="data_cadastro">Data</label>
         <div class="form-text">Informe a data do comprovante.</div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="estoque" name="estoque" placeholder="Quantidade de Itens" value="<?=$d->estoque?>">
+        <label for="estoque">Quantidade de Itens</label>
+        <div class="form-text">Informe a quantidade de itens.</div>
       </div>
 
       <div showImage class="form-floating" style="display:<?=(($d->nota)?'block':'none')?>">
