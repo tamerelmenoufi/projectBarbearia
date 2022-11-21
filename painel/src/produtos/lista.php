@@ -153,7 +153,7 @@
                   produto_nome
                 },
                 success:function(dados){
-                    $(".LateralDireita").html(dados);
+                  $("#paginaHome").html(dados);
                 }
             })
         })
