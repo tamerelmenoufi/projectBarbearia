@@ -98,7 +98,7 @@
       <div class="form-floating mb-3">
         <div class="input-group">
           <span class="input-group-text" id="inputGroup-sizing-default">Valor R$ </span>
-          <input type="text" class="form-control" value="<?=$d->valor?>" id="valor" name="valor">
+          <input type="number" class="form-control" value="<?=$d->valor_produto?>" id="valor_produto" name="valor_produto">
           <span class="input-group-text" id="inputGroup-sizing-default">Estoque</span>
           <div class="form-control"><?=$d->estoque?></div>
         </div>
