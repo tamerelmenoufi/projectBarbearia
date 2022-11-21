@@ -107,6 +107,7 @@
 
       <div showImage class="form-floating" style="display:<?=(($d->nota)?'block':'none')?>">
         <!-- <img src="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" alt="" /> -->
+        <a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir Documento</a>
         <object data="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" style="width:100%;"></object>
       </div>
 
@@ -209,7 +210,7 @@
                         $("#nota_tipo").val(type);
                         $("#nota_nome").val(name);
 
-                        $("div[showImage] object").remove();
+                        $("div[showImage] object").html('');
                         $("div[showImage]").append(`<object data="${Base64}" class="img-fluid mt-3 mb-3" style="width:100%;"></object>`)
                         // $("div[showImage] object").attr("data",Base64);
                         $("div[showImage]").css("display",'block');
