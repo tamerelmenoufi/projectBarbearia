@@ -36,10 +36,10 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Nome</th>
+                  <th scope="col" style="width:50%">Nome</th>
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
-                  <th scope="col">E-mail</th>
+                  <th scope="col" style="width:50%">E-mail</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
