@@ -55,7 +55,7 @@
               <thead>
                 <tr>
                   <!-- <th scope="col" style="width:50%">Produto</th> -->
-                  <th scope="col" style="width:50%">Título</th>
+                  <th scope="col" style="width:100%">Título</th>
                   <th scope="col">Data</th>
                   <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
