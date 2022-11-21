@@ -23,7 +23,7 @@
         }
 
 
-        echo $query = "select * from colaboradores_produtos where colaborador = '{$_POST['colaborador']}'";
+        $query = "select * from colaboradores_produtos where colaborador = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
