@@ -71,7 +71,7 @@
   }
 </style>
 
-<h3 class="titulo<?=$md5?>">Produtos <?=$_SESSION['categoriaProdutoNome']?></h3>
+<h3 class="titulo<?=$md5?>">Editar Produto <small><?=$_SESSION['categoriaProdutoNome']?></small></h3>
 
     <form id="acaoMenu">
 
