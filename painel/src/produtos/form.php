@@ -138,6 +138,11 @@
 
       Carregando('none');
 
+      $("#valor").change(function(){
+        vl = $(this).val();
+        $(this).attr("value",vl);
+      });
+
 
       $( "#acaoMenu<?=$md5?>" ).on( "submit", function( event ) {
 
