@@ -89,8 +89,8 @@
                     // if($(this).prop("checked") == true){
                         cod = $(this).attr("produto");
                         produto.push($(this).attr("produto"));
-                        tipo.push($(`select[tipo${cod}]`).value());
-                        valor.push($(`input[valor${cod}]`).value());
+                        tipo.push($(`select[tipo${cod}]`).val());
+                        valor.push($(`input[valor${cod}]`).val());
                     // }
                 })
 
