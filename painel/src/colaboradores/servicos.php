@@ -89,7 +89,7 @@
             Carregando('none');
 
             $('button[salvar_perfil]').click(function (e) {
-
+                obj = $(this);
                 colaborador = '<?=$_POST['cod']?>';
                 produto = [];
                 tipo = [];
@@ -108,6 +108,9 @@
 
                 Carregando();
 
+                obj.html('<i class="fa-solid fa-gear fa-spin"></i> Salvando ...');
+                obj.attr("disabled","disabled");
+
                 $.ajax({
                     url:"src/colaboradores/servicos.php",
                     type:"POST",
@@ -122,6 +125,8 @@
                     success:function(dados){
                         // $.alert(dados)
                         Carregando('none');
+                        obj.html('<i class="fa-regular fa-floppy-disk"></i> Salvar Perfil');
+                        obj.removeAttr("disabled");
                     },
                     error:function(erro){
 
