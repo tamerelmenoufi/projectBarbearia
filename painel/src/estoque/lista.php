@@ -3,15 +3,15 @@
 
     if($_POST['delete']){
         if($_POST['imagem']){
-            unlink("../volume/produtos/".$_POST['imagem']);
+            unlink("../volume/estoque/".$_POST['imagem']);
         }
-        $query = "delete from produtos where codigo = '{$_POST['delete']}'";
+        $query = "delete from produtos_estoque where codigo = '{$_POST['delete']}'";
         mysqli_query($con, $query);
       }
 
       if($_POST['situacao']){
         // mysqli_query($con, "update produtos set situacao = '0'");
-        $query = "update produtos set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+        $query = "update produtos_estoque set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
         mysqli_query($con, $query);
         exit();
       }
@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Produtos / Serviços (<?=$_SESSION['categoriaProdutoNome']?>)</h5>
+          <h5 class="card-header">Registro de Estoque (<?=$_SESSION['ProdutoNome']?>)</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
 
@@ -54,19 +54,23 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col" style="width:100%">Produto</th>
+                  <th scope="col" style="width:50%">Produto</th>
+                  <th scope="col" style="width:50%">Título</th>
+                  <th scope="col">Data</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from produtos order by produto asc";
+                  $query = "select * from produtos_estoque order by data_cadastro desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
                   <td style="white-space: nowrap;"><?=$d->produto?></td>
+                  <td style="white-space: nowrap;"><?=$d->titulo?></td>
+                  <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
                   <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
@@ -75,10 +79,6 @@
 
                   </td>
                   <td style="white-space: nowrap;">
-
-                    <button class="btn btn-success btn-sm" estoque="<?=$d->codigo?>" produto="<?=$d->produto?>">
-                      <i class="fa-solid fa-dolly"></i> Estoque
-                    </button>
 
                     <button
                       class="btn btn-primary btn-sm"
@@ -94,9 +94,6 @@
                     <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
                     <i class="fa-solid fa-trash-can"></i> Excluir
                     </button>
-
-
-
 
                   </td>
                 </tr>
@@ -121,7 +118,7 @@
 
         $("button[novoCadastro]").click(function(){
             $.ajax({
-                url:"src/produtos/form.php",
+                url:"src/produtos_estoque/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
@@ -131,7 +128,7 @@
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
-                url:"src/produtos/form.php",
+                url:"src/produtos_estoque/form.php",
                 type:"POST",
                 data:{
                   cod
@@ -144,13 +141,11 @@
 
         $("button[estoque]").click(function(){
             produto = $(this).attr("estoque");
-            produto_nome = $(this).attr("produto");
             $.ajax({
-                url:"src/estoque/lista.php",
+                url:"src/produtos_estoque/lista.php",
                 type:"POST",
                 data:{
-                  produto,
-                  produto_nome
+                  produto
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
@@ -171,7 +166,7 @@
                         btnClass:'btn btn-danger',
                         action:function(){
                             $.ajax({
-                                url:"src/produtos/lista.php",
+                                url:"src/produtos_estoque/lista.php",
                                 type:"POST",
                                 data:{
                                     delete:deletar,
@@ -204,7 +199,7 @@
             }
 
             $.ajax({
-                url:"src/produtos/lista.php",
+                url:"src/produtos_estoque/lista.php",
                 type:"POST",
                 data:{
                     situacao,
@@ -220,7 +215,7 @@
 
         $("button[voltar]").click(function(){
             $.ajax({
-                url:"src/produtos_categorias/lista.php",
+                url:"src/produtos/lista.php",
                 success:function(dados){
                   $("#paginaHome").html(dados);
                 }
