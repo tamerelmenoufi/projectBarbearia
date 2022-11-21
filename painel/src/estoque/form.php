@@ -82,7 +82,7 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="data_cadastro" name="data_cadastro" placeholder="Data do comprovante" value="<?=$d->data_cadastro?>">
+        <input type="datetime-local" class="form-control" id="data_cadastro" name="data_cadastro" placeholder="Data do comprovante" value="<?=$d->data_cadastro?>">
         <label for="data_cadastro">Data</label>
         <div class="form-text">Informe a data do comprovante.</div>
       </div>
