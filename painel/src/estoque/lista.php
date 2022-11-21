@@ -54,7 +54,7 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col" style="width:50%">Produto</th>
+                  <!-- <th scope="col" style="width:50%">Produto</th> -->
                   <th scope="col" style="width:50%">Título</th>
                   <th scope="col">Data</th>
                   <th scope="col">Situação</th>
@@ -68,7 +68,7 @@
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td style="white-space: nowrap;"><?=$d->produto?></td>
+                  <!-- <td style="white-space: nowrap;"><?=$d->produto?></td> -->
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
                   <td style="white-space: nowrap;">
