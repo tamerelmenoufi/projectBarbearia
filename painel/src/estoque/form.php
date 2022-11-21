@@ -210,7 +210,7 @@
                         $("#nota_tipo").val(type);
                         $("#nota_nome").val(name);
 
-                        $("div[showImage] object").html('');
+                        $("div[showImage]").html('');
                         $("div[showImage]").append(`<object data="${Base64}" class="img-fluid mt-3 mb-3" style="width:100%;"></object>`)
                         // $("div[showImage] object").attr("data",Base64);
                         $("div[showImage]").css("display",'block');
