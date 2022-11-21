@@ -73,6 +73,7 @@
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
                   <td style="white-space: nowrap;">+<?=$d->estoque?></td>
+                  <td style="white-space: nowrap;"><a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Comprovante</a></td>
                   <!-- <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
