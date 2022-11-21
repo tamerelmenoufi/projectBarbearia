@@ -10,12 +10,12 @@
             foreach($_POST['produto'] as $i => $val){
 
                 $chave = md5($_POST['colaborador'].$val);
-
                 $dados[] = "( '{$chave}', '{$_POST['colaborador']}', '{$val}', tipo_comissao, valor, situacao )";
 
             }
             if($dados){
                 $query = "INSERT INTO colaboradores_produtos (chave, colaborador, produto, '{$_POST['tipo']}', '{$_POST['valor']}', '{$_POST['situacao']}') VALUES ".@implode(", ", $dados);
+                mysqli_query($con, $query);
             }
 
 
