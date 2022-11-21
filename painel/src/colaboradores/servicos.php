@@ -29,17 +29,17 @@
                 }
             ?>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">
+                <span class="input-group-text" id="basic-addon1" style="width:80%">
                     <div class="form-check form-switch">
                         <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
                     </div>
                     <?=$d->produto?>
                 </span>
-                <select class="form-control" style="width:70px !important;">
+                <select class="form-control" >
                     <option value="p">%</option>
                     <option value="v">$</option>
                 </select>
-                <input style="width:70px !important;" type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <?php
             }
