@@ -22,6 +22,18 @@
         $ext = substr($_POST['nota_nome'], strripos($_POST['nota_nome'],'.'), strlen($_POST['nota_nome']));
         $nome = md5($_POST['base64'].$_POST['nota_tipo'].$_POST['nota_nome']).$ext;
 
+        $exts = [
+          '.pdf',
+          '.jpg',
+          '.jpeg',
+          '.png',
+          '.gif'
+        ];
+        if(!in_array($exts, strtolower($ext))){
+          echo "Documento anexo inválido!";
+          exit();
+        }
+
         if(!is_dir("../volume/estoque")) mkdir("../volume/estoque");
         if(file_put_contents("../volume/estoque/".$nome, $img)){
           $dados['nota'] = $nome;
@@ -45,9 +57,9 @@
       }
 
       if($acao){
-        echo $query." Atualização realizada com sucesso!";
+        echo "Atualização realizada com sucesso!";
       }else{
-        echo $query." Nenhuma alteração foi registrada!";
+        echo "Nenhuma alteração foi registrada!";
       }
 
       exit();
