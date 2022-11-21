@@ -106,7 +106,8 @@
       </div>
 
       <div showImage class="form-floating" style="display:<?=(($d->nota)?'block':'none')?>">
-        <img src="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" alt="" />
+        <!-- <img src="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" alt="" /> -->
+        <object data="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3"></object>
       </div>
 
       <!-- <div class="form-floating"> -->
