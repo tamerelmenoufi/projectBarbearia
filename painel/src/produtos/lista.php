@@ -61,7 +61,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from produtos order by produto asc";
+                  $query = "select * from produtos where categoria = '{$_SESSION['categoriaProduto']}' order by produto asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
