@@ -108,6 +108,7 @@
                     },
                     success:function(dados){
                         $.alert(dados)
+                        Carregando('none');
                     },
                     error:function(erro){
 
