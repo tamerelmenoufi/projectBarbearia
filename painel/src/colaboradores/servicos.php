@@ -25,7 +25,7 @@
                 if($categoria != $d->nome_categoria){
                     $categoria = $d->nome_categoria;
             ?>
-            <h6>C: <?=$categoria?></h6>
+            <h6><?=$categoria?></h6>
             <?php
                 }
             ?>
@@ -45,6 +45,9 @@
             <?php
             }
             ?>
+
+            <button class="btn btn-primary btn-block mt-3 mb-3"><i class="fa-regular fa-floppy-disk"></i> Salvar Perfil</button>
+
             </div>
         </div>
 
