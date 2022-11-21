@@ -98,7 +98,7 @@
       </div>
 
       <!-- <div class="form-floating"> -->
-        <input type="file" class="form-control" placeholder="Banner">
+        <input type="file" class="form-control" placeholder="Banner" accept="application/pdf,image/*">
         <input type="hidden" id="base64" name="base64" value="" />
         <input type="hidden" id="nota_tipo" name="nota_tipo" value="" />
         <input type="hidden" id="nota_nome" name="nota_nome" value="" />
