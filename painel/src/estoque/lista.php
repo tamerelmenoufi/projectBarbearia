@@ -118,7 +118,7 @@
 
         $("button[novoCadastro]").click(function(){
             $.ajax({
-                url:"src/produtos_estoque/form.php",
+                url:"src/estoque/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
@@ -128,7 +128,7 @@
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
-                url:"src/produtos_estoque/form.php",
+                url:"src/estoque/form.php",
                 type:"POST",
                 data:{
                   cod
@@ -142,7 +142,7 @@
         $("button[estoque]").click(function(){
             produto = $(this).attr("estoque");
             $.ajax({
-                url:"src/produtos_estoque/lista.php",
+                url:"src/estoque/lista.php",
                 type:"POST",
                 data:{
                   produto
@@ -166,7 +166,7 @@
                         btnClass:'btn btn-danger',
                         action:function(){
                             $.ajax({
-                                url:"src/produtos_estoque/lista.php",
+                                url:"src/estoque/lista.php",
                                 type:"POST",
                                 data:{
                                     delete:deletar,
@@ -199,7 +199,7 @@
             }
 
             $.ajax({
-                url:"src/produtos_estoque/lista.php",
+                url:"src/estoque/lista.php",
                 type:"POST",
                 data:{
                     situacao,

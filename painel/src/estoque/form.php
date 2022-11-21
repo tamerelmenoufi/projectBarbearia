@@ -147,7 +147,7 @@
         console.log(data);
 
         $.ajax({
-          url:"src/produtos_estoque/form.php",
+          url:"src/estoque/form.php",
           type:"POST",
           data,
           success:function(dados){
@@ -166,7 +166,7 @@
 
             $("div[lista]").html('');
             $.ajax({
-              url:"src/produtos_estoque/lista.php",
+              url:"src/estoque/lista.php",
               success:function(dados){
                   $("#paginaHome").html(dados);
               }
