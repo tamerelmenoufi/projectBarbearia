@@ -63,6 +63,19 @@
 
                   </td>
                   <td>
+
+                    <button
+                      class="btn btn-primary"
+                      servicos="<?=$d->codigo?>"
+                      nome="<?=$d->nome?>"
+                      data-bs-toggle="offcanvas"
+                      href="#offcanvasDireita"
+                      role="button"
+                      aria-controls="offcanvasDireita"
+                    >
+                      Serviços
+                    </button>
+
                     <button
                       class="btn btn-primary"
                       edit="<?=$d->codigo?>"
@@ -104,6 +117,22 @@
         $("button[novoCadastro]").click(function(){
             $.ajax({
                 url:"src/colaboradores/form.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
+        $("button[servicos]").click(function(){
+            cod = $(this).attr("servicos");
+            colaborador = $(this).attr("nome");
+            $.ajax({
+                url:"src/colaboradores/servicos.php",
+                type:"POST",
+                data:{
+                  cod,
+                  colaborador
+                },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
