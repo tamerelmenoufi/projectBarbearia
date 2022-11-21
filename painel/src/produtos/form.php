@@ -98,7 +98,7 @@
       <div class="form-floating mb-3">
         <div class="input-group">
           <span class="input-group-text">Valor R$ </span>
-          <input type="number" class="form-control" value="<?=$d->valor?>" id="valor">
+          <input type="number" class="form-control" value="<?=$d->valor?>" id="valor" name="valor">
           <span class="input-group-text">Estoque</span>
           <div class="form-control"><?=$d->estoque?></div>
         </div>
@@ -142,10 +142,10 @@
       $( "#acaoMenu<?=$md5?>" ).on( "submit", function( event ) {
 
         event.preventDefault();
-        valor = $("#valor").val();
+        // valor = $("#valor").val();
         data = $( this ).serialize();
-        data.push({name:'valor', value:valor});
-        console.log(data);
+        // data.push({name:'valor', value:valor});
+        // console.log(data);
 
         $.ajax({
           url:"src/produtos/form.php",
