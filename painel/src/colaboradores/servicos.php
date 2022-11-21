@@ -29,7 +29,7 @@
                 }
             ?>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1" style="width:80%">
+                <span class="input-group-text" id="basic-addon1" style="width:70%">
                     <div class="form-check form-switch">
                         <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
                     </div>
