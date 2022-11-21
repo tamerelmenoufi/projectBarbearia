@@ -85,12 +85,15 @@
                 produto = [];
                 tipo = [];
                 valor = [];
+                situacao = [];
                 $("input.perfil").each(function(){
                     // if($(this).prop("checked") == true){
                         cod = $(this).attr("produto");
                         produto.push($(this).attr("produto"));
                         tipo.push($(`select[tipo${cod}]`).val());
                         valor.push($(`input[valor${cod}]`).val());
+                        situacao.push((($(this).prop("checked") == true)?'1':'0'));
+
                     // }
                 })
 
@@ -104,6 +107,7 @@
                         produto,
                         tipo,
                         valor,
+                        situacao,
                         acao:'perfil'
                     },
                     success:function(dados){
