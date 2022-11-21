@@ -18,7 +18,8 @@
                 mysqli_query($con, $query);
             }
 
-
+            echo $query;
+            exit();
 
         }
 
@@ -97,8 +98,6 @@
                 $.ajax({
                     url:"src/colaboradores/servicos.php",
                     type:"POST",
-                    typeData:"JSON",
-                    mimeType: 'multipart/form-data',
                     data:{
                         colaborador,
                         produto,
@@ -107,7 +106,7 @@
                         acao:'perfil'
                     },
                     success:function(dados){
-
+                        $.alert(dados)
                     },
                     error:function(erro){
 
