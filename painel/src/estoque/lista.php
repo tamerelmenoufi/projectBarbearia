@@ -63,7 +63,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from produtos_estoque where tipo = 'e' order by data_cadastro desc";
+                  $query = "select * from produtos_estoque where tipo = 'e' and produto = '{$_SESSION['codProduto']}' order by data_cadastro desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
