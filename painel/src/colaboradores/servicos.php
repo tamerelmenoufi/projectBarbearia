@@ -18,7 +18,7 @@
             <div class="col">
             <?php
             $categoria = false;
-            $query = "select a.*, b.categoria as nome_categoria from produtos a left join produtos_categorias where a.codigo = '{$_POST['cod']}' order by b.categoria asc";
+            echo $query = "select a.*, b.categoria as nome_categoria from produtos a left join produtos_categorias where a.codigo = '{$_POST['cod']}' order by b.categoria asc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
                 if($categoria != $d->nome_categoria){
