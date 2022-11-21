@@ -5,16 +5,16 @@
 
             $dados = [];
 
-            mysqli_query("delete from colaboradores_produtos where colaborador = '{$_POST['colaborador']}'");
+            mysqli_query($con, "delete from colaboradores_produtos where colaborador = '{$_POST['colaborador']}'");
 
             foreach($_POST['produto'] as $i => $val){
 
                 $chave = md5($_POST['colaborador'].$val);
-                $dados[] = "( '{$chave}', '{$_POST['colaborador']}', '{$val}', tipo_comissao, valor, situacao )";
+                $dados[] = "( '{$chave}', '{$_POST['colaborador']}', '{$val}', '{$_POST['tipo'][$i]}', '{$_POST['valor'][$i]}', '{$_POST['situacao'][$i]}' )";
 
             }
             if($dados){
-                $query = "INSERT INTO colaboradores_produtos (chave, colaborador, produto, '{$_POST['tipo']}', '{$_POST['valor']}', '{$_POST['situacao']}') VALUES ".@implode(", ", $dados);
+                $query = "INSERT INTO colaboradores_produtos (chave, colaborador, produto, tipo_comissao, valor, situacao) VALUES ".@implode(", ", $dados);
                 mysqli_query($con, $query);
             }
 
