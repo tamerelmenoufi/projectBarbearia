@@ -29,10 +29,12 @@
                 }
             ?>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><?=$d->produto?></span>
-                <div class="form-check form-switch">
-                    <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
-                </div>
+                <span class="input-group-text" id="basic-addon1">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
+                    </div>
+                    <?=$d->produto?>
+                </span>
                 <select class="form-control">
                     <option value="p">%</option>
                     <option value="v">$</option>
