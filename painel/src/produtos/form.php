@@ -95,8 +95,8 @@
         <div class="form-text mb-3">Selecione a imagem para o Banner</div>
       <!-- </div> -->
 
-      <div class="form-floating">
-        <div class="input-group mb-3">
+      <div class="form-floating mb-3">
+        <div class="input-group">
           <span class="input-group-text" id="inputGroup-sizing-default">Valor R$ </span>
           <input type="number" class="form-control" value="<?=$d->valor?>" id="valor" name="valor" />
           <div class="form-control"><?=$d->estoque?></div>
