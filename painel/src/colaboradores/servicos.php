@@ -14,11 +14,12 @@
 <h4 class="Titulo<?=$md5?>">Perfil de Serviços</h4>
     <form id="form-<?= $md5 ?>">
         <h5><?=$_POST['colaborador']?></h5>
+        <hr>
         <div class="row">
             <div class="col">
             <?php
             $categoria = false;
-            echo $query = "select a.*, b.categoria as nome_categoria from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by b.categoria asc";
+            $query = "select a.*, b.categoria as nome_categoria from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by b.categoria asc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
                 if($categoria != $d->nome_categoria){
