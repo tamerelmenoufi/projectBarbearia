@@ -87,9 +87,10 @@
                 valor = [];
                 $("input.perfil").each(function(){
                     // if($(this).prop("checked") == true){
+                        cod = $(this).attr("produto");
                         produto.push($(this).attr("produto"));
-                        tipo.push($(`select[tipo${produto}]`).value());
-                        valor.push($(`input[valor${produto}]`).value());
+                        tipo.push($(`select[tipo${cod}]`).value());
+                        valor.push($(`input[valor${cod}]`).value());
                     // }
                 })
 
