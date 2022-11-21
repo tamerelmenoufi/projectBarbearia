@@ -51,6 +51,7 @@
         mysqli_query($con, $query);
         $acao = mysqli_affected_rows($con);
       }else{
+        $campos[] = "data_cadastro = NOW()";
         $query = "INSERT INTO produtos_estoque set ".implode(", ",$campos)."";
         mysqli_query($con, $query);
         $acao = mysqli_affected_rows($con);
@@ -94,8 +95,8 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="datetime-local" class="form-control" id="data_cadastro" name="data_cadastro" placeholder="Data do comprovante" value="<?=$d->data_cadastro?>">
-        <label for="data_cadastro">Data</label>
+        <input type="datetime-local" class="form-control" id="data_nota" name="data_nota" placeholder="Data do comprovante" value="<?=$d->data_nota?>">
+        <label for="data_nota">Data</label>
         <div class="form-text">Informe a data do comprovante.</div>
       </div>
 
