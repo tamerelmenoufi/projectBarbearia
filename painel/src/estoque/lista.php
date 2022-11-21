@@ -72,7 +72,7 @@
                   <!-- <td style="white-space: nowrap;"><?=$d->produto?></td> -->
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
-                  <td style="white-space: nowrap;"><?=$d->estoque?></td>
+                  <td style="white-space: nowrap;">+<?=$d->estoque?></td>
                   <!-- <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
