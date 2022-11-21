@@ -18,7 +18,6 @@
                 mysqli_query($con, $query);
             }
 
-            echo $query;
             exit();
 
         }
@@ -114,7 +113,7 @@
                         acao:'perfil'
                     },
                     success:function(dados){
-                        $.alert(dados)
+                        // $.alert(dados)
                         Carregando('none');
                     },
                     error:function(erro){
