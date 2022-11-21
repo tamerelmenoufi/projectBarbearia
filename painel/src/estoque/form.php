@@ -29,7 +29,7 @@
           '.png',
           '.gif'
         ];
-        if(!in_array($exts, strtolower($ext))){
+        if(!in_array(strtolower($ext), $exts)){
           echo "Documento anexo inválido!";
           exit();
         }
