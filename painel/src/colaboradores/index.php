@@ -51,18 +51,18 @@
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td><?=$d->nome?></td>
-                  <td><?=$d->cpf?></td>
-                  <td><?=$d->telefone?></td>
-                  <td><?=$d->email?></td>
-                  <td>
+                  <td style="white-space: nowrap;"><?=$d->nome?></td>
+                  <td style="white-space: nowrap;"><?=$d->cpf?></td>
+                  <td style="white-space: nowrap;"><?=$d->telefone?></td>
+                  <td style="white-space: nowrap;"><?=$d->email?></td>
+                  <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
                     <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
                   </div>
 
                   </td>
-                  <td>
+                  <td style="white-space: nowrap;">
 
                     <button
                       class="btn btn-primary"
