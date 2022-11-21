@@ -24,11 +24,11 @@
                 if($categoria != $d->nome_categoria){
                     $categoria = $d->nome_categoria;
             ?>
-            <h6><?=$categoria?></h6>
+            <h6>C: <?=$categoria?></h6>
             <?php
                 }
             ?>
-            <p><?=$d->produto?></p>
+            <p>P: <?=$d->produto?></p>
             <?php
             }
             ?>
