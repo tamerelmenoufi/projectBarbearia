@@ -146,7 +146,7 @@
             produto = $(this).attr("estoque");
             produto_nome = $(this).attr("produto");
             $.ajax({
-                url:"src/estoque/lista.php",
+                url:"src/estoque/index.php",
                 type:"POST",
                 data:{
                   produto,
