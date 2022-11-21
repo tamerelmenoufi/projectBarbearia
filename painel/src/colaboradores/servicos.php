@@ -79,7 +79,7 @@
         $(function(){
             Carregando('none');
 
-            $('button[salvar_perfil]').submit(function (e) {
+            $('button[salvar_perfil]').click(function (e) {
 
                 colaborador = '<?=$_POST['cod']?>';
                 produto = [];
