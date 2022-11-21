@@ -71,10 +71,10 @@
   }
 </style>
 
-<h3 class="titulo<?=$md5?>">Editar Produto <small><?=$_SESSION['categoriaProdutoNome']?></small></h3>
+<h3 class="titulo<?=$md5?>">Editar Produto</h3>
 
     <form id="acaoMenu">
-
+      <h5><?=$_SESSION['categoriaProdutoNome']?></h5>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="produto" name="produto" placeholder="Título do Produto" value="<?=$d->produto?>">
         <label for="produto">Produto</label>
