@@ -98,7 +98,7 @@
       <div class="form-floating mb-3">
         <div class="input-group">
           <span class="input-group-text">Valor R$ </span>
-          <input type="text" class="form-control" value="<?=$d->valor?>" name="valor">
+          <input type="number" class="form-control" value="<?=$d->valor?>" id="valor">
           <span class="input-group-text">Estoque</span>
           <div class="form-control"><?=$d->estoque?></div>
         </div>
@@ -113,7 +113,7 @@
         <div class="form-text">Selecione a imagem para o produto</div>
       </div>
 
-      <button type="submit" data-bs-dismiss="offcanvas" class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
+      <button type="submit" data-bs-dismiss="offcanvasXXX" class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
       <button cancelar type="button" data-bs-dismiss="offcanvas" class="btn btn-danger mt-3"> <i class="fa fa-cancel"></i> Cancelar</button>
 
       <input type="hidden" id="acao" name="acao" value="salvar" >
@@ -142,9 +142,9 @@
       $( "#acaoMenu<?=$md5?>" ).on( "submit", function( event ) {
 
         event.preventDefault();
-        // materia = editor.getData();
+        valor = $("#valor").val();
         data = $( this ).serialize();
-        // data.push({name:'materia', value:editor});
+        data.push({name:'valor', value:valor});
         console.log(data);
 
         $.ajax({
