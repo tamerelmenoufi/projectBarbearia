@@ -7,27 +7,27 @@
       unset($dados['acao']);
       unset($dados['codigo']);
 
-      //Imagem
+      //nota
       $img = false;
       unset($dados['base64']);
-      unset($dados['imagem_tipo']);
-      unset($dados['imagem_nome']);
+      unset($dados['nota_tipo']);
+      unset($dados['nota_nome']);
 
-      if($_POST['base64'] and $_POST['imagem_tipo'] and $_POST['imagem_nome']){
+      if($_POST['base64'] and $_POST['nota_tipo'] and $_POST['nota_nome']){
 
-        if($_POST['imagem']) unlink("../volume/estoque/{$_POST['imagem']}");
+        if($_POST['nota']) unlink("../volume/estoque/{$_POST['nota']}");
 
         $base64 = explode('base64,', $_POST['base64']);
         $img = base64_decode($base64[1]);
-        $ext = substr($_POST['imagem_nome'], strripos($_POST['imagem_nome'],'.'), strlen($_POST['imagem_nome']));
-        $nome = md5($_POST['base64'].$_POST['imagem_tipo'].$_POST['imagem_nome']).$ext;
+        $ext = substr($_POST['nota_nome'], strripos($_POST['nota_nome'],'.'), strlen($_POST['nota_nome']));
+        $nome = md5($_POST['base64'].$_POST['nota_tipo'].$_POST['nota_nome']).$ext;
 
         if(!is_dir("../volume/estoque")) mkdir("../volume/estoque");
         if(file_put_contents("../volume/estoque/".$nome, $img)){
-          $dados['imagem'] = $nome;
+          $dados['nota'] = $nome;
         }
       }
-      //Fim da Verificação da Imagem
+      //Fim da Verificação da nota
 
 
       $campos = [];
@@ -87,18 +87,18 @@
         <div class="form-text">Informe a data do comprovante.</div>
       </div>
 
-      <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
-        <img src="<?=$localPainel?>src/volume/estoque/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
+      <div showImage class="form-floating" style="display:<?=(($d->nota)?'block':'none')?>">
+        <img src="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" alt="" />
       </div>
 
       <!-- <div class="form-floating"> -->
         <input type="file" class="form-control" placeholder="Banner">
         <input type="hidden" id="base64" name="base64" value="" />
-        <input type="hidden" id="imagem_tipo" name="imagem_tipo" value="" />
-        <input type="hidden" id="imagem_nome" name="imagem_nome" value="" />
-        <input type="hidden" id="imagem" name="imagem" value="<?=$d->imagem?>" />
+        <input type="hidden" id="nota_tipo" name="nota_tipo" value="" />
+        <input type="hidden" id="nota_nome" name="nota_nome" value="" />
+        <input type="hidden" id="nota" name="nota" value="<?=$d->nota?>" />
         <!-- <label for="url">Banner</label> -->
-        <div class="form-text mb-3">Selecione a imagem para o Banner</div>
+        <div class="form-text mb-3">Selecione a nota para o Banner</div>
       <!-- </div> -->
 
 
@@ -197,8 +197,8 @@
                         var name = file.name;
 
                         $("#base64").val(Base64);
-                        $("#imagem_tipo").val(type);
-                        $("#imagem_nome").val(name);
+                        $("#nota_tipo").val(type);
+                        $("#nota_nome").val(name);
 
                         $("div[showImage] img").attr("src",Base64);
                         $("div[showImage]").css("display",'block');
