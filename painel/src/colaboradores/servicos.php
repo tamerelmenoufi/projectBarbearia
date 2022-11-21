@@ -5,7 +5,7 @@
 
             $dados = [];
 
-            mysqli_query($con, "delete from colaboradores_produtos where colaborador = '{$_POST['colaborador']}'");
+            // mysqli_query($con, "delete from colaboradores_produtos where colaborador = '{$_POST['colaborador']}'");
 
             foreach($_POST['produto'] as $i => $val){
 
@@ -14,7 +14,7 @@
 
             }
             if($dados){
-                $query = "INSERT INTO colaboradores_produtos (chave, colaborador, produto, tipo_comissao, valor, situacao) VALUES ".@implode(", ", $dados);
+                $query = "REPLACE INTO colaboradores_produtos (chave, colaborador, produto, tipo_comissao, valor, situacao) VALUES ".@implode(", ", $dados);
                 mysqli_query($con, $query);
             }
 
@@ -22,6 +22,9 @@
             exit();
 
         }
+
+
+
 
 
 ?>
