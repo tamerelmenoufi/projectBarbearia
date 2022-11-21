@@ -73,7 +73,7 @@
 
 <h3 class="titulo<?=$md5?>">Editar Produto</h3>
 
-    <form id="acaoMenu">
+    <form id="acaoMenu<?=$md5?>">
       <h5><?=$_SESSION['categoriaProdutoNome']?></h5>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="produto" name="produto" placeholder="Título do Produto" value="<?=$d->produto?>">
@@ -142,7 +142,7 @@
       Carregando('none');
 
 
-      $( "form" ).on( "submit", function( event ) {
+      $( "#acaoMenu<?=$md5?>" ).on( "submit", function( event ) {
 
         event.preventDefault();
         // materia = editor.getData();
