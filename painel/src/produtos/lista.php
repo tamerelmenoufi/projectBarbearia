@@ -55,6 +55,8 @@
               <thead>
                 <tr>
                   <th scope="col" style="width:100%">Produto</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Estoque</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
@@ -67,6 +69,10 @@
                 ?>
                 <tr>
                   <td style="white-space: nowrap;"><?=$d->produto?></td>
+
+                  <td style="white-space: nowrap;"><?=$d->valor?></td>
+                  <td style="white-space: nowrap;"><?=$d->estoque?></td>
+
                   <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
