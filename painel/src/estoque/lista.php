@@ -57,6 +57,7 @@
                   <!-- <th scope="col" style="width:50%">Produto</th> -->
                   <th scope="col" style="width:100%">Título</th>
                   <th scope="col">Data</th>
+                  <th scope="col">Entrada</th>
                   <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
@@ -71,6 +72,7 @@
                   <!-- <td style="white-space: nowrap;"><?=$d->produto?></td> -->
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
+                  <td style="white-space: nowrap;"><?=$d->estoque?></td>
                   <!-- <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
