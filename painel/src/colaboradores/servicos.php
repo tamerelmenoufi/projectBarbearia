@@ -25,9 +25,11 @@
 
         $query = "select * from colaboradores_produtos where colaborador = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
-        $d = mysqli_fetch_object($result);
-
-        print_r($d);
+        while($d = mysqli_fetch_object($result)){
+            $tipo[$d->produto] = $d->tipo_comissao;
+            $valor[$d->produto] = $d->valor;
+            $situacao[$d->produto] = $d->situacao;
+        }
 
 
 
@@ -61,15 +63,15 @@
             <div class="input-group mb-3">
                 <span class="input-group-text" style="width:60%">
                     <div class="form-check form-switch">
-                        <input class="form-check-input perfil" type="checkbox" <?=(($d->situacao)?'checked':false)?> produto="<?=$d->codigo?>">
+                        <input class="form-check-input perfil" type="checkbox" <?=(($situacao[$d->codigo])?'checked':false)?> produto="<?=$d->codigo?>">
                     </div>
                     <?=$d->produto?>
                 </span>
                 <select tipo<?=$d->codigo?> class="form-control" >
-                    <option value="p">%</option>
-                    <option value="v">$</option>
+                    <option value="p" <?=(($tipo[$d->codigo] == 'p')?'selected':false)?>>%</option>
+                    <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>$</option>
                 </select>
-                <input  valor<?=$d->codigo?> value="" type="number" class="form-control">
+                <input  valor<?=$d->codigo?> value="<?=$valor[$d->codigo]?>" type="number" class="form-control">
             </div>
             <?php
             }
