@@ -209,7 +209,7 @@
                         $("#nota_tipo").val(type);
                         $("#nota_nome").val(name);
 
-                        $("div[showImage] img").attr("src",Base64);
+                        $("div[showImage] object").attr("data",Base64);
                         $("div[showImage]").css("display",'block');
 
 
