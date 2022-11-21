@@ -9,12 +9,12 @@
         mysqli_query($con, $query);
       }
 
-      if($_POST['situacao']){
-        // mysqli_query($con, "update produtos set situacao = '0'");
-        $query = "update produtos_estoque set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
-        mysqli_query($con, $query);
-        exit();
-      }
+      // if($_POST['situacao']){
+      //   // mysqli_query($con, "update produtos set situacao = '0'");
+      //   $query = "update produtos_estoque set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+      //   mysqli_query($con, $query);
+      //   exit();
+      // }
 
 
 ?>
@@ -57,7 +57,7 @@
                   <!-- <th scope="col" style="width:50%">Produto</th> -->
                   <th scope="col" style="width:50%">Título</th>
                   <th scope="col">Data</th>
-                  <th scope="col">Situação</th>
+                  <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
@@ -71,13 +71,13 @@
                   <!-- <td style="white-space: nowrap;"><?=$d->produto?></td> -->
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=$d->data_cadastro?></td>
-                  <td style="white-space: nowrap;">
+                  <!-- <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
                     <input class="form-check-input situacao" type="checkbox" <?=(($d->situacao)?'checked':false)?> situacao="<?=$d->codigo?>">
                   </div>
 
-                  </td>
+                  </td> -->
                   <td style="white-space: nowrap;">
 
                     <button
@@ -188,29 +188,29 @@
         })
 
 
-        $(".situacao").change(function(){
+        // $(".situacao").change(function(){
 
-            situacao = $(this).attr("situacao");
-            status = $(this).prop("checked");
-            if(status === 'true'){
-              opc = '1';
-            }else{
-              opc = '0';
-            }
+        //     situacao = $(this).attr("situacao");
+        //     status = $(this).prop("checked");
+        //     if(status === 'true'){
+        //       opc = '1';
+        //     }else{
+        //       opc = '0';
+        //     }
 
-            $.ajax({
-                url:"src/estoque/lista.php",
-                type:"POST",
-                data:{
-                    situacao,
-                    opc
-                },
-                success:function(dados){
-                    // $("#paginaHome").html(dados);
-                }
-            })
+        //     $.ajax({
+        //         url:"src/estoque/lista.php",
+        //         type:"POST",
+        //         data:{
+        //             situacao,
+        //             opc
+        //         },
+        //         success:function(dados){
+        //             // $("#paginaHome").html(dados);
+        //         }
+        //     })
 
-        });
+        // });
 
 
         $("button[voltar]").click(function(){
