@@ -1,6 +1,27 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
+        if($_POST['acao'] == 'perfil'){
+
+            $dados = [];
+
+            mysqli_query("delete from colaboradores_produtos where colaborador = '{$_POST['colaborador']}'");
+
+            foreach($_POST['produto'] as $i => $val){
+
+                $chave = md5($_POST['colaborador'].$val);
+
+                $dados[] = "( '{$chave}', '{$_POST['colaborador']}', '{$val}', tipo_comissao, valor, situacao )";
+
+            }
+            if($dados){
+                $query = "INSERT INTO colaboradores_produtos (chave, colaborador, produto, '{$_POST['tipo']}', '{$_POST['valor']}', '{$_POST['situacao']}') VALUES ".@implode(", ", $dados);
+            }
+
+
+
+        }
+
 
 ?>
 <style>
@@ -12,7 +33,7 @@
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Perfil de Serviços</h4>
-    <form id="form-<?= $md5 ?>">
+    <div id="form-<?= $md5 ?>">
         <h5><?=$_POST['colaborador']?></h5>
         <hr>
         <div class="row">
@@ -30,75 +51,66 @@
                 }
             ?>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1" style="width:60%">
+                <span class="input-group-text" style="width:60%">
                     <div class="form-check form-switch">
-                        <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
+                        <input class="form-check-input perfil" type="checkbox" <?=(($d->situacao)?'checked':false)?> produto="<?=$d->codigo?>">
                     </div>
                     <?=$d->produto?>
                 </span>
-                <select class="form-control" >
+                <select tipo<?=$d->codigo?> class="form-control" >
                     <option value="p">%</option>
                     <option value="v">$</option>
                 </select>
-                <input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input  valor<?=$d->codigo?> value="" type="number" class="form-control">
             </div>
             <?php
             }
             ?>
 
-            <button class="btn btn-primary btn-block mt-3 mb-3"><i class="fa-regular fa-floppy-disk"></i> Salvar Perfil</button>
+            <button salvar_perfil class="btn btn-primary btn-block mt-3 mb-3"><i class="fa-regular fa-floppy-disk"></i> Salvar Perfil</button>
 
             </div>
         </div>
 
-    </form>
+    </div>
 
     <script>
         $(function(){
             Carregando('none');
 
-            $("#cpf").mask("999.999.999-99");
-            $("#telefone").mask("(99) 99999-9999");
+            $('button[salvar_perfil]').submit(function (e) {
 
-            $('#form-<?=$md5?>').submit(function (e) {
-
-                e.preventDefault();
-
-                var codigo = $('#codigo').val();
-                var campos = $(this).serializeArray();
-
-                if (codigo) {
-                    campos.push({name: 'codigo', value: codigo})
-                }
-
-                campos.push({name: 'acao', value: 'salvar'})
+                colaborador = '<?=$_POST['cod']?>';
+                produto = [];
+                tipo = [];
+                valor = [];
+                $("input.perfil").each(function(){
+                    // if($(this).prop("checked") == true){
+                        produto.push($(this).attr("produto"));
+                        tipo.push($(`select[tipo${produto}]`).value());
+                        valor.push($(`input[valor${produto}]`).value());
+                    // }
+                })
 
                 Carregando();
 
                 $.ajax({
-                    url:"src/colaboradores/form.php",
+                    url:"src/colaboradores/servicos.php",
                     type:"POST",
                     typeData:"JSON",
                     mimeType: 'multipart/form-data',
-                    data: campos,
+                    data:{
+                        colaborador,
+                        produto,
+                        tipo,
+                        valor,
+                        acao:'perfil'
+                    },
                     success:function(dados){
-                        // if(dados.status){
-                            $.ajax({
-                                url:"src/colaboradores/index.php",
-                                type:"POST",
-                                success:function(dados){
-                                    $("#paginaHome").html(dados);
-                                    let myOffCanvas = document.getElementById('offcanvasDireita');
-                                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-                                    openedCanvas.hide();
-                                }
-                            });
-                        // }
+
                     },
                     error:function(erro){
 
-                        // $.alert('Ocorreu um erro!' + erro.toString());
-                        //dados de teste
                     }
                 });
 
