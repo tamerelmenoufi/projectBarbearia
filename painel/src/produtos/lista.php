@@ -63,7 +63,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, (select count(*) from vendas where produto = a.codigo) as vendas from produtos a where a.categoria = '{$_SESSION['categoriaProduto']}' order by a.produto asc";
+                  $query = "select a.*, (select count(*) from vendas where produto = a.codigo limit 1) as vendas from produtos a where a.categoria = '{$_SESSION['categoriaProduto']}' order by a.produto asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>

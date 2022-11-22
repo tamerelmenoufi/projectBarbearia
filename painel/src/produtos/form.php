@@ -57,7 +57,7 @@
 
 
     if($_POST['cod']){
-      $query = "select a.*, (select count(*) from vendas where produto = a.codigo) as vendas from produtos a where a.codigo = '{$_POST['cod']}'";
+      $query = "select a.*, (select count(*) from vendas where produto = a.codigo limit 1) as vendas from produtos a where a.codigo = '{$_POST['cod']}'";
       $result = mysqli_query($con, $query);
       $d = mysqli_fetch_object($result);
     }
