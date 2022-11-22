@@ -20,7 +20,7 @@
         $base64 = explode('base64,', $_POST['base64']);
         $img = base64_decode($base64[1]);
         $ext = substr($_POST['nota_nome'], strripos($_POST['nota_nome'],'.'), strlen($_POST['nota_nome']));
-        $nome = md5($_POST['base64'].$_POST['nota_tipo'].$_POST['nota_nome']).$ext;
+        $nome = md5($_POST['base64'].$_POST['nota_tipo'].$_POST['nota_nome'].date("YmdHis")).$ext;
 
         $exts = [
           '.pdf',
@@ -95,9 +95,15 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="datetime-local" class="form-control" id="data_nota" name="data_nota" placeholder="Data do comprovante" value="<?=$d->data_nota?>">
-        <label for="data_nota">Data</label>
-        <div class="form-text">Informe a data do comprovante.</div>
+        <input type="datetime-local" class="form-control" id="nota_numero" name="nota_numero" placeholder="Número do comprovante" value="<?=$d->nota_numero?>">
+        <label for="nota_numero">Número (Comprovante)</label>
+        <div class="form-text">Informe o número do comprovante (Nota).</div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="datetime-local" class="form-control" id="nota_data" name="nota_data" placeholder="Data do comprovante" value="<?=$d->nota_data?>">
+        <label for="nota_data">Data</label>
+        <div class="form-text">Informe a data do comprovante (Nota).</div>
       </div>
 
       <div class="form-floating mb-3">
@@ -105,6 +111,8 @@
         <label for="estoque">Quantidade de Itens</label>
         <div class="form-text">Informe a quantidade de itens.</div>
       </div>
+
+
 
       <div showImage class="form-floating" style="display:<?=(($d->nota)?'block':'none')?>">
         <!-- <img src="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" alt="" /> -->

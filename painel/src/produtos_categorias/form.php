@@ -20,7 +20,7 @@
         $base64 = explode('base64,', $_POST['base64']);
         $img = base64_decode($base64[1]);
         $ext = substr($_POST['imagem_nome'], strripos($_POST['imagem_nome'],'.'), strlen($_POST['imagem_nome']));
-        $nome = md5($_POST['base64'].$_POST['imagem_tipo'].$_POST['imagem_nome']).$ext;
+        $nome = md5($_POST['base64'].$_POST['imagem_tipo'].$_POST['imagem_nome'].date("YmdHis")).$ext;
 
         if(!is_dir("../volume/produtos_categorias")) mkdir("../volume/produtos_categorias");
         if(file_put_contents("../volume/produtos_categorias/".$nome, $img)){
