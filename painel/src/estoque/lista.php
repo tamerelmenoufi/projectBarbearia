@@ -171,7 +171,7 @@
           nome = '<?=$_SESSION['ProdutoNome']?>';
 
           $.confirm({
-            content:`Você está prestes a incluir ${quantidade} no estoque do produto ${nome}.<br>Deseja realmente confirmar essa operação?`,
+            content:`Você está prestes a incluir <b>${quantidade}</b> item(ns) no estoque do produto <b>${nome}</b>.<br>Deseja realmente confirmar essa operação?`,
             title:"Inlcuir estoque de produtos",
             type:'green',
             buttons:{
