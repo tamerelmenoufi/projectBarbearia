@@ -151,6 +151,33 @@
 
         Carregando('none');
 
+        $(".vermelho").click(function(){
+
+
+          $.confirm({
+            content:"Deseja realmente incluir no produto a quantidade definido no estoque?",
+            title:"Inlcuir estoque de produtos",
+            type:'green',
+            buttons:{
+              'SIM':{
+                text:'Sim',
+                btnClass:'btn btn-success btn-sm',
+                action:function(){
+
+                }
+              },
+              'NAO':{
+                text:'Não',
+                btnClass:'btn btn-danger btn-sm',
+                action:function(){
+
+                }
+              },
+            }
+          });
+
+        });
+
 
         $("button[novoCadastro]").click(function(){
             $.ajax({
