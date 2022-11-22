@@ -81,7 +81,7 @@
                   <td style="white-space: nowrap;"><?=dataBr($d->nota_data)?></td>
                                                    <!-- <i class="fa-solid fa-plug-circle-check"></i> -->
                                                    <!-- <i class="fa-solid fa-plug-circle-xmark"></i> -->
-                  <td style="white-space: nowrap;"><i class="fa-solid fa-plug-circle-<?=(($d->estoque_atualizado)?'check verde':'xmark vermelho')?>"></i> +<?=$d->estoque?></td>
+                  <td style="white-space: nowrap;"><i class="fa-solid fa-plug-circle-<?=(($d->estoque_atualizado)?'check verde':'xmark vermelho')?>" cod="<?=$d->codigo?>"></i> +<?=$d->estoque?></td>
                   <td style="white-space: nowrap;"><a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</a></td>
                   <!-- <td style="white-space: nowrap;">
 
@@ -94,16 +94,40 @@
 
                     <button
                       class="btn btn-primary btn-sm"
-                      edit="<?=$d->codigo?>"
                       data-bs-toggle="offcanvas"
                       href="#offcanvasDireita"
                       role="button"
                       aria-controls="offcanvasDireita"
+                      <?php
+                      if($d->estoque_atualizado){
+                      ?>
+                      disabled="disabled"
+                      <?php
+                      }else{
+                      ?>
+                      edit="<?=$d->codigo?>"
+                      <?php
+                      }
+                      ?>
                     >
                     <i class="fa-regular fa-pen-to-square"></i> Editar
                     </button>
 
-                    <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
+                    <button
+                      class="btn btn-danger btn-sm"
+                      <?php
+                      if($d->estoque_atualizado){
+                      ?>
+                      disabled="disabled"
+                      <?php
+                      }else{
+                      ?>
+                      delete="<?=$d->codigo?>"
+                      imagem="<?=$d->imagem?>"
+                      <?php
+                      }
+                      ?>
+                      >
                     <i class="fa-solid fa-trash-can"></i> Excluir
                     </button>
 
