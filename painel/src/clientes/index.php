@@ -40,7 +40,6 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
                   <th scope="col" style="width:50%">E-mail</th>
-                  <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
@@ -56,10 +55,6 @@
                   <td style="white-space: nowrap;"><?=$d->telefone?></td>
                   <td style="white-space: nowrap;"><?=$d->email?></td>
                   <td style="white-space: nowrap;">
-
-                  <div class="form-check form-switch">
-                    <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
-                  </div>
 
                   </td>
                   <td style="white-space: nowrap;">
@@ -123,22 +118,6 @@
             })
         })
 
-        $("button[servicos]").click(function(){
-            cod = $(this).attr("servicos");
-            colaborador = $(this).attr("nome");
-            $.ajax({
-                url:"src/clientes/servicos.php",
-                type:"POST",
-                data:{
-                  cod,
-                  colaborador
-                },
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            })
-        })
-
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
@@ -181,31 +160,6 @@
         })
 
 
-        $(".situacao").change(function(){
-
-            situacao = $(this).attr("usuario");
-            opc = false;
-
-            if($(this).prop("checked") == true){
-              opc = '1';
-            }else{
-              opc = '0';
-            }
-
-
-            $.ajax({
-                url:"src/clientes/index.php",
-                type:"POST",
-                data:{
-                    situacao,
-                    opc
-                },
-                success:function(dados){
-                    // $("#paginaHome").html(dados);
-                }
-            })
-
-        });
 
     })
 </script>
