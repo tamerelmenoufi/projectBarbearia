@@ -73,7 +73,9 @@
                   <!-- <td style="white-space: nowrap;"><?=$d->produto?></td> -->
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=dataBr($d->nota_data)?></td>
-                  <td style="white-space: nowrap;"><i class="fa-solid fa-plug-circle-xmark" style="color:red"></i> +<?=$d->estoque?></td>
+                                                   <!-- <i class="fa-solid fa-plug-circle-check"></i> -->
+                                                   <!-- <i class="fa-solid fa-plug-circle-xmark"></i> -->
+                  <td style="white-space: nowrap;"><i class="fa-solid fa-plug-circle-check" style="color:green"></i> +<?=$d->estoque?></td>
                   <td style="white-space: nowrap;"><a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</a></td>
                   <!-- <td style="white-space: nowrap;">
 
