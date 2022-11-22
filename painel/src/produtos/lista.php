@@ -63,7 +63,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from produtos where categoria = '{$_SESSION['categoriaProduto']}' order by produto asc";
+                  $query = "select a.*, (select count(*) from vendas where produto = a.codigo) as vendas from produtos a where a.categoria = '{$_SESSION['categoriaProduto']}' order by a.produto asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -97,7 +97,7 @@
                     <i class="fa-regular fa-pen-to-square"></i> Editar
                     </button>
 
-                    <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
+                    <button <?=(($d->estoque or $d->vendas)?'disabled="disabled"':'delete="'.$d->codigo.'"')?> class="btn btn-danger btn-sm" imagem="<?=$d->imagem?>">
                     <i class="fa-solid fa-trash-can"></i> Excluir
                     </button>
 
