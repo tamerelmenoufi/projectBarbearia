@@ -74,15 +74,6 @@
                     <label for="email">E-mail</label>
                 </div>
 
-
-                <div class="form-floating mb-3">
-                    <select name="situacao" class="form-control" id="situacao">
-                        <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
-                        <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
-                    </select>
-                    <label for="email">Situação</label>
-                </div>
-
             </div>
         </div>
 
