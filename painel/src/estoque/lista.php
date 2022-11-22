@@ -9,6 +9,13 @@
         mysqli_query($con, $query);
       }
 
+      if($_POST['acao'] == 'estoque'){
+        $query = "update produtos_estoque set estoque_atualizado = '1' where codigo = '{$_POST['cod']}'";
+        mysqli_query($con, $query);
+        mysqli_query($con, "update produtos set estoque = (estoque + {$_POST['quantidade']}) where codigo = '{$_POST['produto']}'");
+
+      }
+
       // if($_POST['situacao']){
       //   // mysqli_query($con, "update produtos set situacao = '0'");
       //   $query = "update produtos_estoque set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
@@ -81,7 +88,12 @@
                   <td style="white-space: nowrap;"><?=dataBr($d->nota_data)?></td>
                                                    <!-- <i class="fa-solid fa-plug-circle-check"></i> -->
                                                    <!-- <i class="fa-solid fa-plug-circle-xmark"></i> -->
-                  <td style="white-space: nowrap;"><i class="fa-solid fa-plug-circle-<?=(($d->estoque_atualizado)?'check verde':'xmark vermelho')?>" cod="<?=$d->codigo?>"></i> +<?=$d->estoque?></td>
+                  <td style="white-space: nowrap;"><i
+                                                      class="fa-solid fa-plug-circle-<?=(($d->estoque_atualizado)?'check verde':'xmark vermelho')?>"
+                                                      cod="<?=$d->codigo?>"
+                                                      produto="<?=$d->produto?>"
+                                                      quantidade="<?=$d->estoque?>"
+                                                    ></i> +<?=$d->estoque?></td>
                   <td style="white-space: nowrap;"><a href='<?=$localPainel?>src/volume/estoque/<?=$d->nota?>' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</a></td>
                   <!-- <td style="white-space: nowrap;">
 
@@ -153,9 +165,13 @@
 
         $(".vermelho").click(function(){
 
+          cod = $(this).attr("cod");
+          produto = $(this).attr("produto");
+          quantidade = $(this).attr("quantidade");
+          nome = '<?=$_SESSION['ProdutoNome']?>';
 
           $.confirm({
-            content:"Deseja realmente incluir no produto a quantidade definido no estoque?",
+            content:`Você está prestes a incluir ${quantidade} no estoque do produto ${nome}.<br>Deseja realmente confirmar essa operação?`,
             title:"Inlcuir estoque de produtos",
             type:'green',
             buttons:{
@@ -163,7 +179,27 @@
                 text:'Sim',
                 btnClass:'btn btn-success btn-sm',
                 action:function(){
+                  $.ajax({
+                    url:"src/estoque/lista.php",
+                    type:"POST",
+                    data:{
+                      cod,
+                      produto,
+                      quantidade,
+                      acao:'estoque'
+                    },
+                    success:function(dados){
 
+                      $.alert({
+                        content:'Atualização realizada com sucesso!',
+                        title:false,
+                        type:'green'
+                      });
+                      $("#paginaHome").html(dados);
+
+
+                    }
+                  })
                 }
               },
               'NAO':{
