@@ -58,7 +58,7 @@
 
                     <button
                       class="btn btn-primary"
-                      servicos="<?=$d->codigo?>"
+                      enderecos="<?=$d->codigo?>"
                       nome="<?=$d->nome?>"
                       data-bs-toggle="offcanvas"
                       href="#offcanvasDireita"
