@@ -53,7 +53,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>">Cadastro do Usuário</h4>
+<h4 class="Titulo<?=$md5?>">Cadastro do Cliente</h4>
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
