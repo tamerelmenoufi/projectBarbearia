@@ -56,9 +56,6 @@
                   <td style="white-space: nowrap;"><?=$d->email?></td>
                   <td style="white-space: nowrap;">
 
-                  </td>
-                  <td style="white-space: nowrap;">
-
                     <button
                       class="btn btn-primary"
                       servicos="<?=$d->codigo?>"
