@@ -27,6 +27,14 @@
 
     <div class="row mb-1">
       <div class="col">
+        <a url="src/clientes/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Clientes
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col">
         <a url="src/produtos_categorias/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Produtos / Serviços
         </a>
