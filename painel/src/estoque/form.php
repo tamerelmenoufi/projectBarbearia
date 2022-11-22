@@ -95,13 +95,13 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="datetime-local" class="form-control" id="nota_numero" name="nota_numero" placeholder="Número do comprovante" value="<?=$d->nota_numero?>">
+        <input type="text" class="form-control" id="nota_numero" name="nota_numero" placeholder="Número do comprovante" value="<?=$d->nota_numero?>">
         <label for="nota_numero">Número (Comprovante)</label>
         <div class="form-text">Informe o número do comprovante (Nota).</div>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="datetime-local" class="form-control" id="nota_data" name="nota_data" placeholder="Data do comprovante" value="<?=$d->nota_data?>">
+        <input type="date" class="form-control" id="nota_data" name="nota_data" placeholder="Data do comprovante" value="<?=$d->nota_data?>">
         <label for="nota_data">Data</label>
         <div class="form-text">Informe a data do comprovante (Nota).</div>
       </div>
