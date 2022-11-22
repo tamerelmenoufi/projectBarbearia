@@ -65,7 +65,7 @@
                       role="button"
                       aria-controls="offcanvasDireita"
                     >
-                      Serviços
+                      Endereços
                     </button>
 
                     <button
