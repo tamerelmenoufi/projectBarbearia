@@ -129,6 +129,20 @@
             })
         })
 
+        $("button[enderecos]").click(function(){
+            cod = $(this).attr("enderecos");
+            $.ajax({
+                url:"src/clientes/enderecos.php",
+                type:"POST",
+                data:{
+                  cod
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
         $("button[delete]").click(function(){
             deletar = $(this).attr("delete");
             $.confirm({
