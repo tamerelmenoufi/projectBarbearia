@@ -58,7 +58,7 @@
 
                     <button
                       class="btn btn-primary"
-                      enderecos="<?=$d->codigo?>"
+                      cliente="<?=$d->codigo?>"
                       nome="<?=$d->nome?>"
                       data-bs-toggle="offcanvas"
                       href="#offcanvasDireita"
@@ -130,12 +130,12 @@
         })
 
         $("button[enderecos]").click(function(){
-            cod = $(this).attr("enderecos");
+            cliente = $(this).attr("cliente");
             $.ajax({
                 url:"src/clientes/enderecos.php",
                 type:"POST",
                 data:{
-                  cod
+                  cliente
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);

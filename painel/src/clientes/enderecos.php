@@ -14,7 +14,7 @@
     }
 
 
-    echo $query = "select * from clientes_enderecos where cliente = '{$_POST['cliente']}'";
+    $query = "select * from clientes_enderecos where cliente = '{$_POST['cliente']}'";
     $result = mysqli_query($con, $query);
 ?>
 
