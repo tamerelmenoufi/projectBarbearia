@@ -20,9 +20,11 @@
 <style>
     .verde{
         color:green;
+        cursor:pointer;
     }
     .vermelho{
         color:red;
+        cursor:pointer;
     }
 </style>
 
@@ -41,7 +43,6 @@
 ?>
     <li class="list-group-item opc" style="display: flex; justify-content: space-between;">
         <div class="titulo">
-            <i class="fa-solid fa-location-dot"></i>
             <i class="fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
         <div>
