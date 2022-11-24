@@ -48,7 +48,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>">Editar Endereços</h4>
+<h4 class="Titulo<?=$md5?>">Editar Endereço</h4>
 <form id="acaoMenu">
 
 <div class="form-floating mb-3">
