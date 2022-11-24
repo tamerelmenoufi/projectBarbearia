@@ -13,7 +13,9 @@
           $campos[] = "{$i} = '{$v}'";
         }
 
-        $query = "update clientes_enderecos set {$attr} where codigo = '{$_POST['codigo']}'";
+        if($campos) $campos = implode(", ",$campos);
+
+        $query = "update clientes_enderecos set {$campos} where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         $acao = mysqli_affected_rows($con);
         $cod = $_POST['codigo'];
