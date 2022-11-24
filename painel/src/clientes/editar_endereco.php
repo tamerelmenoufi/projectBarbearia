@@ -45,7 +45,11 @@
         bottom:10px;
         z-index: 999;
     }
-
+    .CancelarCoordenadas{
+        position:fixed;
+        bottom:10px;
+        z-index: 999;
+    }
 </style>
 
 
