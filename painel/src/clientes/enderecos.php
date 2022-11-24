@@ -137,5 +137,21 @@
 
         });
 
+        $(".titulo").click(function(){
+            cod = $(this).attr("cod");
+            $.ajax({
+                url:"src/clientes/visualizar_endereco.php",
+                type:"POST",
+                data:{
+                    cod,
+                    cliente:'<?=$_POST['cliente']?>',
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+
+        });
+
     })
 </script>
