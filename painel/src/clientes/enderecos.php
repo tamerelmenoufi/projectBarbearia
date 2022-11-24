@@ -56,7 +56,7 @@
                     url:"src/clientes/enderecos.php",
                     type:"POST",
                     data:{
-                        cod:'<?=$_POST['cod']?>',
+                        cliente:'<?=$_POST['cliente']?>',
                         titulo,
                         acao:'insert',
                     },
