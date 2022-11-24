@@ -42,7 +42,7 @@
     while($d = mysqli_fetch_object($result)){
 ?>
     <li class="list-group-item opc" style="display: flex; justify-content: space-between;">
-        <div class="titulo">
+        <div class="titulo" cod="<?=$d->codigo?>">
             <i class="fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
         <div>
