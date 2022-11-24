@@ -121,7 +121,7 @@
 
         $("button.excluir").click(function(){
             cod = $(this).attr("cod");
-            titulo = $(this).parent("div").parent("li").children("div.titulo").text();
+            titulo = $(this).parent("div").parent("li").children("div").text();
 
             // $.alert(cod);
             $.confirm({
