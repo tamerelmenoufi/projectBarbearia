@@ -70,20 +70,18 @@
 
 
         $("button.editar").click(function(){
-            opc = $(this).attr("cod");
-
+            cod = $(this).attr("cod");
             $.ajax({
                 url:"src/clientes/enderecos_form.php",
                 type:"POST",
                 data:{
-                    cod:'<?=$_POST['cod']?>',
-                    opc
+                    cod,
+                    cliente:'<?=$_POST['cliente']?>',
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
             });
-
         });
 
 

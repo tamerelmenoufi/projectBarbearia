@@ -1,8 +1,6 @@
 <?php
 
-    include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
-
-
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
 
@@ -15,12 +13,10 @@
           $campos[] = "{$i} = '{$v}'";
         }
 
-        $query = "UPDATE paginas_topicos set
-                    topicos = JSON_SET(topicos,'$.titulo[{$_POST['opc']}]','".addslashes($_POST['titulo'])."'),
-                    topicos = JSON_SET(topicos,'$.descricao[{$_POST['opc']}]','".addslashes($_POST['descricao'])."')
-                WHERE codigo = '{$_POST['codigo']}'";
+        $query = "update clientes_enderecos set {$attr} where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         $acao = mysqli_affected_rows($con);
+        $cod = $_POST['codigo'];
 
         if($acao){
           echo "Atualização realizada com sucesso!";
@@ -37,37 +33,54 @@
 
 
 
-    $query = "select * from paginas_topicos where codigo = '{$_POST['cod']}'";
+    $query = "select * from clientes_enderecos where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
-
-    $topicos = json_decode($d->topicos);
-
-    // print_r($_POST);
-    // echo "<hr>";
-    // print_r($topicos);
-
-    // echo "<hr>";
-    // echo "Título: ".$topicos->titulo[$_POST['opc']];
-    // echo "<br>";
-    // echo "Descrição: ".$topicos->descricao[$_POST['opc']];
-
-    // echo "<br><br><br>";
 
 ?>
 
 <form id="acaoMenu">
 
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="titulo_topico" name="titulo" placeholder="Título da Página" value="<?=$topicos->titulo[$_POST['opc']]?>">
-  <label for="titulo_topico">Título do Tópico</label>
-  <div class="form-text">Digite o nome do tópico que aparecerá no site.</div>
+  <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título da Página" value="<?=$d->titulo?>">
+  <label for="titulo">Título do Endereço</label>
+  <div class="form-text">Digite o nome de identificação do endereço.</div>
 </div>
 
 <div class="form-floating mb-3">
-  <textarea class="form-control" style="height:100px;" id="descricao_topico" name="descricao" placeholder="Descrição do tópico"><?=$topicos->descricao[$_POST['opc']]?></textarea>
-  <label for="descricao_topico">Descrição do Tópico</label>
-  <div class="form-text">Digite a descrição do Tópico.</div>
+  <input type="text" class="form-control" id="cep" name="cep" placeholder="Título da Página" value="<?=$d->cep?>">
+  <label for="cep">CEP</label>
+  <div class="form-text">Digite o CEP do endereço</div>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="rua" name="rua" placeholder="Título da Página" value="<?=$d->rua?>">
+  <label for="rua">Rua</label>
+  <div class="form-text">Digite o nome da Rua</div>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="numero" name="numero" placeholder="Título da Página" value="<?=$d->numero?>">
+  <label for="numero">Número</label>
+  <div class="form-text">Informe o número da Casa / condomínio</div>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Título da Página" value="<?=$d->bairro?>">
+  <label for="bairro">Bairro</label>
+  <div class="form-text">Informe o nome do Bairro</div>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Título da Página" value="<?=$d->complemento?>">
+  <label for="complemento">Complemento</label>
+  <div class="form-text">Quadra, bloco, apartamento, ect</div>
+</div>
+
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Título da Página" value="<?=$d->referencia?>">
+  <label for="referencia">Ponto de Referência</label>
+  <div class="form-text">Informe um local de referência para o seu endereço</div>
 </div>
 
 <button type="submit" class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
@@ -75,7 +88,7 @@
 
 <input type="hidden" id="acao" name="acao" value="salvar" >
 <input type="hidden" id="codigo" name="codigo" value="<?=$d->codigo?>" >
-<input type="hidden" id="opc" name="opc" value="<?=$_POST['opc']?>" >
+<input type="hidden" id="cliente" name="opc" value="<?=$_POST['cliente']?>" >
 </form>
 
 
@@ -95,7 +108,7 @@
             data = $( this ).serialize();
 
             $.ajax({
-                url:"src/paginas_topicos/topicos_form.php",
+                url:"src/clientes/enderecos_form.php",
                 type:"POST",
                 data,
                 success:function(dados){
@@ -113,13 +126,14 @@
                     });
 
                     $.ajax({
-                        url:"src/paginas_topicos/topicos.php",
+                        url:"src/clientes/enderecos.php",
                         type:"POST",
                         data:{
-                            cod:'<?=$_POST['cod']?>'
+                            cod:'<?=$_POST['cod']?>',
+                            cliente:'<?=$_POST['cliente']?>',
                         },
                         success:function(dados){
-                            $("#home-tab-pane").html(dados);
+                            $(".LateralDireita").html(dados);
                         }
                     });
 
@@ -131,13 +145,14 @@
         $("button.voltar").click(function(){
 
             $.ajax({
-                url:"src/paginas_topicos/topicos.php",
+                url:"src/clientes/enderecos.php",
                 type:"POST",
                 data:{
-                    cod:'<?=$_POST['cod']?>'
+                    cod:'<?=$_POST['cod']?>',
+                    cliente:'<?=$_POST['cliente']?>',
                 },
                 success:function(dados){
-                    $("#home-tab-pane").html(dados);
+                    $(".LateralDireita").html(dados);
                 }
             });
 
