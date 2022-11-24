@@ -73,7 +73,7 @@
             opc = $(this).attr("cod");
 
             $.ajax({
-                url:"src/clientes_enderecos/enderecos_form.php",
+                url:"src/clientes/enderecos_form.php",
                 type:"POST",
                 data:{
                     cod:'<?=$_POST['cod']?>',
@@ -102,7 +102,7 @@
                         btnClass:'btn btn-danger',
                         action:function(){
                             $.ajax({
-                                url:"src/clientes_enderecos/enderecos.php",
+                                url:"src/clientes/enderecos.php",
                                 type:"POST",
                                 data:{
                                     cod,
