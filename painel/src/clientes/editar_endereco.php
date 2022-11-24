@@ -158,7 +158,8 @@
                             cliente:'<?=$d->cliente?>'
                         },
                         success:function(dados){
-                            $(".tab-pane").html(dados);
+                            $(".LateralDireita").html(dados);
+                            Carregando('none');
                             let myOffCanvas = document.getElementById('offcanvasDireita');
                             let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                             openedCanvas.hide();
