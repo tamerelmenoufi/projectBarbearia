@@ -48,6 +48,7 @@
     .CancelarCoordenadas{
         position:fixed;
         bottom:10px;
+        left:150px;
         z-index: 999;
     }
 </style>
