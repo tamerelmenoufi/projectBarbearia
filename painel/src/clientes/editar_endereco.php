@@ -55,6 +55,7 @@
     <div id="map<?=$md5?>"></div>
 
     <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenadas?>">Confirmar a Localização</button>
+    <button class="CancelarCoordenadas btn btn-danger btn-block" >Cancelar</button>
 
 
     <script>
@@ -135,6 +136,23 @@
                 }
             }
         });
+
+        $(".CancelarCoordenadas").click(function(){
+            Carregando();
+            $.ajax({
+                url:`src/clientes/enderecos.php`,
+                type:"POST",
+                data:{
+                    cliente:'<?=$d->cliente?>'
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                    // let myOffCanvas = document.getElementById('offcanvasDireita');
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    // openedCanvas.hide();
+                }
+            });
+        })
 
         $(".ConfirmaCoordenadas").click(function(){
             coordenadas = $(this).attr("coordenadas");
