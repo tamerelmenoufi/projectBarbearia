@@ -106,6 +106,7 @@
                                 type:"POST",
                                 data:{
                                     cod,
+                                    cliente:'<?=$_POST['cliente']?>',
                                     acao:'delete',
                                 },
                                 success:function(dados){
