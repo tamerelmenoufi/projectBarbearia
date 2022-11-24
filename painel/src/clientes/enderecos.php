@@ -9,12 +9,12 @@
 
 
     if($_POST['acao'] == 'insert'){
-        echo $query = "insert into clientes_enderecos set titulo = '{$_POST['titulo']}', cliente = '{$_POST['cliente']}'";
+        $query = "insert into clientes_enderecos set titulo = '{$_POST['titulo']}', cliente = '{$_POST['cliente']}'";
         mysqli_query($con, $query);
     }
 
 
-    echo $query = "select * from clientes_enderecos where cliente = '{$_POST['cliente']}'";
+    $query = "select * from clientes_enderecos where cliente = '{$_POST['cliente']}'";
     $result = mysqli_query($con, $query);
 ?>
 
@@ -61,7 +61,6 @@
                         acao:'insert',
                     },
                     success:function(dados){
-                        $.alert(dados)
                         $("#home-tab-pane").html(dados);
                     }
                 });
