@@ -61,7 +61,7 @@
                         acao:'insert',
                     },
                     success:function(dados){
-                        $("#home-tab-pane").html(dados);
+                        $(".LateralDireita").html(dados);
                     }
                 });
             }
@@ -80,7 +80,7 @@
                     opc
                 },
                 success:function(dados){
-                    $("#home-tab-pane").html(dados);
+                    $(".LateralDireita").html(dados);
                 }
             });
 
@@ -109,7 +109,7 @@
                                     acao:'delete',
                                 },
                                 success:function(dados){
-                                    $("#home-tab-pane").html(dados);
+                                    $(".LateralDireita").html(dados);
                                 }
                             });
                         }
