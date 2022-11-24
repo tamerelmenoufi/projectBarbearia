@@ -53,9 +53,8 @@
     }
 </style>
 
-    <h4 class="Titulo<?=$md5?>">Editar Endereço</h4>
     <div id="topo<?=$md5?>">
-        <h4><?=$d->nome?></h4>
+        <h4><?=$d->titulo?></h4>
     </div>
     <div id="map<?=$md5?>"></div>
 
