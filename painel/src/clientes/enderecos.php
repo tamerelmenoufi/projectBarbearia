@@ -61,6 +61,7 @@
                         acao:'insert',
                     },
                     success:function(dados){
+                        $.alert(dados)
                         $("#home-tab-pane").html(dados);
                     }
                 });
