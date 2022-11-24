@@ -159,10 +159,9 @@
                         },
                         success:function(dados){
                             $(".LateralDireita").html(dados);
-                            Carregando('none');
-                            let myOffCanvas = document.getElementById('offcanvasDireita');
-                            let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-                            openedCanvas.hide();
+                            // let myOffCanvas = document.getElementById('offcanvasDireita');
+                            // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                            // openedCanvas.hide();
                         }
                     });
 
