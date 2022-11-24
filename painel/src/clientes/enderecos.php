@@ -9,7 +9,7 @@
 
 
     if($_POST['acao'] == 'insert'){
-        $query = "insert into clientes_enderecos set titulo = '{$_POST['titulo']}', cliente = '{$_POST['cliente']}'";
+        echo $query = "insert into clientes_enderecos set titulo = '{$_POST['titulo']}', cliente = '{$_POST['cliente']}'";
         mysqli_query($con, $query);
     }
 
