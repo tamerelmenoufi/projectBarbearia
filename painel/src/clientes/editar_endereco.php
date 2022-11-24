@@ -29,7 +29,7 @@
         position:absolute;
         left:60px;
         top:8px;
-        z-index:0;
+        z-index:10;
     }
     #map<?=$md5?> {
         position:absolute;
@@ -53,7 +53,7 @@
     }
 </style>
 
-<h4 class="Titulo<?=$md5?>">Editar Endereço</h4>
+    <h4 class="Titulo<?=$md5?>">Editar Endereço</h4>
     <div id="topo<?=$md5?>">
         <h4><?=$d->nome?></h4>
     </div>
