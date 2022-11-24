@@ -58,8 +58,8 @@
 
 ?>
     <li class="list-group-item opc" style="display: flex; justify-content: space-between;">
-        <div class="<?=(($blq)?'bloqueio':'titulo')?>" cod="<?=$d->codigo?>">
-            <i class="fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
+        <div class="<?=(($blq)?false:'titulo')?>" cod="<?=$d->codigo?>">
+            <i class="<?=(($blq)?'bloqueio ':false)?>fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
         <div>
             <button class="btn btn-primary btn-sm editar" cod="<?=$d->codigo?>"><i class="fa-regular fa-pen-to-square"></i></button>
