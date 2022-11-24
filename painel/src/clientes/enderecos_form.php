@@ -40,7 +40,15 @@
     $d = mysqli_fetch_object($result);
 
 ?>
-
+<style>
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+</style>
+<h4 class="Titulo<?=$md5?>">Cadastro de Endereços</h4>
 <form id="acaoMenu">
 
 <div class="form-floating mb-3">

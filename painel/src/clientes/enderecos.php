@@ -18,6 +18,13 @@
     $result = mysqli_query($con, $query);
 ?>
 <style>
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+
     .verde{
         color:green;
         cursor:pointer;
@@ -30,7 +37,7 @@
         color:#eee;
     }
 </style>
-
+<h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
 <div class="input-group mt-3 mb-3">
   <input type="text" class="form-control" id="titulo" placeholder="Digite o nome do Endereço" aria-label="Informe o título de seu novo endereço">
   <button class="btn btn-success novo" type="button"><i class="fa fa-file"></i> Novo Endereço</button>
