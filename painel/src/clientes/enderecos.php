@@ -53,7 +53,7 @@
             if(titulo){
                 $("#titulo").val('');
                 $.ajax({
-                    url:"src/clientes_enderecos/enderecos.php",
+                    url:"src/clientes/enderecos.php",
                     type:"POST",
                     data:{
                         cod:'<?=$_POST['cod']?>',
