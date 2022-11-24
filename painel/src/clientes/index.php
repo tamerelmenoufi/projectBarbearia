@@ -129,7 +129,7 @@
             })
         })
 
-        $("button[enderecos]").click(function(){
+        $("button[cliente]").click(function(){
             cliente = $(this).attr("cliente");
             $.ajax({
                 url:"src/clientes/enderecos.php",
