@@ -88,7 +88,7 @@
 
 <input type="hidden" id="acao" name="acao" value="salvar" >
 <input type="hidden" id="codigo" name="codigo" value="<?=$d->codigo?>" >
-<input type="hidden" id="cliente" name="opc" value="<?=$_POST['cliente']?>" >
+<input type="hidden" id="cliente" name="cliente" value="<?=$d->cliente?>" >
 </form>
 
 
