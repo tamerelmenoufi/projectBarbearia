@@ -140,7 +140,7 @@
         $(".titulo").click(function(){
             cod = $(this).attr("cod");
             $.ajax({
-                url:"src/clientes/visualizar_endereco.php",
+                url:"src/clientes/editar_endereco.php",
                 type:"POST",
                 data:{
                     cod,
