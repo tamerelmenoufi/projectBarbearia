@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-        $query = "update clientes_enderecos set coordenadas = '{$_POST['coordenadas']}', validacao = '1' where codigo = '{$_POST['codigo']}'";
+        $query = "update clientes_enderecos set coordenadas = '{$_POST['coordenadas']}', validacao = '{$_POST['validacao']}' where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         exit();
     }
@@ -105,6 +105,7 @@
                 type:"POST",
                 data:{
                     coordenadas,
+                    validacao:'0',
                     codigo:'<?=$d->codigo?>',
                     acao:'coordenadas'
                 },
@@ -143,6 +144,7 @@
                 type:"POST",
                 data:{
                     coordenadas,
+                    validacao:'1',
                     codigo:'<?=$d->codigo?>',
                     acao:'coordenadas'
                 },
