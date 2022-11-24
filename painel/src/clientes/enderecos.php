@@ -26,6 +26,9 @@
         color:red;
         cursor:pointer;
     }
+    .bloqueio{
+        color:#eee;
+    }
 </style>
 
 <div class="input-group mt-3 mb-3">
@@ -40,9 +43,22 @@
 <ul class="list-group">
 <?php
     while($d = mysqli_fetch_object($result)){
+
+        if(
+            !$d->cep or
+            !$d->rua or
+            !$d->numero or
+            !$d->bairro
+        ){
+            $blq = true;
+        }else{
+            $blq = false;
+        }
+
+
 ?>
     <li class="list-group-item opc" style="display: flex; justify-content: space-between;">
-        <div class="titulo" cod="<?=$d->codigo?>">
+        <div class="<?=(($blq)?'bloqueio':'titulo')?>" cod="<?=$d->codigo?>">
             <i class="fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
         <div>
