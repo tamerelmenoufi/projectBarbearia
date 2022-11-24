@@ -17,7 +17,14 @@
     $query = "select * from clientes_enderecos where cliente = '{$_POST['cliente']}'";
     $result = mysqli_query($con, $query);
 ?>
-
+<style>
+    .verde{
+        color:green;
+    }
+    .vermelho{
+        color:red;
+    }
+</style>
 
 <div class="input-group mt-3 mb-3">
   <input type="text" class="form-control" id="titulo" placeholder="Digite o nome do Endereço" aria-label="Informe o título de seu novo endereço">
@@ -33,7 +40,10 @@
     while($d = mysqli_fetch_object($result)){
 ?>
     <li class="list-group-item opc" style="display: flex; justify-content: space-between;">
-        <div class="titulo"><?=$d->titulo?></div>
+        <div class="titulo">
+            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
+        </div>
         <div>
             <button class="btn btn-primary btn-sm editar" cod="<?=$d->codigo?>"><i class="fa-regular fa-pen-to-square"></i></button>
             <button class="btn btn-danger btn-sm excluir" cod="<?=$d->codigo?>"><i class="fa-solid fa-trash-can"></i></button>
