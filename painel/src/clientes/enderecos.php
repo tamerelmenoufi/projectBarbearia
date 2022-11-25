@@ -34,7 +34,7 @@
         cursor:pointer;
     }
     .bloqueio{
-        color:#eee;
+        color:#ccc;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
