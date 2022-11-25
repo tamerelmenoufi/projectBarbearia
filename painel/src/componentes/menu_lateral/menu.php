@@ -21,7 +21,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/vendas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Caixa
+          <i class="fa-solid fa-clipboard-list"></i> Vendas
         </a>
       </div>
     </div>
