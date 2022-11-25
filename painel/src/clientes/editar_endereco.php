@@ -106,6 +106,7 @@
             var latLng = marker.latLng;
             //alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
             coordenadas = `[${latLng.lat()},${latLng.lng()}]`;
+            $(".ConfirmaCoordenadas").attr("coordenada",coordenadas);
             $.ajax({
                 url:"src/clientes/editar_endereco.php",
                 type:"POST",
