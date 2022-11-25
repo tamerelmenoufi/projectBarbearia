@@ -60,7 +60,7 @@
     <div id="map<?=$md5?>"></div>
 
     <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenadas?>">Confirmar a Localização</button>
-    <button class="CancelarCoordenadas btn btn-danger btn-block" ><?= $d->$coordenadas; ?>Cancelar</button>
+    <button class="CancelarCoordenadas btn btn-danger btn-block" ><?=$d->$coordenadas?>Cancelar</button>
 
 
     <script>
