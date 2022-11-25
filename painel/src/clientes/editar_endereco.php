@@ -160,7 +160,7 @@
         })
 
         $(".ConfirmaCoordenadas").click(function(){
-            coordenadas = $(this).attr("coordenadas");
+            coordenadas = $(this).attr("coordenada");
             Carregando();
             $.ajax({
                 url:"src/clientes/editar_endereco.php",
