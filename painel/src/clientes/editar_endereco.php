@@ -14,7 +14,7 @@
 
     $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
 
-    $coordenada = json_decode($d->coordenadas);
+    $coordenada = json_decode($d->coordenada);
 
     if($coordenada[0] and $coordenada[1]){
         $coordenadas = "{$coordenada[0]},{$coordenada[1]}";
@@ -59,8 +59,8 @@
     </div>
     <div id="map<?=$md5?>"></div>
 
-    <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenadas?>">Confirmar a Localização</button>
-    <button class="CancelarCoordenadas btn btn-danger btn-block" ><?=$d->$coordenadas?>Cancelar</button>
+    <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenada?>">Confirmar a Localização</button>
+    <button class="CancelarCoordenadas btn btn-danger btn-block" ><?=$d->coordenada?>Cancelar</button>
 
 
     <script>
