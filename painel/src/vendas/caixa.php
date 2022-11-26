@@ -12,6 +12,7 @@
         position:absolute;
         overflow-x:auto;
         white-space:nowrap;
+        cursor:move;
     }
     .elementos{
         width:auto;
@@ -21,7 +22,7 @@
         position:relative;
         white-space:nowrap;
         float:left;
-        margin:10px;
+        margin:5px;
         cursor:pointer;
     }
 </style>
