@@ -3,7 +3,7 @@
 ?>
 <style>
     .Categoria-principal{
-        width:100%; position:relative; overflow:auto;
+        width:100%; position:absolute; overflow:auto;
     }
     .Categoria-principal.elementos{
         width:auto; height:60px; padding:20px; border:1px red solid; position:relative; white-space:nowrap; float:left; margin:10px;
