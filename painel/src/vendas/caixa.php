@@ -4,7 +4,7 @@
 <style>
     .elementos{
         width:auto;
-        height:60px;
+        height:50px;
         border:1px red solid;
         position:relative;
         white-space:nowrap;
