@@ -5,7 +5,6 @@
     .elementos{
         width:auto;
         height:60px;
-        padding:20px;
         border:1px red solid;
         position:relative;
         white-space:nowrap;
