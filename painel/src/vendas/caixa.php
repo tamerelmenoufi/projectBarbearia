@@ -3,14 +3,11 @@
 ?>
 <style>
     .elementos{
-        width:auto;
-        height:50px;
         border:1px red solid;
         position:relative;
         white-space:nowrap;
         float:left;
         margin:5px;
-        cursor:pointer;
     }
 </style>
 <h5>Dados do caixa</h5>
