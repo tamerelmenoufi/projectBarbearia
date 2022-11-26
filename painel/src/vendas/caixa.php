@@ -3,7 +3,8 @@
 ?>
 <style>
     .Categoria-principal{
-        width:100%;
+        left:0;
+        right:0;
         position:absolute;
         overflow:auto;
         white-space:nowrap;
