@@ -3,6 +3,9 @@
 ?>
 <style>
     .Categoria-principal{
+        display:flex;
+        flex-direction:row;
+        justify-content:left;
         height:80px;
         left:0;
         right:0;
@@ -11,9 +14,6 @@
         white-space:nowrap;
     }
     .elementos{
-        display:flex;
-        flex-direction:row;
-        justify-content:left;
         width:auto;
         height:60px;
         padding:20px;
