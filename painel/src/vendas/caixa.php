@@ -4,7 +4,9 @@
 <style>
 
 </style>
+<h5>Dados do caixa</h5>
 <div style="width:100%; position:absolute; overflow:auto;">
+    <div class="row">
     <?php
         for($i=0;$i<10;$i++){
     ?>
@@ -12,8 +14,9 @@
     <?php
         }
     ?>
+    </div>
 </div>
-<h5>Dados do caixa</h5>
+
 
 <script>
     $(function(){
