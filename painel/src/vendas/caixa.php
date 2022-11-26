@@ -3,6 +3,7 @@
 ?>
 <style>
     .Categoria-principal{
+        height:100px;
         left:0;
         right:0;
         position:absolute;
