@@ -11,6 +11,9 @@
         white-space:nowrap;
     }
     .elementos{
+        display:flex;
+        flex-direction:row;
+        justify-content:left;
         width:auto;
         height:60px;
         padding:20px;
