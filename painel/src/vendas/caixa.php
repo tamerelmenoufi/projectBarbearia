@@ -3,7 +3,6 @@
 ?>
 <style>
     .elementos{
-        border:1px red solid;
         position:relative;
         white-space:nowrap;
         float:left;
