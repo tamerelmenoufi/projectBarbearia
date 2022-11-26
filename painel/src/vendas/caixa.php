@@ -16,10 +16,12 @@
 <h5>Dados do caixa</h5>
 
 <div class="input-group mb-3">
-    <span class="input-group-text">First and last name</span>
-    <button class="btn btn-outline-secondary" type="button">Button</button>
-    <button class="btn btn-outline-secondary" type="button">Button</button>
-    <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
+    <span class="input-group-text">Profissional</span>
+    <div class="form-control"></div>
+    <button class="btn btn-outline-secondary" type="button">Buscar</button>
+    <span class="input-group-text">Cliente</span>
+    <div class="form-control"></div>
+    <button class="btn btn-outline-secondary" type="button">Buscar</button>
 </div>
 
 <div class="main-carousel">
