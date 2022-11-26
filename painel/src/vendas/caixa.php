@@ -3,11 +3,11 @@
 ?>
 <style>
     .Categoria-principal{
-        height:100px;
+        height:80px;
         left:0;
         right:0;
         position:absolute;
-        overflow:auto;
+        overflow-x:auto;
         white-space:nowrap;
     }
     .elementos{
