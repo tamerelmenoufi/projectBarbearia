@@ -2,37 +2,14 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
 <style>
-    .Categoria-principal{
-        display:flex;
-        flex-direction:row;
-        justify-content:left;
-        height:100px;
-        left:0;
-        right:0;
-        position:absolute;
-        overflow-x:auto;
-        white-space:nowrap;
-        cursor:move;
-        scrollbar-width: thin;
-    }
-    .elementos{
-        width:auto;
-        height:60px;
-        padding:20px;
-        border:1px red solid;
-        position:relative;
-        white-space:nowrap;
-        float:left;
-        margin:5px;
-        cursor:pointer;
-    }
+
 </style>
 <h5>Dados do caixa</h5>
-<div class="Categoria-principal">
+<div class="main-carousel">
     <?php
         for($i=0;$i<30;$i++){
     ?>
-    <div class="elementos"> Coluna <?=$i?></div>
+    <div class="carousel-cell"> Coluna <?=$i?></div>
     <?php
         }
     ?>
@@ -43,7 +20,7 @@
     $(function(){
         Carregando('none');
 
-        $('.Categoria-principal').flickity({
+        $('.main-carousel').flickity({
             // options
             cellAlign: 'left',
             contain: true
