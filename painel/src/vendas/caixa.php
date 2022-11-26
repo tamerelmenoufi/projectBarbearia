@@ -22,6 +22,7 @@
         white-space:nowrap;
         float:left;
         margin:10px;
+        cursor:pointer;
     }
 </style>
 <h5>Dados do caixa</h5>
