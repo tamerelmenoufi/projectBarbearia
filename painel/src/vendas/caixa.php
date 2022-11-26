@@ -20,7 +20,7 @@
         for($i=0;$i<30;$i++){
     ?>
     <div class="carousel-cell elementos">
-        Coluna <?=$i?>
+        <button class="btn btn-secondary btn-block">Coluna <?=$i?></button>
     </div>
     <?php
         }
