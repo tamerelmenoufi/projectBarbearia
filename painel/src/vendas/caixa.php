@@ -13,6 +13,7 @@
         overflow-x:auto;
         white-space:nowrap;
         cursor:move;
+        scrollbar-width: thin;
     }
     .elementos{
         width:auto;
