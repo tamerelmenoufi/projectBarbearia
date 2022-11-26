@@ -43,6 +43,10 @@
     $(function(){
         Carregando('none');
 
-
+        $('.Categoria-principal').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true
+        });
     })
 </script>

@@ -14,6 +14,9 @@
 <link href="lib/css/app.css" rel="stylesheet">
 <script src="lib/js/app.js" ></script>
 
+<!-- flickity -->
+<link rel="stylesheet" href="lib/vendor/flickity/flickity.css">
+<script src="lib/vendor/flickity/flickity.js" ></script>
 
 <!-- JQUERY UI -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
