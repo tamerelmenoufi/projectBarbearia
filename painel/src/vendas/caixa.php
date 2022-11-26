@@ -35,7 +35,10 @@
         $('.main-carousel').flickity({
             // options
             cellAlign: 'left',
-            contain: true
+            contain: true,
+            freeScroll: true,
+            prevNextButtons: false,
+            pageDots: false
         });
     })
 </script>
