@@ -16,12 +16,12 @@
 <h5>Dados do caixa</h5>
 
 <div class="input-group mb-3">
-    <span class="input-group-text">Profissional</span>
+    <span class="input-group-text"><i class="fa-solid fa-user-clock"></i> Profissional</span>
     <div class="form-control"></div>
-    <button class="btn btn-outline-secondary" type="button">Buscar</button>
-    <span class="input-group-text">Cliente</span>
+    <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <span class="input-group-text"><i class="fa-solid fa-user-check"></i>Cliente</span>
     <div class="form-control"></div>
-    <button class="btn btn-outline-secondary" type="button">Buscar</button>
+    <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
 </div>
 
 <div class="main-carousel">
