@@ -15,7 +15,7 @@
 </style>
 <h5>Dados do caixa</h5>
 <div class="row">
-    <div class="col">
+    <div class="col-md-6">
         <div class="input-group mb-3">
             <span class="input-group-text"><i class="fa-solid fa-user-clock" style="margin-right:10px;"></i>Profissional</span>
             <div class="form-control"></div>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="col">
+    <div class="col-md-6">
         <div class="input-group mb-3">
             <span class="input-group-text"><i class="fa-solid fa-user-check" style="margin-right:10px;"></i>Cliente</span>
             <div class="form-control"></div>
