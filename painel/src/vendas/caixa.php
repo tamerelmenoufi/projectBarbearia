@@ -6,7 +6,7 @@
         display:flex;
         flex-direction:row;
         justify-content:left;
-        height:80px;
+        height:100px;
         left:0;
         right:0;
         position:absolute;
