@@ -70,7 +70,7 @@
 }
 
 .profile-img-card {
-    width: 200px;
+    width: 150px;
     height: auto;
     margin: 0 auto 10px;
     display: block;
@@ -146,7 +146,7 @@
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="img/logo.png" />
-            <p id="profile-name" class="profile-name-card"></p>
+            <!-- <p id="profile-name" class="profile-name-card"></p> -->
 
             <div class="form-floating mb-2">
                 <input type="text" class="form-control" id="email" placeholder="Digite seu E-mail" required autofocus>
