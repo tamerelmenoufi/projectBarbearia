@@ -8,7 +8,7 @@
 <div style="width:100%; position:absolute; overflow:auto;">
     <div class="row">
     <?php
-        for($i=0;$i<10;$i++){
+        for($i=0;$i<15;$i++){
     ?>
     <div class="col"> Coluna <?=$i?></div>
     <?php
