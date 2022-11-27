@@ -5,7 +5,7 @@
 
 </style>
 <div class="p-3">
-    <div class="row">
+    <div class="row" style="position:relative; border:solid 1px red">
         <div lista class="col-md-12"></div>
     </div>
 </div>
