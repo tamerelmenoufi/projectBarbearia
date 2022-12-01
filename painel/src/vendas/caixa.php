@@ -39,7 +39,7 @@
         ?>
     </div>
 </div>
-<div class="p-3" style="position:fixed; left:0px; top:195px; right:0px; bottom:0px; overflow:auto;">
+<div class="p-3" style="position:fixed; left:0px; top:235px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
         <div class="col-md-6">
 
