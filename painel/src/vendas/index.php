@@ -4,7 +4,7 @@
 <style>
 
 </style>
-<div class="p-3" style="position:fixed; left:0px; top:60px; right:0px; bottom:10px; overflow:auto; border:solid 1px red">
+<div class="p-3" style="position:fixed; left:0px; top:55px; right:0px; bottom:0px; overflow:auto; border:solid 1px red">
     <div class="row">
         <div lista class="col-md-12"></div>
     </div>
