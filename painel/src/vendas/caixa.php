@@ -9,7 +9,7 @@
         margin:5px;
     }
 </style>
-<div style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
+<div class="p-3" style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
         <div class="col-md-6">
             <div class="input-group mb-3">
@@ -39,7 +39,7 @@
         ?>
     </div>
 </div>
-<div style="position:fixed; left:0px; top:195px; right:0px; bottom:0px; overflow:auto;">
+<div class="p-3" style="position:fixed; left:0px; top:195px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
         <div class="col-md-6">
 
