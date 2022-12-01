@@ -12,7 +12,6 @@
 <div class="row">
     <div class="col-md-6">
         <div class="input-group mb-3">
-            <b>VENDAS</b>
             <span class="input-group-text"><i class="fa-solid fa-user-clock" style="margin-right:10px;"></i>Profissional</span>
             <div class="form-control"></div>
             <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
