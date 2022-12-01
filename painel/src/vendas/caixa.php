@@ -38,7 +38,7 @@
     ?>
 </div>
 
-<div style="position:fixed; top:100px; bottom:0; overflow:auto;">
+<div style="position:fixed; top:190px; bottom:0; overflow:auto;">
     <div class="row">
         <div class="col-md-6">
 
