@@ -29,10 +29,13 @@
     </div>
     <div class="main-carousel">
         <?php
-            for($i=0;$i<30;$i++){
+            $query = "select * from produtos_categorias where situacao = '1' order by categoria asc";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+            // for($i=0;$i<30;$i++){
         ?>
         <div class="carousel-cell elementos">
-            <button class="btn btn-secondary btn-block">Coluna <?=$i?></button>
+            <button class="btn btn-secondary btn-block"><?=$d->categoria?></button>
         </div>
         <?php
             }
