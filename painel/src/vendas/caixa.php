@@ -25,7 +25,7 @@
                 <span class="input-group-text"><i class="fa-solid fa-user-check" style="margin-right:10px;"></i>Cliente</span>
                 <div class="form-control"></div>
                 <button
-                        class="btn btn-outline-secondary"
+                        class="btn btn-outline-secondary listar_profissionais"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
@@ -61,6 +61,16 @@
                 $(".produtos_lista").html(dados);
             }
         });
+
+        $(".listar_profissionais").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/vendas/lista_profissionais.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        })
 
     })
 </script>
