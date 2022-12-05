@@ -4,6 +4,7 @@
 <style>
 
 </style>
+<div class="list-group">
 <?php
 
     $query = "select * from clientes order by nome asc";
@@ -12,10 +13,11 @@
 
     // for($i=0;$i<10;$i++){
 ?>
-<p><?=$d->nome?></p>
+    <a href="#" class="list-group-item list-group-item-action"><?=$d->nome?></a>
 <?php
     }
 ?>
+</div>
 <script>
     $(function(){
         Carregando('none');
