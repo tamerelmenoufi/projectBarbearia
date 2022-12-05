@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fa-solid fa-user-clock" style="margin-right:10px;"></i>Profissional</span>
-                <div class="form-control"></div>
+                <div class="form-control dados_profissionais" codigo="" ></div>
                 <button
                         class="btn btn-outline-secondary listar_profissionais"
                         data-bs-toggle="offcanvas"
@@ -23,7 +23,7 @@
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fa-solid fa-user-check" style="margin-right:10px;"></i>Cliente</span>
-                <div class="form-control"></div>
+                <div class="form-control dados_clientes" codigo=""></div>
                 <button
                         class="btn btn-outline-secondary listar_clientes"
                         data-bs-toggle="offcanvas"

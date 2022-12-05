@@ -13,7 +13,7 @@
 
     // for($i=0;$i<10;$i++){
 ?>
-    <a href="#" class="list-group-item list-group-item-action"><?=$d->nome?></a>
+    <a href="#" class="list-group-item list-group-item-action opc_cliente" codigo="<?=$d->codigo?>"><?=$d->nome?></a>
 <?php
     }
 ?>
@@ -21,6 +21,11 @@
 <script>
     $(function(){
         Carregando('none');
-
+        $(".opc_cliente").click(function(){
+            codigo = $(this).attr("codigo");
+            nome = $(this).html();
+            $(".dados_clientes").attr("codigo", codigo);
+            $(".dados_clientes").html(nome);
+        });
     })
 </script>
