@@ -2,7 +2,11 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
 <style>
-
+    .produtos_lista{
+        border-left:#dee2e6;
+        border-right:#dee2e6;
+        border-bottom:#dee2e6;
+    }
 </style>
 <div class="p-3" style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
