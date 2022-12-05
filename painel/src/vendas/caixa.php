@@ -2,12 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
 <style>
-    .elementos{
-        position:relative;
-        white-space:nowrap;
-        float:left;
-        margin:5px;
-    }
+
 </style>
 <div class="p-3" style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
@@ -27,22 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="main-carousel">
-            <?php
-                $query = "select * from produtos_categorias where situacao = '1' order by categoria asc";
-                $result = mysqli_query($con, $query);
-                while($d = mysqli_fetch_object($result)){
-                // for($i=0;$i<30;$i++){
-            ?>
-            <div class="carousel-cell elementos">
-                <button class="btn btn-secondary btn-block"><?=$d->categoria?></button>
-            </div>
-            <?php
-                }
-            ?>
-        </div>
-    </div>
+    <div class="row categorias_list"></div>
 </div>
 <div class="p-3" style="position:fixed; left:0px; top:235px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
@@ -87,13 +67,12 @@
     $(function(){
         Carregando('none');
 
-        $('.main-carousel').flickity({
-            // options
-            cellAlign: 'left',
-            contain: true,
-            freeScroll: true,
-            prevNextButtons: false,
-            pageDots: false
+        $.ajax({
+            url:"src/vendas/categorias.php",
+            success:function(dados){
+                $(".categorias_list").html(dados);
+            }
         });
+
     })
 </script>
