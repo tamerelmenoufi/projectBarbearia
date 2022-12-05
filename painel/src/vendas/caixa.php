@@ -66,10 +66,10 @@
         <div class="col-md-12">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-produtos" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">PRODUTOS</button>
+                    <button class="nav-link active" id="home-produtos" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Produtos</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="home-compras" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">CARRINHO DE COMPRAS</button>
+                    <button class="nav-link" id="home-compras" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Carrinho de Compras</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
