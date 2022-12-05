@@ -3,9 +3,9 @@
 ?>
 <style>
     .produtos_lista{
-        border-left:#dee2e6;
-        border-right:#dee2e6;
-        border-bottom:#dee2e6;
+        border-left:#dee2e6 solid 1px;
+        border-right:#dee2e6 solid 1px;
+        border-bottom:#dee2e6 solid 1px;
     }
 </style>
 <div class="p-3" style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
