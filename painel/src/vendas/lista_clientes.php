@@ -26,6 +26,12 @@
             nome = $(this).html();
             $(".dados_clientes").attr("codigo", codigo);
             $(".dados_clientes").html(nome);
+
+            let myOffCanvas = document.getElementById('offcanvasDireita');
+            let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+            openedCanvas.hide();
+
+
         });
     })
 </script>
