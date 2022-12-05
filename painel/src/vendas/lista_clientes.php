@@ -22,6 +22,7 @@
     $(function(){
         Carregando('none');
         $(".opc_cliente").click(function(){
+
             codigo = $(this).attr("codigo");
             nome = $(this).html();
             $(".dados_clientes").attr("codigo", codigo);
@@ -31,6 +32,16 @@
             let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
             openedCanvas.hide();
 
+            $.ajax({
+                url:"",
+                type:"POST",
+                data:{
+                    codCliente:codigo,
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
 
         });
     })
