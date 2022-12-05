@@ -45,7 +45,7 @@
     </div>
     <div class="row categorias_list"></div>
 </div>
-<div class="p-3" style="position:fixed; left:0px; top:235px; right:0px; bottom:0px; overflow:auto;">
+<div class="p-3" style="position:fixed; left:0px; top:200px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
