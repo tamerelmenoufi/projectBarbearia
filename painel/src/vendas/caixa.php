@@ -7,6 +7,9 @@
         border-right:#dee2e6 solid 1px;
         border-bottom:#dee2e6 solid 1px;
     }
+    .remove{
+        display:<?=(($_SESSION['ClienteAtivo'])?'block':'none')?>;
+    }
 </style>
 <div class="p-3" style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
@@ -43,9 +46,10 @@
             </div>
         </div>
     </div>
-    <div class="row categorias_list"></div>
+    <div class="row categorias_list remove"></div>
 </div>
-<div class="p-3" style="position:fixed; left:0px; top:200px; right:0px; bottom:0px; overflow:auto;">
+
+<div class="p-3 remove" style="position:fixed; left:0px; top:200px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
