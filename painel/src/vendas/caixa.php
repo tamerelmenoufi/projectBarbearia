@@ -38,9 +38,7 @@
 </div>
 <div class="p-3" style="position:fixed; left:0px; top:235px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
-        <div class="col-md-6 produtos_lista"></div>
-
-        <div class="col-md-6"></div>
+        <div class="col-md-12 produtos_lista"></div>
     </div>
 </div>
 
