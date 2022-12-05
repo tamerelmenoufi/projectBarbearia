@@ -27,19 +27,21 @@
             </div>
         </div>
     </div>
-    <div class="main-carousel">
-        <?php
-            $query = "select * from produtos_categorias where situacao = '1' order by categoria asc";
-            $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
-            // for($i=0;$i<30;$i++){
-        ?>
-        <div class="carousel-cell elementos">
-            <button class="btn btn-secondary btn-block"><?=$d->categoria?></button>
+    <div class="row">
+        <div class="main-carousel">
+            <?php
+                $query = "select * from produtos_categorias where situacao = '1' order by categoria asc";
+                $result = mysqli_query($con, $query);
+                while($d = mysqli_fetch_object($result)){
+                // for($i=0;$i<30;$i++){
+            ?>
+            <div class="carousel-cell elementos">
+                <button class="btn btn-secondary btn-block"><?=$d->categoria?></button>
+            </div>
+            <?php
+                }
+            ?>
         </div>
-        <?php
-            }
-        ?>
     </div>
 </div>
 <div class="p-3" style="position:fixed; left:0px; top:235px; right:0px; bottom:0px; overflow:auto;">
