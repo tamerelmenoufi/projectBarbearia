@@ -66,7 +66,10 @@
 <script>
     $(function(){
         Carregando('none');
-
+        <?php
+        //Verifica se tem cliente ativo para iniciar uma venda
+        if($_SESSION['ClienteAtivo']){
+        ?>
         $.ajax({
             url:"src/vendas/categorias.php",
             success:function(dados){
@@ -80,6 +83,9 @@
                 $(".produtos_lista").html(dados);
             }
         });
+        <?php
+        }//Verifica se tem cliente ativo para iniciar uma venda
+        ?>
 
         $(".listar_profissionais").click(function(){
             Carregando();
