@@ -26,40 +26,9 @@
 </div>
 <div class="p-3" style="position:fixed; left:0px; top:235px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 produtos_lista"></div>
 
-        <?php
-
-        $query = "select * from produtos where situacao = '1' order by produto asc";
-        $result = mysqli_query($con, $query);
-        while($d = mysqli_fetch_object($result)){
-
-        // for($i=0;$i<10;$i++){
-        ?>
-
-            <div class="card mb-3">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><?=$d->produto?></h5>
-                        <p class="card-text"><?=$d->descricao?></p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
-
-        </div>
-
-        <div class="col-md-6">
-
-        </div>
+        <div class="col-md-6"></div>
     </div>
 </div>
 
@@ -71,6 +40,13 @@
             url:"src/vendas/categorias.php",
             success:function(dados){
                 $(".categorias_list").html(dados);
+            }
+        });
+
+        $.ajax({
+            url:"src/vendas/produtos.php",
+            success:function(dados){
+                $(".produtos_lista").html(dados);
             }
         });
 
