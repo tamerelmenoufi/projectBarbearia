@@ -11,7 +11,7 @@
                 <span class="input-group-text"><i class="fa-solid fa-user-clock" style="margin-right:10px;"></i>Profissional</span>
                 <div class="form-control"></div>
                 <button
-                        class="btn btn-outline-secondary"
+                        class="btn btn-outline-secondary listar_profissionais"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
@@ -25,7 +25,7 @@
                 <span class="input-group-text"><i class="fa-solid fa-user-check" style="margin-right:10px;"></i>Cliente</span>
                 <div class="form-control"></div>
                 <button
-                        class="btn btn-outline-secondary listar_profissionais"
+                        class="btn btn-outline-secondary listar_clientes"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
@@ -66,6 +66,16 @@
             Carregando();
             $.ajax({
                 url:"src/vendas/lista_profissionais.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        })
+
+        $(".listar_clientes").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/vendas/lista_clientes.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
