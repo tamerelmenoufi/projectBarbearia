@@ -10,7 +10,13 @@
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fa-solid fa-user-clock" style="margin-right:10px;"></i>Profissional</span>
                 <div class="form-control"></div>
-                <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                        type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>
 
@@ -18,7 +24,13 @@
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fa-solid fa-user-check" style="margin-right:10px;"></i>Cliente</span>
                 <div class="form-control"></div>
-                <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button
+                        class="btn btn-outline-secondary"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                        type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>
     </div>
