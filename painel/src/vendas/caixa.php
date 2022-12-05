@@ -10,6 +10,9 @@
 </style>
 <div class="p-3" style="position:fixed; left:0px; top:65px; right:0px; bottom:0px; overflow:auto;">
     <div class="row">
+        <?php
+        /*
+        ?>
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fa-solid fa-user-clock" style="margin-right:10px;"></i>Profissional</span>
@@ -23,8 +26,10 @@
                         type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </div>
-
-        <div class="col-md-6">
+        <?php
+        //*/
+        ?>
+        <div class="col-md-12">
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fa-solid fa-user-check" style="margin-right:10px;"></i>Cliente</span>
                 <div class="form-control dados_clientes" codigo=""></div>
