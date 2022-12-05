@@ -33,7 +33,7 @@
             openedCanvas.hide();
 
             $.ajax({
-                url:"",
+                url:"src/vendas/caixa.php",
                 type:"POST",
                 data:{
                     codCliente:codigo,
