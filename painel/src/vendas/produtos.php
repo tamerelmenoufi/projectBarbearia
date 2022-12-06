@@ -5,6 +5,7 @@
     if($_POST['codCategoria']){
         $_SESSION['codCategoria'] = $_POST['codCategoria'];
     }
+    if($_POST['codCategoria'] == 'tudo') $_SESSION['codCategoria'] = false;
 
     if($_SESSION['codCategoria']){ $categoria = "and categoria = '{$_SESSION['codCategoria']}'"; }
 
@@ -17,7 +18,7 @@
 <div class="row">
 <?php
 
-    echo $query = "select * from produtos where situacao = '1' {$categoria} order by vendas desc";
+    $query = "select * from produtos where situacao = '1' {$categoria} order by vendas desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
