@@ -1,5 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+    vl(['ProjectPainel']);
 
     if($_POST['acao'] == 'coordenadas'){
         $query = "update clientes_enderecos set coordenadas = '{$_POST['coordenadas']}', validacao = '{$_POST['validacao']}' where codigo = '{$_POST['codigo']}'";

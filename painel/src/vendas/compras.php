@@ -1,5 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+    vl(['ProjectPainel']);
 ?>
 
 <h5>Carrinho de compras</h5>

@@ -1,5 +1,16 @@
 <?php
 
+    function vl($d){
+        // $d corresponde a um vetor dos indicies da sessão que se deseja validar
+        global $_SESSION;
+        global $localPainel;
+        $r = false;
+        foreach($d as $i => $v){
+            if(!$_SESSION[$v]) { header("location:{$localPainel}"); exit(); }
+        }
+    }
+
+
     function dataBr($dt){
         list($d, $h) = explode(" ",$dt);
         list($y,$m,$d) = explode("-",$d);

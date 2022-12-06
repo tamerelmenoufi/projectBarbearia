@@ -1,5 +1,6 @@
 <?php
-        include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+    vl(['ProjectPainel']);
 
     if($_POST['delete']){
       $query = "delete from clientes where codigo = '{$_POST['delete']}'";

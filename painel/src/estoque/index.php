@@ -1,5 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+    vl(['ProjectPainel']);
 
     if($_POST['produto']) $_SESSION['codProduto'] = $_POST['produto'];
     if($_POST['produto_nome']) $_SESSION['ProdutoNome'] = $_POST['produto_nome'];
