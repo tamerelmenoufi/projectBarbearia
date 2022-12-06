@@ -6,9 +6,18 @@
     }
 
     if($_SESSION['ClienteAtivo']){
-        $query = "select * from clientes where codigo = '{$_SESSION['ClienteAtivo']}'";
+        $query = "select a.*, (select codigo from vendas where cliente = a.codigo and situacao = 'n' and deletado != '1') as venda from clientes a where a.codigo = '{$_SESSION['ClienteAtivo']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
+
+        if(!$d->venda){
+            mysqli_query($con, "insert into vendas set cliente = '{$d->codigo}', situacao = 'n', data_pedido = NOW()");
+            $_SESSION['codVenda'] = mysqli_insert_id($con);
+        }else{
+            $_SESSION['codVenda'] = $d->venda;
+        }
+
+
     }
 
 

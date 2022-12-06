@@ -4,6 +4,8 @@
 
 <h5>Carrinho de compras</h5>
 
+Meu código de Compra é <?=$_SESSION['codVenda']?>
+
 <script>
     $(function(){
         Carregando('none')
