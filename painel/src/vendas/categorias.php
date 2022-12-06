@@ -10,6 +10,9 @@
     }
 </style>
 <div class="main-carousel">
+    <div class="carousel-cell elementos">
+        <button abrir_categoria="tudo" class="btn btn-primary btn-block">Todos os Produtos</button>
+    </div>
     <?php
         $query = "select * from produtos_categorias where situacao = '1' order by categoria asc";
         $result = mysqli_query($con, $query);
