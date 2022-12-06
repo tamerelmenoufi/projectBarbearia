@@ -44,7 +44,7 @@
                 data:{
                     codCategoria
                 },
-                success:funciton(dados){
+                success:function(dados){
                     $(".produtos_lista").html(dados);
                 }
             });
