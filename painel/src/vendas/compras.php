@@ -3,3 +3,9 @@
 ?>
 
 <h5>Lista de compras</h5>
+
+<script>
+    $(function(){
+        Carregando('none')
+    })
+</script>
