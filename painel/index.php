@@ -27,7 +27,7 @@
   <body>
 
     <div class="Carregando">
-        <div><i class="fa-solid fa-rotate fa-pulse"></i></div>
+        <div><i class="fa-solid fa-circle-notch fa-pulse"></i></div>
     </div>
 
     <div class="CorpoApp"></div>
