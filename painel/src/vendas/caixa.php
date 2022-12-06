@@ -123,5 +123,25 @@
             });
         })
 
+        $("#home-produtos").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/vendas/produtos.php",
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+        })
+
+        $("#home-compras").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/vendas/compras.php",
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+        })
+
     })
 </script>
