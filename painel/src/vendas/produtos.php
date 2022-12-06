@@ -17,7 +17,7 @@
 <div class="row">
 <?php
 
-    echo $query = "select * from produtos where situacao = '1' {$categorias} order by vendas desc";
+    echo $query = "select * from produtos where situacao = '1' {$categoria} order by vendas desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
