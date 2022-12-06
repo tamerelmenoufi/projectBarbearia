@@ -6,7 +6,7 @@
         global $localPainel;
         $r = false;
         foreach($d as $i => $v){
-            if(!$_SESSION[$v]) { header("location:{$localPainel}"); exit(); }
+            if(!$_SESSION[$v]) { echo "<script>window.location.href='{$localPainel}';</script>"; exit(); }
         }
     }
 
