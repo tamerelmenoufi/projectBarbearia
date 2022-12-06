@@ -45,6 +45,7 @@
                     codCategoria
                 },
                 success:function(dados){
+                    console.log('opc ok')
                     $(".produtos_lista").html(dados);
                 }
             });
