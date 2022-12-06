@@ -17,7 +17,7 @@
         // for($i=0;$i<30;$i++){
     ?>
     <div class="carousel-cell elementos">
-        <button class="btn btn-secondary btn-block"><?=$d->categoria?></button>
+        <button abrir_categoria="<?=$d->codigo?>" class="btn btn-secondary btn-block"><?=$d->categoria?></button>
     </div>
     <?php
         }
@@ -35,5 +35,21 @@
             prevNextButtons: false,
             pageDots: false
         });
+
+        $("button[abrir_categoria]").click(function(){
+            codCategoria = $(this).attr("abrir_categoria");
+            $.ajax({
+                url:"src/vendas/produtos.php",
+                type:"POST",
+                data:{
+                    codCategoria
+                },
+                success:funciton(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+        });
+
+
     })
 </script>

@@ -1,5 +1,15 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+
+
+    if($_POST['codCategoria']){
+        $_SESSION['codCategoria'] = $_POST['codCategoria'];
+    }
+
+    if($_SESSION['codCategoria']){ $categoria = "and categoria = '{$_SESSION['codCategoria']}'"; }
+
+
+
 ?>
 <style>
 
@@ -7,7 +17,7 @@
 <div class="row">
 <?php
 
-    $query = "select * from produtos where situacao = '1' order by produto asc";
+    $query = "select * from produtos where situacao = '1' {$categorias} order by vendas desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
