@@ -41,14 +41,15 @@
 
         $("button[abrir_categoria]").click(function(){
             codCategoria = $(this).attr("abrir_categoria");
+            nomeCategoria = $(this).text();
             $.ajax({
                 url:"src/vendas/produtos.php",
                 type:"POST",
                 data:{
-                    codCategoria
+                    codCategoria,
+                    nomeCategoria,
                 },
                 success:function(dados){
-                    console.log('opc ok')
                     $(".produtos_lista").html(dados);
                 }
             });

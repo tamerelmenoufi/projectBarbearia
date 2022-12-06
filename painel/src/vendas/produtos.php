@@ -4,8 +4,12 @@
 
     if($_POST['codCategoria']){
         $_SESSION['codCategoria'] = $_POST['codCategoria'];
+        $_SESSION['nomeCategoria'] = $_POST['nomeCategoria'];
     }
-    if($_POST['codCategoria'] == 'tudo') $_SESSION['codCategoria'] = false;
+    if($_POST['codCategoria'] == 'tudo'){
+        $_SESSION['codCategoria'] = false;
+        $_SESSION['nomeCategoria'] = false;
+    }
 
     if($_SESSION['codCategoria']){ $categoria = "and categoria = '{$_SESSION['codCategoria']}'"; }
 
@@ -16,6 +20,7 @@
 
 </style>
 <div class="row">
+    <h5><?=(($_SESSION['nomeCategoria'])?:'Todos os Produtos')?></h5>
 <?php
 
     $query = "select * from produtos where situacao = '1' {$categoria} order by vendas desc";
