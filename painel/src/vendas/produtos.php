@@ -4,7 +4,7 @@
 
     if($_POST['codProduto']){
 
-        vl(['ProjectPainel','codCategoria','ClienteAtivo','codVenda']);
+        vl(['ProjectPainel','ClienteAtivo','codVenda']);
 
         $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['codProduto']}'"));
         $qt = (($_POST['quantidade']?:1));
@@ -14,6 +14,7 @@
                         colaborador = '',
 
                         produto_tipo = '{$p->tipo}',
+                        categoria = '{$p->categoria}',
                         produto = '{$p->codigo}',
                         valor_unitario = '{$p->volar}',
                         quantidade = '{$qt}',
