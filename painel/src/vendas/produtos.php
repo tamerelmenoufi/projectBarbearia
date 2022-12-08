@@ -30,7 +30,7 @@
         ";
         $result = mysqli_query($con,$query);
 
-        list($qtr) = mysqli_fetch_rows(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
+        list($qtr) = mysqli_fetch_row(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
 
         echo json_encode([
             'status' => true,
