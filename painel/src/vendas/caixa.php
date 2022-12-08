@@ -18,7 +18,7 @@
             $_SESSION['codVenda'] = $d->venda;
         }
 
-
+        list($qtr) = mysqli_fetch_row(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
     }
 
 
@@ -79,7 +79,10 @@
                     <button class="nav-link active" id="home-produtos" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Produtos</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="home-compras" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Carrinho de Compras</button>
+                    <button class="nav-link" id="home-compras" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                        Carrinho de Compras
+                        <span><?=$qtr?></span>
+                    </button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
