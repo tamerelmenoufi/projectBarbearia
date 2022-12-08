@@ -97,6 +97,7 @@
         $("button[addProduto]").click(function(){
             codProduto = $(this).attr("addProduto");
             console.log(codProduto)
+            Carregando();
             $.ajax({
                 url:"src/vendas/produtos.php",
                 type:"POST",
@@ -107,9 +108,11 @@
                 success:function(dados){
                     console.log(dados.qt)
                     $('.CarrinhoQt').html(dados.qt)
+                    Carregando('none');
                 },
                 error:function(){
                     console.log('Erro ocorrido')
+                    Carregando('none');
                 }
             });
         })
