@@ -63,7 +63,7 @@
     <h5><?=(($_SESSION['nomeCategoria'])?:'Todos os Produtos')?></h5>
 <?php
 
-    $query = "select * from produtos where situacao = '1' {$categoria} order by vendas desc";
+    $query = "select * from produtos where situacao = '1' and valor > 0 {$categoria} order by vendas desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
