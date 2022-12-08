@@ -103,7 +103,7 @@
                     codProduto
                 },
                 success:function(dados){
-                    console.log(dados.qt)
+                    console.log(dados)
                 }
             });
         })
