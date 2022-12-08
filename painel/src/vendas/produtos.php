@@ -99,7 +99,7 @@
             $.ajax({
                 url:"src/vendas/produtos.php",
                 type:"POST",
-                dataType:'json',
+                typeData:'json',
                 data:{
                     codProduto
                 },
