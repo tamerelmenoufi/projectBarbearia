@@ -8,7 +8,7 @@
 
         $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['codProduto']}'"));
         $qt = (($_POST['quantidade']?:1));
-        $query = "insert into vendas_produtos set
+        echo $query = "insert into vendas_produtos set
                         venda = '{$_SESSION['codVenda']}',
                         cliente = '{$_SESSION['ClienteAtivo']}',
                         colaborador = '',
