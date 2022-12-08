@@ -30,7 +30,7 @@
         ";
         $result = mysqli_query($con,$query);
 
-        $qtr = mysqli_num_rows($result);
+        $qtr = mysqli_num_rows($con, $result);
 
         echo json_encode([
             'status' => true,
