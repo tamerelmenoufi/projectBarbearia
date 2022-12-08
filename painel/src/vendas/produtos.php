@@ -96,7 +96,7 @@
         $("button[addProduto]").click(function(){
             codProduto = $(this).attr("addProduto");
             $.ajax({
-                url:"src/vendas/compras.php",
+                url:"src/vendas/produtos.php",
                 type:"POST",
                 dataType:'json',
                 data:{
