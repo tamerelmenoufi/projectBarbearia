@@ -105,7 +105,7 @@
                     codProduto
                 },
                 success:function(dados){
-                    console.log(dados)
+                    console.log(dados.qt)
                 },
                 error:function(){
                     console.log('Erro ocorrido')
