@@ -106,6 +106,7 @@
                 },
                 success:function(dados){
                     console.log(dados.qt)
+                    $('.CarrinhoQt').html(dados.qt)
                 },
                 error:function(){
                     console.log('Erro ocorrido')

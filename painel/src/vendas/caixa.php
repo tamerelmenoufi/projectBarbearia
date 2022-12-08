@@ -81,7 +81,7 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="home-compras" data-bs-toggle="tab" data-bs-target="#painel-vendas" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
                         Carrinho de Compras
-                        <span><?=$qtr?></span>
+                        <span class="CarrinhoQt"><?=$qtr?></span>
                     </button>
                 </li>
             </ul>
