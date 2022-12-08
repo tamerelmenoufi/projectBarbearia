@@ -8,7 +8,7 @@
 
         $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['codProduto']}'"));
         $qt = (($_POST['quantidade']?:1));
-        echo $query = "insert into vendas_produtos set
+        $query = "insert into vendas_produtos set
                         venda = '{$_SESSION['codVenda']}',
                         cliente = '{$_SESSION['ClienteAtivo']}',
                         colaborador = '',
@@ -16,7 +16,7 @@
                         produto_tipo = '{$p->tipo}',
                         categoria = '{$p->categoria}',
                         produto = '{$p->codigo}',
-                        valor_unitario = '{$p->volar}',
+                        valor_unitario = '{$p->valor}',
                         quantidade = '{$qt}',
                         valor = '".($qt*$p->valor)."',
 
@@ -30,7 +30,7 @@
         ";
         $result = mysqli_query($con,$query);
 
-        $qtr = mysqli_num_rows($result);
+        list($qtr) = mysqli_fetch_rows(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
 
         echo json_encode([
             'status' => true,
