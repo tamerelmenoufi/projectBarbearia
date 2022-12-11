@@ -93,7 +93,8 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                             role="button"
                             aria-controls="offcanvasDireita"
                             class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> profissional"
-                            produto = "<?=$d->codigo?>"
+                            codigo = "<?=$d->codigo?>"
+                            produto = "<?=$d->produto?>"
                     ><i class="fa-solid fa-clipboard-user"></i></button>
                     <button type="button" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
@@ -157,12 +158,14 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 
         $(".profissional").click(function(){
+            codigo = $(this).attr("codigo");
             produto = $(this).attr("produto");
             Carregando();
             $.ajax({
                 type:"POST",
                 data:{
-                    produto
+                    codigo,
+                    produto,
                 },
                 url:"src/vendas/lista_profissionais.php",
                 success:function(dados){
