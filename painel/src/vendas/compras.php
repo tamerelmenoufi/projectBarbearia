@@ -13,7 +13,6 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 
 <table class="table table-hover">
-
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -25,7 +24,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     </thead>
     <tbody>
         <?php
-        echo $query = "select
+        $query = "select
                         a.*,
                         p.produto as produto_nome,
                         if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
@@ -48,7 +47,6 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         }
         ?>
     </tbody>
-
 </table>
 
 
