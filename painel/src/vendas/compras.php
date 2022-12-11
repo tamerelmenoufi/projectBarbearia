@@ -68,6 +68,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 qt--;
             }
             $(`span[qt="${pd}"]`).text(qt);
+            console.log(pd)
         });
         // Teste
 
@@ -76,6 +77,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             qt = $(`span[qt="${pd}"]`).text();
             qt++;
             $(`span[qt="${pd}"]`).text(qt);
+            console.log(pd)
         });
 
 
