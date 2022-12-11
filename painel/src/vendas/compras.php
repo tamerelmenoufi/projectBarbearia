@@ -26,6 +26,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             <th scope="col">Quantidade</th>
             <th scope="col">Valor Unitário</th>
             <th scope="col">Valor Total</th>
+            <th scope="col">Ações</th>
         </tr>
     </thead>
     <tbody>
