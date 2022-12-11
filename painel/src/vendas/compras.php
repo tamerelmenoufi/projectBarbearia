@@ -39,7 +39,11 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <tr>
             <th scope="row"><?=$d->codigo?></th>
             <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
-            <td><?=$d->quantidade?></td>
+            <td>
+                <button type="button" class="btn btn-outline-secondary">-</button>
+                <?=$d->quantidade?>
+                <button type="button" class="btn btn-outline-secondary">+</button>
+            </td>
             <td><?=$d->valor_unitario?></td>
             <td><?=$d->valor?></td>
         </tr>
