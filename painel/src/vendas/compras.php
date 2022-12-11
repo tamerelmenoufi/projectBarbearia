@@ -1,5 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+
     vl(['ProjectPainel','codVenda']);
 
     if($_POST['acao'] == 'atualizar'){
@@ -8,6 +9,31 @@
         mysqli_query($con, $query);
 
     }
+
+
+    if($_POST['acao'] == 'profissional'){
+
+        $com = mysqli_fetch_object(mysqli_query($con, "select *, (select valor from vendas_produtos where codigo = '{$_POST['produto']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['profissional']}' and produto = '{$_POST['produto']}' and situacao = '1'"));
+        if($com->codigo){
+            $comissao_tipo = $com->tipo_comissao;
+            $comissao_valor =  $com->valor;
+            $comissao = (($com->tipo_comissao == 'p')?($com->valor_venda/100*$com->valor):$com->valor);
+        }else{
+            $comissao_tipo = 0;
+            $comissao_valor =  0;
+            $comissao = 0;
+        }
+
+        $query = "update vendas_produtos set
+                                            colaborador = '{$_POST['profissional']}',
+                                            comissao_tipo = '{$comissao_tipo}',
+                                            comissao_valor = '{$comissao_valor}',
+                                            comissao = '{$comissao}'
+                    where codigo = '{$_POST['produto']}'";
+        mysqli_query($con, $query);
+
+    }
+
 
 
 
@@ -59,7 +85,14 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 <td><?=$d->valor_unitario?></td>
                 <td><?=$d->valor?></td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-secondary"><i class="fa-solid fa-clipboard-user"></i></button>
+                    <button
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            role="button"
+                            aria-controls="offcanvasDireita"
+                            class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> profissional"
+                            produto = "<?=$d->codigo?>"
+                    ><i class="fa-solid fa-clipboard-user"></i></button>
                     <button type="button" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
@@ -85,7 +118,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                     acao:'atualizar'
                 },
                 success:function(dados){
-                    console.log('success');
+                    // console.log('success');
                     $(".produtos_lista").html(dados);
                 },
                 error:function(){
@@ -119,6 +152,22 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             UpdateQuantidade(pd, qt)
         });
 
+
+
+        $(".profissional").click(function(){
+            produto = $(this).attr("produto");
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    produto
+                },
+                url:"src/vendas/lista_clientes.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        })
 
     })
 </script>

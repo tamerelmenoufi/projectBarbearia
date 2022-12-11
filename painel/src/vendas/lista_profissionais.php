@@ -25,8 +25,22 @@
         $(".opc_profissional").click(function(){
             codigo = $(this).attr("codigo");
             nome = $(this).html();
-            $(".dados_profissionais").attr("codigo", codigo);
-            $(".dados_profissionais").html(nome);
+
+            $.ajax({
+                type:"POST",
+                data:{
+                    produto:"<?=$_POST['produto']?>",
+                    profissional:codigo,
+                    acao:'profissional'
+                },
+                url:"src/vendas/compras.php",
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+
+            // $(".dados_profissionais").attr("codigo", codigo);
+            // $(".dados_profissionais").html(nome);
 
             let myOffCanvas = document.getElementById('offcanvasDireita');
             let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
