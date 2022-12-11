@@ -34,6 +34,10 @@
         $query = "update vendas_produtos set quantidade = '{$_POST['quantidade']}', valor=(valor_unitario*".$_POST['quantidade'].") where codigo = '{$_POST['produto']}'";
         mysqli_query($con, $query);
 
+        if($_POST['colaborador']){
+            AtualizaComissao();
+        }
+
     }
 
 
@@ -85,9 +89,9 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 <th scope="row"><?=$d->cod_produto?></th>
                 <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
                 <td>
-                    <button menos="<?=$d->codigo?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
+                    <button menos="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
                     <span qt="<?=$d->codigo?>" class="m-3"><?=$d->quantidade?></span>
-                    <button mais="<?=$d->codigo?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
+                    <button mais="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
                 </td>
                 <td><?=$d->valor_unitario?></td>
                 <td><?=$d->valor?></td>
@@ -116,14 +120,16 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     $(function(){
         Carregando('none')
 
-        function UpdateQuantidade(produto, quantidade){
+        function UpdateQuantidade(codigo, quantidade, produto, colaborador){
 
             $.ajax({
                 url:"src/vendas/compras.php",
                 type:"POST",
                 data:{
-                    produto,
+                    codigo,
                     quantidade,
+                    produto,
+                    colaborador,
                     acao:'atualizar'
                 },
                 success:function(dados){
@@ -139,26 +145,30 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 
         $("button[menos]").click(function(){
-            pd = $(this).attr("menos");
-            qt = $(`span[qt="${pd}"]`).text();
-            if(qt <= 1){
-                qt = 1;
+            codigo = $(this).attr("menos");
+            produto = $(this).attr("produto");
+            colaborador = $(this).attr("colaborador");
+            quantidade = $(`span[qt="${codigo}"]`).text();
+            if(quantidade <= 1){
+                quantidade = 1;
             }else{
-                qt--;
+                quantidade--;
             }
-            $(`span[qt="${pd}"]`).text(qt);
-            UpdateQuantidade(pd, qt)
+            $(`span[qt="${pd}"]`).text(quantidade);
+            UpdateQuantidade(codigo, quantidade, produto, colaborador)
             // console.log(pd)
         });
         // Teste
 
         $("button[mais]").click(function(){
-            pd = $(this).attr("mais");
-            qt = $(`span[qt="${pd}"]`).text();
-            qt++;
-            $(`span[qt="${pd}"]`).text(qt);
+            codigo = $(this).attr("mais");
+            produto = $(this).attr("produto");
+            colaborador = $(this).attr("colaborador");
+            quantidade = $(`span[qt="${pd}"]`).text();
+            quantidade++;
+            $(`span[qt="${codigo}"]`).text(quantidade);
             // console.log(pd)
-            UpdateQuantidade(pd, qt)
+            UpdateQuantidade(codigo, quantidade, produto, colaborador)
         });
 
 
