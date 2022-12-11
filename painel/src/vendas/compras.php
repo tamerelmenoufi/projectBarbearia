@@ -40,9 +40,9 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             <th scope="row"><?=$d->codigo?></th>
             <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
             <td>
-                <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
-                <span class="m-3"><?=$d->quantidade?></span>
-                <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
+                <button menos="<?=$d->codigo?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
+                <span qt="<?=$d->codigo?>" class="m-3"><?=$d->quantidade?></span>
+                <button mais="<?=$d->codigo?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
             </td>
             <td><?=$d->valor_unitario?></td>
             <td><?=$d->valor?></td>
@@ -57,5 +57,26 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 <script>
     $(function(){
         Carregando('none')
+
+
+        $("button[menos]").click(function(){
+            pd = $(this).attr("menos");
+            qt = $(`span[qt="${pd}"]`).text();
+            if(qt <= 1){
+                qt = 1;
+            }else{
+                qt--;
+            }
+            $(`span[qt="${pd}"]`).text(qt);
+        });
+
+        $("button[mais]").click(function(){
+            pd = $(this).attr("menos");
+            qt = $(`span[qt="${pd}"]`).text();
+            qt++;
+            $(`span[qt="${pd}"]`).text(qt);
+        });
+
+
     })
 </script>
