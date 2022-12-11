@@ -94,7 +94,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                             aria-controls="offcanvasDireita"
                             class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> profissional"
                             codigo = "<?=$d->codigo?>"
-                            produto = "<?=$d->produto?>"
+                            produto = "<?=$d->cod_produto?>"
                     ><i class="fa-solid fa-clipboard-user"></i></button>
                     <button type="button" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
