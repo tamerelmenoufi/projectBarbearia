@@ -31,7 +31,7 @@
 
     if($_POST['acao'] == 'atualizar'){
 
-        $query = "update vendas_produtos set quantidade = '{$_POST['quantidade']}', valor=(valor_unitario*".$_POST['quantidade'].") where codigo = '{$_POST['produto']}'";
+        $query = "update vendas_produtos set quantidade = '{$_POST['quantidade']}', valor=(valor_unitario*".$_POST['quantidade'].") where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
 
         if($_POST['colaborador']){
