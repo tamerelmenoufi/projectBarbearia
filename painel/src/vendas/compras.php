@@ -75,7 +75,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                     quantidade,
                     acao:'atualizar'
                 },
-                success:function(){
+                success:function(dados){
                     console.log('success');
                     $(".produtos_lista").html(dados);
                 },
