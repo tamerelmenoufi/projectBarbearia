@@ -69,6 +69,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             }
             $(`span[qt="${pd}"]`).text(qt);
         });
+        // Teste
 
         $("button[mais]").click(function(){
             pd = $(this).attr("menos");
