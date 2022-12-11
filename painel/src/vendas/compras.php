@@ -3,22 +3,17 @@
 
     vl(['ProjectPainel','codVenda']);
 
-    if($_POST['acao'] == 'atualizar'){
-
-        $query = "update vendas_produtos set quantidade = '{$_POST['quantidade']}', valor=(valor_unitario*".$_POST['quantidade'].") where codigo = '{$_POST['produto']}'";
-        mysqli_query($con, $query);
-
-    }
-
-
-    if($_POST['acao'] == 'profissional'){
+    function AtualizaComissao(){
+        global $con;
+        global $_POST;
+        global $_SESSION;
 
         echo $q = "select *, (select valor from vendas_produtos where codigo = '{$_POST['codigo']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['profissional']}' and produto = '{$_POST['produto']}' and situacao = '1'";
         $com = mysqli_fetch_object(mysqli_query($con, $q));
         if($com->chave){
             $comissao_tipo = $com->tipo_comissao;
             $comissao_valor =  $com->valor;
-            $comissao = (($com->tipo_comissao == 'p')?($com->valor_venda/100*$com->valor):$com->valor);
+            $comissao = (($com->tipo_comissao == 'p')?($com->valor_venda/100*$com->valor):$com->valor*$com->quantidade);
         }else{
             $comissao_tipo = 0;
             $comissao_valor =  0;
@@ -32,7 +27,18 @@
                                             comissao = '{$comissao}'
                     where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
+    }
 
+    if($_POST['acao'] == 'atualizar'){
+
+        $query = "update vendas_produtos set quantidade = '{$_POST['quantidade']}', valor=(valor_unitario*".$_POST['quantidade'].") where codigo = '{$_POST['produto']}'";
+        mysqli_query($con, $query);
+
+    }
+
+
+    if($_POST['acao'] == 'profissional'){
+        AtualizaComissao();
     }
 
 
