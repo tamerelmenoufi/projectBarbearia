@@ -14,7 +14,7 @@
 
     // for($i=0;$i<10;$i++){
 ?>
-    <a href="#" class="list-group-item list-group-item-action opc_profissional" codigo="<?=$d->codigo?>"><?=$d->nome?></a>
+    <a href="#" class="list-group-item list-group-item-action opc_colaborador" codigo="<?=$d->codigo?>"><?=$d->nome?></a>
 <?php
     }
 ?>
@@ -22,7 +22,7 @@
 <script>
     $(function(){
         Carregando('none');
-        $(".opc_profissional").click(function(){
+        $(".opc_colaborador").click(function(){
             codigo = $(this).attr("codigo");
             nome = $(this).html();
 
@@ -31,8 +31,8 @@
                 data:{
                     codigo:"<?=$_POST['codigo']?>",
                     produto:"<?=$_POST['produto']?>",
-                    profissional:codigo,
-                    acao:'profissional'
+                    colaborador:codigo,
+                    acao:'colaborador'
                 },
                 url:"src/vendas/compras.php",
                 success:function(dados){
