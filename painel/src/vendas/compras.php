@@ -154,9 +154,9 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             }else{
                 quantidade--;
             }
-            $(`span[qt="${pd}"]`).text(quantidade);
+            $(`span[qt="${produto}"]`).text(quantidade);
             UpdateQuantidade(codigo, quantidade, produto, colaborador)
-            // console.log(pd)
+            // console.log(produto)
         });
         // Teste
 
@@ -164,10 +164,10 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             codigo = $(this).attr("mais");
             produto = $(this).attr("produto");
             colaborador = $(this).attr("colaborador");
-            quantidade = $(`span[qt="${pd}"]`).text();
+            quantidade = $(`span[qt="${produto}"]`).text();
             quantidade++;
             $(`span[qt="${codigo}"]`).text(quantidade);
-            // console.log(pd)
+            // console.log(produto)
             UpdateQuantidade(codigo, quantidade, produto, colaborador)
         });
 
