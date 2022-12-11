@@ -53,6 +53,10 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             </td>
             <td><?=$d->valor_unitario?></td>
             <td><?=$d->valor?></td>
+            <td>
+                <button type="button" class="btn btn-sm btn-secondary"><i class="fa-solid fa-clipboard-user"></i></button>
+                <button type="button" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+            </td>
         </tr>
         <?php
         }
