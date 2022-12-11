@@ -106,7 +106,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                             codigo = "<?=$d->codigo?>"
                             produto = "<?=$d->cod_produto?>"
                     ><i class="fa-solid fa-clipboard-user"></i></button>
-                    <button type="button" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                    <button type="button" class="btn btn-sm btn-danger excluir" codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
             <?php
@@ -189,6 +189,46 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 }
             });
         })
+
+        $(".excluir").click(function(){
+            codigo = $(this).attr("codigo");
+            produto = $(this).attr("produto");
+            $.confirm({
+                content:`Deseja realmente excluir o produto ${produto}?`,
+                title:"Excluir produto da lista",
+                type:"red",
+                buttons:{
+                    'Sim':{
+                        text:'Sim',
+                        btnClass:'btn btn-danger btn-sm',
+                        action:function(){
+                            Carregando();
+                            $.ajax({
+                                type:"POST",
+                                data:{
+                                    codigo,
+                                    produto,
+                                    acao:'excluir'
+                                },
+                                url:"src/vendas/lista_profissionais.php",
+                                success:function(dados){
+                                    $(".produtos_lista").html(dados);
+                                }
+                            });
+                        },
+                    },
+                    'Não':{
+                        text:'Não',
+                        btnClass:'btn btn-success btn-sm',
+                        action:function(){
+
+                        }
+                    }
+                }
+            });
+
+        })
+
 
     })
 </script>
