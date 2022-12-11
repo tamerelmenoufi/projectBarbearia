@@ -13,7 +13,7 @@
 
     if($_POST['acao'] == 'profissional'){
 
-        echo $q = "select *, (select valor from vendas_produtos where codigo = '{$_POST['produto']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['profissional']}' and produto = '{$_POST['produto']}' and situacao = '1'";
+        $q = "select *, (select valor from vendas_produtos where codigo = '{$_POST['produto']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['profissional']}' and produto = '{$_POST['produto']}' and situacao = '1'";
         $com = mysqli_fetch_object(mysqli_query($con, $q));
         if($com->codigo){
             $comissao_tipo = $com->tipo_comissao;
@@ -25,7 +25,7 @@
             $comissao = 0;
         }
 
-        $query = "update vendas_produtos set
+        echo $query = "update vendas_produtos set
                                             colaborador = '{$_POST['profissional']}',
                                             comissao_tipo = '{$comissao_tipo}',
                                             comissao_valor = '{$comissao_valor}',
