@@ -2,10 +2,6 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
-    if($_POST['acao'] == 'excluir'){
-        mysqli_query($con, "delete from vendas_produtos where codigo = '{$_POST['codigo']}'");
-    }
-
 ?>
 <style>
 

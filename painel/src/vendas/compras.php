@@ -3,6 +3,11 @@
 
     vl(['ProjectPainel','codVenda']);
 
+    if($_POST['acao'] == 'excluir'){
+        mysqli_query($con, "delete from vendas_produtos where codigo = '{$_POST['codigo']}'");
+    }
+
+
     function AtualizaComissao(){
         global $con;
         global $_POST;
@@ -210,7 +215,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                                     produto,
                                     acao:'excluir'
                                 },
-                                url:"src/vendas/lista_profissionais.php",
+                                url:"src/vendas/compras.php",
                                 success:function(dados){
                                     $(".produtos_lista").html(dados);
                                 }
