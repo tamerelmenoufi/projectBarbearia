@@ -2,6 +2,12 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel','codVenda']);
 
+    if($_POST['acao'] == 'atualizar'){
+
+        $query = "update vendas_produtos set quantidade = '{$_POST['quantidade']}', valor=(valor_unitario*".$_POST['quantidade'].") where codigo = '{$_POST['produto']}'";
+        mysqli_query($con, $query);
+
+    }
 
 
 
@@ -26,6 +32,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <?php
         $query = "select
                         a.*,
+                        p.codigo as cod_produto,
                         p.produto as produto_nome,
                         if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
                         c.categoria as categoria_nome
@@ -37,7 +44,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         while($d = mysqli_fetch_object($result)){
         ?>
         <tr>
-            <th scope="row"><?=$d->codigo?></th>
+            <th scope="row"><?=$d->cod_produto?></th>
             <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
             <td>
                 <button menos="<?=$d->codigo?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
@@ -58,6 +65,27 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     $(function(){
         Carregando('none')
 
+        function UpdateQuantidade(produto, quantidade){
+
+            $.ajax({
+                url:"src/vendas/compras.php",
+                type:"POST",
+                data:{
+                    produto,
+                    quantidade,
+                    acao:'atualizar'
+                },
+                success:function(){
+                    console.log('success');
+                    $(".produtos_lista").html(dados);
+                },
+                error:function(){
+                    console.log('Error');
+                }
+            });
+
+        }
+
 
         $("button[menos]").click(function(){
             pd = $(this).attr("menos");
@@ -68,7 +96,8 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 qt--;
             }
             $(`span[qt="${pd}"]`).text(qt);
-            console.log(pd)
+            UpdateQuantidade(pd, qt)
+            // console.log(pd)
         });
         // Teste
 
@@ -77,7 +106,8 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             qt = $(`span[qt="${pd}"]`).text();
             qt++;
             $(`span[qt="${pd}"]`).text(qt);
-            console.log(pd)
+            // console.log(pd)
+            UpdateQuantidade(pd, qt)
         });
 
 
