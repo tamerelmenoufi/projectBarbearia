@@ -18,8 +18,9 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Descrição</th>
-            <th scope="col">tipo</th>
-            <th scope="col">Valor</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor Unitário</th>
+            <th scope="col">Valor Total</th>
         </tr>
     </thead>
     <tbody>
@@ -39,7 +40,8 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <tr>
             <th scope="row"><?=$d->codigo?></th>
             <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
-            <td><?=$d->produto_tipo?></td>
+            <td><?=$d->quantidade?></td>
+            <td><?=$d->valor_unitario?></td>
             <td><?=$d->valor?></td>
         </tr>
         <?php
