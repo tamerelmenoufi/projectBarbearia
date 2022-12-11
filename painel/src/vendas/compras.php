@@ -88,7 +88,6 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                     <button
                             type="button"
                             data-bs-toggle="offcanvas"
-                            href="#offcanvasDireita"
                             role="button"
                             aria-controls="offcanvasDireita"
                             class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> profissional"
@@ -163,7 +162,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 data:{
                     produto
                 },
-                url:"src/vendas/lista_clientes.php",
+                url:"src/vendas/lista_profissionais.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
