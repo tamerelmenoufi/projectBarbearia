@@ -24,7 +24,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     </thead>
     <tbody>
         <?php
-        $query = "select
+        echo $query = "select
                         a.*,
                         p.produto as nome_produto,
                         if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
