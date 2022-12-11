@@ -8,7 +8,7 @@
         global $_POST;
         global $_SESSION;
 
-        echo $q = "select *, (select valor from vendas_produtos where codigo = '{$_POST['codigo']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['profissional']}' and produto = '{$_POST['produto']}' and situacao = '1'";
+        echo $q = "select *, (select valor from vendas_produtos where codigo = '{$_POST['codigo']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['colaborador']}' and produto = '{$_POST['produto']}' and situacao = '1'";
         $com = mysqli_fetch_object(mysqli_query($con, $q));
         if($com->chave){
             $comissao_tipo = $com->tipo_comissao;
@@ -21,7 +21,7 @@
         }
         echo "<br>";
         echo $query = "update vendas_produtos set
-                                            colaborador = '{$_POST['profissional']}',
+                                            colaborador = '{$_POST['colaborador']}',
                                             comissao_tipo = '{$comissao_tipo}',
                                             comissao_valor = '{$comissao_valor}',
                                             comissao = '{$comissao}'
@@ -41,7 +41,7 @@
     }
 
 
-    if($_POST['acao'] == 'profissional'){
+    if($_POST['acao'] == 'colaborador'){
         AtualizaComissao();
     }
 
@@ -102,7 +102,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                             href="#offcanvasDireita"
                             role="button"
                             aria-controls="offcanvasDireita"
-                            class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> profissional"
+                            class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> colaborador"
                             codigo = "<?=$d->codigo?>"
                             produto = "<?=$d->cod_produto?>"
                     ><i class="fa-solid fa-clipboard-user"></i></button>
@@ -173,7 +173,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 
 
-        $(".profissional").click(function(){
+        $(".colaborador").click(function(){
             codigo = $(this).attr("codigo");
             produto = $(this).attr("produto");
             Carregando();
