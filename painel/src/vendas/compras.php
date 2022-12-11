@@ -27,7 +27,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         $query = "select
                         a.*,
                         p.produto as nome_produto,
-                        if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome
+                        if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
                         c.categoria as categoria_nome
                     from vendas_produtos a
                          left join produtos p on a.produto = b.codigo
