@@ -88,6 +88,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                             left join produtos_categorias c on p.categoria = c.codigo
                         where a.venda = '{$_SESSION['codVenda']}'";
             $result = mysqli_query($con, $query);
+            $n = mysqli_num_rows($result);
             while($d = mysqli_fetch_object($result)){
             ?>
             <tr>
@@ -124,7 +125,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 <script>
     $(function(){
         Carregando('none')
-
+        $('.CarrinhoQt').html(<?=$n?>);
         function UpdateQuantidade(codigo, quantidade, produto, colaborador){
 
             $.ajax({
