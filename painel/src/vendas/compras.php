@@ -88,6 +88,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                     <button
                             type="button"
                             data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
                             role="button"
                             aria-controls="offcanvasDireita"
                             class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> profissional"
