@@ -29,6 +29,7 @@
             $.ajax({
                 type:"POST",
                 data:{
+                    codigo:"<?=$_POST['codigo']?>",
                     produto:"<?=$_POST['produto']?>",
                     profissional:codigo,
                     acao:'profissional'
