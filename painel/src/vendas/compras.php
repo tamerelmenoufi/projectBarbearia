@@ -8,12 +8,12 @@
         global $_POST;
         global $_SESSION;
 
-        echo $q = "select *, (select valor from vendas_produtos where codigo = '{$_POST['codigo']}') as valor_venda from colaboradores_produtos where colaborador = '{$_POST['colaborador']}' and produto = '{$_POST['produto']}' and situacao = '1'";
+        echo $q = "select a.*, b.valor as valor_venda, b.quantidade from colaboradores_produtos a left join vendas_produtos b on b.codigo = '{$_POST['codigo']}' where a.colaborador = '{$_POST['colaborador']}' and a.produto = '{$_POST['produto']}' and a.situacao = '1'";
         $com = mysqli_fetch_object(mysqli_query($con, $q));
         if($com->chave){
             $comissao_tipo = $com->tipo_comissao;
             $comissao_valor =  $com->valor;
-            $comissao = (($com->tipo_comissao == 'p')?($com->valor_venda/100*$com->valor):$com->valor*$com->quantidade);
+            $comissao = (($com->tipo_comissao == 'p')?($com->valor_venda/100*$com->valor):($com->valor*$com->quantidade));
         }else{
             $comissao_tipo = 0;
             $comissao_valor =  0;
