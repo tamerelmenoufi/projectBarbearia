@@ -14,7 +14,7 @@
 ?>
 <style>
     td{
-        weight-space: nowrap;
+        white-space: nowrap;
     }
 </style>
 <h5>Carrinho de compras</h5>
