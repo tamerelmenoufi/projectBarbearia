@@ -122,7 +122,11 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 $comissao = $comissao + $d->comissao;
             }
 
-            mysqli_query($con, "update vendas set valor = '{$valor}', comissao = '{$comissao}' where codigo = '{$_SESSION['codVenda']}'");
+            mysqli_query($con, "update vendas set
+                                                valor = '{$valor}',
+                                                comissao = '{$comissao}',
+                                                total = ({$valor} + taxa_entrega + taxa - desconto + acrescimo)
+                        where codigo = '{$_SESSION['codVenda']}'");
 
             ?>
         </tbody>
