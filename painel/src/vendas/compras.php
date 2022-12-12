@@ -13,7 +13,7 @@
         global $_POST;
         global $_SESSION;
 
-        echo $q = "select a.*, b.valor as valor_venda, b.quantidade from colaboradores_produtos a left join vendas_produtos b on b.codigo = '{$_POST['codigo']}' where a.colaborador = '{$_POST['colaborador']}' and a.produto = '{$_POST['produto']}' and a.situacao = '1'";
+        $q = "select a.*, b.valor as valor_venda, b.quantidade from colaboradores_produtos a left join vendas_produtos b on b.codigo = '{$_POST['codigo']}' where a.colaborador = '{$_POST['colaborador']}' and a.produto = '{$_POST['produto']}' and a.situacao = '1'";
         $com = mysqli_fetch_object(mysqli_query($con, $q));
         if($com->chave){
             $comissao_tipo = $com->tipo_comissao;
@@ -24,8 +24,8 @@
             $comissao_valor =  0;
             $comissao = 0;
         }
-        echo "<br>";
-        echo $query = "update vendas_produtos set
+        // echo "<br>";
+        $query = "update vendas_produtos set
                                             colaborador = '{$_POST['colaborador']}',
                                             comissao_tipo = '{$comissao_tipo}',
                                             comissao_valor = '{$comissao_valor}',
@@ -89,6 +89,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                         where a.venda = '{$_SESSION['codVenda']}'";
             $result = mysqli_query($con, $query);
             $n = mysqli_num_rows($result);
+            $valor = $comissao = 0;
             while($d = mysqli_fetch_object($result)){
             ?>
             <tr>
@@ -103,19 +104,22 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 <td><?=$d->valor?></td>
                 <td>
                     <button
-                            type="button"
-                            data-bs-toggle="offcanvas"
-                            href="#offcanvasDireita"
-                            role="button"
-                            aria-controls="offcanvasDireita"
-                            class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> colaborador"
-                            codigo = "<?=$d->codigo?>"
-                            produto = "<?=$d->cod_produto?>"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                        class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> colaborador"
+                        codigo = "<?=$d->codigo?>"
+                        produto = "<?=$d->cod_produto?>"
                     ><i class="fa-solid fa-clipboard-user"></i></button>
                     <button type="button" class="btn btn-sm btn-danger excluir" codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
             <?php
+                // Dados para calculo das somas totais e das comissões
+                $valor = $valor + $d->valor;
+                $comissao = $comissao + $d->comissao;
             }
             ?>
         </tbody>
