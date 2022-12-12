@@ -65,8 +65,8 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 <div class="row">
     <div class="col-md-3">
-        <label for="entrega" class="form-label">Entrega</label>
-        <input type="number" id="entrega" class="form-control" value="<?=$d->taxa_entrega?>" />
+        <label for="valor" class="form-label">Valor</label>
+        <input type="number" id="valor" class="form-control" value="<?=$d->valor?>" />
     </div>
     <div class="col-md-3">
         <label for="entrega" class="form-label">Entrega</label>
