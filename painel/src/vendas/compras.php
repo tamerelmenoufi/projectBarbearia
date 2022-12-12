@@ -82,7 +82,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3 col-offest-9">
+    <div class="col-md-3 offset-md-9">
         <label for="total" class="form-label">Total</label>
         <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + $d->acrescimo - $d->desconto)?></div>
     </div>
