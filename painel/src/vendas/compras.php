@@ -71,15 +71,34 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     </div>
     <div class="col-md-2">
         <label for="entrega" class="form-label">Entrega</label>
-        <input type="number" id="entrega" class="form-control" value="<?=$d->taxa_entrega?>" />
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">R$</span>
+            <input type="number" id="entrega" class="form-control" value="<?=$d->taxa_entrega?>" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+        </div>
+
+
     </div>
     <div class="col-md-2">
         <label for="acrescimo" class="form-label">Acrescimo</label>
-        <input type="number" id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">R$</span>
+            <input type="number" id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+        </div>
+
     </div>
     <div class="col-md-2">
         <label for="desconto" class="form-label">Desconto</label>
-        <input type="number" id="desconto" class="form-control" value="<?=$d->desconto?>" />
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">R$</span>
+            <input type="number" id="desconto" class="form-control" value="<?=$d->desconto?>" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+        </div>
     </div>
 
     <div class="col-md-2">
