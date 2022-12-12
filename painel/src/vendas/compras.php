@@ -67,23 +67,21 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 <div class="row">
     <div class="col-md-2 offset-md-2">
         <label for="valor" class="form-label">Valor</label>
-        <div type="number" class="form-control"><?=$d->valor?></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">R$</span>
+            <div type="number" class="form-control"><?=$d->valor?></div>
+        </div>
     </div>
     <div class="col-md-2">
         <label for="entrega" class="form-label">Entrega</label>
-
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <input type="number" id="entrega" class="form-control" value="<?=$d->taxa_entrega?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
         </div>
-
-
     </div>
     <div class="col-md-2">
         <label for="acrescimo" class="form-label">Acrescimo</label>
-
-
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <input type="number" id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
@@ -93,7 +91,6 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     </div>
     <div class="col-md-2">
         <label for="desconto" class="form-label">Desconto</label>
-
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <input type="number" id="desconto" class="form-control" value="<?=$d->desconto?>" />
@@ -103,7 +100,10 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
     <div class="col-md-2">
         <label for="total" class="form-label">Total</label>
-        <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + $d->acrescimo - $d->desconto)?></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">R$</span>
+            <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + $d->acrescimo - $d->desconto)?></div>
+        </div>
     </div>
 </div>
 
