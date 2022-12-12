@@ -65,25 +65,24 @@
 Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2 offset-md-1">
         <label for="valor" class="form-label">Valor</label>
         <input type="number" id="valor" class="form-control" value="<?=$d->valor?>" />
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <label for="entrega" class="form-label">Entrega</label>
         <input type="number" id="entrega" class="form-control" value="<?=$d->taxa_entrega?>" />
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <label for="acrescimo" class="form-label">Acrescimo</label>
         <input type="number" id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <label for="desconto" class="form-label">Desconto</label>
         <input type="number" id="desconto" class="form-control" value="<?=$d->desconto?>" />
     </div>
-</div>
-<div class="row">
-    <div class="col-md-3 offset-md-9">
+
+    <div class="col-md-2">
         <label for="total" class="form-label">Total</label>
         <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + $d->acrescimo - $d->desconto)?></div>
     </div>
