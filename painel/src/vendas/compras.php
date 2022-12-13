@@ -266,7 +266,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         })
 
 
-        $("button-acrescimo").click(function(){
+        $("#button-acrescimo").click(function(){
             acrescimo = $(".acrescimo").val();
             Carregando();
             $.ajax({
@@ -281,7 +281,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             });
         });
 
-        $("button-desconto").click(function(){
+        $("#button-desconto").click(function(){
             desconto = $(".desconto").val();
             Carregando();
             $.ajax({
