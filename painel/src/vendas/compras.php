@@ -73,12 +73,6 @@
     }
 </style>
 <h5>Carrinho de compras</h5>
-
-Meu código de Compra é <?=$_SESSION['codVenda']?>
-
-
-
-
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
