@@ -165,7 +165,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             <button
                     type="button"
                     id="button-addon1"
-                    class="btn btn-outline-<?=(($d->taxa_entrega > 0)?'success':'secondary')?>"
+                    class="btn btn-outline-<?=(($d->taxa_entrega > 0)?'success':'secondary')?> taxa_entrega"
                     type="button"
                     id="button-acrescimo"
                     data-bs-toggle="offcanvas"
@@ -310,6 +310,17 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 url:"src/vendas/compras.php",
                 success:function(dados){
                     $(".produtos_lista").html(dados);
+                }
+            });
+        });
+
+
+        $("button.taxa_entrega").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/clientes/enderecos_entrega.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
                 }
             });
         });
