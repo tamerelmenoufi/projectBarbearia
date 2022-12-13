@@ -161,8 +161,8 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <label for="entrega" class="form-label">Entrega</label>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
-            <input type="number" id="entrega" class="form-control" value="<?=$d->taxa_entrega?>" />
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-regular fa-floppy-disk"></i></button>
+            <div class="form-control"><?=$d->taxa_entrega?></div>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-location-dot"></i></button>
         </div>
     </div>
     <div class="col-md-2">
