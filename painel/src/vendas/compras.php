@@ -162,7 +162,15 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <div class="form-control"><?=$d->taxa_entrega?></div>
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-location-dot"></i></button>
+            <button
+                    type="button"
+                    id="button-addon1"
+                    class="btn btn-outline-<?=(($d->taxa_entrega)?'success':'secondary')?>"
+                    type="button"
+                    id="button-acrescimo"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+            ><i class="fa-solid fa-location-dot"></i></button>
         </div>
     </div>
     <div class="col-md-2">
