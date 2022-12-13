@@ -219,7 +219,7 @@
         </div>
     </div>
 
-    <p>O produto será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($d->local_entrega)?"({$d->endereco})":false)?></p>
+    <p style="text-align:center; font-size:10px; color:#a1a1a1;">O produto será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($d->local_entrega)?"({$d->endereco})":false)?></p>
 </div>
 
 
