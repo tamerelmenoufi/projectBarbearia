@@ -73,6 +73,9 @@
                 },
                 success:function(dados){
                     $(".produtos_lista").html(dados);
+                    let myOffCanvas = document.getElementById('offcanvasDireita');
+                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    openedCanvas.hide();
                 }
             });
 
