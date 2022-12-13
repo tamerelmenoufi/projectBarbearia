@@ -89,6 +89,7 @@
             <?php
             $query = "select
                             a.*,
+                            p.tipo,
                             p.codigo as cod_produto,
                             p.produto as produto_nome,
                             if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
