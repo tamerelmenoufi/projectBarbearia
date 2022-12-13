@@ -150,11 +150,11 @@
 <?php
     $query = "select a.*,
                         concat(
-                                b.rua, if(b.numero,', ',''),
-                                b.numero, if(b.bairro,', ',''),
-                                b.bairro, if(b.cep,', ',''),
-                                b.cep, if(b.complemento,', ',''),
-                                b.complemento, if(b.referencia,', ',''),
+                                b.rua, if(b.numero != '',', ',''),
+                                b.numero, if(b.bairro != '',', ',''),
+                                b.bairro, if(b.cep != '',', ',''),
+                                b.cep, if(b.complemento != '',', ',''),
+                                b.complemento, if(b.referencia != '',', ',''),
                                 b.referencia
                             ) as endereco
                 from vendas a
