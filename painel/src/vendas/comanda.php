@@ -21,7 +21,6 @@
             $tipo_produtos = false;
             while($d = mysqli_fetch_object($result)){
 ?>
-<ul class="list-group">
   <li class="list-group-item">
     <b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
   </li>
