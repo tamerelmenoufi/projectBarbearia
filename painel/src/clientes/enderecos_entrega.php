@@ -16,14 +16,10 @@
 
     .verde{
         color:green;
-        cursor:pointer;
     }
-    .vermelho{
-        color:red;
+
+    .titulo{
         cursor:pointer;
-    }
-    .bloqueio{
-        color:#ccc;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
@@ -48,7 +44,7 @@
 ?>
     <li class="list-group-item list-group-item-action titulo" cod="<?=$d->codigo?>" style="display: flex; justify-content: space-between;">
         <div>
-            <i class="<?=(($blq)?'bloqueio ':false)?>fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
+            <i class="fa-solid fa-location-dot verde"></i> <?=$d->titulo?>
         </div>
         <div>
             <i class="fa-solid fa-motorcycle"></i> R$ 23,88
