@@ -106,13 +106,24 @@
       </div>
 
       <div class="form-floating">
+        <select id="tipo" name="tipo" class="form-control" placeholder="Tipo">
+          <option value="p" <?=(($d->tipo == 'p')?'selected':false)?>>Produto</option>
+          <option value="s" <?=(($d->tipo == 's')?'selected':false)?>>Serviço</option>
+        </select>
+        <label for="tipo">Tipo</label>
+        <div class="form-text">Selecione o tipo do registro</div>
+      </div>
+
+
+      <div class="form-floating">
         <select id="situacao" name="situacao" class="form-control" placeholder="Situação">
           <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
           <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
         </select>
-        <label for="situacao">Imagem</label>
+        <label for="situacao">Situação</label>
         <div class="form-text">Selecione a situação para o produto</div>
       </div>
+
 
       <button type="submit" data-bs-dismiss="offcanvas" class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
       <button cancelar type="button" data-bs-dismiss="offcanvas" class="btn btn-danger mt-3"> <i class="fa fa-cancel"></i> Cancelar</button>
