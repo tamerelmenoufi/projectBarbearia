@@ -7,12 +7,12 @@
         mysqli_query($con, "delete from vendas_produtos where codigo = '{$_POST['codigo']}'");
     }
 
-    if($_POST['acrescimo']){
+    if($_POST['acao'] == 'acrescimo'){
         echo $q = "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
     }
 
-    if($_POST['desconto']){
+    if($_POST['acao'] == 'desconto'){
         echo $q = "update vendas set desconto = '{$_POST['desconto']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
     }
@@ -276,6 +276,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 type:"POST",
                 data:{
                     acrescimo,
+                    acao:'acrescimo'
                 },
                 url:"src/vendas/compras.php",
                 success:function(dados){
@@ -291,6 +292,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 type:"POST",
                 data:{
                     desconto,
+                    acao:'desconto'
                 },
                 url:"src/vendas/compras.php",
                 success:function(dados){
