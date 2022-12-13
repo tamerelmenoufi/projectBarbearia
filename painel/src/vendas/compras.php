@@ -100,7 +100,9 @@
             $result = mysqli_query($con, $query);
             $n = mysqli_num_rows($result);
             $valor = $comissao = 0;
+            $tipo_produtos = false;
             while($d = mysqli_fetch_object($result)){
+                if($d->tipo == 'p') $tipo_produtos = true;
             ?>
             <tr>
                 <th scope="row"><?=$d->cod_produto?></th>
@@ -156,6 +158,9 @@
             <div type="number" class="form-control"><?=$d->valor?></div>
         </div>
     </div>
+    <?php
+    if($tipo_produtos){
+    ?>
     <div class="col-md-2">
         <label for="entrega" class="form-label">Entrega</label>
         <div class="input-group mb-3">
@@ -172,6 +177,9 @@
             ><i class="fa-solid fa-location-dot"></i></button>
         </div>
     </div>
+    <?php
+    }
+    ?>
     <div class="col-md-2">
         <label for="acrescimo" class="form-label">Acrescimo</label>
         <div class="input-group mb-3">
