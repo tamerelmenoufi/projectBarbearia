@@ -270,7 +270,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 
         $("#button-acrescimo").click(function(){
-            acrescimo = $(".acrescimo").val();
+            acrescimo = $("#acrescimo").val();
             Carregando();
             $.ajax({
                 type:"POST",
@@ -285,7 +285,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         });
 
         $("#button-desconto").click(function(){
-            desconto = $(".desconto").val();
+            desconto = $("#desconto").val();
             Carregando();
             $.ajax({
                 type:"POST",
