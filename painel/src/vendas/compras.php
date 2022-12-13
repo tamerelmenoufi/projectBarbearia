@@ -7,6 +7,15 @@
         mysqli_query($con, "delete from vendas_produtos where codigo = '{$_POST['codigo']}'");
     }
 
+    if($_POST['acrescimo']){
+        mysqli_query($con, "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'");
+    }
+
+    if($_POST['desconto']){
+        mysqli_query($con, "update vendas set desconto = '{$_POST['desconto']}' where codigo = '{$_SESSION['codVenda']}'");
+    }
+
+
 
     function AtualizaComissao(){
         global $con;
@@ -159,7 +168,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <input type="number" id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-regular fa-floppy-disk"></i></button>
+            <button class="btn btn-outline-secondary" type="button" id="button-acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
 
     </div>
@@ -168,7 +177,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <input type="number" id="desconto" class="form-control" value="<?=$d->desconto?>" />
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-regular fa-floppy-disk"></i></button>
+            <button class="btn btn-outline-secondary" type="button" id="button-desconto"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
     </div>
 
@@ -255,6 +264,37 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
                 }
             });
         })
+
+
+        $("button-acrescimo").click(function(){
+            acrescimo = $(".acrescimo").val();
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    acrescimo,
+                },
+                url:"src/vendas/compras.php",
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+        });
+
+        $("button-desconto").click(function(){
+            desconto = $(".desconto").val();
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    desconto,
+                },
+                url:"src/vendas/compras.php",
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+        });
 
         $(".excluir").click(function(){
             codigo = $(this).attr("codigo");
