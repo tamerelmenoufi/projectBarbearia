@@ -169,7 +169,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <label for="acrescimo" class="form-label">Acrescimo</label>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
-            <input type="number" id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
+            <input type="text" data-thousands="" data-decimal="." id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
 
@@ -178,7 +178,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
         <label for="desconto" class="form-label">Desconto</label>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
-            <input type="number" id="desconto" class="form-control" value="<?=$d->desconto?>" />
+            <input type="text" data-thousands="" data-decimal="." id="desconto" class="form-control" value="<?=$d->desconto?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-desconto"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
     </div>
@@ -197,6 +197,11 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
     $(function(){
 
         Carregando('none')
+
+        $('#desconto').maskMoney();
+        $('#acrescimo').maskMoney();
+
+
         $('.CarrinhoQt').html(<?=$n?>);
         function UpdateQuantidade(codigo, quantidade, produto, colaborador){
 
