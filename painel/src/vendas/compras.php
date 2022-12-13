@@ -219,7 +219,7 @@
         </div>
     </div>
 
-    <p>O produto será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($d->loca_entrega)?"({$d->endereco})":false)?></p>
+    <p>O produto será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($d->local_entrega)?"({$d->endereco})":false)?></p>
 </div>
 
 
