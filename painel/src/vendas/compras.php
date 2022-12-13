@@ -193,6 +193,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
 
 <script>
     $(function(){
+
         Carregando('none')
         $('.CarrinhoQt').html(<?=$n?>);
         function UpdateQuantidade(codigo, quantidade, produto, colaborador){
