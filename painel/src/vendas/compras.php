@@ -8,11 +8,13 @@
     }
 
     if($_POST['acrescimo']){
-        mysqli_query($con, "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'");
+        echo $q = "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'";
+        mysqli_query($con, $q);
     }
 
     if($_POST['desconto']){
-        mysqli_query($con, "update vendas set desconto = '{$_POST['desconto']}' where codigo = '{$_SESSION['codVenda']}'");
+        echo $q = "update vendas set desconto = '{$_POST['desconto']}' where codigo = '{$_SESSION['codVenda']}'";
+        mysqli_query($con, $q);
     }
 
 
