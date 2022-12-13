@@ -138,7 +138,8 @@
             mysqli_query($con, "update vendas set
                                                 valor = '{$valor}',
                                                 comissao = '{$comissao}',
-                                                total = ({$valor} + taxa_entrega + taxa - desconto + acrescimo - {$comissao})
+                                                ".((!$tipo_produtos)?"taxa_entrega = '0', local_entrega = '0', ":false)."
+                                                total = ({$valor}".((!$tipo_produtos)?" + taxa_entrega":false)." + taxa - desconto + acrescimo - {$comissao})
                         where codigo = '{$_SESSION['codVenda']}'");
 
             ?>
