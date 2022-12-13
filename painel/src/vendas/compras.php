@@ -356,6 +356,16 @@
             });
         });
 
+        $("#button-pagar").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/vendas/comanda.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
+
         $(".excluir").click(function(){
             codigo = $(this).attr("codigo");
             produto = $(this).attr("produto");
