@@ -17,6 +17,11 @@
         mysqli_query($con, $q);
     }
 
+    if($_POST['local_entrega']){
+        echo $q = "update vendas set local_entrega = '{$_POST['local_entrega']}' where codigo = '{$_SESSION['codVenda']}'";
+        mysqli_query($con, $q);
+    }
+
 
 
     function AtualizaComissao(){

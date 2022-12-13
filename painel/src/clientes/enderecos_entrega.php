@@ -3,7 +3,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel','codVenda','ClienteAtivo']);
 
-    $query = "select * from clientes_enderecos where cliente = '{$_SESSION['ClienteAtivo']}'";
+    $query = "select * from clientes_enderecos where cliente = '{$_SESSION['ClienteAtivo']}' and validacao = '1'";
     $result = mysqli_query($con, $query);
 ?>
 <style>
@@ -61,16 +61,15 @@
         Carregando('none');
 
         $(".titulo").click(function(){
-            cod = $(this).attr("cod");
+            local_entrega = $(this).attr("cod");
             $.ajax({
-                url:"src/clientes/editar_endereco.php",
+                url:"src/vendas/compras.php",
                 type:"POST",
                 data:{
-                    cod,
-                    cliente:'<?=$_POST['cliente']?>',
+                    local_entrega,
                 },
                 success:function(dados){
-                    $(".LateralDireita").html(dados);
+                    $(".produtos_lista").html(dados);
                 }
             });
 
