@@ -216,7 +216,15 @@
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
             <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + $d->acrescimo - $d->desconto)?></div>
-            <button class="btn btn-outline-secondary" type="button" id="button-pagar"><i class="fa-solid fa-cash-register"></i></button>
+            <button
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-pagar"
+            ><i class="fa-solid fa-cash-register"></i></button>
         </div>
     </div>
 
