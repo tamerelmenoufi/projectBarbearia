@@ -4,6 +4,7 @@
 
     if($_POST['codCliente']){
         $_SESSION['ClienteAtivo'] = $_POST['codCliente'];
+        $_SESSION['ClienteAtivoNome'] = $_POST['nomeCliente'];
     }
 
     if($_SESSION['ClienteAtivo']){

@@ -38,6 +38,7 @@
                 type:"POST",
                 data:{
                     codCliente:codigo,
+                    nomeCliente:nome,
                 },
                 success:function(dados){
                     $("#paginaHome").html(dados);

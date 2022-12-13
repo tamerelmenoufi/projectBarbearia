@@ -148,7 +148,18 @@
 </div>
 
 <?php
-    $query = "select * from vendas where codigo = '{$_SESSION['codVenda']}'";
+    $query = "select a.*,
+                        concat(
+                                b.rua, if(b.numero,', ',''),
+                                b.numero, if(b.bairro,', ',''),
+                                b.bairro, if(b.cep,', ',''),
+                                b.cep, if(b.complemento,', ',''),
+                                b.complemento, if(b.referencia,', ',''),
+                                b.referencia
+                            ) as endereco
+                from vendas a
+                     left join clientes_enderecos b on a.local_entrega = b.codigo
+                where a.codigo = '{$_SESSION['codVenda']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
@@ -207,6 +218,8 @@
             <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + $d->acrescimo - $d->desconto)?></div>
         </div>
     </div>
+
+    <p>O produto será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($d->loca_entrega)?"({$d->endereco})":false)?></p>
 </div>
 
 
