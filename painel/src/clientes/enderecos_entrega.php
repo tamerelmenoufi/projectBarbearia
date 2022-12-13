@@ -46,8 +46,8 @@
 
 
 ?>
-    <li class="list-group-item list-group-item-action opc" style="display: flex; justify-content: space-between;">
-        <div class="<?=(($blq)?false:'titulo')?>" cod="<?=$d->codigo?>">
+    <li class="list-group-item list-group-item-action titulo" cod="<?=$d->codigo?>" style="display: flex; justify-content: space-between;">
+        <div>
             <i class="<?=(($blq)?'bloqueio ':false)?>fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
         <div>
