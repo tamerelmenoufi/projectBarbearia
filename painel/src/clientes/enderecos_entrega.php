@@ -1,10 +1,9 @@
 <?php
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
-    vl(['ProjectPainel']);
+    vl(['ProjectPainel','codVenda','ClienteAtivo']);
 
-
-    $query = "select * from clientes_enderecos where cliente = '{$_POST['cliente']}'";
+    $query = "select * from clientes_enderecos where cliente = '{$_SESSION['ClienteAtivo']}'";
     $result = mysqli_query($con, $query);
 ?>
 <style>
