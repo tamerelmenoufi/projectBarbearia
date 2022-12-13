@@ -51,7 +51,7 @@
             <i class="<?=(($blq)?'bloqueio ':false)?>fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
         <div>
-            R$ 23,88
+            <i class="fa-solid fa-motorcycle"></i> R$ 23,88
         </div>
     </li>
 <?php
