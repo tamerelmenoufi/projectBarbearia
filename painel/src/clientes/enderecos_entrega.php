@@ -50,6 +50,9 @@
         <div class="<?=(($blq)?false:'titulo')?>" cod="<?=$d->codigo?>">
             <i class="<?=(($blq)?'bloqueio ':false)?>fa-solid fa-location-<?=(($d->validacao)?'dot verde':'pin-lock vermelho')?>"></i> <?=$d->titulo?>
         </div>
+        <div>
+            R$ 23,88
+        </div>
     </li>
 <?php
     }
