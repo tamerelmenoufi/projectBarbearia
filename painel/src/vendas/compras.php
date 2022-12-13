@@ -165,7 +165,7 @@ Meu código de Compra é <?=$_SESSION['codVenda']?>
             <button
                     type="button"
                     id="button-addon1"
-                    class="btn btn-outline-<?=(($d->taxa_entrega)?'success':'secondary')?>"
+                    class="btn btn-outline-<?=(($d->taxa_entrega > 0)?'success':'secondary')?>"
                     type="button"
                     id="button-acrescimo"
                     data-bs-toggle="offcanvas"
