@@ -54,7 +54,7 @@
 
     </div>
     <div class="col-10">
-        <b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
+        <?=$d->produto_nome?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
     </div>
     </div>
 
@@ -81,7 +81,7 @@
     ?>
 
     <div class="row justify-content-between" style="margin-top:10px;">
-    <div class="col-10 text-right">
+    <div class="col-10 text-end">
         <b>TOTAL</b>
     </div>
 
