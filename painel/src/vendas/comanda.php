@@ -46,6 +46,7 @@
                 $valor = $comissao = 0;
                 $tipo_produtos = false;
                 while($d = mysqli_fetch_object($result)){
+                    if($d->tipo == 'p') $tipo_produtos = true;
     ?>
 
 
@@ -81,14 +82,59 @@
     ?>
 
     <div class="row justify-content-between" style="margin-top:10px;">
-    <div class="col-10 text-end">
-        <b>TOTAL</b>
+        <div class="col-10 text-end">
+            <b>VALOR</b>
+        </div>
+
+        <div class="col-2">
+            <b>R$ <?=number_format($v->valor,2,',','.')?></b>
+        </div>
+    </div>
+    <?php
+    if($tipo_produtos){
+    ?>
+    <div class="row justify-content-between" style="margin-top:10px;">
+        <div class="col-10 text-end">
+            <b>ENTREGA</b>
+        </div>
+
+        <div class="col-2">
+            <b>R$ <?=number_format($v->taxa_entrega,2,',','.')?></b>
+        </div>
+    </div>
+    <?php
+    }
+    ?>
+    <div class="row justify-content-between">
+        <div class="col-10 text-end">
+            <b>ACRESCIMO</b>
+        </div>
+
+        <div class="col-2">
+            <b>R$ <?=number_format($v->acrescimo,2,',','.')?></b>
+        </div>
     </div>
 
-    <div class="col-2">
-        <b>R$ <?=number_format($v->total,2,',','.')?></b>
+    <div class="row justify-content-between">
+        <div class="col-10 text-end">
+            <b>DESCONTO</b>
+        </div>
+
+        <div class="col-2">
+            <b>R$ <?=number_format($v->desconto,2,',','.')?></b>
+        </div>
     </div>
+
+    <div class="row justify-content-between">
+        <div class="col-10 text-end">
+            <b>TOTAL</b>
+        </div>
+
+        <div class="col-2">
+            <b>R$ <?=number_format($v->total,2,',','.')?></b>
+        </div>
     </div>
+
 </div>
 
   <!-- </li>
