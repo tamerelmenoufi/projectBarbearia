@@ -194,5 +194,7 @@
 
         Carregando('none');
 
+        $('#valor_add').maskMoney();
+
     })
 </script>
