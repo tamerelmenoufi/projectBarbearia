@@ -31,9 +31,7 @@
         z-index:0;
     }
 </style>
-<!-- <ul class="list-group">
 
-<li class="list-group-item"> -->
 <h4 class="Titulo<?=$md5?>"><i class="fa-solid fa-receipt"></i> Comanda da compra</h4>
 <div class="p-3" style="font-size:12px;">
     <div class="row justify-content-between" style="margin-bottom:10px;">
@@ -160,13 +158,31 @@
         </div>
     </div>
 
-
+<ul class="list-group">
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <select class="form-control" id="forma_pagamento">
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="pix">PIX</option>
+                    <option value="credito">Crédito</option>
+                    <option value="debito">Débito</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" value="" />
+            </div>
+            <div class="col-md-3 mb-2">
+                <button class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i></button>
+            </div>
+        </div>
+    </li>
+</ul>
 
     <p style="text-align:center; font-size:12px; color:#a1a1a1;">A compra será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($v->local_entrega)?"({$v->endereco})":false)?></p>
 </div>
 
-  <!-- </li>
-</ul> -->
+
 
 <script>
     $(function(){
