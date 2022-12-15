@@ -4,7 +4,24 @@
     vl(['ProjectPainel','codVenda']);
 
 
-    $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_SESSION['codVenda']}'"));
+    // $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_SESSION['codVenda']}'"));
+
+
+    $query = "select a.*,
+                        concat(
+                                b.rua, if(b.numero != '',', ',''),
+                                b.numero, if(b.bairro != '',', ',''),
+                                b.bairro, if(b.cep != '',', ',''),
+                                b.cep, if(b.complemento != '',', ',''),
+                                b.complemento, if(b.referencia != '',', ',''),
+                                b.referencia
+                            ) as endereco
+                from vendas a
+                     left join clientes_enderecos b on a.local_entrega = b.codigo
+                where a.codigo = '{$_SESSION['codVenda']}'";
+    $result = mysqli_query($con, $query);
+    $v = mysqli_fetch_object($result);
+
 ?>
 <style>
     .Titulo<?=$md5?>{
@@ -145,7 +162,7 @@
 
 
 
-    <p style="text-align:center; font-size:12px; color:#a1a1a1;">A compra será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($d->local_entrega)?"({$d->endereco})":false)?></p>
+    <p style="text-align:center; font-size:12px; color:#a1a1a1;">A compra será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($v->local_entrega)?"({$v->endereco})":false)?></p>
 </div>
 
   <!-- </li>
