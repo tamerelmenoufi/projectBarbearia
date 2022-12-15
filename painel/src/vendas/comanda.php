@@ -162,7 +162,7 @@
     <li class="list-group-item">
         <div class="row">
             <div class="col-md-6 mb-2">
-                <select class="form-control" id="forma_pagamento">
+                <select class="form-select form-select-sm" id="forma_pagamento">
                     <option value="dinheiro">Dinheiro</option>
                     <option value="pix">PIX</option>
                     <option value="credito">Crédito</option>
@@ -170,10 +170,10 @@
                 </select>
             </div>
             <div class="col-md-3 mb-2">
-                <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" value="" />
+                <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control form-control-sm" value="" />
             </div>
             <div class="col-md-3 mb-2">
-                <button class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i></button>
+                <button class="btn btn-primary btn-sm"><i class="fa-regular fa-floppy-disk"></i></button>
             </div>
         </div>
     </li>
