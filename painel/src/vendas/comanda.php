@@ -1,5 +1,10 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+
+
+
+
+    $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_SESSION['codVenda']}'"));
 ?>
 
 <ul class="list-group">
@@ -76,6 +81,18 @@
 <?php
             }
 ?>
+
+<div class="row justify-content-between">
+  <div class="col-10">
+    TOTAL
+  </div>
+
+  <div class="col-2">
+    <?=$v->total?>
+  </div>
+</div>
+
+
   </li>
 </ul>
 
