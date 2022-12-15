@@ -22,6 +22,16 @@
             while($d = mysqli_fetch_object($result)){
 ?>
   <li class="list-group-item">
+
+  <div class="row justify-content-between">
+    <div class="col-4">
+      1
+    </div>
+    <div class="col-4">
+      R$ 22,30
+    </div>
+  </div>
+
     <b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
   </li>
 <?php
