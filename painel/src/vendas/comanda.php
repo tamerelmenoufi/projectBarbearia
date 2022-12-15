@@ -4,7 +4,7 @@
     vl(['ProjectPainel','codVenda']);
 
     if($_POST['acao'] == 'forma_pagamento'){
-        $query = "insert into venda_pagamentos set venda = '{$_SESSION['codVenda']}', forma_pagamento = '{$_POST['forma_pagamento']}', valor = '{$_POST['valor']}' ";
+        echo $query = "insert into venda_pagamentos set venda = '{$_SESSION['codVenda']}', forma_pagamento = '{$_POST['forma_pagamento']}', valor = '{$_POST['valor']}' ";
         mysqli_query($con, $query);
     }
 
