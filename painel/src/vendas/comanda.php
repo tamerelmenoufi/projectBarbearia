@@ -67,13 +67,13 @@
 
         </div>
         <div class="col-2">
-            R$ <?=number_format($d->valor_unitario,2,',','.')?>
+            R$<?=number_format($d->valor_unitario,2,',','.')?>
         </div>
         <div class="col-2">
             <?=$d->quantidade?>
         </div>
         <div class="col-2">
-            R$ <?=number_format($d->valor,2,',','.')?>
+            R$<?=number_format($d->valor,2,',','.')?>
         </div>
     </div>
 
@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-2">
-            R$ <?=number_format($v->valor,2,',','.')?>
+            R$<?=number_format($v->valor,2,',','.')?>
         </div>
     </div>
     <?php
@@ -99,7 +99,7 @@
         </div>
 
         <div class="col-2">
-            R$ <?=number_format($v->taxa_entrega,2,',','.')?>
+            R$<?=number_format($v->taxa_entrega,2,',','.')?>
         </div>
     </div>
     <?php
@@ -111,7 +111,7 @@
         </div>
 
         <div class="col-2">
-            R$ <?=number_format($v->acrescimo,2,',','.')?>
+            R$<?=number_format($v->acrescimo,2,',','.')?>
         </div>
     </div>
 
@@ -121,7 +121,7 @@
         </div>
 
         <div class="col-2">
-            R$ <?=number_format($v->desconto,2,',','.')?>
+            R$<?=number_format($v->desconto,2,',','.')?>
         </div>
     </div>
 
@@ -131,7 +131,7 @@
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->total,2,',','.')?></b>
+            <b>R$<?=number_format($v->total,2,',','.')?></b>
         </div>
     </div>
 
