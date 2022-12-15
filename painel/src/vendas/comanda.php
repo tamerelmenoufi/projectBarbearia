@@ -3,6 +3,24 @@
 ?>
 
 <ul class="list-group">
+
+<li class="list-group-item">
+
+<div class="row justify-content-between">
+  <div class="col-2">
+    Cod
+  </div>
+  <div class="col-6">
+    Descrição
+  </div>
+  <div class="col-2">
+    Vl Uni
+  </div>
+  <div class="col-2">
+    Vl Tot
+  </div>
+</div>
+
 <?php
     $query = "select
                             a.*,
@@ -21,22 +39,37 @@
             $tipo_produtos = false;
             while($d = mysqli_fetch_object($result)){
 ?>
-  <li class="list-group-item">
 
-  <div class="row justify-content-between">
-    <div class="col-4">
-      1
-    </div>
-    <div class="col-4">
-      R$ 22,30
-    </div>
+
+<div class="row justify-content-between">
+  <div class="col-2">
+
   </div>
-
+  <div class="col-10">
     <b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
-  </li>
+  </div>
+</div>
+
+<div class="row justify-content-between">
+  <div class="col-2">
+    <?=$cod_produto?>
+  </div>
+  <div class="col-6">
+
+  </div>
+  <div class="col-2">
+    <?=$d->valor_unitario?>
+  </div>
+  <div class="col-2">
+    <?=$d->valor?>
+  </div>
+</div>
+
+
 <?php
             }
 ?>
+  </li>
 </ul>
 
 <script>
