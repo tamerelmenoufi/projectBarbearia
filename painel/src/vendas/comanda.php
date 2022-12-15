@@ -7,9 +7,9 @@
     $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_SESSION['codVenda']}'"));
 ?>
 
-<ul class="list-group">
+<!-- <ul class="list-group">
 
-<li class="list-group-item">
+<li class="list-group-item"> -->
 
 <div class="row justify-content-between">
   <div class="col-2">
@@ -58,7 +58,7 @@
   </div>
 </div>
 
-<div class="row justify-content-between">
+<div class="row justify-content-between mb-3">
   <div class="col-2">
     <?=$d->cod_produto?>
   </div>
@@ -76,8 +76,6 @@
   </div>
 </div>
 
-<hr>
-
 <?php
             }
 ?>
@@ -93,8 +91,8 @@
 </div>
 
 
-  </li>
-</ul>
+  <!-- </li>
+</ul> -->
 
 <script>
     $(function(){
