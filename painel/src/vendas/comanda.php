@@ -51,30 +51,30 @@
 
 
     <div class="row justify-content-between">
-    <div class="col-2">
-
-    </div>
-    <div class="col-10">
-        <?=$d->produto_nome?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
-    </div>
+        <div class="col-2">
+            <?=$d->cod_produto?>
+        </div>
+        <div class="col-10">
+            <?=$d->produto_nome?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
+        </div>
     </div>
 
     <div class="row justify-content-between" style="margin-bottom:20px;">
-    <div class="col-2">
-        <?=$d->cod_produto?>
-    </div>
-    <div class="col-4">
+        <div class="col-2">
 
-    </div>
-    <div class="col-2">
-        R$ <?=number_format($d->valor_unitario,2,',','.')?>
-    </div>
-    <div class="col-2">
-        <?=$d->quantidade?>
-    </div>
-    <div class="col-2">
-        R$ <?=number_format($d->valor,2,',','.')?>
-    </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-2">
+            R$ <?=number_format($d->valor_unitario,2,',','.')?>
+        </div>
+        <div class="col-2">
+            <?=$d->quantidade?>
+        </div>
+        <div class="col-2">
+            R$ <?=number_format($d->valor,2,',','.')?>
+        </div>
     </div>
 
     <?php
