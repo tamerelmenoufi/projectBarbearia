@@ -10,11 +10,14 @@
   <div class="col-2">
     Cod
   </div>
-  <div class="col-6">
+  <div class="col-4">
     Descrição
   </div>
   <div class="col-2">
     Vl Uni
+  </div>
+  <div class="col-2">
+    Quant.
   </div>
   <div class="col-2">
     Vl Tot
@@ -52,10 +55,13 @@
 
 <div class="row justify-content-between">
   <div class="col-2">
-    <?=$cod_produto?>
+    <?=$d->cod_produto?>
   </div>
-  <div class="col-6">
+  <div class="col-4">
 
+  </div>
+  <div class="col-2">
+    <?=$d->quantidade?>
   </div>
   <div class="col-2">
     <?=$d->valor_unitario?>
