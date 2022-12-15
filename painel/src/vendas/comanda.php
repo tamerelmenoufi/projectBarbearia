@@ -232,6 +232,7 @@
                 type:"POST",
                 data:{
                     valor,
+                    forma_pagamento,
                     acao:'forma_pagamento',
                 },
                 url:"src/vendas/comanda.php",
