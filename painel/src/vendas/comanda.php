@@ -83,11 +83,11 @@
 
     <div class="row justify-content-between" style="margin-top:10px;">
         <div class="col-10 text-end">
-            <b>VALOR</b>
+            VALOR
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->valor,2,',','.')?></b>
+            R$ <?=number_format($v->valor,2,',','.')?>
         </div>
     </div>
     <?php
@@ -95,11 +95,11 @@
     ?>
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            <b>ENTREGA</b>
+            ENTREGA
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->taxa_entrega,2,',','.')?></b>
+            R$ <?=number_format($v->taxa_entrega,2,',','.')?>
         </div>
     </div>
     <?php
@@ -107,21 +107,21 @@
     ?>
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            <b>ACRESCIMO</b>
+            ACRESCIMO
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->acrescimo,2,',','.')?></b>
+            R$ <?=number_format($v->acrescimo,2,',','.')?>
         </div>
     </div>
 
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            <b>DESCONTO</b>
+            DESCONTO
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->desconto,2,',','.')?></b>
+            R$ <?=number_format($v->desconto,2,',','.')?>
         </div>
     </div>
 
