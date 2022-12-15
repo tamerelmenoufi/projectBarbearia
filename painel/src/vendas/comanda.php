@@ -66,13 +66,13 @@
 
   </div>
   <div class="col-2">
-    <?=$d->valor_unitario?>
+    R$ <?=number_format($v->valor_unitario,2,',','.')?>
   </div>
   <div class="col-2">
     <?=$d->quantidade?>
   </div>
   <div class="col-2">
-    <?=$d->valor?>
+    R$ <?=number_format($v->valor,2,',','.')?>
   </div>
 </div>
 
@@ -82,11 +82,11 @@
 
 <div class="row justify-content-between">
   <div class="col-10">
-    TOTAL
+    <b>TOTAL</b>
   </div>
 
   <div class="col-2">
-    <?=$v->total?>
+    <b>R$ <?=number_format($v->total,2,',','.')?></b>
   </div>
 </div>
 
