@@ -10,7 +10,7 @@
 <!-- <ul class="list-group">
 
 <li class="list-group-item"> -->
-<div class="p-3">
+<div class="p-3" style="font-size:12px;">
     <div class="row justify-content-between" style="margin-bottom:10px;">
     <div class="col-2">
         <b>Cod</b>
