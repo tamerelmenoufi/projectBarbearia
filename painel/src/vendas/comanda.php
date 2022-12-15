@@ -169,12 +169,19 @@
                     <option value="debito">Débito</option>
                 </select>
             </div>
-            <div class="col-md-3 mb-2">
-                <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control form-control-sm" value="" />
+            <div class="col-md-6 mb-2">
+
+
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">R$</span>
+                    <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <button class="btn btn-primary btn-sm"><i class="fa-regular fa-floppy-disk"></i></button>
+                </div>
+
+
             </div>
-            <div class="col-md-3 mb-2">
-                <button class="btn btn-primary btn-sm"><i class="fa-regular fa-floppy-disk"></i></button>
-            </div>
+
         </div>
     </li>
 </ul>
