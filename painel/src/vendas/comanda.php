@@ -3,6 +3,11 @@
 
     vl(['ProjectPainel','codVenda']);
 
+    if($_POST['acao'] == 'forma_pagamento'){
+        $query = "insert into venda_pagamentos set venda = '{$_SESSION['codVenda']}', forma_pagamento = '{$_POST['forma_pagamento']}', valor = '{$_POST['valor']}' ";
+        mysqli_query($con, $query);
+    }
+
 
     // $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_SESSION['codVenda']}'"));
 
@@ -175,12 +180,29 @@
                 <div class="input-group input-group-sm">
                     <span class="input-group-text" id="inputGroup-sizing-sm">R$</span>
                     <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <button class="btn btn-success btn-sm"><i class="fa-solid fa-file-invoice-dollar"></i></button>
+                    <button class="btn btn-success btn-sm valor_add"><i class="fa-solid fa-file-invoice-dollar"></i></button>
                 </div>
 
             </div>
 
         </div>
+
+        <?php
+        $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
+        $result = mysqli_query($con, $query);
+        $resto = $v->total;
+        while($p = mysqli_fetch_object($result)){
+        ?>
+        <div class="row">
+            <div class="col-md-6 mb-2"><?=$p->forma_pagamento?></div>
+            <div class="col-md-6 mb-2"><?=$p->valor?></div>
+        </div>
+        <?php
+            $resto = ($resto - $p->valor);
+        }
+        ?>
+
+
     </li>
 </ul>
 
@@ -195,6 +217,30 @@
         Carregando('none');
 
         $('#valor_add').maskMoney();
+
+        $(".valor_add").click(function(){
+            total = <?=$v->total?>;
+            resto = <?=$resto?>;
+            valor = $('#valor_add').val();
+            forma_pagamento = $('#forma_pagamento').val();
+            if(valor > total && valor > resto){
+                $.alert('O valor pago não pode ser superior ao valor da compra!')
+                return false;
+            }
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    valor,
+                    acao:'forma_pagamento',
+                },
+                url:"src/vendas/comanda.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        })
+
 
     })
 </script>
