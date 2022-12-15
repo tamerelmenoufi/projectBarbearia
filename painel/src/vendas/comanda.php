@@ -93,7 +93,7 @@
     <?php
     if($tipo_produtos){
     ?>
-    <div class="row justify-content-between" style="margin-top:10px;">
+    <div class="row justify-content-between">
         <div class="col-10 text-end">
             <b>ENTREGA</b>
         </div>
