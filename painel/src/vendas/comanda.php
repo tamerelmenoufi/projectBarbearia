@@ -160,6 +160,7 @@
 
 <ul class="list-group mt-3 mb-3">
     <li class="list-group-item">
+        <h5>Formas de pagamento</h5>
         <div class="row">
             <div class="col-md-6 mb-2">
                 <select class="form-select form-select-sm" id="forma_pagamento">
