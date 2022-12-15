@@ -58,7 +58,7 @@
   </div>
 </div>
 
-<div class="row justify-content-between mb-3">
+<div class="row justify-content-between b-3">
   <div class="col-2">
     <?=$d->cod_produto?>
   </div>
