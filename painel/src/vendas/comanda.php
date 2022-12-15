@@ -49,7 +49,7 @@
 ?>
 
 
-<div class="row justify-content-between mb-3">
+<div class="row justify-content-between">
   <div class="col-2">
 
   </div>
@@ -58,7 +58,7 @@
   </div>
 </div>
 
-<div class="row justify-content-between">
+<div class="row justify-content-between" style="margin-bottom:20px;">
   <div class="col-2">
     <?=$d->cod_produto?>
   </div>
@@ -66,13 +66,13 @@
 
   </div>
   <div class="col-2">
-    R$ <?=number_format($v->valor_unitario,2,',','.')?>
+    R$ <?=number_format($d->valor_unitario,2,',','.')?>
   </div>
   <div class="col-2">
     <?=$d->quantidade?>
   </div>
   <div class="col-2">
-    R$ <?=number_format($v->valor,2,',','.')?>
+    R$ <?=number_format($d->valor,2,',','.')?>
   </div>
 </div>
 
@@ -80,8 +80,8 @@
             }
 ?>
 
-<div class="row justify-content-between">
-  <div class="col-10">
+<div class="row justify-content-between" style="margin-top:10px;">
+  <div class="col-10 text-right">
     <b>TOTAL</b>
   </div>
 
