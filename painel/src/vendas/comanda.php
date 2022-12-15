@@ -61,10 +61,10 @@
 
   </div>
   <div class="col-2">
-    <?=$d->quantidade?>
+    <?=$d->valor_unitario?>
   </div>
   <div class="col-2">
-    <?=$d->valor_unitario?>
+    <?=$d->quantidade?>
   </div>
   <div class="col-2">
     <?=$d->valor?>
