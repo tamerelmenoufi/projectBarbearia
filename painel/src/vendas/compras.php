@@ -113,8 +113,10 @@
             $n = mysqli_num_rows($result);
             $valor = $comissao = 0;
             $tipo_produtos = false;
+            if($n) $colaborador = true;
             while($d = mysqli_fetch_object($result)){
                 if($d->tipo == 'p') $tipo_produtos = true;
+                if(!$d->colaborador) $colaborador = false;
             ?>
             <tr>
                 <th scope="row"><?=$d->cod_produto?></th>
@@ -173,6 +175,10 @@
                 where a.codigo = '{$_SESSION['codVenda']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
+
+    $n = mysqli_num_rows($result);
+    if($n) $entrega = true;
+
 ?>
 <div class="row">
     <div class="col-md-2 offset-md-2">
@@ -184,6 +190,9 @@
     </div>
     <?php
     if($tipo_produtos){
+
+        if(!$d->local_entrega and $d->retirada_estabelecimento == '0') $entrega = false;
+
     ?>
     <div class="col-md-2">
         <label for="entrega" class="form-label">Entrega</label>
@@ -379,8 +388,8 @@
         $("#button-pagar").click(function(){
 
 
-            <?=(($d->local_entrega > 0 || $d->retirada_estabelecimento == '1')?'msgE = ``;':'msgE = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu o local de entrega.</p>`;')?>
-            <?=(($d->colaborador)?'msgC = ``;':'msgC = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu atendente/colaborador em um ou mais serviços/produtos.</p>`;')?>
+            <?=(($entrega)?'msgE = ``;':'msgE = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu o local de entrega.</p>`;')?>
+            <?=(($colaborador)?'msgC = ``;':'msgC = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu atendente/colaborador em um ou mais serviços/produtos.</p>`;')?>
 
             if(msgC || msgE){
                 $.alert({
