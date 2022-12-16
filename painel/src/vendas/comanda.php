@@ -221,9 +221,9 @@
         <?php
         if(!$resto){
         ?>
-        $('#forma_pagamento').css("disabled","disabled");
-        $('#valor_add').css("disabled","disabled");
-        $('.valor_add').css("disabled","disabled");
+        $('#forma_pagamento').attr("disabled","disabled");
+        $('#valor_add').attr("disabled","disabled");
+        $('.valor_add').attr("disabled","disabled");
         <?php
         }
         ?>
