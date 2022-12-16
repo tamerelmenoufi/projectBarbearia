@@ -32,6 +32,8 @@
     $result = mysqli_query($con, $query);
     $v = mysqli_fetch_object($result);
 
+    $total = ($v->valor + $v->taxa_entrega + $v->acrescimo - $v->desconto);
+
 ?>
 <style>
     .Titulo<?=$md5?>{
@@ -164,8 +166,7 @@
         </div>
 
         <div class="col-2">
-
-            <b>R$ <?=number_format(($v->valor + $v->taxa_entrega + $v->acrescimo - $v->desconto),2,',','.')?></b>
+            <b>R$ <?=number_format($total,2,',','.')?></b>
         </div>
     </div>
 
@@ -210,7 +211,7 @@
         </div>
         </li>
         <?php
-            $resto = ($resto - $p->valor);
+            $resto = ($resto - $total);
         }
         ?>
         </ul>
