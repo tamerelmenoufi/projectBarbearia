@@ -191,13 +191,14 @@
             </div>
 
         </div>
-
+        <ul class="list-group">
         <?php
         $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
         $result = mysqli_query($con, $query);
         $resto = $v->total;
         while($p = mysqli_fetch_object($result)){
         ?>
+        <li class="list-group-item">
         <div class="row">
             <div class="col-md-4 mb-2"><?=$p->forma_pagamento?></div>
             <div class="col-md-4 mb-2"><?=$p->valor?></div>
@@ -205,11 +206,12 @@
                 <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
             </div>
         </div>
+        </li>
         <?php
             $resto = ($resto - $p->valor);
         }
         ?>
-
+        </ul>
 
     </li>
 </ul>
