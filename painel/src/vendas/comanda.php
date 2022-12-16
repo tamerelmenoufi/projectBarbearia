@@ -221,10 +221,10 @@
 
     <div class="row mt-3 mb-3">
         <div class="col d-grid">
-            <button class="btn btn-warning btn-sm">Solicitar Entrega</button>
+            <button class="btn btn-warning btn-sm"><i class="fa-solid fa-motorcycle"></i> Solicitar Entrega</button>
         </div>
         <div class="col d-grid">
-            <button class="btn btn-primary btn-sm">Concluir</button>
+            <button class="btn btn-primary btn-sm"><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
     </div>
 
