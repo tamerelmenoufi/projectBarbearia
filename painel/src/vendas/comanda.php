@@ -198,7 +198,7 @@
         $resto = $v->total;
         while($p = mysqli_fetch_object($result)){
         ?>
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-md-4"><?=$p->forma_pagamento?></div>
             <div class="col-md-4"><?=$p->valor?></div>
