@@ -261,6 +261,7 @@
                 $.alert('O valor pago não pode ser superior ao valor da compra!')
                 return false;
             }
+            if(!(valor*1)) return false;
             Carregando();
             $.ajax({
                 type:"POST",
