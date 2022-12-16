@@ -56,7 +56,7 @@
 ?>
     <li class="list-group-item list-group-item-action titulo <?=(($_POST['local_entrega'] == $d->codigo)?'active':false)?>" cod="<?=$d->codigo?>" style="display: flex; justify-content: space-between;">
         <div>
-            <i class="fa-solid fa-location-dot verde"></i> <?=$d->titulo?>
+            <i class="fa-solid fa-location-dot"></i> <?=$d->titulo?>
         </div>
         <div>
             <i class="fa-solid fa-motorcycle"></i> R$ 23,88
