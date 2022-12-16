@@ -25,7 +25,12 @@
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
 
 
-<ul class="list-group">
+<div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="retirada_estabelecimento">
+    <label class="form-check-label" for="retirada_estabelecimento">Retirada dos produtos no estabelecimento</label>
+</div>
+
+<ul class="list-group enderecos">
 <?php
     while($d = mysqli_fetch_object($result)){
 
@@ -72,6 +77,35 @@
                     let myOffCanvas = document.getElementById('offcanvasDireita');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.hide();
+                }
+            });
+
+        });
+
+
+        $("#retirada_estabelecimento").click(function(){
+
+            opc = $(this).prop("checked");
+
+            $.ajax({
+                url:"src/vendas/compras.php",
+                type:"POST",
+                data:{
+                    acao:'retirada_estabelecimento',
+                },
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                    if(opc === true){
+                        $(".verde").css("dispaly","block");
+                        $(".enderecos").css("opacity","1");
+                    }else{
+                        $(".verde").css("dispaly","none");
+                        $(".enderecos").css("opacity","0.5");
+                    }
+
+                    // let myOffCanvas = document.getElementById('offcanvasDireita');
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    // openedCanvas.hide();
                 }
             });
 
