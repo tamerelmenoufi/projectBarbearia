@@ -20,8 +20,14 @@
 
     .titulo{
         cursor:pointer;
+    }
+
+    .enderecos{
+        cursor:pointer;
         opacity:<?=(($_POST['retirada_estabelecimento'])?'0.1':'1')?>;
     }
+
+
 </style>
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
 
