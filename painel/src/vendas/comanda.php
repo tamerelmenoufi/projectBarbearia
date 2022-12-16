@@ -223,7 +223,7 @@
             resto = <?=$resto?>;
             valor = $('#valor_add').val();
             forma_pagamento = $('#forma_pagamento').val();
-            if(valor > total && valor > resto){
+            if( (valor*1) > (total*1) && (valor*1) > (resto*1)){
                 $.alert('O valor pago não pode ser superior ao valor da compra!')
                 return false;
             }
