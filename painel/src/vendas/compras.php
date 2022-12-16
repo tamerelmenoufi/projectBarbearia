@@ -5,6 +5,7 @@
 
     if($_POST['acao'] == 'excluir'){
         mysqli_query($con, "delete from vendas_produtos where codigo = '{$_POST['codigo']}'");
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_POST['codigo']}'");
     }
 
     if($_POST['acao'] == 'acrescimo'){
