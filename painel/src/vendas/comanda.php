@@ -220,7 +220,7 @@
     </ul>
 
     <div class="row mt-3 mb-3">
-        <div class="col d-grid gap-2">
+        <div class="col d-grid">
             <button class="btn btn-warning btn-sm">Solicitar Entrega</button>
         </div>
         <div class="col">
