@@ -28,7 +28,7 @@
 
 
     if($_POST['acao'] == 'retirada_estabelecimento'){
-        $q = "update vendas set retirada_estabelecimento = '1', local_entrega = '0', taxa_entrega = '0' where codigo = '{$_SESSION['codVenda']}'";
+        $q = "update vendas set retirada_estabelecimento = '{$_POST['retirada_estabelecimento']}', local_entrega = '0', taxa_entrega = '0' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
         mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }

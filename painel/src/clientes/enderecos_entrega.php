@@ -92,9 +92,11 @@
             if(opc === true){
                 // $(".verde").css("display","none");
                 $(".enderecos").css("opacity","0.1");
+                retirada_estabelecimento = '1';
             }else{
                 // $(".verde").css("display","inline");
                 $(".enderecos").css("opacity","1");
+                retirada_estabelecimento = '0';
             }
 
             $.ajax({
@@ -102,6 +104,7 @@
                 type:"POST",
                 data:{
                     acao:'retirada_estabelecimento',
+                    retirada_estabelecimento,
                 },
                 success:function(dados){
                     $(".produtos_lista").html(dados);
