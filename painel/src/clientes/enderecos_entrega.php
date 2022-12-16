@@ -87,6 +87,14 @@
 
             opc = $(this).prop("checked");
 
+            if(opc === true){
+                $(".verde").css("display","none");
+                $(".enderecos").css("opacity","0.5");
+            }else{
+                $(".verde").css("display","inline");
+                $(".enderecos").css("opacity","1");
+            }
+
             $.ajax({
                 url:"src/vendas/compras.php",
                 type:"POST",
@@ -95,14 +103,6 @@
                 },
                 success:function(dados){
                     $(".produtos_lista").html(dados);
-                    if(opc === true){
-                        $(".verde").css("display","none");
-                        $(".enderecos").css("opacity","0.5");
-                    }else{
-                        $(".verde").css("display","block");
-                        $(".enderecos").css("opacity","1");
-                    }
-
                     // let myOffCanvas = document.getElementById('offcanvasDireita');
                     // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     // openedCanvas.hide();
