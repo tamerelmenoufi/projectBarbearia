@@ -362,13 +362,13 @@
         $("button.taxa_entrega").click(function(){
             Carregando();
             retirada_estabelecimento = $(this).attr("retirada_estabelecimento");
-            taxa_entrega = $(this).attr("taxa_entrega");
+            local_entrega = $(this).attr("local_entrega");
             $.ajax({
                 url:"src/clientes/enderecos_entrega.php",
                 type:"POST",
                 data:{
                     retirada_estabelecimento,
-                    taxa_entrega
+                    local_entrega
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
