@@ -198,7 +198,7 @@
         <?php
         $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
         $result = mysqli_query($con, $query);
-        $resto = $v->total;
+        $resto = $total;
         while($p = mysqli_fetch_object($result)){
         ?>
         <li class="list-group-item list-group-item-action">
