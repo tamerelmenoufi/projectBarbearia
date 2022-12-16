@@ -220,9 +220,15 @@
     </ul>
 
     <div class="row mt-3 mb-3">
+        <?php
+        if($v->local_entrega || $v->entrega_estabelecimento){
+        ?>
         <div class="col d-grid">
             <button class="btn btn-warning btn-sm"><i class="fa-solid fa-motorcycle"></i> Solicitar Entrega</button>
         </div>
+        <?php
+        }
+        ?>
         <div class="col d-grid">
             <button class="btn btn-primary btn-sm"><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
