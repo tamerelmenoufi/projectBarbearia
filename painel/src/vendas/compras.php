@@ -377,7 +377,7 @@
         });
 
         $("#button-pagar").click(function(){
-            Carregando();
+
 
             <?=(($d->local_entrega > 0 || $d->retirada_estabelecimento == '1')?'msgE = ``;':'msgE = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu o local de entrega.</p>`;')?>
             <?=(($d->colaborador)?'msgC = ``;':'msgC = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu atendente/colaborador em um ou mais serviços/produtos.</p>`;')?>
@@ -387,9 +387,15 @@
                     content:`${msgE} ${msgC}`,
                     type:'red'
                 });
+
+                let myOffCanvas = document.getElementById('offcanvasDireita');
+                let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                openedCanvas.hide();
+
                 return false;
             }
 
+            Carregando();
 
             $.ajax({
                 url:"src/vendas/comanda.php",
