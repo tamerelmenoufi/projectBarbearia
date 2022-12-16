@@ -164,7 +164,8 @@
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->total,2,',','.')?></b>
+
+            <b>R$ <?=number_format(($v->valor + $v->taxa_entrega + $v->acrescimo - $v->desconto),2,',','.')?></b>
         </div>
     </div>
 
