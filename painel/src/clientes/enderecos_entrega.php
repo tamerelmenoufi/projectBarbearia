@@ -20,13 +20,14 @@
 
     .titulo{
         cursor:pointer;
+        opacity:<?=(($_POST['retirada_estabelecimento'])?'0.1':'1')?>;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
 
 
 <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="retirada_estabelecimento">
+    <input type="checkbox" <?=(($_POST['retirada_estabelecimento'])?'checked':false)?> class="form-check-input" id="retirada_estabelecimento">
     <label class="form-check-label" for="retirada_estabelecimento" style="cursor:pointer;">Retirada dos produtos no estabelecimento</label>
 </div>
 
