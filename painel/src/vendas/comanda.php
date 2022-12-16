@@ -183,6 +183,7 @@
             <div class="col-md-6 mb-2">
 
                 <div class="input-group input-group-sm">
+                    <button class="btn btn-warning btn-sm valor_resto" valor="<?=$resto?>">R$ <?=number_format($resto,2,',','.')?></button>
                     <span class="input-group-text" id="inputGroup-sizing-sm">R$</span>
                     <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     <button class="btn btn-success btn-sm valor_add"><i class="fa-solid fa-file-invoice-dollar"></i></button>
@@ -234,6 +235,14 @@
         $('#forma_pagamento').attr("disabled","disabled");
         $('#valor_add').attr("disabled","disabled");
         $('.valor_add').attr("disabled","disabled");
+        $(".valor_resto").remove();
+        <?php
+        }else{
+        ?>
+        $(".valor_resto").click(function(){
+            valor = $(this).attr("valor");
+            $('#valor_add').val(valor);
+        });
         <?php
         }
         ?>
