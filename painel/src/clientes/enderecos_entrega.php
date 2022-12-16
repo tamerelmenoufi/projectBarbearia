@@ -21,6 +21,9 @@
     .titulo{
         cursor:pointer;
     }
+    #retirada_estabelecimento{
+        cursor:pointer;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
 
