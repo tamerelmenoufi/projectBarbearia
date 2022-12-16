@@ -220,8 +220,12 @@
     </ul>
 
     <div class="row mt-3 mb-3">
-        <div class="col">Entrega</div>
-        <div class="col">Concluir</div>
+        <div class="col">
+            <button class="btn btn-warning btn-sm btn-block">Solicitar Entrega</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary btn-sm btn-block">Concluir</button>
+        </div>
     </div>
 
 
