@@ -27,7 +27,7 @@
         $(function(){
             Carregando();
             $.ajax({
-                url:"",
+                url:"home/index.php",
                 success:function(dados){
                     $(".CorpoApp").html(dados);
                 }
