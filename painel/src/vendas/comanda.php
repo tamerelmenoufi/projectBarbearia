@@ -170,54 +170,60 @@
         </div>
     </div>
 
-<ul class="list-group mt-3 mb-3">
-    <li class="list-group-item">
-        <h5>Formas de pagamento</h5>
-        <div class="row">
-            <div class="col-md-6 mb-2">
-                <select class="form-select form-select-sm" id="forma_pagamento">
-                    <option value="dinheiro">Dinheiro</option>
-                    <option value="pix">PIX</option>
-                    <option value="credito">Crédito</option>
-                    <option value="debito">Débito</option>
-                </select>
-            </div>
-            <div class="col-md-6 mb-2">
+    <ul class="list-group mt-3 mb-3">
+        <li class="list-group-item">
+            <h5>Formas de pagamento</h5>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <select class="form-select form-select-sm" id="forma_pagamento">
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="pix">PIX</option>
+                        <option value="credito">Crédito</option>
+                        <option value="debito">Débito</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-2">
 
-                <div class="input-group input-group-sm">
-                    <button class="btn btn-warning btn-sm valor_resto" valor=""></button>
-                    <span class="input-group-text" id="inputGroup-sizing-sm">R$</span>
-                    <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <button class="btn btn-success btn-sm valor_add"><i class="fa-solid fa-file-invoice-dollar"></i></button>
+                    <div class="input-group input-group-sm">
+                        <button class="btn btn-warning btn-sm valor_resto" valor=""></button>
+                        <span class="input-group-text" id="inputGroup-sizing-sm">R$</span>
+                        <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <button class="btn btn-success btn-sm valor_add"><i class="fa-solid fa-file-invoice-dollar"></i></button>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
-        <ul class="list-group">
-        <?php
-        $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
-        $result = mysqli_query($con, $query);
-        $resto = $total;
-        while($p = mysqli_fetch_object($result)){
-        ?>
-        <li class="list-group-item list-group-item-action">
-        <div class="row">
-            <div class="col-md-4"><?=$p->forma_pagamento?></div>
-            <div class="col-md-4">R$ <?=number_format($p->valor,2,',','.')?></div>
-            <div class="col-md-4 text-end">
-                <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
+            <ul class="list-group">
+            <?php
+            $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
+            $result = mysqli_query($con, $query);
+            $resto = $total;
+            while($p = mysqli_fetch_object($result)){
+            ?>
+            <li class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-md-4"><?=$p->forma_pagamento?></div>
+                <div class="col-md-4">R$ <?=number_format($p->valor,2,',','.')?></div>
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
+                </div>
             </div>
-        </div>
-        </li>
-        <?php
-            $resto = ($resto - $total);
-        }
-        ?>
-        </ul>
+            </li>
+            <?php
+                $resto = ($resto - $total);
+            }
+            ?>
+            </ul>
 
-    </li>
-</ul>
+        </li>
+    </ul>
+
+    <div class="row mt-3 mb-3">
+        <div class="col">Entrega</div>
+        <div class="col">Concluir</div>
+    </div>
+
 
     <p style="text-align:center; font-size:12px; color:#a1a1a1;">A compra será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($v->local_entrega)?"({$v->endereco})":false)?></p>
 </div>
