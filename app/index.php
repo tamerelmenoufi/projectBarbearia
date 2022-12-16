@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ff0000"/>
     <title>APP</title>
-    <?php include("../lib/header.php"); ?>
+    <?php include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/header.php"); ?>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/app.css?xyz">
 
@@ -23,7 +23,7 @@
 
 <div class="ms_corpo"></div>
 
-<?php include("../lib/footer.php"); ?>
+<?php include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/footer.php"); ?>
 
 
 
