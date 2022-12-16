@@ -394,6 +394,7 @@
             if(msgC || msgE){
                 $.alert({
                     content:`${msgE} ${msgC}`,
+                    title:"Pendências",
                     type:'red'
                 });
 
