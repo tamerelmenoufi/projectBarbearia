@@ -220,11 +220,11 @@
     </ul>
 
     <div class="row mt-3 mb-3">
-        <div class="col">
-            <button class="btn btn-warning btn-sm btn-block">Solicitar Entrega</button>
+        <div class="col gap-2">
+            <button class="btn btn-warning btn-sm">Solicitar Entrega</button>
         </div>
         <div class="col">
-            <button class="btn btn-primary btn-sm btn-block">Concluir</button>
+            <button class="btn btn-primary btn-sm">Concluir</button>
         </div>
     </div>
 
