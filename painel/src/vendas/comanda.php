@@ -218,6 +218,16 @@
 
         $('#valor_add').maskMoney();
 
+        <?php
+        if(!$resto){
+        ?>
+        $('#forma_pagamento').css("disabled","disabled");
+        $('#valor_add').css("disabled","disabled");
+        $('.valor_add').css("disabled","disabled");
+        <?php
+        }
+        ?>
+
         $(".valor_add").click(function(){
             total = <?=$v->total?>;
             resto = <?=$resto?>;
