@@ -183,7 +183,7 @@
             <div class="col-md-6 mb-2">
 
                 <div class="input-group input-group-sm">
-                    <button class="btn btn-warning btn-sm valor_resto" valor="<?=$resto?>">R$ <?=number_format($resto,2,',','.')?></button>
+                    <button class="btn btn-warning btn-sm valor_resto" valor=""></button>
                     <span class="input-group-text" id="inputGroup-sizing-sm">R$</span>
                     <input type="text" data-thousands="" data-decimal="." id="valor_add" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     <button class="btn btn-success btn-sm valor_add"><i class="fa-solid fa-file-invoice-dollar"></i></button>
@@ -239,6 +239,8 @@
         <?php
         }else{
         ?>
+        $(".valor_resto").html('R$ <?=number_format($resto,2,',','.')?>');
+        $(".valor_resto").attr("valor",'<?=$resto?>');
         $(".valor_resto").click(function(){
             valor = $(this).attr("valor");
             $('#valor_add').val(valor);
