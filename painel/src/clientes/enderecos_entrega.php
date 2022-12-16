@@ -54,7 +54,7 @@
 
 
 ?>
-    <li class="list-group-item list-group-item-action titulo" cod="<?=$d->codigo?>" style="display: flex; justify-content: space-between;">
+    <li class="list-group-item list-group-item-action titulo <?=(($_POST['taxa_entrega'] == $d->codigo)?'active':false)?>" cod="<?=$d->codigo?>" style="display: flex; justify-content: space-between;">
         <div>
             <i class="fa-solid fa-location-dot verde"></i> <?=$d->titulo?>
         </div>

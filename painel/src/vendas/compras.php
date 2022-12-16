@@ -199,6 +199,7 @@
                     data-bs-toggle="offcanvas"
                     href="#offcanvasDireita"
                     retirada_estabelecimento = "<?=$d->retirada_estabelecimento?>"
+                    local_entrega = "<?=$d->local_entrega?>"
             ><i class="fa-solid fa-location-dot"></i></button>
         </div>
     </div>
@@ -361,11 +362,13 @@
         $("button.taxa_entrega").click(function(){
             Carregando();
             retirada_estabelecimento = $(this).attr("retirada_estabelecimento");
+            taxa_entrega = $(this).attr("taxa_entrega");
             $.ajax({
                 url:"src/clientes/enderecos_entrega.php",
                 type:"POST",
                 data:{
-                    retirada_estabelecimento
+                    retirada_estabelecimento,
+                    taxa_entrega
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
