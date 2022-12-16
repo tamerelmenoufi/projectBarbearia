@@ -66,6 +66,8 @@
 
         $(".titulo").click(function(){
             local_entrega = $(this).attr("cod");
+            opc = $("#retirada_estabelecimento").prop("checked");
+            if(opc === true) return false;
             $.ajax({
                 url:"src/vendas/compras.php",
                 type:"POST",
@@ -88,10 +90,10 @@
             opc = $(this).prop("checked");
 
             if(opc === true){
-                $(".verde").css("display","none");
-                $(".enderecos").css("opacity","0.5");
+                // $(".verde").css("display","none");
+                $(".enderecos").css("opacity","0.9");
             }else{
-                $(".verde").css("display","inline");
+                // $(".verde").css("display","inline");
                 $(".enderecos").css("opacity","1");
             }
 
