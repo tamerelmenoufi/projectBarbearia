@@ -202,13 +202,13 @@
             while($p = mysqli_fetch_object($result)){
             ?>
             <li class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-md-4"><?=$p->forma_pagamento?></div>
-                <div class="col-md-4">R$ <?=number_format($p->valor,2,',','.')?></div>
-                <div class="col-md-4 text-end">
-                    <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
+                <div class="row">
+                    <div class="col"><?=$p->forma_pagamento?></div>
+                    <div class="col text-end">R$ <?=number_format($p->valor,2,',','.')?></div>
+                    <div class="col text-end">
+                        <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                 </div>
-            </div>
             </li>
             <?php
                 $resto = ($resto - $total);
