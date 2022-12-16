@@ -223,7 +223,7 @@
         <div class="col d-grid">
             <button class="btn btn-warning btn-sm">Solicitar Entrega</button>
         </div>
-        <div class="col">
+        <div class="col d-grid">
             <button class="btn btn-primary btn-sm">Concluir</button>
         </div>
     </div>
