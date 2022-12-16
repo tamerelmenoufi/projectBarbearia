@@ -378,6 +378,19 @@
 
         $("#button-pagar").click(function(){
             Carregando();
+
+            <?=(($d->local_entrega > 0 || $d->retirada_estabelecimento == '1')?'msgE = ``;':'msgE = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu o local de entrega.</p>`;')?>
+            <?=(($d->colaborador)?'msgC = ``;':'msgC = `<p><i class="fa-solid fa-clipboard-user"></i> Você ainda não definiu atendente/colaborador em um ou mais serviços/produtos.</p>`;')?>
+
+            if(msgC || msgE){
+                $.alert({
+                    content:`${msgE} ${msgC}`,
+                    type:'red'
+                });
+                return false;
+            }
+
+
             $.ajax({
                 url:"src/vendas/comanda.php",
                 success:function(dados){
