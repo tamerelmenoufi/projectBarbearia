@@ -200,9 +200,9 @@
         ?>
         <li class="list-group-item">
         <div class="row">
-            <div class="col-md-4 mb-2"><?=$p->forma_pagamento?></div>
-            <div class="col-md-4 mb-2"><?=$p->valor?></div>
-            <div class="col-md-4 mb-2 text-end">
+            <div class="col-md-4"><?=$p->forma_pagamento?></div>
+            <div class="col-md-4"><?=$p->valor?></div>
+            <div class="col-md-4 text-end">
                 <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
             </div>
         </div>
