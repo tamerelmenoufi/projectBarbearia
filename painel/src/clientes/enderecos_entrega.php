@@ -96,11 +96,11 @@
                 success:function(dados){
                     $(".produtos_lista").html(dados);
                     if(opc === true){
-                        $(".verde").css("dispaly","block");
-                        $(".enderecos").css("opacity","1");
-                    }else{
-                        $(".verde").css("dispaly","none");
+                        $(".verde").css("display","none");
                         $(".enderecos").css("opacity","0.5");
+                    }else{
+                        $(".verde").css("display","block");
+                        $(".enderecos").css("opacity","1");
                     }
 
                     // let myOffCanvas = document.getElementById('offcanvasDireita');
