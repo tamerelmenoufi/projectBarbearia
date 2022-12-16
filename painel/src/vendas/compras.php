@@ -388,8 +388,8 @@
         $("#button-pagar").click(function(){
 
 
-            <?=(($entrega)?'msgE = ``;':'msgE = `<div class="col"><div class="row"><div class="col-2"><i class="fa-solid fa-location-dot"></i></div><div class="col-10">Você ainda não definiu o local de entrega.</div></div></div>`;')?>
-            <?=(($colaborador)?'msgC = ``;':'msgC = `<div class="col"><div class="row"><div class="col-2"><i class="fa-solid fa-clipboard-user"></i></div><div class="col-10">Você ainda não definiu atendente/colaborador em um ou mais serviços/produtos.</div></div></div>`;')?>
+            <?=(($entrega)?'msgE = ``;':'msgE = `<div class="col"><div class="col-1"><i class="fa-solid fa-location-dot"></i></div><div class="col-11">Você ainda não definiu o local de entrega.</div></div>`;')?>
+            <?=(($colaborador)?'msgC = ``;':'msgC = `<div class="col"><div class="col-1"><i class="fa-solid fa-clipboard-user"></i></div><div class="col-11">Você ainda não definiu atendente/colaborador em um ou mais serviços/produtos.</div></div>`;')?>
 
             if(msgC || msgE){
                 $.alert({
