@@ -4,7 +4,12 @@
     vl(['ProjectPainel','codVenda']);
 
     if($_POST['acao'] == 'forma_pagamento'){
-        echo $query = "insert into vendas_pagamentos set venda = '{$_SESSION['codVenda']}', forma_pagamento = '{$_POST['forma_pagamento']}', valor = '{$_POST['valor']}' ";
+        $query = "insert into vendas_pagamentos set venda = '{$_SESSION['codVenda']}', forma_pagamento = '{$_POST['forma_pagamento']}', valor = '{$_POST['valor']}' ";
+        mysqli_query($con, $query);
+    }
+
+    if($_POST['acao'] == 'pagamento_del'){
+        $query = "delete from vendas_pagamentos where codigo = '{$_POST['codigo']}' ";
         mysqli_query($con, $query);
     }
 
@@ -194,8 +199,11 @@
         while($p = mysqli_fetch_object($result)){
         ?>
         <div class="row">
-            <div class="col-md-6 mb-2"><?=$p->forma_pagamento?></div>
-            <div class="col-md-6 mb-2"><?=$p->valor?></div>
+            <div class="col-md-4 mb-2"><?=$p->forma_pagamento?></div>
+            <div class="col-md-4 mb-2"><?=$p->valor?></div>
+            <div class="col-md-4 mb-2 text-end">
+                <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
+            </div>
         </div>
         <?php
             $resto = ($resto - $p->valor);
@@ -245,6 +253,26 @@
                     valor,
                     forma_pagamento,
                     acao:'forma_pagamento',
+                },
+                url:"src/vendas/comanda.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        })
+
+
+
+        $(".pagamento_del").click(function(){
+
+            codigo = $(this).attr("cod");
+            forma_pagamento = $('#forma_pagamento').val();
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    codigo,
+                    acao:'pagamento_del',
                 },
                 url:"src/vendas/comanda.php",
                 success:function(dados){
