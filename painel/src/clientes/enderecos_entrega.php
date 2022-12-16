@@ -98,10 +98,12 @@
 
             if(opc === true){
                 // $(".verde").css("display","none");
+                $(".titulo").removeClass("active");
                 $(".enderecos").css("opacity","0.1");
                 retirada_estabelecimento = '1';
             }else{
                 // $(".verde").css("display","inline");
+                $(".titulo").removeClass("active");
                 $(".enderecos").css("opacity","1");
                 retirada_estabelecimento = '0';
             }
