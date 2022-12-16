@@ -252,7 +252,7 @@
         ?>
 
         $(".valor_add").click(function(){
-            total = <?=$v->total?>;
+            total = <?=$total?>;
             resto = <?=$resto?>;
             valor = $('#valor_add').val();
             forma_pagamento = $('#forma_pagamento').val();
