@@ -202,7 +202,7 @@
             <div class="col-md-4 mb-2"><?=$p->forma_pagamento?></div>
             <div class="col-md-4 mb-2"><?=$p->valor?></div>
             <div class="col-md-4 mb-2 text-end">
-                <button class="btn btn-danger btn-xs pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
+                <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
             </div>
         </div>
         <?php
