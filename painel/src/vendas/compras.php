@@ -5,22 +5,25 @@
 
     if($_POST['acao'] == 'excluir'){
         mysqli_query($con, "delete from vendas_produtos where codigo = '{$_POST['codigo']}'");
-        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_POST['codigo']}'");
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
     if($_POST['acao'] == 'acrescimo'){
         $q = "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
     if($_POST['acao'] == 'desconto'){
         $q = "update vendas set desconto = '{$_POST['desconto']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
     if($_POST['local_entrega']){
         $q = "update vendas set local_entrega = '{$_POST['local_entrega']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
 
@@ -59,12 +62,13 @@
         if($_POST['colaborador']){
             AtualizaComissao();
         }
-
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
 
     if($_POST['acao'] == 'colaborador'){
         AtualizaComissao();
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
 ?>

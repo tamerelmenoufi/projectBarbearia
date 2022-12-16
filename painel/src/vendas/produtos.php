@@ -31,6 +31,7 @@
         $result = mysqli_query($con,$query);
 
         list($qtr) = mysqli_fetch_row(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
+        mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
 
         echo json_encode([
             'status' => true,
