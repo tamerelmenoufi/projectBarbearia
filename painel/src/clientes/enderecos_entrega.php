@@ -91,7 +91,7 @@
 
             if(opc === true){
                 // $(".verde").css("display","none");
-                $(".enderecos").css("opacity","0.9");
+                $(".enderecos").css("opacity","0.1");
             }else{
                 // $(".verde").css("display","inline");
                 $(".enderecos").css("opacity","1");
