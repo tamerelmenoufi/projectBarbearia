@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/icone.png">
     <title>Os Manos Barbearia</title>
     <?php
-    include("lib/header.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/header.php");
     ?>
   </head>
   <body>
@@ -20,14 +20,14 @@
     <div class="CorpoApp"></div>
 
     <?php
-    include("lib/footer.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/footer.php");
     ?>
 
     <script>
         $(function(){
             Carregando();
             $.ajax({
-                url:"<?=$url?>",
+                url:"",
                 success:function(dados){
                     $(".CorpoApp").html(dados);
                 }
