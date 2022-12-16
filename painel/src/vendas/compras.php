@@ -193,7 +193,7 @@
             <button
                     type="button"
                     id="button-addon1"
-                    class="btn btn-outline-<?=(($d->taxa_entrega > 0)?'success':'secondary')?> taxa_entrega"
+                    class="btn btn-outline-<?=(($d->local_entrega > 0 || $d->retirada_estabelecimento == '1')?'success':'secondary')?> taxa_entrega"
                     type="button"
                     id="button-acrescimo"
                     data-bs-toggle="offcanvas"
