@@ -21,14 +21,11 @@
     .titulo{
         cursor:pointer;
     }
-    #retirada_estabelecimento{
-        cursor:pointer;
-    }
 </style>
 <h4 class="Titulo<?=$md5?>">Lista de Endereços</h4>
 
 
-<div class="mb-3 form-check">
+<div class="mb-3 form-check" style="cursor:pointer;">
     <input type="checkbox" class="form-check-input" id="retirada_estabelecimento">
     <label class="form-check-label" for="retirada_estabelecimento">Retirada dos produtos no estabelecimento</label>
 </div>
