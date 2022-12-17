@@ -323,7 +323,7 @@
         $("button[concluir_venda]").click(function(){
 
             $.confirm({
-                content:"Está operação inaliza a compra.<br><b>Deseja Realmente Confirmar?</b>",
+                content:"Esta operação finaliza a sua compra.<br><b>Deseja Realmente Confirmar?</b>",
                 title:"Finalização da Compra",
                 buttons:{
                     'SIM':{
