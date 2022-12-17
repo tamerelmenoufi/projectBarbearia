@@ -322,7 +322,38 @@
 
         $("button[concluir_venda]").click(function(){
 
-            $.alert('Concluir a venda');
+            $.confirm({
+                content:"Está operação inaliza a compra.<br><b>Deseja Realmente Confirmar?</b>",
+                title:"Finalização da Compra",
+                buttons:{
+                    'SIM':{
+                        text:'<i class="fa-solid fa-check"></i> Confirmo',
+                        btnClass:'btn btn-success btn-sm',
+                        action:function(){
+                            Carregando();
+                            $.ajax({
+                                type:"POST",
+                                data:{
+                                    acao:'fechar_pedido',
+                                },
+                                url:"src/vendas/caixa.php",
+                                success:function(dados){
+                                    $("#paginaHome").html(dados);
+                                }
+                            });
+                        }
+                    },
+                    'NÃO':{
+                        text:'<i class="fa-solid fa-xmark"></i> Cancelar',
+                        btnClass:'btn btn-danger btn-sm',
+                        action:function(){
+
+                        }
+                    }
+                }
+            });
+
+
 
         });
 

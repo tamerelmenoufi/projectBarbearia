@@ -2,6 +2,11 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
+    if($_POST['acao'] == 'fechar_pedido'){
+        echo "FECHAR O PEDIDO";
+    }
+
+
     if($_POST['codCliente']){
         $_SESSION['ClienteAtivo'] = $_POST['codCliente'];
         $_SESSION['ClienteAtivoNome'] = $_POST['nomeCliente'];
