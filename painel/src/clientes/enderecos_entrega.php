@@ -44,7 +44,7 @@
     while($d = mysqli_fetch_object($result)){
 
         list($lat, $lng) = json_decode($d->coordenadas);
-        $vlorBee = json_decode($bee->ValorViagem(44, $lat, $lng));
+        $valorBee = json_decode($bee->ValorViagem(44, $lat, $lng));
         var_dump($valorBee);
         if(
             !$d->cep or
