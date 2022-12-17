@@ -11,8 +11,8 @@
         }
 
         public function Autenticacao(){
-            global $cBk;
-            return $cBk['bee'][$this->Ambiente]['TOKEN'];
+            global $cBarb;
+            return $cBarb['bee'][$this->Ambiente]['TOKEN'];
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
