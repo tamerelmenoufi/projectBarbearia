@@ -3,6 +3,8 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel','codVenda','ClienteAtivo']);
 
+    $bee = new Bee;
+
     $query = "select * from clientes_enderecos where cliente = '{$_SESSION['ClienteAtivo']}' and validacao = '1'";
     $result = mysqli_query($con, $query);
 ?>
@@ -61,7 +63,7 @@
             <i class="fa-solid fa-location-dot"></i> <?=$d->titulo?>
         </div>
         <div>
-            <i class="fa-solid fa-motorcycle"></i> <?=ValorViagem(44, $lat, $lng)?>
+            <i class="fa-solid fa-motorcycle"></i> <?=$bee->ValorViagem(44, $lat, $lng)?>
         </div>
     </li>
 <?php
