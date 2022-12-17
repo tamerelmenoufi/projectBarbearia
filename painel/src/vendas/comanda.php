@@ -202,7 +202,7 @@
             <?php
             $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
             $result = mysqli_query($con, $query);
-            $resto = $total;
+            $resto = 0;
             $nPagamento = 0;
             while($p = mysqli_fetch_object($result)){
                 $nPagamento = ($nPagamento*1 + $p->valor*1);
@@ -217,8 +217,8 @@
                 </div>
             </li>
             <?php
-                $resto = ($resto - $total);
             }
+            $resto = ($total - $nPagamento);
             ?>
             </ul>
 
