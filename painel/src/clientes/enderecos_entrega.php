@@ -41,6 +41,8 @@
 <?php
     while($d = mysqli_fetch_object($result)){
 
+        list($lat, $lng) = json_decode($d->coordenadas);
+
         if(
             !$d->cep or
             !$d->rua or
@@ -59,7 +61,7 @@
             <i class="fa-solid fa-location-dot"></i> <?=$d->titulo?>
         </div>
         <div>
-            <i class="fa-solid fa-motorcycle"></i> R$ 23,88
+            <i class="fa-solid fa-motorcycle"></i> <?=ValorViagem(44, $lat, $lng)?>
         </div>
     </li>
 <?php
