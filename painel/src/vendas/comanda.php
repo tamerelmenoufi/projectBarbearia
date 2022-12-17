@@ -253,7 +253,7 @@
         $('#valor_add').maskMoney();
 
         <?php
-        if(!$resto){
+        if(!($resto*1)){
         ?>
         $('#forma_pagamento').attr("disabled","disabled");
         $('#valor_add').attr("disabled","disabled");
