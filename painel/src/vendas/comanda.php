@@ -199,7 +199,9 @@
             $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
             $result = mysqli_query($con, $query);
             $resto = $total;
+            $nPagamento = false;
             while($p = mysqli_fetch_object($result)){
+                $nPagamento = true;
             ?>
             <li class="list-group-item list-group-item-action">
                 <div class="row">
@@ -224,13 +226,13 @@
         if($v->local_entrega || $v->entrega_estabelecimento){
         ?>
         <div class="col d-grid">
-            <button class="btn btn-warning btn-sm"><i class="fa-solid fa-motorcycle"></i> Solicitar Entrega</button>
+            <button class="btn btn-warning btn-sm" <?=((!$nPagamento)?'disabled':false)?>><i class="fa-solid fa-motorcycle"></i> Solicitar Entrega</button>
         </div>
         <?php
         }
         ?>
         <div class="col d-grid">
-            <button class="btn btn-primary btn-sm"><i class="fa-regular fa-circle-check"></i> Concluir</button>
+            <button class="btn btn-primary btn-sm" <?=((!$nPagamento)?'disabled':false)?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
     </div>
 
