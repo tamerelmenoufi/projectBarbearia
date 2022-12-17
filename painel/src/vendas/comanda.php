@@ -236,7 +236,7 @@
         }
         ?>
         <div class="col d-grid">
-            <button class="btn btn-primary btn-sm" <?=((!$nPagamento)?'disabled':false)?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
+            <button class="btn btn-primary btn-sm" <?=((!$nPagamento)?'disabled concluir_venda':false)?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
     </div>
 
@@ -319,6 +319,12 @@
         })
 
         //TESTE
+
+        $("button[concluir_venda]").click(function(){
+
+            $.alert('Concluir a venda');
+
+        });
 
 
     })
