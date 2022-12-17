@@ -8,7 +8,7 @@
     $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/app/projectBarbearia/site/";
 
     include("/appinc/connect.php");
-    $con = AppConnect('barbearia');
+    $con = AppConnect($cBarb['banco']['DATABASE']);
 
     // include("/appinc/connect.php");
     include("fn.php");
