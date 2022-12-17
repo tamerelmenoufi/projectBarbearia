@@ -203,9 +203,9 @@
             $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
             $result = mysqli_query($con, $query);
             $resto = $total;
-            $nPagamento = false;
+            $nPagamento = 0;
             while($p = mysqli_fetch_object($result)){
-                $nPagamento = true;
+                $nPagamento = ($nPagamento*1 + $p->valor*1);
             ?>
             <li class="list-group-item list-group-item-action">
                 <div class="row">
@@ -236,7 +236,7 @@
         }
         ?>
         <div class="col d-grid">
-            <button class="btn btn-primary btn-sm" <?=((!$nPagamento)?'disabled':'concluir_venda')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
+            <button class="btn btn-primary btn-sm" <?=(($nPagamento != $total)?'disabled':'concluir_venda')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
     </div>
 
