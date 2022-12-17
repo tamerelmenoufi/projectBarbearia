@@ -21,7 +21,7 @@
     }
 
     if($_POST['local_entrega']){
-        $q = "update vendas set retirada_estabelecimento = '0', local_entrega = '{$_POST['local_entrega']}' where codigo = '{$_SESSION['codVenda']}'";
+        $q = "update vendas set retirada_estabelecimento = '0', local_entrega = '{$_POST['local_entrega']}', taxa_entrega = '{$_POST['valor_entrega']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
         mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
@@ -373,7 +373,7 @@
             retirada_estabelecimento = $(this).attr("retirada_estabelecimento");
             local_entrega = $(this).attr("local_entrega");
             $.ajax({
-                url:"src/clientes/enderecos_entrega.php",
+                url:"src/vendas/enderecos_entrega.php",
                 type:"POST",
                 data:{
                     retirada_estabelecimento,

@@ -59,12 +59,12 @@
 
 
 ?>
-    <li class="list-group-item list-group-item-action titulo <?=(($_POST['local_entrega'] == $d->codigo)?'active':false)?>" cod="<?=$d->codigo?>" style="display: flex; justify-content: space-between;">
+    <li class="list-group-item list-group-item-action titulo <?=(($_POST['local_entrega'] == $d->codigo)?'active':false)?>" cod="<?=$d->codigo?>" valor="<?=$valorBee->deliveryFee?>" style="display: flex; justify-content: space-between;">
         <div>
             <i class="fa-solid fa-location-dot"></i> <?=$d->titulo?>
         </div>
         <div>
-            <i class="fa-solid fa-motorcycle"></i> <?=$valorBee->deliveryFee?>
+            <i class="fa-solid fa-motorcycle"></i> R$ <?=number_format($valorBee->deliveryFee, 2, ',','.')?>
         </div>
     </li>
 <?php
@@ -78,6 +78,7 @@
 
         $(".titulo").click(function(){
             local_entrega = $(this).attr("cod");
+            valor_entrega = $(this).attr("valor");
             opc = $("#retirada_estabelecimento").prop("checked");
             if(opc === true) return false;
             $.ajax({
@@ -85,6 +86,7 @@
                 type:"POST",
                 data:{
                     local_entrega,
+                    valor_entrega,
                 },
                 success:function(dados){
                     $(".produtos_lista").html(dados);
