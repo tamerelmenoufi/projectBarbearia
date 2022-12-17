@@ -13,6 +13,6 @@
     // include("/appinc/connect.php");
     include("fn.php");
 
-    include("rede/vendor/classes.php");
-    include("bee/vendor/classes.php");
+    include("vendor/rede/classes.php");
+    include("vendor/bee/classes.php");
 
