@@ -236,7 +236,7 @@
         }
         ?>
         <div class="col d-grid">
-            <button class="btn btn-primary btn-sm" <?=(($nPagamento != $total)?'disabled':'concluir_venda')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
+            <button class="btn btn-primary btn-sm" <?=(($nPagamento == $total)?'concluir_venda':'disabled')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
     </div>
 
