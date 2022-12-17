@@ -229,9 +229,9 @@
         <?php
         if($v->local_entrega || $v->entrega_estabelecimento){
         ?>
-        <div class="col d-grid">
+        <!-- <div class="col d-grid">
             <button class="btn btn-warning btn-sm" <?=((!$nPagamento)?'disabled':false)?>><i class="fa-solid fa-motorcycle"></i> Solicitar Entrega</button>
-        </div>
+        </div> -->
         <?php
         }
         ?>
