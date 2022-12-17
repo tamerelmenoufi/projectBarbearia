@@ -45,7 +45,7 @@
 
         list($lat, $lng) = json_decode($d->coordenadas);
         $valorBee = json_decode($bee->ValorViagem(44, $lat, $lng));
-        var_dump($valorBee);
+        // var_dump($valorBee);
         if(
             !$d->cep or
             !$d->rua or
@@ -64,7 +64,7 @@
             <i class="fa-solid fa-location-dot"></i> <?=$d->titulo?>
         </div>
         <div>
-            <i class="fa-solid fa-motorcycle"></i> <?=$bee->ValorViagem(44, $lat, $lng)?>
+            <i class="fa-solid fa-motorcycle"></i> <?=$valorBee->deliveryFee?>
         </div>
     </li>
 <?php
