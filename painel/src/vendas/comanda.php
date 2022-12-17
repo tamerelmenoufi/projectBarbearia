@@ -218,7 +218,7 @@
             </li>
             <?php
             }
-            $resto = ($total - $nPagamento);
+            $resto = number_format(($total - $nPagamento),2,'.',false);
             ?>
             </ul>
 
