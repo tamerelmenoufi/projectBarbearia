@@ -3,7 +3,9 @@
     vl(['ProjectPainel']);
 
     if($_POST['acao'] == 'fechar_pedido'){
-        echo "FECHAR O PEDIDO";
+        // echo "FECHAR O PEDIDO";
+        $query = "update vendas set situacao = 'p' where codigo = '{$_SESSION['codVenda']}'";
+        mysqli_query($con, $query);
     }
 
 
