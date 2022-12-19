@@ -4,9 +4,11 @@
 <style>
     .solicitar_entrega{
         cursor:pointer;
+        color:orange;
     }
     .cancelar_pedido{
         cursor:pointer;
+        color:red;
     }
 </style>
 <h6>Pedidos em Produção</h6>
