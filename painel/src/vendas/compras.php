@@ -176,8 +176,8 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    $n = mysqli_num_rows($result);
-    if($n) $entrega = true;
+    // $n = mysqli_num_rows($result);
+    // if($n) $entrega = true;
 
 ?>
 <div class="row">
