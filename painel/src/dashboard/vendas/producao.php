@@ -1,6 +1,14 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
+<style>
+    i[solicitar_entrega]{
+        cursor:pointer;
+    }
+    i[cancelar_pedido]{
+        cursor:pointer;
+    }
+</style>
 <h6>Pedidos em Produção</h6>
 <div class="table-responsive" style="font-size:12px;">
     <table class="table table-hover">
@@ -30,8 +38,8 @@
                 <td><?=$d->data_pedido?></td>
                 <td>R$ <?=number_format($d->valor, 2, ",",".")?></td>
                 <td>
-                    <i class="fa-solid fa-motorcycle"></i>
-                    <i class="fa-solid fa-ban ms-3"></i>
+                    <i class="fa-solid fa-motorcycle solicitar_entrega"></i>
+                    <i class="fa-solid fa-ban ms-3 cancelar_pedido"></i>
                 </td>
             </tr>
             <?php
