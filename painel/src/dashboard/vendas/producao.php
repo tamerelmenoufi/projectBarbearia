@@ -30,8 +30,8 @@
                 <td><?=$d->data_pedido?></td>
                 <td>R$ <?=number_format($d->valor, 2, ",",".")?></td>
                 <td>
-                    <i class="fa-solid fa-clipboard-user ml-3"></i>
-                    <i class="fa-regular fa-trash-can"></i>
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <i class="fa-regular fa-trash-can ms-3"></i>
                 </td>
             </tr>
             <?php
