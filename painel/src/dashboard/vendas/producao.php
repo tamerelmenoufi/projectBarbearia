@@ -2,10 +2,10 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
 <style>
-    i[solicitar_entrega]{
+    .solicitar_entrega{
         cursor:pointer;
     }
-    i[cancelar_pedido]{
+    .cancelar_pedido{
         cursor:pointer;
     }
 </style>
