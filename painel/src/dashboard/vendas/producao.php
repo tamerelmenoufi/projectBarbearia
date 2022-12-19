@@ -17,28 +17,14 @@
         <tbody>
             <?php
             $query = "select
-                            a.*,
-                            p.tipo,
-                            p.codigo as cod_produto,
-                            p.produto as produto_nome,
-                            if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
-                            c.categoria as categoria_nome
-                        from vendas_produtos a
-                            left join vendas v on a.venda = v.codigo
-                            left join produtos p on a.produto = p.codigo
-                            left join produtos_categorias c on p.categoria = c.codigo
-                        where v.situacao = 'p'";
+                            *
+                        from vendas
+                        where situacao = 'p'";
             $result = mysqli_query($con, $query);
-            $n = mysqli_num_rows($result);
-            $valor = $comissao = 0;
-            $tipo_produtos = false;
-            if($n) $colaborador = true;
             while($d = mysqli_fetch_object($result)){
-                if($d->tipo == 'p') $tipo_produtos = true;
-                if(!$d->colaborador) $colaborador = false;
             ?>
             <tr>
-                <th scope="row"><?=$d->cod_produto?></th>
+                <th scope="row"><?=$d->codigo?></th>
                 <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
                 <td>
                     <button menos="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
