@@ -4,7 +4,7 @@
 <style>
     .solicitar_entrega{
         cursor:pointer;
-        color:orange;
+        color:green;
     }
     .cancelar_pedido{
         cursor:pointer;
