@@ -24,9 +24,10 @@
                             if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
                             c.categoria as categoria_nome
                         from vendas_produtos a
+                            left join vendas v on a.venda = v.codigo
                             left join produtos p on a.produto = p.codigo
                             left join produtos_categorias c on p.categoria = c.codigo
-                        where a.venda = '{$_SESSION['codVenda']}'";
+                        where v.situacao = 'p'";
             $result = mysqli_query($con, $query);
             $n = mysqli_num_rows($result);
             $valor = $comissao = 0;
