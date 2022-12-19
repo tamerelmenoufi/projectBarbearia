@@ -3,9 +3,11 @@
     vl(['ProjectPainel']);
 ?>
 
-<div class="row">
-    <div class="col">
-        <div class="card p1" vendasProducao></div>
+<div style="padding:20px;">
+    <div class="row">
+        <div class="col">
+            <div class="card p-1" vendasProducao></div>
+        </div>
     </div>
 </div>
 
