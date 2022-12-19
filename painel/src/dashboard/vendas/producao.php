@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
 <h6>Pedidos em Produção</h6>
-<div class="table-responsive" style="font-size:10px;">
+<div class="table-responsive" style="font-size:12px;">
     <table class="table table-hover">
         <thead>
             <tr>
@@ -30,17 +30,8 @@
                 <td><?=$d->data_pedido?></td>
                 <td><?=$d->valor?></td>
                 <td>
-                    <button
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        href="#offcanvasDireita"
-                        role="button"
-                        aria-controls="offcanvasDireita"
-                        class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> colaborador"
-                        codigo = "<?=$d->codigo?>"
-                        produto = "<?=$d->cod_produto?>"
-                    ><i class="fa-solid fa-clipboard-user"></i></button>
-                    <button type="button" class="btn btn-sm btn-danger excluir" codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>"><i class="fa-regular fa-trash-can"></i></button>
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <i class="fa-regular fa-trash-can"></i>
                 </td>
             </tr>
             <?php
