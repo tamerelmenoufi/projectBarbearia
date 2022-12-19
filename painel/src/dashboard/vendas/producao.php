@@ -7,10 +7,9 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Valor Unitário</th>
-                <th scope="col">Valor Total</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Data</th>
+                <th scope="col">Valor</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
@@ -25,14 +24,9 @@
             ?>
             <tr>
                 <th scope="row"><?=$d->codigo?></th>
-                <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
-                <td>
-                    <button menos="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
-                    <span qt="<?=$d->codigo?>" class="m-3"><?=$d->quantidade?></span>
-                    <button mais="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
-                </td>
-                <td><?=$d->valor_unitario?></td>
-                <td><?=$d->valor?></td>
+                <td><b><?=$d->cliente_nome?></b></td>
+                <td><b><?=$d->data_pedido?></b></td>
+                <td><b><?=$d->valor?></b></td>
                 <td>
                     <button
                         type="button"
