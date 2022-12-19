@@ -3,6 +3,10 @@
     vl(['ProjectPainel']);
 ?>
 
+<style>
+
+</style>
+
 <div style="padding:20px;">
     <div class="row">
         <div class="col">

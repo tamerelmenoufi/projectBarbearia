@@ -1,8 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
-<h5>Pedidos em Produção</h5>
-<div class="table-responsive">
+<h6>Pedidos em Produção</h6>
+<div class="table-responsive" style="font-size:10px;">
     <table class="table table-hover">
         <thead>
             <tr>
