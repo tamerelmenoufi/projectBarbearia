@@ -23,10 +23,10 @@
             while($d = mysqli_fetch_object($result)){
             ?>
             <tr>
-                <th scope="row"><?=$d->codigo?></th>
-                <td><b><?=$d->cliente_nome?></b></td>
-                <td><b><?=$d->data_pedido?></b></td>
-                <td><b><?=$d->valor?></b></td>
+                <td scope="row"><?=$d->codigo?></td>
+                <td><?=$d->cliente_nome?></td>
+                <td><?=$d->data_pedido?></td>
+                <td><?=$d->valor?></td>
                 <td>
                     <button
                         type="button"
