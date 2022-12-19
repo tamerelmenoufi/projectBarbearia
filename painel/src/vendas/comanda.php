@@ -338,7 +338,13 @@
                                 },
                                 url:"src/vendas/caixa.php",
                                 success:function(dados){
-                                    $("#paginaHome").html(dados);
+                                    $.ajax({
+                                        url:"src/dashboard/index.php",
+                                        success:function(dados){
+                                            $("#paginaHome").html(dados);
+                                        }
+                                    });
+
                                 }
                             });
                             let myOffCanvas = document.getElementById('offcanvasDireita');
