@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
-<div style="position:relative; height:350px; overflow:auto; width:100%; clear:both;">
+<div class="p-1" style="position:relative; height:350px; overflow:auto; width:100%; clear:both;">
     <h6>Agenda do dia</h6>
     <ul class="list-group">
     <?php

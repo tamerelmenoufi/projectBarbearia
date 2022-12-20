@@ -10,10 +10,10 @@
 <div style="padding:20px;">
     <div class="row">
         <div class="col-md-6">
-            <div class="card p-1" vendasProducao style="position:relative;"></div>
+            <div class="card p-1" vendasProducao></div>
         </div>
         <div class="col-md-6">
-            <div class="card p-1" agendaDia style="position:relative;"></div>
+            <div class="card p-1" agendaDia></div>
         </div>
     </div>
 </div>
