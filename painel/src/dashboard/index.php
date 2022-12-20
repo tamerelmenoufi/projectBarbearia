@@ -5,26 +5,26 @@
 
 <style>
     .element {
-    height:350px;
-    overflow:auto;
-    width:100%;
-    clear:both;
-    scrollbar-width: thin;
-    scrollbar-color: black transparent;
+        height:350px;
+        overflow:auto;
+        width:100%;
+        clear:both;
+        scrollbar-width: thin;
+        scrollbar-color: black transparent;
     }
 
     .element::-webkit-scrollbar {
-    width: 3px;
-    height: 3px; /* A altura só é vista quando a rolagem é horizontal */
+        width: 3px;
+        height: 3px; /* A altura só é vista quando a rolagem é horizontal */
     }
 
     .element::-webkit-scrollbar-track {
-    background: transparent;
-    padding: 2px;
+        background: transparent;
+        padding: 2px;
     }
 
     .element::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+        background-color: #ccc;
     }
 </style>
 

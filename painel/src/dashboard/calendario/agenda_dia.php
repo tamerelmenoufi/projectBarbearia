@@ -6,7 +6,7 @@
 
 </style>
 
-<div class="p-1">
+<div class="p-1" style="font-size:12px;">
     <h6>Agenda do dia</h6>
     <ul class="list-group">
     <?php

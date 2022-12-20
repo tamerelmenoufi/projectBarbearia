@@ -10,6 +10,9 @@
         cursor:pointer;
         color:red;
     }
+    td{
+        white-space: nowrap;
+    }
 </style>
 <h6>Pedidos em Produção</h6>
 <div class="table-responsive" style="font-size:12px;">
