@@ -13,7 +13,7 @@
             <div class="card p-1" vendasProducao></div>
         </div>
         <div class="col-md-6">
-
+            <div class="card p-1" agendaDia></div>
         </div>
     </div>
 </div>
@@ -30,5 +30,11 @@
             }
         });
 
+        $.ajax({
+            url:"src/dashboard/calendario/agenda_dia.php",
+            success:function(dados){
+                $("div[agendaDia]").html(dados);
+            }
+        });
     })
 </script>
