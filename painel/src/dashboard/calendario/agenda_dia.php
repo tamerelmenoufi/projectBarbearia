@@ -11,9 +11,14 @@
     <ul class="list-group">
     <?php
     for($i=0;$i<24;$i++){
+        $j = [0,15,30,45];
+        foreach($j as $ind => $h){
     ?>
-    <li class="list-group-item">An item</li>
+    <li class="list-group-item">
+        <?="{$i}:{$h}"?>
+    </li>
     <?php
+        }
     }
     ?>
 </div>
