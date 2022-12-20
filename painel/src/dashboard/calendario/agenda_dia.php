@@ -22,7 +22,7 @@
         foreach($j as $ind => $h){
             $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($h , 2 , '0' , STR_PAD_LEFT);
     ?>
-    <li class="list-group-item">
+    <li class="list-group-item" style="position:relative;">
         <i class="fa-solid fa-calendar-day"></i> <?=$hora?>
         <div agendamento style="position:absolute; left:680px; right:10px; height:auto; top:5px; border:red 1px solid" >
             <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
