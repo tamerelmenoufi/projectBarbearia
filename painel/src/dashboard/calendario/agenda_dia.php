@@ -1,15 +1,15 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
-
 <style>
     .agendamento{
         margin-left:10px;
         padding:3px;
         border-radius:5px;
-        background-color:rgb(125,11,234, 0.7);
+        background-color:rgb(125,11,234, 0.9);
         color:#fff;
         font-size:9px;
+        white-space:nowrap;
     }
 </style>
 
@@ -24,10 +24,28 @@
     ?>
     <li class="list-group-item">
         <i class="fa-solid fa-calendar-day"></i> <?=$hora?>
-        <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
+        <div agendamento >
+            <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
+        </div>
     </li>
     <?php
         }
     }
     ?>
 </div>
+
+<script>
+    $(function(){
+
+        $('div[agendamento]').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            freeScroll: true,
+            prevNextButtons: false,
+            pageDots: false
+        });
+
+
+    })
+</script>
