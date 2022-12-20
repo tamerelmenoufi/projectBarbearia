@@ -8,7 +8,7 @@
         border-radius:5px;
         background-color:rgb(125,11,234, 0.9);
         color:#fff;
-        font-size:9px;
+        font-size:7px;
         white-space:nowrap;
     }
 </style>
