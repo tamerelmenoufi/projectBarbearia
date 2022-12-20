@@ -24,7 +24,7 @@
     ?>
     <li class="list-group-item">
         <i class="fa-solid fa-calendar-day"></i> <?=$hora?>
-        <div agendamento style="position:absolute; left:50px; right:10px; height:auto; border:red 1px solid" >
+        <div agendamento style="position:absolute; left:80px; right:10px; height:auto; top:10px; border:red 1px solid" >
             <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
         </div>
     </li>
