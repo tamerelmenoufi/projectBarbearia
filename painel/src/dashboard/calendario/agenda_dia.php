@@ -20,7 +20,7 @@
 }
 
 .element::-webkit-scrollbar-thumb {
-  background-color: #000;
+  background-color: #ccc;
 }
 
 </style>
