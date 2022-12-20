@@ -10,6 +10,7 @@
         color:#fff;
         font-size:7px;
         white-space:nowrap;
+        cursor: pointer;
     }
 </style>
 
@@ -26,8 +27,8 @@
         <i class="fa-solid fa-calendar-day"></i> <?=$hora?>
         <div agendamento style="position:absolute; left:60px; right:10px; height:auto; top:4px;" >
             <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
-            <!-- <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
-            <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span> -->
+            <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
+            <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
         </div>
     </li>
     <?php
@@ -48,6 +49,12 @@
             pageDots: false
         });
 
+
+        $(".agendamento").click(function(){
+
+            $.alert('Visualização da agenda!');
+
+        });
 
     })
 </script>
