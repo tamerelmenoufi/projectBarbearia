@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
-<div class="card p-2">
+<div style="position:absolute; height:350px; overflow:auto;">
     <h6>Agenda do dia</h6>
     <ul class="list-group">
     <?php
