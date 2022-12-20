@@ -13,7 +13,7 @@
     for($i=0;$i<24;$i++){
         $j = [0,15,30,45];
         foreach($j as $ind => $h){
-            $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($j , 2 , '0' , STR_PAD_LEFT);
+            $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($h , 2 , '0' , STR_PAD_LEFT);
     ?>
     <li class="list-group-item">
         <?=$hora?>
