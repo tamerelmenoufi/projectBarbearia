@@ -116,7 +116,7 @@
 
         $("#dataAgenda").blur(function(){
             agenda_dia = $(this).val();
-            $("#dataAgenda").css("opacity",0.2);
+            $("div[agendaDia]").css("opacity",0.2);
             $.ajax({
                 url:"src/dashboard/calendario/agenda_dia.php",
                 type:"POST",
@@ -125,7 +125,7 @@
                 },
                 success:function(dados){
                     $("div[agendaDia]").html(dados);
-                    $("#dataAgenda").css("opacity",1);
+                    $("div[agendaDia]").css("opacity",1);
                 }
             });
         })
