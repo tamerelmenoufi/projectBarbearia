@@ -118,7 +118,7 @@
         $("#cliente").selectpicker();
         $("#colaborador").selectpicker();
 
-        $("#cadastrarAgenda").click(function(){
+        $(".cadastrarAgenda").click(function(){
 
             cliente = $("#cliente").val();
             colaborador = $("#colaborador").val();
