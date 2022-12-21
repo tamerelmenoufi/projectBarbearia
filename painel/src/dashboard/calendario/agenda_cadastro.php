@@ -68,11 +68,7 @@
         <select
                 name="servico"
                 id="servico"
-                data-live-search="true"
-                data-none-selected-text="Selecione"
-                class="selectpicker form-control"
-                multiple
-                data-actions-box="true"
+                class="selectpicker" multiple
                 >
             <option value="">Selecione</option>
                 <?php
