@@ -8,6 +8,21 @@
 
     }
 
+    if($_POST['acao'] == 'nova_agenda'){
+
+        $query = "insert into agenda set
+                                        tipo_cadastro = 'u',
+                                        usuario = '{$_SESSION['ProjectPainel']->codigo}',
+                                        colaborador = '{$_POST['colaborador']}',
+                                        cliente = '{$_POST['cliente']}',
+                                        servico = '{$_POST['servico']}',
+                                        observacao = '{$_POST['observacao']}',
+                                        data_agenda = '{$_POST['data_agenda']}',
+                                        data_cadastro = NOW(),
+                                        situacao = 'n'";
+        mysqli_query($con, $query);
+
+    }
 
 
 
@@ -75,6 +90,8 @@
 
 <script>
     $(function(){
+
+        Carregando('none');
 
         $('div[agendamento]').flickity({
             // options
