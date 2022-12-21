@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
-    $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
+    $data_agenda = dataBr($_SESSION['agenda_dia']).' '.$_POST['data'];
 ?>
 
 <style>
