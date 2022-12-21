@@ -30,11 +30,11 @@
         font-size:9px
     }
 </style>
-<h4 class="Titulo<?=$md5?>"><i class="fa-solid fa-calendar-day"></i> <?=dataBr($d->data_agenda)?></h4>
+<h4 class="Titulo<?=$md5?>"><i class="fa-solid fa-calendar-day"></i> <?=dataBr("{$_SESSION['agenda_dia']} {$_POST['hora']}")?></h4>
 <?php
 while($d = mysqli_fetch_object($result)){
 ?>
-<div class="card mh-3 p-3 <?=(($_POST['codigo'] == $d->codigo)?'text-bg-info':false)?>">
+<div class="card m-3 p-3 <?=(($_POST['codigo'] == $d->codigo)?'text-bg-info':false)?>">
     <div class="row">
         <div class="col dados">
             <h6><i class="fa-solid fa-scissors"></i> <?=$d->servico_nome?></h6>
