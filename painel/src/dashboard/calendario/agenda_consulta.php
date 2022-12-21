@@ -35,9 +35,9 @@
 <div class="card mh-3 p-3">
     <div class="row">
         <div class="col dados">
-            <h6><?=$d->servico_nome?></h6>
-            <p class="identificacao"><?=$d->cliente_nome?> <span><?=$d->colaborador_nome?></span></p>
-            <p><?=$d->observacao?></p>
+            <h6><i class="fa-solid fa-user-clock"></i> <?=$d->servico_nome?></h6>
+            <p class="identificacao"><i class="fa-solid fa-user"></i> <?=$d->cliente_nome?><br><span><i class="fa-regular fa-user"></i> Atendimento por: <?=$d->colaborador_nome?></span></p>
+            <p><i class="fa-solid fa-circle-info"></i> <?=$d->observacao?></p>
         </div>
     </div>
 </div>
