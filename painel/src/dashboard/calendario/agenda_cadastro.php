@@ -53,7 +53,7 @@
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
-            <option value="<?=(($d->agenda > 0)?false:$d->codigo)?>" <?=(($d->agenda > 0)?'disabled':false)?>><?=$d->nome?></option>
+            <option value="<?=(($d->agenda > 0)?false:$d->codigo)?>" <?=(($d->agenda > 0)?'disabled':false)?>><?=$d->nome?> <small>Possui agenda</small></option>
         <?php
             }
         ?>
