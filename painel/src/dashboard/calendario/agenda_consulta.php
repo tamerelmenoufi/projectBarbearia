@@ -49,13 +49,14 @@ while($d = mysqli_fetch_object($result)){
     while($ds = mysqli_fetch_object($rs)){
         $servicos[] = $ds->produto;
     }
-    $servicos = implode(" ,", $servicos);
+    $servicos = implode(", ", $servicos);
 
 ?>
 <div class="card m-3 p-3 <?=(($_POST['codigo'] == $d->codigo)?'text-bg-info':false)?>">
     <div class="row">
         <div class="col dados">
-            <h6><i class="fa-solid fa-scissors"></i> <?=$servicos?></h6>
+            <h6><i class="fa-solid fa-scissors"></i> </h6>
+            <p style="margin-left:20px; font-size:10px; padding:0; margin:0"><?=$servicos?></p>
             <p class="identificacao<?=(($_POST['codigo'] == $d->codigo)?'_ativo':false)?>"><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?><br><span><i class="fa-solid fa-user"></i> Atendimento por: <?=$d->colaborador_nome?></span></p>
             <p><i class="fa-solid fa-circle-info"></i> <?=$d->observacao?></p>
             <button
