@@ -26,4 +26,4 @@
 <script src="<?=$localPainel?>lib/vendor/jquery-maskmoney/jquery.maskMoney.min.js"></script>
 
 <!-- Bootstrap Select -->
-<link rel="stylesheet" href="<?= $caminho_vendor ?>/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="<?= $localPainel ?>lib/vendor/bootstrap-select/css/bootstrap-select.min.css">
