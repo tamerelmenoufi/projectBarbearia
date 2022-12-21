@@ -10,12 +10,14 @@
 
     if($_POST['acao'] == 'nova_agenda'){
 
+        $servicos = json_encode($_POST['servico']);
+
         $query = "insert into agenda set
                                         tipo_cadastro = 'u',
                                         usuario = '{$_SESSION['ProjectPainel']->codigo}',
                                         colaborador = '{$_POST['colaborador']}',
                                         cliente = '{$_POST['cliente']}',
-                                        servico = '{$_POST['servico']}',
+                                        servico = '{$servicos}',
                                         observacao = '{$_POST['observacao']}',
                                         data_agenda = '{$_POST['data_agenda']}',
                                         data_cadastro = NOW(),

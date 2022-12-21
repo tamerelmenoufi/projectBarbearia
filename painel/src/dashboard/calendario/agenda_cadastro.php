@@ -133,8 +133,8 @@
             observacao = $("#observacao").val();
             data_agenda = '<?=$data_agenda?>';
 
-            console.log(servico);
-            return false;
+            // console.log(servico);
+            // return false;
 
             if(!cliente || !colaborador || !servico){
                 $.alert({
