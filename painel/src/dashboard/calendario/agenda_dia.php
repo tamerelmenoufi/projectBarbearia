@@ -24,7 +24,7 @@
             $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($h , 2 , '0' , STR_PAD_LEFT);
     ?>
     <li class="list-group-item">
-        <i class="fa-solid fa-calendar-day"></i> <?=$hora?>
+        <i class="fa-solid fa-calendar-plus"></i> <?=$hora?>
         <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
             for($w = 0; $w < 20; $w++){
