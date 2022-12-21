@@ -20,6 +20,7 @@
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="form-control">
+            <option value="">Selecione</option>
         <?php
             $query = "select * from clientes order by nome";
             $result = mysqli_query($con, $query);
@@ -42,6 +43,7 @@
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="form-control">
+            <option value="">Selecione</option>
                 <?php
             $query = "select * from colaboradores where situacao = '1' order by nome";
             $result = mysqli_query($con, $query);
