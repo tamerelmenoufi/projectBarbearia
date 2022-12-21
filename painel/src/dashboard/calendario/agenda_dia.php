@@ -39,8 +39,9 @@
             href="#offcanvasDireita"
             role="button"
             aria-controls="offcanvasDireita"
-            class="nova_agenda"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
-        <div agendamento data="<?=$hora?>" style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
+            class="nova_agenda"
+            data="<?=$hora?>"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
+        <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
             for($w = 0; $w < 20; $w++){
             ?>
@@ -89,12 +90,12 @@
         });
 
         $(".nova_agenda").click(function(){
-            data_hora = $(this).attr("data");
+            data = $(this).attr("data");
             $.ajax({
                 url:"src/dashboard/calendario/agenda_cadastro.php",
                 type:"POST",
                 data:{
-                    data_hora,
+                    data,
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
