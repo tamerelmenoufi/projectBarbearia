@@ -40,7 +40,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="colaborador" class="form-label">Colaborador (Atendente) *<br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponíveis.</small></label>
+        <label for="colaborador" class="form-label">Colaborador (Atendente) *<br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
         <select
                 name="colaborador"
                 id="colaborador"
