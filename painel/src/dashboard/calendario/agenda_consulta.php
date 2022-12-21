@@ -11,7 +11,7 @@
                     left join clientes b on a.cliente = b.codigo
                     left join colaboradores c on a.colaborador = c.codigo
                     left join produtos d on a.servico = d.codigo
-                where a.codigo = '{$_POST['codigo']}'";
+                where a.data_agenda = '{$_SESSION['agenda_dia']}'";
     $result = mysqli_query($con, $query);
 
 ?>
@@ -34,7 +34,7 @@
 <?php
 while($d = mysqli_fetch_object($result)){
 ?>
-<div class="card mh-3 p-3">
+<div class="card mh-3 p-3 <?=(($_POST['codigo'] == $d->codigo)?'text-bg-info':false)?>">
     <div class="row">
         <div class="col dados">
             <h6><i class="fa-solid fa-scissors"></i> <?=$d->servico_nome?></h6>

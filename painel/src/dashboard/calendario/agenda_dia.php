@@ -85,7 +85,8 @@
                 href="#offcanvasDireita"
                 role="button"
                 aria-controls="offcanvasDireita"
-                class="agendamento" codigo="<?=$d->codigo?>"><?=$d->cliente_nome?><br> <i><?=$d->colaborador_nome?></i> </span>
+                class="agendamento"
+                codigo="<?=$d->codigo?>"><?=$d->cliente_nome?><br> <i><?=$d->colaborador_nome?></i> </span>
             <?php
             }
             ?>
