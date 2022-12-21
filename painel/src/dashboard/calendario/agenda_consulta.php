@@ -1,6 +1,9 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
+
+    $query = "select * from agenda where codigo = '{$_POST['codigo']}'";
+    // $result = mysqli_query($con, )
 ?>
 
 <style>
