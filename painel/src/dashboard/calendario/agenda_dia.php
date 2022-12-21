@@ -69,7 +69,9 @@
             data="<?=$hora?>"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
         <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
-            for($w = 0; $w < 20; $w++){
+            $query = "select * from agenda where data_agenda = '{$_SESSION['agenda_dia']} {$hora}' order by data_cadastro asc";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
             ?>
             <span
                 data-bs-toggle="offcanvas"
