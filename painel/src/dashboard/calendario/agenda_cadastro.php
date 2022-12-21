@@ -12,9 +12,9 @@
 </style>
 <h4 class="Titulo<?=$md5?>"><?=$_SESSION['agenda_dia']?> <?=$_POST['data']?></h4>
 
-<div class="row">
+<div class="row mb-2">
     <div class="col-12">
-        <select name="cliente" id="cliente">
+        <select name="cliente" id="cliente" class="form-control">
             <option value="1">Nome do cliente</option>
             <option value="1">Nome do cliente</option>
             <option value="1">Nome do cliente</option>
@@ -24,9 +24,9 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
     <div class="col-12">
-        <select name="colaborador" id="colaborador">
+        <select name="colaborador" id="colaborador" class="form-control">
             <option value="1">Nome do colaborador</option>
             <option value="1">Nome do colaborador</option>
             <option value="1">Nome do colaborador</option>
@@ -36,13 +36,13 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
     <div class="col-12">
         <textarea name="observacao" id="observacao" class="form-control" cols="30" rows="10"></textarea>
     </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
     <div class="col-12">
         <button class="btn btn-primary">Cadastrar agenda</button>
     </div>
