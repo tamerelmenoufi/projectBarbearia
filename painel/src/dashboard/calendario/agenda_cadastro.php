@@ -12,7 +12,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>"><?=$_SESSION['agenda_dia']?> <?=$data_agenda?></h4>
+<h4 class="Titulo<?=$md5?>"><?=$data_agenda?></h4>
 
 <div class="row mb-2">
     <div class="col-12">
