@@ -72,10 +72,10 @@
             $query = "select
                             a.*,
                             b.nome as cliente_nome,
-                            c.nome as atendente_nome
+                            c.nome as colaborador_nome
                         from agenda a
                             left join clientes b on a.cliente = b.codigo
-                            left join atendentes c on a.atendente = c.codigo
+                            left join colaboradores c on a.colaborador = c.codigo
                         where data_agenda = '{$_SESSION['agenda_dia']} {$hora}' order by a.data_cadastro asc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
