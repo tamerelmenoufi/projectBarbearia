@@ -56,7 +56,7 @@ while($d = mysqli_fetch_object($result)){
     <div class="row">
         <div class="col dados">
             <h6><i class="fa-solid fa-scissors"></i> Serviços</h6>
-            <p style="padding-left:50px; font-size:10px; padding:0; margin:0"><?=$servicos?></p>
+            <p style="font-size:10px; padding:0; margin:0; margin-left:50px; margin-bottom:10px;"><?=$servicos?></p>
             <p class="identificacao<?=(($_POST['codigo'] == $d->codigo)?'_ativo':false)?>"><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?><br><span><i class="fa-solid fa-user"></i> Atendimento por: <?=$d->colaborador_nome?></span></p>
             <p><i class="fa-solid fa-circle-info"></i> <?=$d->observacao?></p>
             <button
