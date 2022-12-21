@@ -76,7 +76,7 @@
                         from agenda a
                             left join clientes b on a.cliente = b.codigo
                             left join atendentes c on a.atendente = c.codigo
-                        where data_agenda = '{$_SESSION['agenda_dia']} {$hora}' order by data_cadastro asc";
+                        where data_agenda = '{$_SESSION['agenda_dia']} {$hora}' order by a.data_cadastro asc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
             ?>
