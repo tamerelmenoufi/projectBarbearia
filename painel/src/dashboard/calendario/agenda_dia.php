@@ -3,7 +3,7 @@
 ?>
 <style>
     .agendamento{
-        margin-left:10px;
+        margin-left:20px;
         padding:3px;
         border-radius:5px;
         background-color:rgb(125,11,234, 0.9);
