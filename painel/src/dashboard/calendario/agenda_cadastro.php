@@ -62,7 +62,7 @@
     $(function(){
 
         $("#cliente").selectpicker();
-        $("#colaboradores").selectpicker();
+        $("#colaborador").selectpicker();
 
 
     })
