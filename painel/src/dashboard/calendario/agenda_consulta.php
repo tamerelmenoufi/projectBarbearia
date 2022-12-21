@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
-    echo $query = "select
+    $query = "select
                     a.*,
                     b.nome as cliente_nome,
                     c.nome as colaborador_nome,
@@ -13,7 +13,7 @@
                     left join produtos d on a.servico = d.codigo
                 where a.codigo = '{$_POST['codigo']}'";
     $result = mysqli_query($con, $query);
-    $d = mysqli_fetch_object($result);
+
 ?>
 
 <style>
@@ -31,7 +31,9 @@
     }
 </style>
 <h4 class="Titulo<?=$md5?>"><i class="fa-solid fa-calendar-day"></i> <?=dataBr($d->data_agenda)?></h4>
-
+<?php
+while($d = mysqli_fetch_object($result)){
+?>
 <div class="card mh-3 p-3">
     <div class="row">
         <div class="col dados">
@@ -41,3 +43,6 @@
         </div>
     </div>
 </div>
+<?php
+}
+?>
