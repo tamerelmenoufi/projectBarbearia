@@ -61,7 +61,8 @@
 <script>
     $(function(){
 
-        $("#cliente, #colaboradores").selectpicker();
+        $("#cliente").selectpicker();
+        $("#colaboradores").selectpicker();
 
 
     })
