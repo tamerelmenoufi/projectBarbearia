@@ -12,6 +12,9 @@
         white-space:nowrap;
         cursor: pointer;
     }
+    div[agendamento]{
+
+    }
     .nova_agenda{
         cursor:pointer;
     }
@@ -31,12 +34,22 @@
             $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($h , 2 , '0' , STR_PAD_LEFT);
     ?>
     <li class="list-group-item">
-        <span class="nova_agenda"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
+        <span
+            data-bs-toggle="offcanvas"
+            href="#offcanvasDireita"
+            role="button"
+            aria-controls="offcanvasDireita"
+            class="nova_agenda"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
         <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
             for($w = 0; $w < 20; $w++){
             ?>
-            <span class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
+            <span
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+                class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
             <?php
             }
             ?>
