@@ -18,7 +18,7 @@
 </style>
 
 <div class="p-1" style="font-size:12px;">
-    <h6>Agenda do dia</h6>
+    <h6>Agenda do dia  <input type="date" id="dataAgenda" class="form-control" /></h6>
     <ul class="list-group">
     <?php
     for($i=0;$i<24;$i++){
