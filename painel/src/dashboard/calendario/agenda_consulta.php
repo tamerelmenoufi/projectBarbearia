@@ -57,9 +57,11 @@ while($d = mysqli_fetch_object($result)){
         <div class="col dados">
             <h6><i class="fa-solid fa-scissors"></i> Serviços</h6>
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$servicos?></p>
-            <p class="identificacao<?=(($_POST['codigo'] == $d->codigo)?'_ativo':false)?>"><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?></p>
+            <h6><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?></h6>
+            <!-- <p class="identificacao<?=(($_POST['codigo'] == $d->codigo)?'_ativo':false)?>"><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?></p> -->
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;">Atendimento por: <?=$d->colaborador_nome?></p>
-            <p><i class="fa-solid fa-circle-info"></i> <?=$d->observacao?></p>
+            <h6><i class="fa-solid fa-circle-info"></i> Observações</h6>
+            <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
             <button
                     class="btn btn-primary"
                     iniciar_atendimento="<?=$d->codigo?>"
