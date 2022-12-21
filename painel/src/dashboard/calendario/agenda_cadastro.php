@@ -70,7 +70,7 @@
                 id="servico"
                 data-live-search="true"
                 data-none-selected-text="Selecione"
-                multiple
+                multiple data-actions-box="true"
                 class="form-control">
             <option value="">Selecione</option>
                 <?php
