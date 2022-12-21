@@ -68,7 +68,11 @@
         <select
                 name="servico"
                 id="servico"
-                class="selectpicker" multiple
+                data-live-search="true"
+                data-none-selected-text="Selecione"
+                class="selectpicker form-control"
+                multiple
+                data-actions-box="true"
                 >
             <option value="">Selecione</option>
                 <?php
@@ -119,6 +123,7 @@
 
         $("#cliente").selectpicker();
         $("#colaborador").selectpicker();
+        $("#servico").selectpicker();
 
         $(".cadastrarAgenda").click(function(){
 
