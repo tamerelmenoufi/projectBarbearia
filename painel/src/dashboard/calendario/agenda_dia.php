@@ -114,5 +114,19 @@
             });
         })
 
+        $("#dataAgenda").blur(function(){
+            agenda_dia = $(this).val();
+            $.ajax({
+                url:"src/dashboard/calendario/agenda_dia.php",
+                type:"POST",
+                data:{
+                    agenda_dia
+                }
+                success:function(dados){
+                    $("div[agendaDia]").html(dados);
+                }
+            });
+        })
+
     })
 </script>
