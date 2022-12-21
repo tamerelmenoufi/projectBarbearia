@@ -20,11 +20,16 @@
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="form-control">
-            <option value="1">Nome do cliente</option>
-            <option value="1">Nome do cliente</option>
-            <option value="1">Nome do cliente</option>
-            <option value="1">Nome do cliente</option>
-            <option value="1">Nome do cliente</option>
+        <?php
+            $query = "select * from clientes order by nome";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+
+        ?>
+            <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+        <?php
+            }
+        ?>
         </select>
     </div>
 </div>
@@ -37,11 +42,15 @@
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="form-control">
-            <option value="1">Nome do colaborador</option>
-            <option value="1">Nome do colaborador</option>
-            <option value="1">Nome do colaborador</option>
-            <option value="1">Nome do colaborador</option>
-            <option value="1">Nome do colaborador</option>
+                <?php
+            $query = "select * from colaboradores where situacao = '1' order by nome";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+        ?>
+            <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+        <?php
+            }
+        ?>
         </select>
     </div>
 </div>
