@@ -31,10 +31,10 @@
 <div style="padding:20px;">
     <div class="row">
         <div class="col-md-6">
-            <div class="card p-1 element" vendasProducao></div>
+            <div class="card p-1 mb-3 element" vendasProducao></div>
         </div>
         <div class="col-md-6">
-            <div class="card p-1 element" agendaDia></div>
+            <div class="card p-1 mb-3 element" agendaDia></div>
         </div>
     </div>
 </div>
