@@ -18,6 +18,7 @@
 
         function IncluirServicos($agenda){
             global $con;
+            global $_SESSION;
             list($servicos) = mysqli_fetch_row(mysqli_query($con, "select servico from agenda where codigo = '{$agenda}'"));
             $servicos = json_decode($servicos);
             foreach($servicos as $ind => $cod){
