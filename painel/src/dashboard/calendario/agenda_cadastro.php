@@ -84,7 +84,7 @@
         <?php
                 }
         ?>
-            <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+            <option value="<?=$d->codigo?>"><?=$d->produto?></option>
         <?php
             if($grupo != $d->categoria_nome){
         ?>
