@@ -49,7 +49,7 @@
                 class="form-control">
             <option value="">Selecione</option>
                 <?php
-            $query = "select a.*, (select count(*) from agenda where colaborador = a.codigo) as agenda from colaboradores a where a.situacao = '1' order by a.nome";
+            $query = "select a.*, (select count(*) from agenda where colaborador = a.codigo and data_agenda = '{$data_agenda}') as agenda from colaboradores a where a.situacao = '1' order by a.nome";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
