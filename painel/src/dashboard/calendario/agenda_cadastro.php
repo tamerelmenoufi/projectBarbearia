@@ -73,7 +73,7 @@
                 class="form-control">
             <option value="">Selecione</option>
                 <?php
-            $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' and b.situacao = '1' order by b.categoria, a.produto";
+            $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.tipo = 's' and a.situacao = '1' and b.situacao = '1' order by b.categoria, a.produto";
             $result = mysqli_query($con, $query);
             $grupo = false;
             while($d = mysqli_fetch_object($result)){
