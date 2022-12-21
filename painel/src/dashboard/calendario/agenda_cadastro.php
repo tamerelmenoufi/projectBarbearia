@@ -102,7 +102,7 @@
 <div class="row mb-2">
     <div class="col-12">
         <label for="exampleInputEmail1" class="form-label">Observações </label>
-        <textarea name="observacao" id="observacao" class="form-control" cols="30" rows="10"></textarea>
+        <textarea name="observacao" id="observacao" class="form-control" rows="5"></textarea>
     </div>
 </div>
 
@@ -149,6 +149,9 @@
                 },
                 success:function(dados){
                     $("div[agendaDia]").html(dados);
+                    let myOffCanvas = document.getElementById('offcanvasDireita');
+                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    openedCanvas.hide();
                 }
             });
         });
