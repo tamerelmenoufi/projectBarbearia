@@ -16,7 +16,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="exampleInputEmail1" class="form-label">Cliente *</label>
+        <label for="cliente" class="form-label">Cliente *</label>
         <select
                 name="cliente"
                 id="cliente"
@@ -40,7 +40,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="exampleInputEmail1" class="form-label">Colaborador (Atendente) *</label>
+        <label for="colaborador" class="form-label">Colaborador (Atendente) *</label>
         <select
                 name="colaborador"
                 id="colaborador"
@@ -64,10 +64,10 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="exampleInputEmail1" class="form-label">Serviço *</label>
+        <label for="servico" class="form-label">Serviço *</label>
         <select
-                name="colaborador"
-                id="colaborador"
+                name="servico"
+                id="servico"
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="form-control">
@@ -122,11 +122,11 @@
 
             cliente = $("#cliente").val();
             colaborador = $("#colaborador").val();
-            servicao = $("#servicao").val();
+            servico = $("#servico").val();
             observacao = $("#observacao").val();
             data_agenda = '<?=$data_agenda?>';
 
-            if(!cliente || !colaborador){
+            if(!cliente || !colaborador || !servico){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
                     type:'red',
