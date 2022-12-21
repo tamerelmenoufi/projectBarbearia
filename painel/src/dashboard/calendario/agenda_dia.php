@@ -1,5 +1,16 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+
+
+    if($_POST['agenda_dia']){
+
+        $_SESSION['agenda_dia'] = $_POST['agenda_dia'];
+
+    }
+
+
+
+
 ?>
 <style>
     .agendamento{
@@ -23,7 +34,7 @@
 <div class="p-1" style="font-size:12px;">
     <div class="row mb-3">
         <div class="col text-start"><h6>Agenda do dia</h6></div>
-        <div class="col text-end"><input type="date" id="dataAgenda" class="form-control form-control-sm" /></div>
+        <div class="col text-end"><input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=(($_SESSION['agenda_dia'])?:date("Y-m-d"))?>" /></div>
     </div>
 
     <ul class="list-group">
