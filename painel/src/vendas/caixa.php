@@ -70,7 +70,7 @@
                 mysqli_query($con, "update vendas set agenda = '{$_POST['agenda']}' where codigo = '{$d->venda}'");
             }
 
-            if($_POST['agenda']){
+            if($_POST['agenda'] and !$d->agenda){
                 IncluirServicos($_POST['agenda']);
             }
 
