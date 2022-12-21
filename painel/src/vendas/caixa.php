@@ -17,6 +17,7 @@
     if($_SESSION['ClienteAtivo']){
 
         function IncluirServicos($agenda){
+            global $con;
             list($servicos) = mysqli_fetch_row(mysqli_query($con, "select servico from agenda where codigo = '{$agenda}'"));
             $servicos = json_decode($servicos);
             foreach($servicos as $ind => $cod){
