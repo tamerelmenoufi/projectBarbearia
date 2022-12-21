@@ -9,7 +9,7 @@
                     d.produto as servico_nome
                 from agenda a
                     left join clientes b on a.cliente = b.codigo
-                    left join colaboradores c on a.cloaborador = c.codigo
+                    left join colaboradores c on a.colaborador = c.codigo
                     left join produtos d on a.servico = d.codigo
                 where a.codigo = '{$_POST['codigo']}'";
     $result = mysqli_query($con, $query);
