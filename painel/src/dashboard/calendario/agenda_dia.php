@@ -86,6 +86,7 @@
                 role="button"
                 aria-controls="offcanvasDireita"
                 class="agendamento"
+                hora="<?=$hora?>"
                 codigo="<?=$d->codigo?>"><?=$d->cliente_nome?><br> <i><?=$d->colaborador_nome?></i> </span>
             <?php
             }
@@ -115,11 +116,13 @@
 
         $(".agendamento").click(function(){
             codigo = $(this).attr("codigo");
+            hora = $(this).attr("hora");
             $.ajax({
                 url:"src/dashboard/calendario/agenda_consulta.php",
                 type:"POST",
                 data:{
                     codigo,
+                    hora,
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);

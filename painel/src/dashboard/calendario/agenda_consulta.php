@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
-    echo $query = "select
+    $query = "select
                     a.*,
                     b.nome as cliente_nome,
                     c.nome as colaborador_nome,
@@ -11,7 +11,7 @@
                     left join clientes b on a.cliente = b.codigo
                     left join colaboradores c on a.colaborador = c.codigo
                     left join produtos d on a.servico = d.codigo
-                where a.data_agenda = '{$_SESSION['agenda_dia']}'";
+                where a.data_agenda = '{$_SESSION['agenda_dia']} {$_POST['hora']}'";
     $result = mysqli_query($con, $query);
 
 ?>
