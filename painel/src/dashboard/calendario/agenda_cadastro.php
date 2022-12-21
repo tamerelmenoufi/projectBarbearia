@@ -133,6 +133,9 @@
             observacao = $("#observacao").val();
             data_agenda = '<?=$data_agenda?>';
 
+            console.log(servico);
+            return false;
+
             if(!cliente || !colaborador || !servico){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
