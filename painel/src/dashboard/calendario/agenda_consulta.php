@@ -50,7 +50,12 @@ while($d = mysqli_fetch_object($result)){
             <h6><i class="fa-solid fa-scissors"></i> <?=$d->servico_nome?></h6>
             <p class="identificacao<?=(($_POST['codigo'] == $d->codigo)?'_ativo':false)?>"><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?><br><span><i class="fa-solid fa-user"></i> Atendimento por: <?=$d->colaborador_nome?></span></p>
             <p><i class="fa-solid fa-circle-info"></i> <?=$d->observacao?></p>
-            <button class="btn btn-primary" iniciar_atendimento="<?=$d->codigo?>"><i class="fa-regular fa-circle-check"></i> Iniciar atendimento</button>
+            <button
+                    class="btn btn-primary"
+                    iniciar_atendimento="<?=$d->codigo?>"
+                    codCliente="<?=$d->cliente?>"
+                    nomeCliente="<?=$d->cliente_nome?>"
+            ><i class="fa-regular fa-circle-check"></i> Iniciar atendimento</button>
         </div>
     </div>
 </div>
@@ -62,12 +67,16 @@ while($d = mysqli_fetch_object($result)){
     $(function(){
         $("button[iniciar_atendimento]").click(function(){
             agenda = $(this).attr("iniciar_atendimento");
+            codCliente = $(this).attr("codCliente");
+            nomeCliente = $(this).attr("nomeCliente");
             Carregando();
             $.ajax({
                 url:"src/vendas/caixa.php",
                 type:"POST",
                 data:{
                     agenda,
+                    codCliente,
+                    nomeCliente
                 },
                 success:function(dados){
                     $("#paginaHome").html(dados);
