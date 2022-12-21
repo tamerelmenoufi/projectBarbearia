@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
-    $query = "select
+    echo $query = "select
                     a.*,
                     b.nome as cliente_nome,
                     c.nome as colaborador_nome,
