@@ -14,7 +14,12 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <select name="cliente" id="cliente" class="form-control">
+        <select
+                name="cliente"
+                id="cliente"
+                data-live-search="true"
+                data-none-selected-text="Selecione"
+                class="form-control">
             <option value="1">Nome do cliente</option>
             <option value="1">Nome do cliente</option>
             <option value="1">Nome do cliente</option>
@@ -26,7 +31,12 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <select name="colaborador" id="colaborador" class="form-control">
+        <select
+                name="colaborador"
+                id="colaborador"
+                data-live-search="true"
+                data-none-selected-text="Selecione"
+                class="form-control">
             <option value="1">Nome do colaborador</option>
             <option value="1">Nome do colaborador</option>
             <option value="1">Nome do colaborador</option>
@@ -47,3 +57,12 @@
         <button class="btn btn-primary">Cadastrar agenda</button>
     </div>
 </div>
+
+<script>
+    $(function(){
+
+        $("#cliente, #colaboradores").selectpicker();
+
+
+    })
+</script>
