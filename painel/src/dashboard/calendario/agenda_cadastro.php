@@ -70,8 +70,11 @@
                 id="servico"
                 data-live-search="true"
                 data-none-selected-text="Selecione"
-                multiple data-actions-box="true"
-        >
+                class="selectpicker form-control"
+                data-hide-disabled="true"
+                multiple
+                data-actions-box="true"
+                >
             <option value="">Selecione</option>
                 <?php
             $query = "select
