@@ -69,7 +69,14 @@
             data="<?=$hora?>"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
         <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
-            $query = "select * from agenda where data_agenda = '{$_SESSION['agenda_dia']} {$hora}' order by data_cadastro asc";
+            $query = "select
+                            a.*,
+                            b.nome as cliente_nome,
+                            c.nome as atendente_nome
+                        from agenda a
+                            left join clientes b on a.cliente = b.codigo
+                            left join atendentes c on a.atendente = c.codigo
+                        where data_agenda = '{$_SESSION['agenda_dia']} {$hora}' order by data_cadastro asc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
             ?>
@@ -78,7 +85,7 @@
                 href="#offcanvasDireita"
                 role="button"
                 aria-controls="offcanvasDireita"
-                class="agendamento" codigo="<?=$w?>">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
+                class="agendamento" codigo="<?=$d->codigo?>"><?=$d->cliente_nome?><br> <i><?=$d->atendente_nome?></i> </span>
             <?php
             }
             ?>
