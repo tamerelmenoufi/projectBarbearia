@@ -1,0 +1,1 @@
+Cadastro em <?=$_POST['data']?>

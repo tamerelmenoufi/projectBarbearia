@@ -40,7 +40,7 @@
             role="button"
             aria-controls="offcanvasDireita"
             class="nova_agenda"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
-        <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
+        <div agendamento data="<?=$hora?>" style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
             for($w = 0; $w < 20; $w++){
             ?>
@@ -49,7 +49,7 @@
                 href="#offcanvasDireita"
                 role="button"
                 aria-controls="offcanvasDireita"
-                class="agendamento">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
+                class="agendamento" codigo="<?=$w?>">José Ribamar<br> <i>Eduardo Fernandes</i> </span>
             <?php
             }
             ?>
@@ -75,13 +75,31 @@
 
 
         $(".agendamento").click(function(){
-
-            $.alert('Visualização da agenda!');
-
+            codigo = $(this).attr("codigo");
+            $.ajax({
+                url:"src/dashboard/calendario/agenda_consulta.php",
+                type:"POST",
+                data:{
+                    codigo,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
         });
 
         $(".nova_agenda").click(function(){
-            $.alert('Novo cadastro!');
+            data = $(this).attr("data");
+            $.ajax({
+                url:"src/dashboard/calendario/agenda_cadastro.php",
+                type:"POST",
+                data:{
+                    data,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
         })
 
     })
