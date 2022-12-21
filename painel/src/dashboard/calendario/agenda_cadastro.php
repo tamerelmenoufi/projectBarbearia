@@ -49,11 +49,11 @@
                 class="form-control">
             <option value="">Selecione</option>
                 <?php
-            $query = "select * from colaboradores where situacao = '1' order by nome";
+            $query = "select a.*, (select count(*) from agenda where colaborador = a.codigo) as agenda from colaboradores a where a.situacao = '1' order by a.nome";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
-            <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+            <option value="<?=(($d->agenda > 0)?false:$d->codigo)?>" <?=(($d->agenda > 0)?'disabled':false)?>><?=$d->nome?></option>
         <?php
             }
         ?>
@@ -73,7 +73,10 @@
                 class="form-control">
             <option value="">Selecione</option>
                 <?php
-            $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.tipo = 's' and a.situacao = '1' and b.situacao = '1' order by b.categoria, a.produto";
+            $query = "select
+                            a.*,
+                            b.categoria as categoria_nome
+                        from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.tipo = 's' and a.situacao = '1' and b.situacao = '1' order by b.categoria, a.produto";
             $result = mysqli_query($con, $query);
             $grupo = false;
             while($d = mysqli_fetch_object($result)){
