@@ -6,11 +6,13 @@
                     a.*,
                     b.nome as cliente_nome,
                     c.nome as colaborador_nome,
-                    d.produto as servico_nome
+                    d.produto as servico_nome,
+                    e.codigo as cod_venda
                 from agenda a
                     left join clientes b on a.cliente = b.codigo
                     left join colaboradores c on a.colaborador = c.codigo
                     left join produtos d on a.servico = d.codigo
+                    left join vendas e on a.codigo = e.agenda
                 where a.data_agenda = '{$_SESSION['agenda_dia']} {$_POST['hora']}'";
     $result = mysqli_query($con, $query);
 
@@ -48,9 +50,32 @@ while($d = mysqli_fetch_object($result)){
             <h6><i class="fa-solid fa-scissors"></i> <?=$d->servico_nome?></h6>
             <p class="identificacao<?=(($_POST['codigo'] == $d->codigo)?'_ativo':false)?>"><i class="fa-solid fa-user-clock"></i> <?=$d->cliente_nome?><br><span><i class="fa-solid fa-user"></i> Atendimento por: <?=$d->colaborador_nome?></span></p>
             <p><i class="fa-solid fa-circle-info"></i> <?=$d->observacao?></p>
+            <button class="btn btn-primary" iniciar_atendimento="<?=$d->codigo?>"><i class="fa-regular fa-circle-check"></i> Iniciar atendimento</button>
         </div>
     </div>
 </div>
 <?php
 }
 ?>
+
+<script>
+    $(function(){
+        $("button[iniciar_atendimento]").click(function(){
+            agenda = $(this).attr("iniciar_atendimento");
+            Carregando();
+            $.ajax({
+                url:"src/vendas/caixa.php",
+                type:"POST",
+                data:{
+                    agenda,
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
+            let myOffCanvas = document.getElementById('offcanvasDireita');
+            let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+            openedCanvas.hide();
+        });
+    })
+</script>

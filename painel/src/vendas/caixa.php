@@ -20,10 +20,13 @@
         $d = mysqli_fetch_object($result);
 
         if(!$d->venda){
-            mysqli_query($con, "insert into vendas set cliente = '{$d->codigo}', colaborador = '{$_SESSION['ProjectPainel']->codigo}', situacao = 'n'");
+            mysqli_query($con, "insert into vendas set cliente = '{$d->codigo}', colaborador = '{$_SESSION['ProjectPainel']->codigo}', situacao = 'n'".(($_POST['agenda'])?", agenda = '{$_POST['agenda']}'":false));
             $_SESSION['codVenda'] = mysqli_insert_id($con);
         }else{
             $_SESSION['codVenda'] = $d->venda;
+            if($_POST['agenda']){
+                mysqli_query($con, "update vendas set agenda = '{$_POST['agenda']}' where codigo = '{$d->venda}'");
+            }
         }
 
         list($qtr) = mysqli_fetch_row(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
