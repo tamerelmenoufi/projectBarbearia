@@ -71,7 +71,6 @@
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="selectpicker form-control"
-                data-hide-disabled="true"
                 multiple
                 data-actions-box="true"
                 >
