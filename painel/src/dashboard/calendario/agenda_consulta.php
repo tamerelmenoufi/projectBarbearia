@@ -1,5 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+
     vl(['ProjectPainel']);
 
     $query = "select
@@ -7,7 +8,9 @@
                     b.nome as cliente_nome,
                     c.nome as colaborador_nome,
                     d.produto as servico_nome,
-                    e.codigo as cod_venda
+                    e.codigo as cod_venda,
+                    e.agenda as cod_agenda,
+                    (select (select count(*) from vendas_produtos where venda = v.codigo) from vendas v where v.cliente = b.codigo and v.situacao = 'n' and v.deletado != '1') as venda_status
                 from agenda a
                     left join clientes b on a.cliente = b.codigo
                     left join colaboradores c on a.colaborador = c.codigo
@@ -44,6 +47,8 @@
 <?php
 while($d = mysqli_fetch_object($result)){
 
+
+
     $qs = "select * from produtos where codigo in(".implode(",",json_decode($d->servico)).")";
     $rs = mysqli_query($con, $qs);
     $servicos = [];
@@ -63,12 +68,36 @@ while($d = mysqli_fetch_object($result)){
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;">Atendimento por: <?=$d->colaborador_nome?></p>
             <h6><i class="fa-solid fa-circle-info"></i> Observações</h6>
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
+            <?php
+            if($d->agenda == $d->codigo){
+            ?>
+            <button
+                    class="btn btn-success"
+                    iniciar_atendimento=""
+                    codCliente="<?=$d->cliente?>"
+                    nomeCliente="<?=$d->cliente_nome?>"
+            ><i class="fa-regular fa-circle-check"></i> Esta Agenda está em aberto</button>
+            <?php
+            }else if($d->venda_status > 0){
+            ?>
+            <button
+                    class="btn btn-danger"
+                    iniciar_atendimento=""
+                    codCliente="<?=$d->cliente?>"
+                    nomeCliente="<?=$d->cliente_nome?>"
+            ><i class="fa-regular fa-circle-check"></i> Cliente com venda em aberto</button>
+            <?php
+            }else{
+            ?>
             <button
                     class="btn btn-primary"
                     iniciar_atendimento="<?=$d->codigo?>"
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
             ><i class="fa-regular fa-circle-check"></i> Iniciar atendimento</button>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>
