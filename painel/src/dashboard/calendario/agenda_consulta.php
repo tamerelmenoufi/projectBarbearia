@@ -46,6 +46,7 @@ while($d = mysqli_fetch_object($result)){
 
     echo $qs = "select * from produtos where codigo in(".implode(",",json_decode($d->servico)).")";
     $rs = mysqli_query($con, $qs);
+    $servicos = [];
     while($ds = mysqli_fetch_object($rs)){
         $servicos[] = $ds->produto;
     }
