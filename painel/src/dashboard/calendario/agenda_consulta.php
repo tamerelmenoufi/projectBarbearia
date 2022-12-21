@@ -31,7 +31,7 @@
     }
 
     .dados p.identificacao_ativo{
-        color:#a1a1a1;
+        color:#000;
     }
     .dados p.identificacao_ativo span{
         font-size:9px
