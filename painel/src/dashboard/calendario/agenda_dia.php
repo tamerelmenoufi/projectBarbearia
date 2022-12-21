@@ -89,12 +89,12 @@
         });
 
         $(".nova_agenda").click(function(){
-            data = $(this).attr("data");
+            data_hora = $(this).attr("data");
             $.ajax({
                 url:"src/dashboard/calendario/agenda_cadastro.php",
                 type:"POST",
                 data:{
-                    data,
+                    data_hora,
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
