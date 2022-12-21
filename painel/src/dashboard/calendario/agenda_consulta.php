@@ -69,7 +69,7 @@ while($d = mysqli_fetch_object($result)){
             <h6><i class="fa-solid fa-circle-info"></i> Observações</h6>
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
             <?php
-            if($d->agenda == $d->codigo){
+            if($d->cod_agenda == $d->codigo){
             ?>
             <button
                     class="btn btn-success"
