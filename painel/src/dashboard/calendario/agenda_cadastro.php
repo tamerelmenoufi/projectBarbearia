@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
-    $data_agenda = dataBr($_SESSION['agenda_dia']).' '.$_POST['data'];
+    $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
 ?>
 
 <style>
@@ -12,7 +12,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>"><?=$data_agenda?></h4>
+<h4 class="Titulo<?=$md5?>"><?=dataBr($data_agenda)?></h4>
 
 <div class="row mb-2">
     <div class="col-12">
