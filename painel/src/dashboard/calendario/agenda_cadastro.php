@@ -126,7 +126,7 @@
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
-        $('#colaborador').on('changed', function (e, clickedIndex, isSelected, previousValue) {
+        $('#colaborador').on('change', function (e, clickedIndex, isSelected, previousValue) {
             // do something...
             console.log(e)
             console.log(clickedIndex)
