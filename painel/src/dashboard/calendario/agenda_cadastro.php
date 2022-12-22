@@ -74,7 +74,7 @@
                 multiple
                 data-actions-box="true"
                 >
-            <option value="">Selecione</option>
+                <option value="">Selecione</option>
                 <?php
             $query = "select
                             a.*,
@@ -85,21 +85,23 @@
             while($d = mysqli_fetch_object($result)){
 
             if($grupo != $d->categoria_nome){
+
+                if($group != false){
         ?>
-        <optgroup label="<?=$d->categoria_nome?>">
+            </optgroup>
         <?php
                 }
         ?>
-            <option value="<?=$d->codigo?>"><?=$d->produto?></option>
+            <optgroup label="<?=$d->categoria_nome?>">
         <?php
-            if($grupo != $d->categoria_nome){
+                }
         ?>
-        </optgroup>
+                <option value="<?=$d->codigo?>"><?=$d->produto?></option>
         <?php
-            }
             $grupo = $d->categoria_nome;
             }
         ?>
+            </optgroup>
         </select>
     </div>
 </div>
