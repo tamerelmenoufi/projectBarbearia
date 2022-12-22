@@ -3,6 +3,13 @@
 
     vl(['ProjectPainel']);
 
+    if($_POST['acao'] == 'cancelar_agenda'){
+
+        mysqli_query($con, "delete from agenda where codigo = '{$_POST['codigo']}'");
+
+    }
+
+
     $query = "select
                     a.*,
                     b.nome as cliente_nome,
@@ -69,6 +76,7 @@ while($d = mysqli_fetch_object($result)){
             <h6><i class="fa-solid fa-circle-info"></i> Observações</h6>
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
             <?php
+            if($_SESSION['agenda_dia'] == date("Y-m-d")){
             if(in_array($d->codigo, $vcod_agenda)){
             ?>
             <button
@@ -95,6 +103,13 @@ while($d = mysqli_fetch_object($result)){
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
             ><i class="fa-regular fa-circle-check"></i> Abrir comanda com esta agenda</button>
+            <?php
+            }}else{
+            ?>
+            <button
+                    class="btn btn-danger"
+                    cancelar_atendimento="<?=$d->codigo?>"
+            ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
             }
             ?>
@@ -127,6 +142,40 @@ while($d = mysqli_fetch_object($result)){
             let myOffCanvas = document.getElementById('offcanvasDireita');
             let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
             openedCanvas.hide();
+        });
+
+        $("button[cancelar_atendimento]").click(function(){
+            codigo = $(this).attr("cancelar_atendimento");
+            $.confirm({
+                content:"Deseja realmente cancelar a agenda?",
+                title:"Cancelar Agenda",
+                buttons:{
+                    'Sim':{
+                        text:'Sim',
+                        btnClass:'btn btn-danger',
+                        action:function(){
+                            $.ajax({
+                                url:"src/dashboard/calendario/agenda_consulta.php",
+                                type:"POST",
+                                data:{
+                                    codigo,
+                                    acao:'cancelar_agenda'
+                                },
+                                success:function(dados){
+                                    $("div[agendaDia]").html(dados);
+                                }
+                            });
+                        },
+                    'Não':{
+                        text:'Não',
+                        btnClass:'btn btn-success',
+                        action:function(){
+
+                        }
+                    }
+                    }
+                }
+            });
         });
     })
 </script>
