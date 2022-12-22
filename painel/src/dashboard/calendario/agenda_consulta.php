@@ -71,7 +71,7 @@ while($d = mysqli_fetch_object($result)){
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
             <?php
             if($_SESSION['agenda_dia'] == date("Y-m-d")){
-            if($d->codigo == $d->cod_agenda){
+            if($d->codigo == $d->cod_agenda and $d->situacao != 'c'){
             ?>
             <button
                     class="btn btn-success"
@@ -80,7 +80,7 @@ while($d = mysqli_fetch_object($result)){
                     nomeCliente="<?=$d->cliente_nome?>"
             ><i class="fa-regular fa-circle-check"></i> Esta Agenda está na comanda</button>
             <?php
-            }else if($d->venda_status > 0){
+            }else if($d->venda_status > 0 and $d->situacao != 'c'){
             ?>
             <button
                     class="btn btn-warning"
@@ -93,7 +93,7 @@ while($d = mysqli_fetch_object($result)){
                     cancelar_atendimento="<?=$d->codigo?>"
             ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
-            }else{
+            }else if($d->situacao != 'c'){
             ?>
             <button
                     class="btn btn-primary"
@@ -106,14 +106,14 @@ while($d = mysqli_fetch_object($result)){
                     cancelar_atendimento="<?=$d->codigo?>"
             ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
-            }}else if($d->cancelar == 'sim'){
+            }}else if($d->cancelar == 'sim'  and $d->situacao != 'c'){
             ?>
             <button
                     class="btn btn-danger"
                     cancelar_atendimento="<?=$d->codigo?>"
             ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
-            }else if($d->codigo == $d->cod_agenda){
+            }else if($d->codigo == $d->cod_agenda and $d->situacao != 'c'){
             ?>
             <button
                     class="btn btn-success"
