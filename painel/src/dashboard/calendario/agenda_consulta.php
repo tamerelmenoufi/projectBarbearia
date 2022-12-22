@@ -147,7 +147,7 @@ while($d = mysqli_fetch_object($result)){
                     nomeCliente
                 },
                 success:function(dados){
-                    console.log(dados);
+                    // console.log(dados);
                     $("#paginaHome").html(dados);
                 },
                 error:function(){
