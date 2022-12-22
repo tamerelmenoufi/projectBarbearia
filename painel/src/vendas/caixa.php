@@ -19,7 +19,7 @@
         function IncluirServicos($agenda){
             global $con;
             global $_SESSION;
-            list($servicos) = mysqli_fetch_row(mysqli_query($con, "select servico from agenda where codigo = '{$agenda}'"));
+            list($servicos, $colaborador) = mysqli_fetch_row(mysqli_query($con, "select servico, colaborador from agenda where codigo = '{$agenda}'"));
             if($servicos){
                 $servicos = json_decode($servicos);
                 foreach($servicos as $ind => $cod){
@@ -29,7 +29,7 @@
                                     agenda = '{$agenda}',
                                     venda = '{$_SESSION['codVenda']}',
                                     cliente = '{$_SESSION['ClienteAtivo']}',
-                                    colaborador = '',
+                                    colaborador = '{$colaborador}',
 
                                     produto_tipo = '{$p->tipo}',
                                     categoria = '{$p->categoria}',
@@ -47,9 +47,36 @@
                                     data_pedido = ''
                     ";
                     $result = mysqli_query($con,$query);
+                    $cod_venda_produto = mysqli_insert_id($con);
+                    AtualizaComissao($cod_venda_produto, $p->codigo, $colaborador);
                 }
             }
         }
+
+        function AtualizaComissao($cod_venda_produto, $cod_produto, $cod_colaborador){
+            global $con;
+
+            $q = "select a.*, b.valor as valor_venda, b.quantidade from colaboradores_produtos a left join vendas_produtos b on b.codigo = '{$cod_venda_produto}' where a.colaborador = '{$cod_colaborador}' and a.produto = '{$cod_produto}' and a.situacao = '1'";
+            $com = mysqli_fetch_object(mysqli_query($con, $q));
+            if($com->chave){
+                $comissao_tipo = $com->tipo_comissao;
+                $comissao_valor =  $com->valor;
+                $comissao = (($com->tipo_comissao == 'p')?($com->valor_venda/100*$com->valor):($com->valor*$com->quantidade));
+            }else{
+                $comissao_tipo = 0;
+                $comissao_valor =  0;
+                $comissao = 0;
+            }
+            // echo "<br>";
+            $query = "update vendas_produtos set
+                                                colaborador = '{$cod_colaborador}',
+                                                comissao_tipo = '{$comissao_tipo}',
+                                                comissao_valor = '{$comissao_valor}',
+                                                comissao = '{$comissao}'
+                        where codigo = '{$cod_venda_produto}'";
+            mysqli_query($con, $query);
+        }
+
 
         $query = "select a.*,
                         (select codigo from vendas where cliente = a.codigo and situacao = 'n' and deletado != '1') as venda,
