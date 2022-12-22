@@ -74,7 +74,7 @@
                     ";
                     $result = mysqli_query($con,$query);
                     $cod_venda_produto = mysqli_insert_id($con);
-                    AtualizaComissao($cod_venda_produto, $p->codigo, $colaborador);
+                    // AtualizaComissao($cod_venda_produto, $p->codigo, $colaborador);
                 }
             }
         }
