@@ -20,32 +20,34 @@
             global $con;
             global $_SESSION;
             list($servicos) = mysqli_fetch_row(mysqli_query($con, "select servico from agenda where codigo = '{$agenda}'"));
-            $servicos = json_decode($servicos);
-            foreach($servicos as $ind => $cod){
-                $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$cod}'"));
-                $qt = 1;
-                $query = "insert into vendas_produtos set
-                                agenda = '{$agenda}',
-                                venda = '{$_SESSION['codVenda']}',
-                                cliente = '{$_SESSION['ClienteAtivo']}',
-                                colaborador = '',
+            if($servicos){
+                $servicos = json_decode($servicos);
+                foreach($servicos as $ind => $cod){
+                    $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$cod}'"));
+                    $qt = 1;
+                    $query = "insert into vendas_produtos set
+                                    agenda = '{$agenda}',
+                                    venda = '{$_SESSION['codVenda']}',
+                                    cliente = '{$_SESSION['ClienteAtivo']}',
+                                    colaborador = '',
 
-                                produto_tipo = '{$p->tipo}',
-                                categoria = '{$p->categoria}',
-                                produto = '{$p->codigo}',
-                                valor_unitario = '{$p->valor}',
-                                quantidade = '{$qt}',
-                                valor = '".($qt*$p->valor)."',
+                                    produto_tipo = '{$p->tipo}',
+                                    categoria = '{$p->categoria}',
+                                    produto = '{$p->codigo}',
+                                    valor_unitario = '{$p->valor}',
+                                    quantidade = '{$qt}',
+                                    valor = '".($qt*$p->valor)."',
 
-                                comissao_tipo = '',
-                                comissao_valor = '',
-                                comissao = '',
+                                    comissao_tipo = '',
+                                    comissao_valor = '',
+                                    comissao = '',
 
-                                total = '".($qt*$p->valor)."',
-                                situacao = 'n',
-                                data_pedido = ''
-                ";
-                $result = mysqli_query($con,$query);
+                                    total = '".($qt*$p->valor)."',
+                                    situacao = 'n',
+                                    data_pedido = ''
+                    ";
+                    $result = mysqli_query($con,$query);
+                }
             }
         }
 
