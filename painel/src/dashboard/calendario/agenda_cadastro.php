@@ -126,6 +126,15 @@
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
+        $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            // do something...
+            console.log(e)
+            console.log(clickedIndex)
+            console.log(isSelected)
+            console.log(previousValue)
+        });
+
+
         $(".cadastrarAgenda").click(function(){
 
             cliente = $("#cliente").val();
