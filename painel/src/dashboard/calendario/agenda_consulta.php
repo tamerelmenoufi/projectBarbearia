@@ -10,6 +10,7 @@
                     d.produto as servico_nome,
                     e.codigo as cod_venda,
                     e.agenda as cod_agenda,
+                    if(a.data_agenda >= NOW(), 'sim','nao') as cancelar,
                     (select (select count(*) from vendas_produtos where venda = v.codigo) from vendas v where v.cliente = b.codigo and v.situacao = 'n' and v.deletado != '1') as venda_status
                 from agenda a
                     left join clientes b on a.cliente = b.codigo
@@ -47,7 +48,7 @@
 <?php
 while($d = mysqli_fetch_object($result)){
 
-    $vcod_agenda = explode(",",$d->cod_agenda);
+    // $vcod_agenda = explode(",",$d->cod_agenda);
 
     $qs = "select * from produtos where codigo in(".implode(",",json_decode($d->servico)).")";
     $rs = mysqli_query($con, $qs);
@@ -70,7 +71,7 @@ while($d = mysqli_fetch_object($result)){
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
             <?php
             if($_SESSION['agenda_dia'] == date("Y-m-d")){
-            if(in_array($d->codigo, $vcod_agenda)){
+            if($d->codigo == $d->cod_agenda){
             ?>
             <button
                     class="btn btn-success"
@@ -87,6 +88,10 @@ while($d = mysqli_fetch_object($result)){
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
             ><i class="fa-regular fa-circle-check"></i> Incluir agenda na comanda atual</button>
+            <button
+                    class="btn btn-danger"
+                    cancelar_atendimento="<?=$d->codigo?>"
+            ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
             }else{
             ?>
@@ -96,8 +101,12 @@ while($d = mysqli_fetch_object($result)){
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
             ><i class="fa-regular fa-circle-check"></i> Abrir comanda com esta agenda</button>
+            <button
+                    class="btn btn-danger"
+                    cancelar_atendimento="<?=$d->codigo?>"
+            ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
-            }}else{
+            }}else if($d->cancelar == 'sim'){
             ?>
             <button
                     class="btn btn-danger"
