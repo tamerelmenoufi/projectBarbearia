@@ -162,7 +162,7 @@
             console.log(servico.length);
             // return false;
 
-            if(!cliente || !colaborador || !servico){
+            if(!cliente || !colaborador || servico.length == 0){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
                     type:'red',
