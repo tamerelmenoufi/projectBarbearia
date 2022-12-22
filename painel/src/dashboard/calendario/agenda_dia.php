@@ -49,7 +49,7 @@
 </style>
 
 <div class="p-1" style="font-size:12px;">
-    <div class="mb-3" style="position:relative; width:100%">
+    <div class="mb-3" style="position:absolute; left:0; right:0; top:0; bottom:0; border:solid 1px red">
         <div class="row">
             <div class="col text-start"><h6>Agenda do dia</h6></div>
             <div class="col text-end"><input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" /></div>
