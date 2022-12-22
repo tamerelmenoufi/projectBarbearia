@@ -20,7 +20,7 @@
         function AtualizaComissao($cod_venda_produto, $cod_produto, $cod_colaborador){
             global $con;
 
-            $q = "select a.*, b.valor as valor_venda, b.quantidade from colaboradores_produtos a left join vendas_produtos b on b.codigo = '{$cod_venda_produto}' where a.colaborador = '{$cod_colaborador}' and a.produto = '{$cod_produto}' and a.situacao = '1'";
+            echo $q = "select a.*, b.valor as valor_venda, b.quantidade from colaboradores_produtos a left join vendas_produtos b on b.codigo = '{$cod_venda_produto}' where a.colaborador = '{$cod_colaborador}' and a.produto = '{$cod_produto}' and a.situacao = '1'";
             $com = mysqli_fetch_object(mysqli_query($con, $q));
             if($com->chave){
                 $comissao_tipo = $com->tipo_comissao;
@@ -31,8 +31,8 @@
                 $comissao_valor =  0;
                 $comissao = 0;
             }
-            // echo "<br>";
-            $query = "update vendas_produtos set
+            echo "<br>";
+            echo $query = "update vendas_produtos set
                                                 colaborador = '{$cod_colaborador}',
                                                 comissao_tipo = '{$comissao_tipo}',
                                                 comissao_valor = '{$comissao_valor}',
