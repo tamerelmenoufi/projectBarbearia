@@ -5,7 +5,7 @@
 
     function filtroServicoColaborador($c){
         global $con;
-        $query = "select
+        echo $query = "select
                         a.*,
                         b.produto_nome,
                         c.categoria_nome
