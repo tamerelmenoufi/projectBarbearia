@@ -5,7 +5,7 @@
 
     function filtroServicoColaborador($c){
         global $con;
-        echo $query = "select
+        $query = "select
                         a.*,
                         b.produto as produto_nome,
                         c.categoria as categoria_nome
@@ -18,13 +18,14 @@
         $grupo = false;
         while($d = mysqli_fetch_object($result)){
 
-            if($grupo != $d->categoria){
+            if($grupo != $d->categoria_nome){
+                if($grupo != false){
+                    echo "</optgroup>";
+                }
                 echo "<optgroup label='{$d->categoria_nome}'>";
             }
             echo "<option value='{$d->produto}'>{$d->produto_nome}</option>";
-            if($grupo != false and $grupo != $d->categoria){
-                echo "</optgroup>";
-            }
+            $grupo = $d->categoria_nome;
         }
         echo "</optgroup>";
     }
