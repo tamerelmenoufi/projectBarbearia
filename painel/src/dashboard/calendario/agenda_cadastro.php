@@ -108,35 +108,7 @@
                 class="selectpicker form-control"
                 multiple
                 data-actions-box="true"
-                >
-                <?php
-            $query = "select
-                            a.*,
-                            b.categoria as categoria_nome
-                        from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.tipo = 's' and a.situacao = '1' and b.situacao = '1' order by b.categoria, a.produto";
-            $result = mysqli_query($con, $query);
-            $grupo = false;
-            while($d = mysqli_fetch_object($result)){
-
-            if($grupo != $d->categoria_nome){
-
-                if($group != false){
-        ?>
-            </optgroup>
-        <?php
-                }
-        ?>
-            <optgroup label="<?=$d->categoria_nome?>">
-        <?php
-                }
-        ?>
-                <option value="<?=$d->codigo?>"><?=$d->produto?></option>
-        <?php
-            $grupo = $d->categoria_nome;
-            }
-        ?>
-            </optgroup>
-        </select>
+                ></select>
     </div>
 </div>
 
