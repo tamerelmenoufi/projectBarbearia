@@ -25,6 +25,7 @@
                 $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$cod}'"));
                 $qt = 1;
                 $query = "insert into vendas_produtos set
+                                agenda = '{$agenda}',
                                 venda = '{$_SESSION['codVenda']}',
                                 cliente = '{$_SESSION['ClienteAtivo']}',
                                 colaborador = '',
@@ -51,29 +52,27 @@
         $query = "select a.*,
                         (select codigo from vendas where cliente = a.codigo and situacao = 'n' and deletado != '1') as venda,
                         (select agenda from vendas where cliente = a.codigo and situacao = 'n' and deletado != '1') as agenda
-
                     from clientes a where a.codigo = '{$_SESSION['ClienteAtivo']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
         if(!$d->venda){
-            mysqli_query($con, "insert into vendas set cliente = '{$d->codigo}', colaborador = '{$_SESSION['ProjectPainel']->codigo}', situacao = 'n'".(($_POST['agenda'])?", agenda = '{$_POST['agenda']}'":false));
+            mysqli_query($con, "insert into vendas set cliente = '{$d->codigo}', colaborador = '{$_SESSION['ProjectPainel']->codigo}', situacao = 'n'".(($_POST['agenda'])?", agenda = '".(($d->agenda)?$d->agenda.','.$_POST['agenda']:$_POST['agenda'])."'":false));
             $_SESSION['codVenda'] = mysqli_insert_id($con);
-
-            if(!$d->agenda and $_POST['agenda']){
+            $vagenda = explode(",",$d->agenda);
+            if(!in_array($_POST['agenda'],$vagenda)){
                 IncluirServicos($_POST['agenda']);
             }
 
         }else{
             $_SESSION['codVenda'] = $d->venda;
             if($_POST['agenda']){
-                mysqli_query($con, "update vendas set agenda = '{$_POST['agenda']}' where codigo = '{$d->venda}'");
+                mysqli_query($con, "update vendas set agenda = '".(($d->agenda)?$d->agenda.','.$_POST['agenda']:$_POST['agenda'])."' where codigo = '{$d->venda}'");
             }
-
-            if($_POST['agenda'] and !$d->agenda){
+            $vagenda = explode(",",$d->agenda);
+            if(!in_array($_POST['agenda'],$vagenda)){
                 IncluirServicos($_POST['agenda']);
             }
-
         }
 
         list($qtr) = mysqli_fetch_row(mysqli_query($con, "select count(*) from vendas_produtos where venda = '{$_SESSION['codVenda']}' "));
