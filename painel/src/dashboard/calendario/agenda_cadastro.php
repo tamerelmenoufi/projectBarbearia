@@ -128,10 +128,10 @@
 
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             // do something...
-            console.log(e)
+            console.log(e.value)
             console.log(clickedIndex)
             console.log(isSelected)
-            console.log(previousValue)
+            console.log($(this).val())
         });
 
 
