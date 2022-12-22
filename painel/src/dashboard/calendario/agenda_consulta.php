@@ -47,7 +47,7 @@
 <?php
 while($d = mysqli_fetch_object($result)){
 
-
+    $vcod_agenda = explode(",",$d->cod_agenda);
 
     $qs = "select * from produtos where codigo in(".implode(",",json_decode($d->servico)).")";
     $rs = mysqli_query($con, $qs);
@@ -69,23 +69,23 @@ while($d = mysqli_fetch_object($result)){
             <h6><i class="fa-solid fa-circle-info"></i> Observações</h6>
             <p style="font-size:10px; padding:0; margin:0; margin-left:20px; margin-bottom:10px;"><?=$d->observacao?></p>
             <?php
-            if($d->cod_agenda == $d->codigo){
+            if(in_array($d->codigo, $vcod_agenda)){
             ?>
             <button
                     class="btn btn-success"
                     iniciar_atendimento=""
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
-            ><i class="fa-regular fa-circle-check"></i> Esta Agenda está em aberto</button>
+            ><i class="fa-regular fa-circle-check"></i> Esta Agenda está na comanda</button>
             <?php
             }else if($d->venda_status > 0){
             ?>
             <button
-                    class="btn btn-danger"
-                    iniciar_atendimento=""
+                    class="btn btn-warning"
+                    iniciar_atendimento="<?=$d->codigo?>"
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
-            ><i class="fa-regular fa-circle-check"></i> Cliente com venda em aberto</button>
+            ><i class="fa-regular fa-circle-check"></i> Incluir agenda na comanda atual</button>
             <?php
             }else{
             ?>
@@ -94,7 +94,7 @@ while($d = mysqli_fetch_object($result)){
                     iniciar_atendimento="<?=$d->codigo?>"
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
-            ><i class="fa-regular fa-circle-check"></i> Iniciar atendimento</button>
+            ><i class="fa-regular fa-circle-check"></i> Abrir comanda com esta agenda</button>
             <?php
             }
             ?>
