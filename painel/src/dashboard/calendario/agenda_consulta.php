@@ -15,7 +15,7 @@
                     left join clientes b on a.cliente = b.codigo
                     left join colaboradores c on a.colaborador = c.codigo
                     left join produtos d on a.servico = d.codigo
-                    left join vendas e on a.codigo = e.agenda
+                    left join vendas e on a.codigo in (e.agenda)
                 where a.data_agenda = '{$_SESSION['agenda_dia']} {$_POST['hora']}'";
     $result = mysqli_query($con, $query);
 
