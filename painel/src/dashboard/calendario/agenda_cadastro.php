@@ -2,6 +2,39 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
     $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
+
+    function filtroServicoColaborador($c){
+        global $con;
+        $query = "select
+                        a.*,
+                        b.produto_nome,
+                        c.categoria_nome
+                    from
+                        colaboradores_produtos a
+                        left join produtos b on a.produto = b.codigo
+                        left join produtos_categorias c on b.categoria = c.codigo
+                    where a.colaborador = '{$c}'";
+        $result = mysqli_query($result);
+        $grupo = false;
+        while($d = mysqli_fetch_object($result)){
+
+            if($grupo != $d->categoria){
+                echo "<optgroup label='{$d->categoria_nome}'>";
+            }
+            echo "<option value='{$d->produto}'>{$d->produto_nome}</option>";
+            if($grupo != false and $grupo != $d->categoria){
+                echo "</optgroup>";
+            }
+        }
+        echo "</optgroup>";
+    }
+
+    if($_POST['acao'] == 'filto_servicos'){
+        filtroServicoColaborador($_POST['colaborador']);
+        exit();
+    }
+
+
 ?>
 
 <style>
@@ -128,14 +161,27 @@
 
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             // do something...
-            console.log(e.value)
-            console.log(clickedIndex)
-            console.log(isSelected)
-            console.log($(this).val())
+            // console.log(e.value)
+            // console.log(clickedIndex)
+            // console.log(isSelected)
+            // console.log($(this).val())
+
+            colaborador = $(this).val();
+
             $("#servico").selectpicker('destroy');
-            valor = '<optgroup label="TESTE RENDER"><option>Opção 1</option><option>Opção 1</option></optgroup>';
-            $("#servico").html(valor);
-            $("#servico").selectpicker('render');
+
+            $.ajax({
+                url:"src/dashboard/calendario/agenda_cadastro.php",
+                type:"POST",
+                data:{
+                    colaborador,
+                    acao:'filto_servicos'
+                },
+                success:function(dados){
+                    $("#servico").html(dados);
+                    $("#servico").selectpicker('render');
+                }
+            });
 
         });
 
