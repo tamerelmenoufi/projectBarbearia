@@ -3,13 +3,6 @@
 
     vl(['ProjectPainel']);
 
-    if($_POST['acao'] == 'cancelar_agenda'){
-
-        mysqli_query($con, "delete from agenda where codigo = '{$_POST['codigo']}'");
-
-    }
-
-
     $query = "select
                     a.*,
                     b.nome as cliente_nome,
@@ -155,7 +148,7 @@ while($d = mysqli_fetch_object($result)){
                         btnClass:'btn btn-danger',
                         action:function(){
                             $.ajax({
-                                url:"src/dashboard/calendario/agenda_consulta.php",
+                                url:"src/dashboard/calendario/agenda_dia.php",
                                 type:"POST",
                                 data:{
                                     codigo,

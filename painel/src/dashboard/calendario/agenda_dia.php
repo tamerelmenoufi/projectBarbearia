@@ -2,6 +2,12 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
+    if($_POST['acao'] == 'cancelar_agenda'){
+
+        mysqli_query($con, "delete from agenda where codigo = '{$_POST['codigo']}'");
+
+    }
+
     if($_POST['agenda_dia']){
         $_SESSION['agenda_dia'] = $_POST['agenda_dia'];
     }
