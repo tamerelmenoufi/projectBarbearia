@@ -156,16 +156,19 @@ while($d = mysqli_fetch_object($result)){
                                 },
                                 success:function(dados){
                                     $("div[agendaDia]").html(dados);
+                                    let myOffCanvas = document.getElementById('offcanvasDireita');
+                                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                                    openedCanvas.hide();
                                 }
                             });
-                        },
+                        }
+                    },
                     'Não':{
                         text:'Não',
                         btnClass:'btn btn-success',
                         action:function(){
 
                         }
-                    }
                     }
                 }
             });
