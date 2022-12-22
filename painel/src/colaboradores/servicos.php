@@ -107,7 +107,7 @@
                     // }
                 })
 
-                // Carregando();
+                Carregando();
 
                 obj.html('<i class="fa-solid fa-gear fa-spin"></i> Salvando ...');
                 obj.attr("disabled","disabled");
@@ -128,9 +128,10 @@
                         // Carregando('none');
                         obj.html('<i class="fa-regular fa-floppy-disk"></i> Salvar Perfil');
                         obj.removeAttr("disabled");
+                        Carregando('none');
                     },
                     error:function(erro){
-
+                        Carregando('none');
                     }
                 });
 
