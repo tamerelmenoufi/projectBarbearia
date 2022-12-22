@@ -7,8 +7,8 @@
         global $con;
         echo $query = "select
                         a.*,
-                        b.produto_nome,
-                        c.categoria_nome
+                        b.produto as produto_nome,
+                        c.categoria as categoria_nome
                     from
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
