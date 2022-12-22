@@ -113,6 +113,15 @@ while($d = mysqli_fetch_object($result)){
                     cancelar_atendimento="<?=$d->codigo?>"
             ><i class="fa-regular fa-circle-check"></i> Cancelar a agenda</button>
             <?php
+            }else if($d->codigo == $d->cod_agenda){
+            ?>
+            <button
+                    class="btn btn-success"
+                    iniciar_atendimento=""
+                    codCliente="<?=$d->cliente?>"
+                    nomeCliente="<?=$d->cliente_nome?>"
+            ><i class="fa-regular fa-circle-check"></i> Esta Agenda está na comanda</button>
+            <?php
             }
             ?>
         </div>
