@@ -132,9 +132,8 @@
             console.log(clickedIndex)
             console.log(isSelected)
             console.log($(this).val())
-
+            $("#servico").selectpicker('destroy');
             valor = '<optgroup label="TESTE RENDER"><option>Opção 1</option><option>Opção 1</option></optgroup>';
-
             $("#servico").html(valor);
             $("#servico").selectpicker('refresh');
 
