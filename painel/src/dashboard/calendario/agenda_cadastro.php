@@ -159,7 +159,7 @@
             observacao = $("#observacao").val();
             data_agenda = '<?=$data_agenda?>';
 
-            console.log(servico.length);
+            console.log(servico.lenght);
             // return false;
 
             if(!cliente || !colaborador || !servico){
