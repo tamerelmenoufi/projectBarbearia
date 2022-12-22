@@ -74,7 +74,6 @@
                 multiple
                 data-actions-box="true"
                 >
-                <option value="">Selecione</option>
                 <?php
             $query = "select
                             a.*,
