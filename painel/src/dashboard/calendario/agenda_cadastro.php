@@ -13,7 +13,7 @@
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
-                    where a.colaborador = '{$c}'";
+                    where a.colaborador = '{$c}' order by c.categoria, b.produto";
         $result = mysqli_query($con, $query);
         $grupo = false;
         while($d = mysqli_fetch_object($result)){
