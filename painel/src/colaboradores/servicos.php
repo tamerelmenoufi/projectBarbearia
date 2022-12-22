@@ -51,7 +51,7 @@
             <div class="col">
             <?php
             $categoria = false;
-            $query = "select a.*, b.categoria as nome_categoria from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by b.categoria asc";
+            $query = "select a.*, if(a.tipo = 'p','Produto','Serviço') as tipo_nome, b.categoria as nome_categoria from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by b.categoria asc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
                 if($categoria != $d->nome_categoria){
@@ -66,7 +66,7 @@
                     <div class="form-check form-switch">
                         <input class="form-check-input perfil" type="checkbox" <?=(($situacao[$d->codigo])?'checked':false)?> produto="<?=$d->codigo?>">
                     </div>
-                    <?=$d->produto?>
+                    <?=$d->produto?> (<?=$d->tipo_nome?>)
                 </span>
                 <select tipo<?=$d->codigo?> class="form-control" >
                     <option value="p" <?=(($tipo[$d->codigo] == 'p')?'selected':false)?>>%</option>
