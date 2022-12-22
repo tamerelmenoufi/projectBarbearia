@@ -84,7 +84,7 @@ while($d = mysqli_fetch_object($result)){
             ?>
             <button
                     class="btn btn-warning"
-                    c="<?=$d->codigo?>"
+                    iniciar_atendimento="<?=$d->codigo?>"
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
             ><i class="fa-regular fa-circle-check"></i> Incluir agenda na comanda atual</button>
