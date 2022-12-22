@@ -178,6 +178,7 @@
                     acao:'filto_servicos'
                 },
                 success:function(dados){
+                    console.log(dados)
                     $("#servico").html(dados);
                     $("#servico").selectpicker('render');
                 }
