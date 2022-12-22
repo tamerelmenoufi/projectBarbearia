@@ -126,12 +126,12 @@
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
-        $('#colaborador').on('change', function () {
+        $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             // do something...
-            console.log('Teste')
-            // console.log(clickedIndex)
-            // console.log(isSelected)
-            // console.log(previousValue)
+            console.log(e)
+            console.log(clickedIndex)
+            console.log(isSelected)
+            console.log(previousValue)
         });
 
 
