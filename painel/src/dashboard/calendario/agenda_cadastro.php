@@ -13,7 +13,8 @@
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
-                    where a.colaborador = '{$c}' order by c.categoria, b.produto";
+                    where a.colaborador = '{$c}' and b.tipo = 's' and a.situacao = '1' order by c.categoria, b.produto";
+
         $result = mysqli_query($con, $query);
         $grupo = false;
         while($d = mysqli_fetch_object($result)){
@@ -161,16 +162,8 @@
         $("#servico").selectpicker();
 
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-            // do something...
-            // console.log(e.value)
-            // console.log(clickedIndex)
-            // console.log(isSelected)
-            // console.log($(this).val())
-
             colaborador = $(this).val();
-
             $("#servico").selectpicker('destroy');
-
             $.ajax({
                 url:"src/dashboard/calendario/agenda_cadastro.php",
                 type:"POST",
@@ -179,12 +172,10 @@
                     acao:'filto_servicos'
                 },
                 success:function(dados){
-                    console.log(dados)
                     $("#servico").html(dados);
                     $("#servico").selectpicker('render');
                 }
             });
-
         });
 
 
