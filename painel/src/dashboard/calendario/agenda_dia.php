@@ -48,8 +48,8 @@
     }
 </style>
 
-<div class="p-1" style="font-size:12px;">
-    <div class="row mb-3">
+<div class="p-1 mb-3" style="font-size:12px;">
+    <div class="row">
         <div class="col text-start"><h6>Agenda do dia</h6></div>
         <div class="col text-end"><input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" /></div>
     </div>
