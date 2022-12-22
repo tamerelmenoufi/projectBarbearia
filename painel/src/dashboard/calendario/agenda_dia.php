@@ -12,6 +12,7 @@
         $_SESSION['agenda_dia'] = $_POST['agenda_dia'];
     }
 
+
     $_SESSION['agenda_dia'] = (($_SESSION['agenda_dia'])?:date("Y-m-d"));
 
     if($_POST['acao'] == 'nova_agenda'){
@@ -31,7 +32,6 @@
         mysqli_query($con, $query);
 
     }
-
 
 
 ?>

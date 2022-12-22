@@ -37,6 +37,17 @@
     }
 
 
+    $agora = mktime(date("H"), date("m"), date("s"), date("m"), date("d"), date("Y"));
+    $dt = explode("-",$_SESSION['agenda_dia']);
+    $hs = explode(":",$_POST['data']);
+    $agenda = mktime($hs[0], $hs[1], date("s"), $dt[1], $dt[2], $dt[0]);
+
+    $blq = false;
+    if($agenda <= $agora){
+        $blq = true;
+    }
+
+
 ?>
 
 <style>
@@ -49,6 +60,19 @@
 </style>
 <h4 class="Titulo<?=$md5?>"><?=dataBr($data_agenda)?></h4>
 
+<?php
+if($blq){
+?>
+<div class="row">
+    <div class="col-12">
+        <div style="width:100%; height:300px; color:#a1a1a1; opacity:0.5; padding-top:80px; text-align:center;">
+            <h1><i class="fa-solid fa-ban"></i><br>Data não autorizada</h1>
+        </div>
+    </div>
+</div>
+<?php
+}else{
+?>
 <div class="row mb-2">
     <div class="col-12">
         <label for="cliente" class="form-label">Cliente *</label>
@@ -125,7 +149,9 @@
         <button class="btn btn-primary cadastrarAgenda"><i class="fa-solid fa-calendar-plus"></i> Cadastrar agenda</button>
     </div>
 </div>
-
+<?php
+}
+?>
 <script>
     $(function(){
 
