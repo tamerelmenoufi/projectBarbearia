@@ -120,7 +120,7 @@ while($d = mysqli_fetch_object($result)){
                     iniciar_atendimento=""
                     codCliente="<?=$d->cliente?>"
                     nomeCliente="<?=$d->cliente_nome?>"
-            ><i class="fa-regular fa-circle-check"></i> Esta Agenda está na comanda</button>
+            ><i class="fa-regular fa-circle-check"></i> XX Esta Agenda está na comanda</button>
             <?php
             }
             ?>
