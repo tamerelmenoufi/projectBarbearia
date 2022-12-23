@@ -338,10 +338,11 @@
                                 },
                                 url:"src/vendas/caixa.php",
                                 success:function(dados){
+                                    console.log("MEUS DADOS DE FECHAR PEDIDO");
+                                    console.log(dados);
                                     $.ajax({
                                         url:"src/dashboard/index.php",
                                         success:function(dados){
-                                            console.log(dados);
                                             $("#paginaHome").html(dados);
                                         }
                                     });

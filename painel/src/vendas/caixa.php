@@ -12,7 +12,6 @@
             echo $q = "update vendas_produtos set situacao = 'c' where codigo in ($agenda)";
             mysqli_query($con, $q);
         }
-        exit();
     }
 
 
