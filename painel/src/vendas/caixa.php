@@ -8,7 +8,7 @@
         $query = "update vendas set situacao = 'p', data_pedido = NOW() where codigo = '{$_SESSION['codVenda']}'";
         $result = mysqli_query($con, $query);
         if ($result and $agenda){
-            mysqli_query($con, "update situacao = 'c' where codigo in ($agenda)");
+            mysqli_query($con, "update vendas_produtos set situacao = 'c' where codigo in ($agenda)");
         }
     }
 
