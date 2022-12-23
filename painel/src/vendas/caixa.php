@@ -7,7 +7,7 @@
         list($agenda) = mysqli_fetch_row(mysqli_query($con, "select agenda from vendas where codigo = '{$_SESSION['codVenda']}'"));
         $query = "update vendas set situacao = 'p', data_pedido = NOW() where codigo = '{$_SESSION['codVenda']}'";
         $result = mysqli_query($con, $query);
-        echo "Agenda:".$agenda;
+        // echo "Agenda:".$agenda;
         if ($result and $agenda){
             mysqli_query($con, "update vendas_produtos set situacao = 'c' where agenda in ($agenda)");
             mysqli_query($con, "update agenda set situacao = 'c' where codigo in ($agenda)");

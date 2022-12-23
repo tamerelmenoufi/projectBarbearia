@@ -51,6 +51,8 @@
                     nomeCategoria,
                 },
                 success:function(dados){
+                    $("#home-compras").removeClass("active");
+                    $("#home-produtos").addClass("active");
                     $(".produtos_lista").html(dados);
                 }
             });
