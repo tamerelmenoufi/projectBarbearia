@@ -9,8 +9,8 @@
         $result = mysqli_query($con, $query);
         echo "Agenda:".$agenda;
         if ($result and $agenda){
-            echo $q = "update vendas_produtos set situacao = 'c' where agenda in ($agenda)";
-            mysqli_query($con, $q);
+            mysqli_query($con, "update vendas_produtos set situacao = 'c' where agenda in ($agenda)");
+            mysqli_query($con, "update agenda set situacao = 'c' where codigo in ($agenda)");
         }
     }
 
