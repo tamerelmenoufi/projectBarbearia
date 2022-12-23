@@ -341,6 +341,7 @@
                                     $.ajax({
                                         url:"src/dashboard/index.php",
                                         success:function(dados){
+                                            console.log(dados);
                                             $("#paginaHome").html(dados);
                                         }
                                     });
