@@ -47,7 +47,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, (select count(*) from vendas where cliente = a.codigo) as vendas from clientes a order by a.nome asc";
+                  $query = "select a.*, (select count(*) from vendas where cliente = a.codigo and situacao != 'n') as vendas from clientes a order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
