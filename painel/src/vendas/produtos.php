@@ -79,6 +79,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><?=$d->produto?></h5>
                     <p class="card-text"><?=$d->descricao?></p>
+                    <p class="card-text">R$ <?=number_format($d->valor, 2, ',','.')?></p>
                     <p class="card-text" style="text-align:right">
                         <button class="btn btn-success btn-sm" addProduto="<?=$d->codigo?>">ADD</button>
                     </p>
