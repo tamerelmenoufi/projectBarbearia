@@ -41,12 +41,13 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
                   <th scope="col" style="width:50%">E-mail</th>
+                  <th scope="col">Vendas</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from clientes order by nome asc";
+                  $query = "select a.*, (select * from vendas where cliente = a.codigo) as vendas  from clientes order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -55,6 +56,7 @@
                   <td style="white-space: nowrap;"><?=$d->cpf?></td>
                   <td style="white-space: nowrap;"><?=$d->telefone?></td>
                   <td style="white-space: nowrap;"><?=$d->email?></td>
+                  <td style="white-space: nowrap;"><?=$d->qt?></td>
                   <td style="white-space: nowrap;">
 
                     <button
