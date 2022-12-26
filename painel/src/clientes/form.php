@@ -41,7 +41,7 @@
     }
 
 
-    $query = "select * from clientes where codigo = '{$_POST['cod']}'";
+    $query = "select a.*, (select count(*) from vendas where cliente = a.codigo and situacao != 'n') as vendas from clientes a where a.codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
@@ -62,7 +62,7 @@
                     <label for="nome">Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <input type="text" <?=(($d->vendas)?'disabled':'name="cpf"')?> id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">CPF*</label>
                 </div>
                 <div class="form-floating mb-3">
