@@ -81,7 +81,7 @@
                     <p class="card-text"><?=$d->descricao?></p>
                     <p class="card-text">R$ <?=number_format($d->valor, 2, ',','.')?></p>
                     <p class="card-text" style="text-align:right">
-                        <button class="btn btn-success btn-sm" addProduto="<?=$d->codigo?>"><i class="fa-solid fa-cart-plus"></i></button>
+                        <button class="btn btn-success btn-sm" addProduto="<?=$d->codigo?>"><i class="fa-solid fa-cart-plus"></i> Incluir</button>
                     </p>
                 </div>
                 </div>
