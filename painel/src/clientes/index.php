@@ -56,7 +56,7 @@
                   <td style="white-space: nowrap;"><?=$d->cpf?></td>
                   <td style="white-space: nowrap;"><?=$d->telefone?></td>
                   <td style="white-space: nowrap;"><?=$d->email?></td>
-                  <td style="white-space: nowrap;"><?=$d->qt?></td>
+                  <td style="white-space: nowrap;"><?=$d->vendas?></td>
                   <td style="white-space: nowrap;">
 
                     <button
