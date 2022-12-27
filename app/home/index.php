@@ -25,7 +25,7 @@
 
 
 
-<div class="d-flex flex-row justify-content-between" style="background-color:#eee; height:70px; position:fixed; left:0; top:0; width:100%;">
+<div class="d-flex flex-row justify-content-between" style="background-color:#eee; height:70px; position:fixed; left:0; top:0; width:100%; z-index:9;">
   <div></div>
   <div class="m-3" style="width:100px; height:100px; padding:5px; background-color:#eee; border-solid 2px #fff; border-radius:100%; z-index:10; position:relative;">
     <img id="profile-img" style="width:90px;" class="profile-img-card" src="img/icone.png" />
@@ -35,7 +35,7 @@
 
 
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top:70px;">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
