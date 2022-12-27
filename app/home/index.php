@@ -136,6 +136,9 @@
                                     </p>
                                     <a href="#" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Go somewhere</a>
                                 </div>
+                                <div class="card-bottom">
+                                    Material Rodapé
+                                </div>
                             </div>
                         </div>
                         <?php
