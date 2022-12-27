@@ -121,11 +121,19 @@
                         for($i=0;$i<20;$i++){
                         ?>
                         <div class="col-3 mb-3">
-                            <div class="card">
+                            <div class="card h-100">
                                 <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/kreative/catalog/banner-barbearia/banner-barbearia-mod-2041/banner-barbearia-2042/banner-barbearia-2043/banner-barbearia-2043/banner-barbearia-mod-2045/banner-barbearia-mod-2046/banner-barbearia-mod-2045-foto-120190927145845.JPG" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">
+                                        <?php
+                                        for($j=0;$j<3;$j++){
+                                        ?>
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        <?php
+                                        }
+                                        ?>
+                                    </p>
                                     <a href="#" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Go somewhere</a>
                                 </div>
                             </div>
