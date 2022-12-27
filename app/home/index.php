@@ -137,7 +137,7 @@
                                     <small class="text-muted">
                                         <a
                                             href="#"
-                                            class="btn btn-outline-info"
+                                            class="btn btn-outline-secondary"
                                             data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasExample"
                                             aria-controls="offcanvasExample"
