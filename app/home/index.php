@@ -134,9 +134,10 @@
 
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-muted">L
+                                    <small class="text-muted">
                                         <a
                                             href="#"
+                                            class="btn btn-outline-info"
                                             data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasExample"
                                             aria-controls="offcanvasExample"
