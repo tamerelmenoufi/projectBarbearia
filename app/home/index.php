@@ -5,7 +5,7 @@
   </div>
 </nav>
 
-<h6>APLICATIVO</h6>
+<!-- <h6>APLICATIVO</h6> -->
 
 <script>
     $(function(){
