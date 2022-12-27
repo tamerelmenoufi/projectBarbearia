@@ -120,7 +120,7 @@
                         <?php
                         for($i=0;$i<20;$i++){
                         ?>
-                        <div class="col-3">
+                        <div class="col-3 mb-3">
                             <div class="card">
                                 <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/kreative/catalog/banner-barbearia/banner-barbearia-mod-2041/banner-barbearia-2042/banner-barbearia-2043/banner-barbearia-2043/banner-barbearia-mod-2045/banner-barbearia-mod-2046/banner-barbearia-mod-2045-foto-120190927145845.JPG" class="card-img-top" alt="...">
                                 <div class="card-body">
