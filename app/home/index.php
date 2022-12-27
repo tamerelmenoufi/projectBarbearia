@@ -127,7 +127,7 @@
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">
                                         <?php
-                                        for($j=0;$j<3;$j++){
+                                        for($j=$i;$j<3;$j++){
                                         ?>
                                         Some quick example text to build on the card title and make up the bulk of the card's content.
                                         <?php
