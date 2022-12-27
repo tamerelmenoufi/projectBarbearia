@@ -52,7 +52,7 @@
 
 
 
-<div class="container">
+<div class="m-3 p-3">
     <div class="row">
         <div class="col">
             <div class="accordion" id="accordionPanelsStayOpenExample">
