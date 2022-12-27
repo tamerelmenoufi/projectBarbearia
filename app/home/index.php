@@ -76,9 +76,6 @@
 
 
 
-
-
-
 <div class="m-3 p-3">
     <div class="row">
         <div class="col">
@@ -134,10 +131,17 @@
                                         }
                                         ?>
                                     </p>
-                                    <a href="#" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Go somewhere</a>
+
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">L
+                                        <a
+                                            href="#"
+                                            data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvasExample"
+                                            aria-controls="offcanvasExample"
+                                        >Go somewhere</a>
+                                    </small>
                                 </div>
                             </div>
                         </div>
