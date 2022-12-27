@@ -136,8 +136,8 @@
                                     </p>
                                     <a href="#" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Go somewhere</a>
                                 </div>
-                                <div class="card-bottom">
-                                    Material Rodapé
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
                                 </div>
                             </div>
                         </div>
