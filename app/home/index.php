@@ -1,11 +1,6 @@
-
-<nav class="navbar bg-light">
-  <div class="container-fluid">
-    <div class="d-flex flex-row justify-content-center">
-        <div class="d-flex justify-content-center">MEU LOGIN</div>
-    </div>
-  </div>
-</nav>
+<div class="d-flex flex-row mb-3">
+  <div class="p-2">Flex item 1</div>
+</div>
 
 <!-- <h6>APLICATIVO</h6> -->
 
