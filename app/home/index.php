@@ -1,5 +1,3 @@
-
-
 <div
     class="offcanvas offcanvas-end"
     data-bs-backdrop="static"
@@ -127,8 +125,8 @@
                         <?php
                         for($i=0;$i<20;$i++){
                         ?>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
+                            <div class="col-md-3 mb-3">
+                              <div class="card h-100">
                                 <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/kreative/catalog/banner-barbearia/banner-barbearia-mod-2041/banner-barbearia-2042/banner-barbearia-2043/banner-barbearia-2043/banner-barbearia-mod-2045/banner-barbearia-mod-2046/banner-barbearia-mod-2045-foto-120190927145845.JPG" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -154,8 +152,8 @@
                                         >Go somewhere</a>
                                     </small>
                                 </div>
+                              </div>
                             </div>
-                        </div>
                         <?php
                         }
                         ?>
@@ -165,6 +163,35 @@
                 </div>
             </div>
             </div>
+
+
+            <div class="row">
+              <?php
+              for($i = 0;$i < 6; $i++){
+              ?>
+              <div class="col-md-4">
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="https://media.istockphoto.com/id/1281247301/pt/vetorial/the-barber-avatar-icon-barbershop-and-hairdresser-haircutter-symbol-flat-icon-illustration.jpg?s=1024x1024&w=is&k=20&c=yWhDjdlYMHLLlKmVhlA6wlHvOjIbNG0Q5KUsDdffFmY=" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php
+              }
+              ?>
+            </div>
+
+
+
         </div>
     </div>
 </div>
