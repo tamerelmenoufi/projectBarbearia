@@ -198,7 +198,7 @@
 
 
 
-      if (window.File && window.FileList && window.FileReader) {
+    if (window.File && window.FileList && window.FileReader) {
 
         $('input[type="file"]').change(function () {
 
@@ -232,9 +232,5 @@
       } else {
         alert('Nao suporta HTML5');
       }
-
-
-
-
     })
 </script>

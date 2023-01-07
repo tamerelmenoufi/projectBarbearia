@@ -57,6 +57,21 @@
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
+
+
+                <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
+                    <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
+                </div>
+            <!-- <div class="form-floating"> -->
+                <input <?=(($d->vendas or $d->estoque)?'disabled="disabled"':false)?> type="file" class="form-control" placeholder="Banner">
+                <input type="hidden" id="base64" name="base64" value="" />
+                <input type="hidden" id="imagem_tipo" name="imagem_tipo" value="" />
+                <input type="hidden" id="imagem_nome" name="imagem_nome" value="" />
+                <input type="hidden" id="imagem" name="imagem" value="<?=$d->imagem?>" />
+                <!-- <label for="url">Banner</label> -->
+                <div class="form-text mb-3">Selecione a imagem para o Banner</div>
+            <!-- </div> -->
+
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
                     <label for="nome">Nome*</label>
@@ -191,4 +206,42 @@
             });
 
         })
+
+
+        if (window.File && window.FileList && window.FileReader) {
+
+            $('input[type="file"]').change(function () {
+
+                if ($(this).val()) {
+                    var files = $(this).prop("files");
+                    for (var i = 0; i < files.length; i++) {
+                        (function (file) {
+                            var fileReader = new FileReader();
+                            fileReader.onload = function (f) {
+
+
+                            var Base64 = f.target.result;
+                            var type = file.type;
+                            var name = file.name;
+
+                            $("#base64").val(Base64);
+                            $("#imagem_tipo").val(type);
+                            $("#imagem_nome").val(name);
+
+                            $("div[showImage] img").attr("src",Base64);
+                            $("div[showImage]").css("display",'block');
+
+
+
+                            };
+                            fileReader.readAsDataURL(file);
+                        })(files[i]);
+                    }
+            }
+            });
+        } else {
+            alert('Nao suporta HTML5');
+        }
+
+
     </script>
