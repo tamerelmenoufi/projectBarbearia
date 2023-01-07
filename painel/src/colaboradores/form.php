@@ -13,9 +13,9 @@
 
       //Imagem
       $img = false;
-      unset($dados['base64']);
-      unset($dados['imagem_tipo']);
-      unset($dados['imagem_nome']);
+      unset($data['base64']);
+      unset($data['imagem_tipo']);
+      unset($data['imagem_nome']);
 
       if($_POST['base64'] and $_POST['imagem_tipo'] and $_POST['imagem_nome']){
 
@@ -28,7 +28,7 @@
 
         if(!is_dir("../volume/colaboradores")) mkdir("../volume/colaboradores");
         if(file_put_contents("../volume/colaboradores/".$nome, $img)){
-          $dados['foto'] = $nome;
+          $data['foto'] = $nome;
         }
       }
       //Fim da Verificação da Imagem
