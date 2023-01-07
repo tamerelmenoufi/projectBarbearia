@@ -11,6 +11,29 @@
         unset($data['acao']);
         unset($data['senha']);
 
+      //Imagem
+      $img = false;
+      unset($dados['base64']);
+      unset($dados['imagem_tipo']);
+      unset($dados['imagem_nome']);
+
+      if($_POST['base64'] and $_POST['imagem_tipo'] and $_POST['imagem_nome']){
+
+        if($_POST['foto']) unlink("../volume/colaboradores/{$_POST['foto']}");
+
+        $base64 = explode('base64,', $_POST['base64']);
+        $img = base64_decode($base64[1]);
+        $ext = substr($_POST['imagem_nome'], strripos($_POST['imagem_nome'],'.'), strlen($_POST['imagem_nome']));
+        $nome = md5($_POST['base64'].$_POST['imagem_tipo'].$_POST['imagem_nome'].date("YmdHis")).$ext;
+
+        if(!is_dir("../volume/colaboradores")) mkdir("../volume/colaboradores");
+        if(file_put_contents("../volume/colaboradores/".$nome, $img)){
+          $dados['foto'] = $nome;
+        }
+      }
+      //Fim da Verificação da Imagem
+
+
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . addslashes($value) . "'";
         }
@@ -59,17 +82,17 @@
             <div class="col">
 
 
-                <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
-                    <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
+                <div showImage class="form-floating" style="display:<?=(($d->foto)?'block':'none')?>">
+                    <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="img-fluid mt-3 mb-3" alt="" />
                 </div>
             <!-- <div class="form-floating"> -->
-                <input <?=(($d->vendas or $d->estoque)?'disabled="disabled"':false)?> type="file" class="form-control" placeholder="Banner">
+                <input type="file" class="form-control" placeholder="Foto">
                 <input type="hidden" id="base64" name="base64" value="" />
                 <input type="hidden" id="imagem_tipo" name="imagem_tipo" value="" />
                 <input type="hidden" id="imagem_nome" name="imagem_nome" value="" />
-                <input type="hidden" id="imagem" name="imagem" value="<?=$d->imagem?>" />
+                <input type="hidden" id="imagem" name="foto" value="<?=$d->foto?>" />
                 <!-- <label for="url">Banner</label> -->
-                <div class="form-text mb-3">Selecione a imagem para o Banner</div>
+                <div class="form-text mb-3">Selecione a foto do Colaborador</div>
             <!-- </div> -->
 
                 <div class="form-floating mb-3">
