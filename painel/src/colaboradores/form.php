@@ -99,6 +99,12 @@
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
                     <label for="nome">Nome*</label>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="especialidade" name="especialidade" placeholder="Especialidade do Profissional" value="<?=$d->especialidade?>">
+                    <label for="especialidade">Especialidade*</label>
+                </div>
+
                 <div class="form-floating mb-3">
                     <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">CPF*</label>
