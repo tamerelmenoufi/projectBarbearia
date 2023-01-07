@@ -44,7 +44,7 @@
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
-            $query = "update colaboradores set {$attr} where codigo = '{$_POST['codigo']}'";
+            echo $query = "update colaboradores set {$attr} where codigo = '{$_POST['codigo']}'";
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
@@ -206,6 +206,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
+                        $.alert(dados)
                         // if(dados.status){
                             $.ajax({
                                 url:"src/colaboradores/index.php",
