@@ -179,7 +179,7 @@
                 <div class="card text-bg-dark mb-3">
                   <img src="https://media.istockphoto.com/id/1281247301/pt/vetorial/the-barber-avatar-icon-barbershop-and-hairdresser-haircutter-symbol-flat-icon-illustration.jpg?s=1024x1024&w=is&k=20&c=yWhDjdlYMHLLlKmVhlA6wlHvOjIbNG0Q5KUsDdffFmY=" class="card-img" alt="...">
                   <div class="card-img-overlay">
-                    <div class="fixed-bottom">
+                    <div class="d-flex align-items-end">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                       <p class="card-text"><small>Last updated 3 mins ago</small></p>
