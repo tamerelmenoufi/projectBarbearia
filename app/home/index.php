@@ -87,7 +87,10 @@
 <div class="m-3 p-3">
     <div class="row">
         <div class="col">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
+
+
+
+            <!-- <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
@@ -121,49 +124,52 @@
                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                 <div class="accordion-body">
 
-                    <div class="row">
-                        <?php
-                        for($i=0;$i<20;$i++){
-                        ?>
-                            <div class="col-md-3 mb-3">
-                              <div class="card h-100">
-                                <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/kreative/catalog/banner-barbearia/banner-barbearia-mod-2041/banner-barbearia-2042/banner-barbearia-2043/banner-barbearia-2043/banner-barbearia-mod-2045/banner-barbearia-mod-2046/banner-barbearia-mod-2045-foto-120190927145845.JPG" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">
-                                        <?php
-                                        for($j=$i;$j<3;$j++){
-                                        ?>
-                                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                                        <?php
-                                        }
-                                        ?>
-                                    </p>
 
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">
-                                        <a
-                                            href="#"
-                                            class="btn btn-outline-secondary"
-                                            data-bs-toggle="offcanvas"
-                                            data-bs-target="#offcanvasDireita"
-                                            aria-controls="offcanvasDireita"
-                                        >Go somewhere</a>
-                                    </small>
-                                </div>
-                              </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
+
+                </div>
+                </div>
+            </div>
+            </div> -->
+
+
+
+            <div class="row">
+                <?php
+                for($i=0;$i<20;$i++){
+                ?>
+                    <div class="col-md-3 mb-3">
+                      <div class="card h-100">
+                        <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/kreative/catalog/banner-barbearia/banner-barbearia-mod-2041/banner-barbearia-2042/banner-barbearia-2043/banner-barbearia-2043/banner-barbearia-mod-2045/banner-barbearia-mod-2046/banner-barbearia-mod-2045-foto-120190927145845.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                <?php
+                                for($j=$i;$j<3;$j++){
+                                ?>
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                <?php
+                                }
+                                ?>
+                            </p>
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                <a
+                                    href="#"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasDireita"
+                                    aria-controls="offcanvasDireita"
+                                >Go somewhere</a>
+                            </small>
+                        </div>
+                      </div>
                     </div>
-
-                </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
-            </div>
-
 
             <div class="row">
               <?php
