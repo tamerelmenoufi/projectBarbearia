@@ -196,7 +196,7 @@
               ?>
             </div>
 
-            <footer class="text-muted py-5">
+            <footer class="text-muted py-5 bg-secondary">
               <div class="container">
                 <p class="float-end mb-1">
                   <a href="#">Back to top</a>
