@@ -36,7 +36,7 @@
         $campos[] = "{$i} = '{$v}'";
       }
       if($_POST['codigo']){
-        $query = "UPDATE produtos set ".implode(", ",$campos)." WHERE codigo = '{$_POST['codigo']}'";
+        echo $query = "UPDATE produtos set ".implode(", ",$campos)." WHERE codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         $acao = mysqli_affected_rows($con);
       }else{
