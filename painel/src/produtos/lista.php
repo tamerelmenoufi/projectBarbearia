@@ -55,7 +55,7 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col" style="width:100%">Produto</th>
+                  <th scope="col" style="width:100%">Item</th>
                   <th scope="col">Valor</th>
                   <th scope="col">Estoque</th>
                   <th scope="col">Situação</th>

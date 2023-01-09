@@ -73,7 +73,7 @@
                   <td style="white-space: nowrap;">
 
                     <button class="btn btn-success btn-sm" produtos="<?=$d->codigo?>" categoria="<?=$d->categoria?>">
-                    <i class="fa-solid fa-box-open"></i> Produtos
+                    <i class="fa-solid fa-box-open"></i> Itens
                     </button>
 
                     <button
