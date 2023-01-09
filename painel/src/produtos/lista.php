@@ -57,7 +57,7 @@
                 <tr>
                   <th scope="col" style="width:100%">Item</th>
                   <th scope="col">Valor</th>
-                  <th scope="col">Tempo</th>
+                  <?=(($d->tipo == 's')?'<th scope="col">Tempo</th>':false)?>
                   <th scope="col">Estoque</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
@@ -73,7 +73,7 @@
                   <td style="white-space: nowrap;"><?=$d->produto?></td>
 
                   <td style="white-space: nowrap;">R$ <?=number_format($d->valor,2,',','.')?></td>
-                  <td style="white-space: nowrap;"><?=$d->tempo?> min</td>
+                  <?=(($d->tipo == 's')?'<td style="white-space: nowrap;">'.$d->tempo.' min</td>':false)?>
                   <td style="white-space: nowrap;"><?=$d->estoque?></td>
 
                   <td style="white-space: nowrap;">

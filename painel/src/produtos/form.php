@@ -105,12 +105,13 @@
         </div>
       </div>
 
-
-      <div class="form-floating mb-3">
-        <div class="input-group">
-          <span class="input-group-text">Tempo de Atendimento</span>
-          <input type="number" class="form-control" value="<?=$d->tempo?>" id="tempo" name="tempo" min="15" max="120" step=".00">
-          <span class="input-group-text">Especificar em Minuto</span>
+      <div class="grupo_servico" style="display:<?=(($d->tipo == 's')?'inline':'none')?>">
+        <div class="form-floating mb-3">
+          <div class="input-group">
+            <span class="input-group-text">Tempo de Atendimento</span>
+            <input type="number" class="form-control" value="<?=$d->tempo?>" id="tempo" name="tempo" min="15" max="120" step=".00">
+            <span class="input-group-text">Especificar em Minuto</span>
+          </div>
         </div>
       </div>
 
@@ -204,8 +205,10 @@
         opc = $(this).val();
         if(opc == 'p'){
           $(".grupo_nota").css("display","inline");
+          $(".grupo_servico").css("display","none");
         }else{
           $(".grupo_nota").css("display","none");
+          $(".grupo_servico").css("display","inline");
         }
       });
 
