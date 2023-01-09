@@ -105,6 +105,17 @@
         </div>
       </div>
 
+
+      <div class="form-floating">
+        <select id="tipo" name="tipo" class="form-control" placeholder="Tipo">
+          <option value="p" <?=(($d->tipo == 'p')?'selected':false)?>>Produto</option>
+          <option value="s" <?=(($d->tipo == 's')?'selected':false)?>>Serviço</option>
+        </select>
+        <label for="tipo">Tipo</label>
+        <div class="form-text">Selecione o tipo do registro</div>
+      </div>
+
+
       <div class="grupo_nota" style="display:<?=(($d->tipo == 'p')?'inline':'none')?>">
 
         <div class="form-floating mb-3">
@@ -137,16 +148,6 @@
           <div class="form-text">Digite ICMS do Produto.</div>
         </div>
 
-      </div>
-
-
-      <div class="form-floating">
-        <select id="tipo" name="tipo" class="form-control" placeholder="Tipo">
-          <option value="p" <?=(($d->tipo == 'p')?'selected':false)?>>Produto</option>
-          <option value="s" <?=(($d->tipo == 's')?'selected':false)?>>Serviço</option>
-        </select>
-        <label for="tipo">Tipo</label>
-        <div class="form-text">Selecione o tipo do registro</div>
       </div>
 
 
