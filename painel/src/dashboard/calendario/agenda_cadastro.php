@@ -1,6 +1,9 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
+
+    $conf = mysqli_fetch_object(mysqli_query("select * from configuracoes where codigo = '1'"));
+
     $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
 
     function filtroServicoColaborador($c){

@@ -2,6 +2,10 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
 
+
+    $conf = mysqli_fetch_object(mysqli_query("select * from configuracoes where codigo = '1'"));
+    $hoje = date("D");
+
     if($_POST['acao'] == 'cancelar_agenda'){
 
         mysqli_query($con, "delete from agenda where codigo = '{$_POST['codigo']}'");
@@ -57,7 +61,7 @@
 <div class="p-1" style="font-size:12px;">
     <div class="mb-3">
         <div class="row" style="margin:0; padding:0;">
-            <div class="col text-start"><h6>Agenda do dia</h6></div>
+            <div class="col text-start"><h6>Agenda do dia <?=$hoje?></h6></div>
             <div class="col text-end"><input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" /></div>
         </div>
     </div>
