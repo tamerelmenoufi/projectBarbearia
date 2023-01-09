@@ -72,7 +72,7 @@
                 <tr>
                   <td style="white-space: nowrap;"><?=$d->produto?></td>
 
-                  <td style="white-space: nowrap;"><?=$d->valor?></td>
+                  <td style="white-space: nowrap;">R$ <?=number_format($d->valor,2,',','.')?></td>
                   <td style="white-space: nowrap;"><?=$d->tempo?> min</td>
                   <td style="white-space: nowrap;"><?=$d->estoque?></td>
 
