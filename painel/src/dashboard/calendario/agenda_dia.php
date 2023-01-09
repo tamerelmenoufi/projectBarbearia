@@ -4,7 +4,8 @@
 
 
     $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
-    $hoje = strftime('%a', strtotime('today'));
+    setlocale(LC_ALL, 'pt_BR');
+    $hoje = strftime('%a', date());
 
     if($_POST['acao'] == 'cancelar_agenda'){
 
