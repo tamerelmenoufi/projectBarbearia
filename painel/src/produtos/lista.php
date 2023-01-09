@@ -57,6 +57,7 @@
                 <tr>
                   <th scope="col" style="width:100%">Item</th>
                   <th scope="col">Valor</th>
+                  <th scope="col">Tempo</th>
                   <th scope="col">Estoque</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
@@ -72,6 +73,7 @@
                   <td style="white-space: nowrap;"><?=$d->produto?></td>
 
                   <td style="white-space: nowrap;"><?=$d->valor?></td>
+                  <td style="white-space: nowrap;"><?=$d->tempo?></td>
                   <td style="white-space: nowrap;"><?=$d->estoque?></td>
 
                   <td style="white-space: nowrap;">
