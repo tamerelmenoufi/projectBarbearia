@@ -3,7 +3,7 @@
     vl(['ProjectPainel']);
 
 
-    $conf = mysqli_fetch_object(mysqli_query("select * from configuracoes where codigo = '1'"));
+    $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
     $hoje = date("D");
 
     if($_POST['acao'] == 'cancelar_agenda'){
