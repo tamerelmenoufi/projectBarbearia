@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    setlocale(LC_ALL, 'pt_BR');
+    setlocale(LC_ALL, 'pt_BR.utf8');
 
     include("/appinc/cBarb.php");
     $md5 = md5(date("YmdHis"));
