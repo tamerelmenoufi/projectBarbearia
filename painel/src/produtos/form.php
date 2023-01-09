@@ -72,7 +72,7 @@
   }
 </style>
 
-<h3 class="titulo<?=$md5?>">Editar Produto</h3>
+<h3 class="titulo<?=$md5?>">Editar Item</h3>
 
     <form id="acaoMenu<?=$md5?>">
       <h5><?=$_SESSION['categoriaProdutoNome']?></h5>
