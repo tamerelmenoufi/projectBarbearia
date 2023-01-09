@@ -146,3 +146,13 @@
         }
         return $sum;
     }
+
+    $abrevSem = [
+        'Mon' => 'seg',
+        'Tue' => 'ter',
+        'Wed' => 'qua',
+        'Thu' => 'qui',
+        'Fri' => 'sex',
+        'Sat' => 'sab',
+        'Sun' => 'dom'
+    ];
