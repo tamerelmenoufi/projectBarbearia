@@ -108,31 +108,31 @@
       <div class="grupo_nota" style="display:<?=(($d->tipo == 'p')?'inline':'none')?>">
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="ncm" name="ncm" placeholder="NCM do Produto" value="<?=$d->ncm?>">
+          <input type="text" class="form-control" id="ncm" name="nota_ncm" placeholder="NCM do Produto" value="<?=$d->ncm?>">
           <label for="produto">NCM</label>
           <div class="form-text">Digite o NCM do Produto.</div>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="cest" name="cest" placeholder="CEST do Produto" value="<?=$d->cest?>">
+          <input type="text" class="form-control" id="cest" name="nota_cest" placeholder="CEST do Produto" value="<?=$d->cest?>">
           <label for="produto">CEST</label>
           <div class="form-text">Digite o CEST do Produto.</div>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="origem" name="origem" placeholder="Origem do Produto" value="<?=$d->origem?>">
+          <input type="text" class="form-control" id="origem" name="nota_origem" placeholder="Origem do Produto" value="<?=$d->origem?>">
           <label for="produto">Origem</label>
           <div class="form-text">Digite Origem do Produto.</div>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="cfop" name="cfop" placeholder="CFOP do Produto" value="<?=$d->cfop?>">
+          <input type="text" class="form-control" id="cfop" name="nota_cfop" placeholder="CFOP do Produto" value="<?=$d->cfop?>">
           <label for="produto">CFOP</label>
           <div class="form-text">Digite CFOP do Produto.</div>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="icms" name="icms" placeholder="ICMS do Produto" value="<?=$d->icms?>">
+          <input type="text" class="form-control" id="icms" name="nota_icms" placeholder="ICMS do Produto" value="<?=$d->icms?>">
           <label for="produto">ICMS</label>
           <div class="form-text">Digite ICMS do Produto.</div>
         </div>
