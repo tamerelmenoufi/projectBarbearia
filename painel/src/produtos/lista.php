@@ -73,7 +73,7 @@
                   <td style="white-space: nowrap;"><?=$d->produto?></td>
 
                   <td style="white-space: nowrap;"><?=$d->valor?></td>
-                  <td style="white-space: nowrap;"><?=$d->tempo?></td>
+                  <td style="white-space: nowrap;"><?=$d->tempo?> min</td>
                   <td style="white-space: nowrap;"><?=$d->estoque?></td>
 
                   <td style="white-space: nowrap;">
