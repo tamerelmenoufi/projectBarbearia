@@ -16,7 +16,7 @@
 
       if($_POST['base64'] and $_POST['imagem_tipo'] and $_POST['imagem_nome']){
 
-        if($_POST['imagem']) unlink("../volume/produtos/{$_POST['imagem']}");
+        if($_POST['imagem']) @unlink("../volume/produtos/{$_POST['imagem']}");
 
         $base64 = explode('base64,', $_POST['base64']);
         $img = base64_decode($base64[1]);
