@@ -70,9 +70,6 @@
     top:7px;
     margin-left:50px;
   }
-  .grupo_nota{
-    display:none;
-  }
 </style>
 
 <h3 class="titulo<?=$md5?>">Editar Produto</h3>
@@ -108,7 +105,7 @@
         </div>
       </div>
 
-      <div class="grupo_nota" style="display:<?=(($d->tipo == 'p')?'none':'inline')?>">
+      <div class="grupo_nota" style="display:<?=(($d->tipo == 'p')?'inline':'none')?>">
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="ncm" name="ncm" placeholder="NCM do Produto" value="<?=$d->ncm?>">
