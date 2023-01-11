@@ -23,7 +23,7 @@
 
         $result = mysqli_query($con, $query);
         $grupo = false;
-        echo "<option value=''>::Selecione::</option>";
+        echo "<option value=''>Selecione</option>";
         while($d = mysqli_fetch_object($result)){
 
             if($grupo != $d->categoria_nome){
@@ -137,7 +137,6 @@ if($blq){
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="selectpicker form-control"
-                multipleXXXX
                 data-actions-box="true"
                 ></select>
     </div>
@@ -215,7 +214,7 @@ if($blq){
 
             // return false;
 
-            if(!cliente || !colaborador || servico.length == 0){
+            if(!cliente || !colaborador || !servico){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
                     type:'red',
