@@ -8,7 +8,7 @@
     $inter_ini = strtotime(date("Y-m-d {$hi}:00"));
     $inter_fim = strtotime(date("Y-m-d {$hf}:00"));
 
-    echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
+    echo "<p>Colab.: {$_POST['colaborador']} - Serv.: ".implode(", ",$_POST['servico'])."</p>";
 
     for($i = $inter_ini; $i <= $inter_fim; $i = ($i + 60)){
         echo "<p>".date("d/m/Y H:i",$i)."</p>";
