@@ -23,6 +23,7 @@
 
         $result = mysqli_query($con, $query);
         $grupo = false;
+        echo "<option value=''>::Selecione::</option>";
         while($d = mysqli_fetch_object($result)){
 
             if($grupo != $d->categoria_nome){
