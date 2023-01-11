@@ -52,7 +52,8 @@ while($d = mysqli_fetch_object($result)){
 
     // $vcod_agenda = explode(",",$d->cod_agenda);
 
-    $qs = "select * from produtos where codigo in(".implode(",",json_decode($d->servico)).")";
+    // $qs = "select * from produtos where codigo in(".implode(",",json_decode($d->servico)).")";
+    $qs = "select * from produtos where codigo = '".$d->servico."'";
     $rs = mysqli_query($con, $qs);
     $servicos = [];
     while($ds = mysqli_fetch_object($rs)){
