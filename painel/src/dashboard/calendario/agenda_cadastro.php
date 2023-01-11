@@ -169,13 +169,21 @@ if($blq){
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
-
-        $.ajax({
-            url:"src/dashboard/calendario/horarios.php",
-            success:function(dados){
-                $(".horarios").html(dados);
-            }
+        $("#servico").change(function(){
+            colaborador = $("#colaborador").val();
+            servico = $(this).val();
+            $.ajax({
+                type:"POST",
+                data:{
+                    colaborador,
+                    servico,
+                },
+                url:"src/dashboard/calendario/horarios.php",
+                success:function(dados){
+                    $(".horarios").html(dados);
+                }
             });
+        });
 
 
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
