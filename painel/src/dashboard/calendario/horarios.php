@@ -3,4 +3,4 @@
     vl(['ProjectPainel']);
 
     $dia = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
-    echo $dia[date("D")];
+    echo $dia;
