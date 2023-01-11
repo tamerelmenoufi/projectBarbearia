@@ -136,7 +136,7 @@ if($blq){
                 data-live-search="true"
                 data-none-selected-text="Selecione"
                 class="selectpicker form-control"
-                multiple
+                multipleXXXX
                 data-actions-box="true"
                 ></select>
     </div>
