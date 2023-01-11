@@ -3,8 +3,10 @@
     vl(['ProjectPainel']);
 
     $dia = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
-    var_dump($_SESSION['PeriodoLoja']->dias_horas_atendimento);
-    echo "<hr>";
-    echo $hj = $abrevSem[date("D")];
-    echo "<hr>";
-    echo $dia->$hj;
+    $hj = $abrevSem[date("D")];
+    list($hi, $hf) = explode("-",$dia->$hj);
+    $inter_ini = strtotime(date("Y-m-d {$hi}:00"));
+    $inter_fim = strtotime(date("Y-m-d {$hf}:00"));
+
+    echo "<p>{$inter_ini} até {$inter_fim}</p>";
+
