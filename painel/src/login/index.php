@@ -11,6 +11,7 @@
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
             $_SESSION['ProjectPainel'] = $d;
+            $_SESSION['PeriodoLoja'] = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
             $retorno = [
                 'sucesso' => true,
                 'ProjectPainel' => $d->codigo,

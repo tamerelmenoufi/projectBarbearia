@@ -6,6 +6,9 @@
 
     $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
 
+
+    $hoje = $abrevSem[date("D")];
+
     function filtroServicoColaborador($c){
         global $con;
         $query = "select
@@ -139,7 +142,11 @@ if($blq){
     </div>
 </div>
 
+<div class="row mb-2">
+    <div class="col-12 horarios">
 
+    </div>
+</div>
 <div class="row mb-2">
     <div class="col-12">
         <label for="exampleInputEmail1" class="form-label">Observações </label>
@@ -161,6 +168,15 @@ if($blq){
         $("#cliente").selectpicker();
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
+
+
+        $.ajax({
+            url:"src/dashboard/calendario/horarios.php",
+            success:function(dados){
+                $(".horarios").html(dados);
+            }
+            });
+
 
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             colaborador = $(this).val();
