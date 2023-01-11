@@ -53,9 +53,9 @@
             global $_SESSION;
             list($servicos, $colaborador) = mysqli_fetch_row(mysqli_query($con, "select servico, colaborador from agenda where codigo = '{$agenda}'"));
             if($servicos){
-                $servicos = json_decode($servicos);
-                foreach($servicos as $ind => $cod){
-                    $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$cod}'"));
+                // $servicos = json_decode($servicos);
+                // foreach($servicos as $ind => $cod){
+                    $p = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$servicos}'"));
                     $qt = 1;
                     $query = "insert into vendas_produtos set
                                     agenda = '{$agenda}',
@@ -81,7 +81,7 @@
                     $result = mysqli_query($con,$query);
                     $cod_venda_produto = mysqli_insert_id($con);
                     AtualizaComissao($cod_venda_produto, $p->codigo, $colaborador);
-                }
+                // }
             }
         }
 
