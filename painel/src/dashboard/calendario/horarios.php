@@ -44,31 +44,14 @@
 </style>
 <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
-          <td colspan="7" align="left" class="titulo">
-        Registro de envios em <select id="OpMes">
-            <option value="">M&eacute;s</option>
-            <?php
-                for($i=1;$i<=12;$i++){
-            ?>
-                <option value="<?=$i?>" <?=(($i == $mes) ? 'selected' : false)?>><?=$i?></option>
-            <?php
-                }
-            ?>
-        </select>
-        /
-        <select id="OpAno">
-            <option value="">Ano</option>
-            <?php
-			for($i = date(Y); $i > date(Y)-4; $i--){
-			?>
-            <option value="<?=$i?>" <?=(($i == $ano) ? 'selected' : false)?>><?=$i?></option>
-            <?php
-			}
-			?>
-<!--            <option value="2012" <?=(('2012' == $ano) ? 'selected' : false)?>>2012</option>
-            <option value="2013" <?=(('2013' == $ano) ? 'selected' : false)?>>2013</option>
-            <option value="2014" <?=(('2014' == $ano) ? 'selected' : false)?>>2014</option>
--->        </select>
+        <td colspan="7" align="center" class="titulo">
+            <button class="btn btn-secondary">
+                <i class="fa-solid fa-angle-left"></i>
+            </button>
+            Janeiro
+            <button class="btn btn-secondary">
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
         </td>
       </tr>
 <?php
