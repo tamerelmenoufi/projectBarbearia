@@ -22,13 +22,13 @@
 	}
 
 
-    $prox_a = date("Y", mktime(0,0,0,$mes+1,$ano, $dia));
-    $prox_m = date("m", mktime(0,0,0,$mes+1,$ano, $dia));
-    $prox_d = date("d", mktime(0,0,0,$mes+1,$ano, $dia));
+    $prox_a = date("Y", mktime(0,0,0,$mes+1,$dia, $ano));
+    $prox_m = date("m", mktime(0,0,0,$mes+1,$dia, $ano));
+    $prox_d = date("d", mktime(0,0,0,$mes+1,$dia, $ano));
 
-    $ante_a = date("Y", mktime(0,0,0,$mes-1,$ano, $dia));
-    $ante_m = date("m", mktime(0,0,0,$mes-1,$ano, $dia));
-    $ante_d = date("d", mktime(0,0,0,$mes-1,$ano, $dia));
+    $ante_a = date("Y", mktime(0,0,0,$mes-1,$dia, $ano));
+    $ante_m = date("m", mktime(0,0,0,$mes-1,$dia, $ano));
+    $ante_d = date("d", mktime(0,0,0,$mes-1,$dia, $ano));
 
 ?>
 <style>
