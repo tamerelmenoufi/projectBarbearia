@@ -49,7 +49,7 @@
             <button class="btn btn-secondary">
                 <i class="fa-solid fa-angle-left"></i>
             </button>
-            <span style="font-size:30px; margin:10px 5px 10px 0;">Janeiro</span>
+            <span style="font-size:30px; margin-top:10px; margin-left:10px; margin-right:10px;">Janeiro</span>
             <button class="btn btn-secondary">
                 <i class="fa-solid fa-angle-right"></i>
             </button>
