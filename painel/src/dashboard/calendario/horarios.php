@@ -29,7 +29,18 @@
         /* width:calc(100/7)%;
         height:80px; */
         cursor:pointer;
+        position:relative;
     }
+    .calendario td div{
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        opacity:0.5;
+        background-color:red;
+    }
+
 </style>
 <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
@@ -110,7 +121,7 @@
 						echo "<td>";
 
                         echo "$linha ".$hoje;
-                        echo "<div class='agenda ".(($qtd)?'text-danger':'text-success')."' data='$ano-$w-$linha'>
+                        echo "<div class='".(($qtd)?'text-danger':'agenda text-success')."' data='$ano-$w-$linha'>
                         <i class='fa-solid fa-circle'></i>
                         </div>";
 
