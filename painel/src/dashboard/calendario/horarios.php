@@ -37,8 +37,8 @@
         top:0;
         right:0;
         bottom:0;
-        opacity:0.5;
-        background-color:red;
+        /* opacity:0.5;
+        background-color:red; */
     }
 
 </style>
@@ -122,8 +122,8 @@
 
                         // echo "$linha ".$hoje;
                         echo "<div class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."' data='$ano-$w-$linha'>
-                            {$linha}{$hoje}<br>
-                            <i class='fa-solid fa-circle'></i>
+                            <p>{$linha}{$hoje}<br>
+                            <i class='fa-solid fa-circle'></i></p>
                         </div>";
 
                         echo "</td>";
