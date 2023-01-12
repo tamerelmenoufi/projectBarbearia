@@ -111,7 +111,7 @@
 
 
                         echo "$linha ".$hoje;
-                        echo "<div class='".(($qtd)?'text-success':'text-danger')."' data='$ano-$w-$linha'>
+                        echo "<div class='".(($qtd)?'text-danger':'text-success')."' data='$ano-$w-$linha'>
                         <i class='fa-solid fa-circle'></i>
                         </div>";
 
