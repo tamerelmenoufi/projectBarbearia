@@ -23,6 +23,7 @@
 <style>
     .calendario{
         width:100%;
+        font-size:10px;
     }
     .calendario td{
         width:calc(100/7)%;
