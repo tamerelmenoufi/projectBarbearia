@@ -57,6 +57,21 @@
     <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
+
+
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+            <select name="" id="">
+                <option value="">Um</option>
+                <option value="">Um</option>
+                <option value="">Um</option>
+                <option value="">Um</option>
+            </select>
+            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+        </div>
+
+
             <button
                     class="btn btn-secondary busca_data"
                     ano="<?=$ante_a?>"
