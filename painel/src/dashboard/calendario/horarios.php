@@ -28,7 +28,7 @@
     .calendario td{
         /* width:calc(100/7)%;
         height:80px; */
-
+        cursor:pointer;
     }
 </style>
 <table class='table calendario' cellpadding="5" cellspacing="0">
@@ -109,9 +109,8 @@
 
 						echo "<td>";
 
-
                         echo "$linha ".$hoje;
-                        echo "<div class='".(($qtd)?'text-danger':'text-success')."' data='$ano-$w-$linha'>
+                        echo "<div class='agenda ".(($qtd)?'text-danger':'text-success')."' data='$ano-$w-$linha'>
                         <i class='fa-solid fa-circle'></i>
                         </div>";
 
