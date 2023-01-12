@@ -65,7 +65,7 @@
             >
                 <i class="fa-solid fa-angle-left"></i>
             </button>
-            <span style="font-size:30px; margin-left:10px; margin-right:10px;"><?=$abrevMes($mes)?></span>
+            <span style="font-size:30px; margin-left:10px; margin-right:10px;"><?=$abrevMes[$mes]?></span>
             <button
                     class="btn btn-secondary busca_data"
                     ano="<?=$prox_a?>"
