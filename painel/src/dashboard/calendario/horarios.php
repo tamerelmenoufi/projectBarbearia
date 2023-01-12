@@ -109,10 +109,13 @@
                    }
           ?>
     		</tr>
+            <?php
+       }
+            ?>
 	  </table>
 
 <?php
-       }
+
 
     echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
 
