@@ -1,8 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
-    echo $c = "select * from colaboradores where codigo = '{$_POST['colaborador']}'";
-    $c = mysqli_fetch_object(mysqli_query($con, "select * from colaboradores where codigo = '{$_POST['colaborador']}'"));
+    $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['servico']}'"));
 
 
     $dia = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
