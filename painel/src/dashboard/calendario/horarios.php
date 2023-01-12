@@ -121,7 +121,7 @@
 						echo "<td>";
 
                         echo "$linha ".$hoje;
-                        echo "<div class='d-flex align-items-center align-content-center ".(($qtd)?'text-danger':'agenda text-success')."' data='$ano-$w-$linha'><i class='fa-solid fa-circle'></i></div>";
+                        echo "<div class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."' data='$ano-$w-$linha'><i class='fa-solid fa-circle'></i></div>";
 
                         echo "</td>";
 					    // Se Sábado desce uma linha
