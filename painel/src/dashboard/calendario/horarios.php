@@ -113,7 +113,9 @@
                         echo "$linha ".$hoje;
 						//$qtd = '354';
 						if($qtd) {
-						    echo "<div ".$qt." data='$ano-$w-$linha'>".$qtd."</div>";
+						    echo "<div class='".(($qtd)?'text-color-green':'text-color-red')."' data='$ano-$w-$linha'>
+                            <i class='fa-solid fa-circle'></i>
+                            </div>";
 						}
 						echo "</td>";
 					    // Se Sábado desce uma linha
