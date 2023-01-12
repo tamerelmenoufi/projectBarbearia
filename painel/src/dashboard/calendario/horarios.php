@@ -43,7 +43,7 @@
 
 </style>
 <div class='card'>
-    <table class='card table calendario' cellpadding="5" cellspacing="0">
+    <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
             <button class="btn btn-secondary">
