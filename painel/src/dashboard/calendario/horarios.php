@@ -165,7 +165,7 @@
 
 $(function(){
 
-    $(".busca_data").change(function(){
+    $(".busca_data").click(function(){
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
         ano = $(this).attr("ano");
