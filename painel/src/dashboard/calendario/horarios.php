@@ -23,7 +23,7 @@
 <style>
     .calendario{
         width:100%;
-        font-size:10px;
+        font-size:12px;
     }
     .calendario td{
         /* width:calc(100/7)%;
@@ -71,7 +71,13 @@
 ?>
 
 			  <tr align='center' class='dias_semana'>
-   				  <td class='lista_titulo' width="14%">Domingo<td class='lista_titulo' width="14%">Segunda<td class='lista_titulo' width="14%">Ter&ccedil;a<td class='lista_titulo' width="14%">Quarta<td class='lista_titulo' width="14%">Quinta<td class='lista_titulo' width="14%">Sexta<td class='lista_titulo' width="14%">S&aacute;bado</td>
+   				<td class='lista_titulo' width="14%">Dom</td>
+                <td class='lista_titulo' width="14%">Seg</td>
+                <td class='lista_titulo' width="14%">Ter</td>
+                <td class='lista_titulo' width="14%">Qua</td>
+                <td class='lista_titulo' width="14%">Qui</td>
+                <td class='lista_titulo' width="14%">Sex</td>
+                <td class='lista_titulo' width="14%">S&aacute;b</td>
               </tr>
 
 			  <tr>
@@ -101,7 +107,7 @@
 
 						//echo "select count(codigo) from t".$_SESSION[sms_usuario_logado]."_".$ano.$w." where data like '%$ano-$w-$linha%'";
 
-						echo "<td geral class='lista_agenda' valign='top' cel>";
+						echo "<td>";
 
 
                         echo "$linha ".$hoje;
