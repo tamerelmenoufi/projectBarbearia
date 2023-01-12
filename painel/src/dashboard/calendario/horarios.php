@@ -58,7 +58,7 @@
       <tr>
         <td colspan="7" align="center" class="titulo">
             <button
-                    class="btn btn-secondary data_ante"
+                    class="btn btn-secondary busca_data"
                     ano="<?=$ante_a?>"
                     mes="<?=$ante_m?>"
                     dia="<?=$ante_d?>"
@@ -67,7 +67,7 @@
             </button>
             <span style="font-size:30px; margin-left:10px; margin-right:10px;"><?=$mes?></span>
             <button
-                    class="btn btn-secondary data_prox"
+                    class="btn btn-secondary busca_data"
                     ano="<?=$prox_a?>"
                     mes="<?=$prox_m?>"
                     dia="<?=$prox_d?>"
@@ -165,7 +165,7 @@
 
 $(function(){
 
-    $("#servico").change(function(){
+    $(".busca_data").change(function(){
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
         ano = $(this).attr("ano");
