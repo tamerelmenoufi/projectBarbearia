@@ -31,7 +31,7 @@
 
     }
 </style>
-<table class='table' cellpadding="5" cellspacing="0">
+<table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
           <td colspan="7" align="left" class="titulo">
         Registro de envios em <select id="OpMes">
