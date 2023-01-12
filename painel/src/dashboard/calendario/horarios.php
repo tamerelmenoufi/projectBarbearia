@@ -122,7 +122,7 @@
 
                         // echo "$linha ".$hoje;
                         echo "<div class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."' data='$ano-$w-$linha'>
-                            <p>{$linha}{$hoje}<br>
+                            <p class='".(($hoje)?'text-primary':false)."'>{$linha}<br>
                             <i class='fa-solid fa-circle'></i></p>
                         </div>";
 
