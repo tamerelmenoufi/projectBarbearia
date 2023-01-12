@@ -42,13 +42,13 @@
     }
 
 </style>
-<table class='table calendario' cellpadding="5" cellspacing="0">
+<table class='card table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
             <button class="btn btn-secondary">
                 <i class="fa-solid fa-angle-left"></i>
             </button>
-            Janeiro
+            <span style="font-size:30px; font-weight:bold; margin-left:10px; margin-right:10px;">Janeiro</span>
             <button class="btn btn-secondary">
                 <i class="fa-solid fa-angle-right"></i>
             </button>
