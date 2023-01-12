@@ -20,8 +20,17 @@
 	}
 
 ?>
+<style>
+    .calendario{
+        width:100%;
+    }
+    .calendario td{
+        width:calc(100/7)%;
+        height:80px;
 
-<table class='table' cellpadding="5" cellspacing="0" border="0" align="center">
+    }
+</style>
+<table class='table' cellpadding="5" cellspacing="0">
       <tr>
           <td colspan="7" align="left" class="titulo">
         Registro de envios em <select id="OpMes">
