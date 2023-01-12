@@ -26,8 +26,8 @@
         font-size:10px;
     }
     .calendario td{
-        width:calc(100/7)%;
-        height:80px;
+        /* width:calc(100/7)%;
+        height:80px; */
 
     }
 </style>
