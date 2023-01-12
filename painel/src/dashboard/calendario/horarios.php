@@ -11,13 +11,24 @@
 
 
 
-	if($_GET[OpAno] and $_GET[OpMes]){
-		$ano = $_GET[OpAno];
-		$mes = $_GET[OpMes];
+	if($_POST['ano'] and $_POST['mes']){
+		$ano = $_POST['ano'];
+		$mes = $_POST['mes'];
+        $dia = (($_POST['dia'])?:date("d"));
 	}else{
 		$ano = date(Y);
 		$mes = date(m);
+		$dia = date(d);
 	}
+
+
+    $prox_a = date("Y", mktime(0,0,0,$mes+1,$ano, $dia));
+    $prox_m = date("m", mktime(0,0,0,$mes+1,$ano, $dia));
+    $prox_d = date("d", mktime(0,0,0,$mes+1,$ano, $dia));
+
+    $ante_a = date("Y", mktime(0,0,0,$mes-1,$ano, $dia));
+    $ante_m = date("m", mktime(0,0,0,$mes-1,$ano, $dia));
+    $ante_d = date("d", mktime(0,0,0,$mes-1,$ano, $dia));
 
 ?>
 <style>
@@ -46,11 +57,21 @@
     <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
-            <button class="btn btn-secondary">
+            <button
+                    class="btn btn-secondary data_ante"
+                    ano="<?=$ante_a?>"
+                    mes="<?=$ante_m?>"
+                    dia="<?=$ante_d?>"
+            >
                 <i class="fa-solid fa-angle-left"></i>
             </button>
-            <span style="font-size:30px; margin-left:10px; margin-right:10px;">Janeiro</span>
-            <button class="btn btn-secondary">
+            <span style="font-size:30px; margin-left:10px; margin-right:10px;"><?=$mes?></span>
+            <button
+                    class="btn btn-secondary data_prox"
+                    ano="<?=$prox_a?>"
+                    mes="<?=$prox_m?>"
+                    dia="<?=$prox_d?>"
+            >
                 <i class="fa-solid fa-angle-right"></i>
             </button>
         </td>
@@ -139,3 +160,33 @@
     echo "<p>{$inter_ini} até {$inter_fim}</p>";
     echo ($inter_fim - $inter_ini);
 ?>
+
+<script>
+
+$(function(){
+
+    $("#servico").change(function(){
+        colaborador = '<?=$_POST['colaborador']?>';
+        servico = '<?=$_POST['servico']?>';
+        ano = $(this).attr("ano");
+        mes = $(this).attr("mes");
+        dia = $(this).attr("dia");
+        $.ajax({
+            type:"POST",
+            data:{
+                colaborador,
+                servico,
+                ano,
+                mes,
+                dia
+            },
+            url:"src/dashboard/calendario/horarios.php",
+            success:function(dados){
+                $(".horarios").html(dados);
+            }
+        });
+    });
+
+})
+
+</script>
