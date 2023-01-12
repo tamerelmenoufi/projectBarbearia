@@ -111,13 +111,11 @@
 
 
                         echo "$linha ".$hoje;
-						//$qtd = '354';
-						if($qtd) {
-						    echo "<div class='".(($qtd)?'text-color-green':'text-color-red')."' data='$ano-$w-$linha'>
-                            <i class='fa-solid fa-circle'></i>
-                            </div>";
-						}
-						echo "</td>";
+                        echo "<div class='".(($qtd)?'text-color-green':'text-color-red')."' data='$ano-$w-$linha'>
+                        <i class='fa-solid fa-circle'></i>
+                        </div>";
+
+                        echo "</td>";
 					    // Se Sábado desce uma linha
                         if (date('w',$d1) == 6) {
                             echo "<tr>\n";
