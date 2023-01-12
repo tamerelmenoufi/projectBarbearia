@@ -13,7 +13,7 @@
 
     echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
 
-    for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$c->tempo))){
+    for($i = $inter_ini; $i <= $inter_fim; $i = (($i + $c->tempo))){
         echo "<p>".date("d/m/Y H:i",$i)."</p>";
     }
 
