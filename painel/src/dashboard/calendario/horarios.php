@@ -13,7 +13,7 @@
     echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
 
     for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60))){
-        echo "<p>".date("d/m/Y H:i",$i)." - ".$c->tempo."</p>";
+        echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>";
     }
 
     $inter_ini = strtotime(date("Y-m-d 10:00:00"));
