@@ -195,7 +195,7 @@
             dia="<?=date("d",$i)?>"
             value="<?=date("H:i",$i)?>"
         >
-        <label class="btn btn-outline-primary" for="option<?=$i?>"><?=date("H:i",$i)?></label>
+        <label class="btn btn-outline-primary mb-1 mt-1" for="option<?=$i?>"><?=date("H:i",$i)?></label>
         <!-- <button class="btn btn-primary">
             <?=date("H:i",$i)?>
         </button> -->
