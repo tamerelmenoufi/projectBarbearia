@@ -147,7 +147,12 @@
 						echo "<td>";
 
                         // echo "$linha ".$hoje;
-                        echo "<div class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."' data='$ano-$w-$linha'>
+                        echo "<div
+                                    class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."'
+                                    ano='$ano'
+                                    mes='$w'
+                                    dia='$linha'
+                                >
                             <p class='".(($hoje)?'text-primary':false)."'>{$linha}<br>
                             <i class='fa-solid fa-circle'></i></p>
                         </div>";
@@ -167,7 +172,7 @@
             ?>
 	</table>
 </div>
-<h6><?="{$dia}/{$mes}/{$ano}"?></h6>
+<h6 class="mt-2"><?="{$dia}/{$mes}/{$ano}"?></h6>
 <?php
 
 
@@ -215,7 +220,7 @@ $(function(){
         });
     }
 
-    $(".busca_data").click(function(){
+    $(".busca_data, .agenda").click(function(){
         ano = $(this).attr("ano");
         mes = $(this).attr("mes");
         dia = $(this).attr("dia");
