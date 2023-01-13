@@ -178,13 +178,9 @@ $(function(){
 
     $("#opcAno").mask("9999")
 
-    $(".busca_data").click(function(){
+    mudaClandario = (ano, mes, dia)=>{
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
-        ano = $(this).attr("ano");
-        mes = $(this).attr("mes");
-        dia = $(this).attr("dia");
-
         $.ajax({
             type:"POST",
             data:{
@@ -201,7 +197,35 @@ $(function(){
                 $(".horarios").html(dados);
             }
         });
+    }
+
+    $(".busca_data").click(function(){
+        ano = $(this).attr("ano");
+        mes = $(this).attr("mes");
+        dia = $(this).attr("dia");
+        mudaClandario(ano, mes, dia);
     });
+
+    $("#opcMes").change(function(){
+        ano = $(this).attr("ano");
+        mes = $(this).val();
+        dia = $(this).attr("dia");
+        mudaClandario(ano, mes, dia);
+    });
+
+    $("#opcAno").keyup(function(){
+        ano = $(this).val();
+        mes = $(this).attr("mes");
+        dia = $(this).attr("dia");
+
+        if(ano.length == 4){
+            mudaClandario(ano, mes, dia);
+        }
+
+    });
+
+
+
 
 })
 
