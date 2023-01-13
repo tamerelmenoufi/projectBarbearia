@@ -259,6 +259,7 @@ $(function(){
     });
 
     $(".opcHoras").click(function(){
+
         ano = $(this).attr("ano");
         mes = $(this).attr("mes");
         dia = $(this).attr("dia");
@@ -266,7 +267,8 @@ $(function(){
 
         agenda = `${ano}-${mes}-${dia} ${hora}`;
 
-        $(".cadastrarAgenda").attr(agenda);
+        $(".cadastrarAgenda").attr("agenda",agenda);
+
     });
 
 
