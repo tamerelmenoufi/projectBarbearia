@@ -267,8 +267,10 @@ $(function(){
         hora = $(this).val();
 
         agenda = `${ano}-${mes}-${dia} ${hora}`;
+        rotulo = `${dia}/${mes}-${ano} ${hora}`;
 
         $(".cadastrarAgenda").attr("agenda",agenda);
+        $(".cadastrarAgenda span").text(rotulo);
 
     });
 

@@ -156,7 +156,7 @@ if($blq){
 
 <div class="row mb-2">
     <div class="col-12">
-        <button class="btn btn-primary cadastrarAgenda" agenda=""><i class="fa-solid fa-calendar-plus"></i> Cadastrar agenda</button>
+        <button class="btn btn-primary cadastrarAgenda" agenda="" disabled><i class="fa-solid fa-calendar-plus"></i> Agenda para <span></span></button>
     </div>
 </div>
 <?php
