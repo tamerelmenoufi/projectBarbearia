@@ -66,7 +66,7 @@
                 >
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
-                <select id="opcMes" class="form-control col-3">
+                <select id="opcMes" class="form-control col-3 text-center">
                     <?php
                     foreach($abrevMes as $ind => $val){
                     ?>
@@ -75,7 +75,7 @@
                     }
                     ?>
                 </select>
-                <input type="text" class="form-control col-3" id="opcAno" value="<?=$ano?>" placeholder="" >
+                <input type="text" class="form-control col-3 text-center" id="opcAno" value="<?=$ano?>" placeholder="" >
                 <button
                         class="btn btn-secondary busca_data col-3"
                         ano="<?=$prox_a?>"
