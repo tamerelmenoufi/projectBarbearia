@@ -57,7 +57,7 @@
     <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
-            <div class="input-group mb-3 col">
+            <div class="input-group col">
                 <button
                         class="btn btn-secondary busca_data col-3"
                         ano="<?=$ante_a?>"
