@@ -220,9 +220,9 @@ $(function(){
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
 
-        $(".cadastrarAgenda").attr("agenda",'');
-        $(".cadastrarAgenda span").text('');
-        $(".cadastrarAgenda").addAttr("disabled");
+        // $(".cadastrarAgenda").attr("agenda",'');
+        // $(".cadastrarAgenda span").text('');
+        // $(".cadastrarAgenda").addAttr("disabled");
 
         $.ajax({
             type:"POST",
