@@ -177,6 +177,7 @@
 $(function(){
 
     $(".busca_data").click(function(){
+        alert('xxx')
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
         ano = $(this).attr("ano");
