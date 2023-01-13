@@ -167,6 +167,7 @@
             ?>
 	</table>
 </div>
+<h6><?="{$dia}/{$mes}/{$ano}"?></h6>
 <?php
 
 
@@ -175,7 +176,7 @@
     for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
         ?>
         <button class="btn btn-primary mb-1 mt-1">
-            <?=date("d/m/Y H:i",$i)?>
+            <?=date("H:i",$i)?>
         </button>
         <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
     <?php
@@ -183,8 +184,8 @@
 
     $inter_ini = strtotime(date("Y-m-d 10:00:00"));
     $inter_fim = strtotime(date("Y-m-d 10:01:00"));
-    echo "<p>{$inter_ini} até {$inter_fim}</p>";
-    echo ($inter_fim - $inter_ini);
+    // echo "<p>{$inter_ini} até {$inter_fim}</p>";
+    // echo ($inter_fim - $inter_ini);
 ?>
 
 <script>
