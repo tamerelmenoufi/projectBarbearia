@@ -51,7 +51,9 @@
         /* opacity:0.5;
         background-color:red; */
     }
-
+    .calendario td div:houver{
+        background-color:rgb(255,123,87, 0.5);
+    }
 </style>
 <div class='card'>
     <table class='table calendario' cellpadding="5" cellspacing="0">
