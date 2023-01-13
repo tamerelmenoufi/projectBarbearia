@@ -4,12 +4,6 @@
     $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['servico']}'"));
 
     $dia = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
-    $hj = $abrevSem[date("D")];
-    list($hi, $hf) = explode("-",$dia->$hj);
-    $inter_ini = strtotime(date("Y-m-d {$hi}:00"));
-    $inter_fim = strtotime(date("Y-m-d {$hf}:00"));
-
-
 
 	if($_POST['ano'] and $_POST['mes']){
 		$ano = $_POST['ano'];
@@ -29,6 +23,13 @@
     $ante_a = date("Y", mktime(0,0,0,$mes-1,$dia, $ano));
     $ante_m = date("m", mktime(0,0,0,$mes-1,$dia, $ano));
     $ante_d = date("d", mktime(0,0,0,$mes-1,$dia, $ano));
+
+
+    $hj = $abrevSem[date("D", mktime(0,0,0,$mes,$dia, $ano))];
+    list($hi, $hf) = explode("-",$dia->$hj);
+    $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia, $ano)));
+    $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia, $ano)));
+
 
 ?>
 <style>
