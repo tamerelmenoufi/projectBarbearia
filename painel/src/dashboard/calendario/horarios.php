@@ -220,9 +220,7 @@ $(function(){
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
 
-        // $(".cadastrarAgenda").attr("agenda",'');
-        // $(".cadastrarAgenda span").text('');
-        // $(".cadastrarAgenda").addAttr("disabled");
+
 
         $.ajax({
             type:"POST",
@@ -236,6 +234,9 @@ $(function(){
             url:"src/dashboard/calendario/horarios.php",
             success:function(dados){
                 $(".horarios").html(dados);
+                $(".cadastrarAgenda").attr("agenda",'');
+                $(".cadastrarAgenda span").text('');
+                $(".cadastrarAgenda").addAttr("disabled");
             }
         });
     }
