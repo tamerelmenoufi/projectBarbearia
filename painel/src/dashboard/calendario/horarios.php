@@ -220,8 +220,6 @@ $(function(){
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
 
-
-
         $.ajax({
             type:"POST",
             data:{
@@ -237,6 +235,7 @@ $(function(){
                 $(".cadastrarAgenda").attr("agenda",'');
                 $(".cadastrarAgenda span").text('');
                 $(".cadastrarAgenda").addAttr("disabled","disabled");
+                $("span[Titulo]").text('')
             }
         });
     }
@@ -279,6 +278,7 @@ $(function(){
         $(".cadastrarAgenda").attr("agenda",agenda);
         $(".cadastrarAgenda span").text(rotulo);
         $(".cadastrarAgenda").removeAttr("disabled");
+        $("span[Titulo]").text(rotulo);
     });
 
 
