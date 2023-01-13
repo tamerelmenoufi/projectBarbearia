@@ -66,7 +66,11 @@
                 >
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
-                <select id="opcMes" class="form-control col-3 text-center">
+                <select
+                    id="opcMes"
+                    ano="<?=$ante_a?>"
+                    dia="<?=$ante_d?>"
+                    class="form-control col-3 text-center">
                     <?php
                     foreach($abrevMes as $ind => $val){
                     ?>
@@ -75,7 +79,13 @@
                     }
                     ?>
                 </select>
-                <input type="text" class="form-control col-3 text-center" id="opcAno" value="<?=$ano?>" placeholder="" >
+                <input
+                    type="text"
+                    mes="<?=$ante_m?>"
+                    dia="<?=$ante_d?>"
+                    class="form-control col-3 text-center"
+                    id="opcAno"
+                    value="<?=$ano?>">
                 <button
                         class="btn btn-secondary busca_data col-3"
                         ano="<?=$prox_a?>"
