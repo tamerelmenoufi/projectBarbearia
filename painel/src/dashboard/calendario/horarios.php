@@ -38,7 +38,7 @@
     }
     .calendario td{
         /* width:calc(100/7)%;*/
-        /* height:80px; */
+        height:30px;
         cursor:pointer;
         position:relative;
     }
