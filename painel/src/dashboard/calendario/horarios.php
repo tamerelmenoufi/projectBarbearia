@@ -170,10 +170,15 @@
 <?php
 
 
-    echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
+    // echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
 
     for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
-        echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>";
+        ?>
+        <button class="btn btn-primary">
+            <?=$s->tempo?>
+        </button>
+        <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
+    <?php
     }
 
     $inter_ini = strtotime(date("Y-m-d 10:00:00"));
