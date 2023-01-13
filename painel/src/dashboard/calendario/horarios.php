@@ -182,15 +182,28 @@
 
     for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
         ?>
-        <button class="btn btn-primary mb-1 mt-1">
+
+        <input
+            type="radio"
+            class="btn-check mb-1 mt-1 opcHoras"
+            name="opcHoras"
+            id="option<?=$i?>"
+            autocomplete="off"
+            ano="<?=date("Y",$i)?>"
+            mes="<?=date("m",$i)?>"
+            dia="<?=date("d",$i)?>"
+            value="<?=date("H:i",$i)?>"
+        >
+        <label class="btn btn-outline-primary" for="option<?=$i?>"><?=date("H:i",$i)?></label>
+        <!-- <button class="btn btn-primary">
             <?=date("H:i",$i)?>
-        </button>
+        </button> -->
         <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
     <?php
     }
 
-    $inter_ini = strtotime(date("Y-m-d 10:00:00"));
-    $inter_fim = strtotime(date("Y-m-d 10:01:00"));
+    // $inter_ini = strtotime(date("Y-m-d 10:00:00"));
+    // $inter_fim = strtotime(date("Y-m-d 10:01:00"));
     // echo "<p>{$inter_ini} até {$inter_fim}</p>";
     // echo ($inter_fim - $inter_ini);
 ?>
@@ -215,8 +228,6 @@ $(function(){
             },
             url:"src/dashboard/calendario/horarios.php",
             success:function(dados){
-                console.log('Chegou até aqui')
-                console.log(dados)
                 $(".horarios").html(dados);
             }
         });
@@ -245,6 +256,17 @@ $(function(){
             mudaClandario(ano, mes, dia);
         }
 
+    });
+
+    $(".opcHoras").click(function(){
+        ano = $(this).attr("ano");
+        mes = $(this).attr("mes");
+        dia = $(this).attr("dia");
+        hora = $(this).val();
+
+        agenda = `${ano}-${mes}-${dia} ${hora}`;
+
+        $(".cadastrarAgenda").attr(agenda);
     });
 
 

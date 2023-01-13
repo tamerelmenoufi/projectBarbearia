@@ -156,7 +156,7 @@ if($blq){
 
 <div class="row mb-2">
     <div class="col-12">
-        <button class="btn btn-primary cadastrarAgenda"><i class="fa-solid fa-calendar-plus"></i> Cadastrar agenda</button>
+        <button class="btn btn-primary cadastrarAgenda" agenda=""><i class="fa-solid fa-calendar-plus"></i> Cadastrar agenda</button>
     </div>
 </div>
 <?php
@@ -210,11 +210,11 @@ if($blq){
             colaborador = $("#colaborador").val();
             servico = $("#servico").val();
             observacao = $("#observacao").val();
-            data_agenda = '<?=$data_agenda?>';
+            data_agenda = $(this).attr("agenda");
 
             // return false;
 
-            if(!cliente || !colaborador || !servico){
+            if(!cliente || !colaborador || !servico || !data_agenda){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
                     type:'red',
