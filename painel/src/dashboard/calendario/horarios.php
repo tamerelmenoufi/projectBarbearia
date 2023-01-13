@@ -3,7 +3,7 @@
     vl(['ProjectPainel']);
     $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['servico']}'"));
 
-    $dia = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
+    $dia_serv = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
 
 	if($_POST['ano'] and $_POST['mes']){
 		$ano = $_POST['ano'];
@@ -25,10 +25,10 @@
     $ante_d = date("d", mktime(0,0,0,$mes-1,$dia, $ano));
 
 
-    $hj = $abrevSem[date("D", mktime(0,0,0,$mes,$dia, $ano))];
-    list($hi, $hf) = explode("-",$dia->$hj);
-    $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia, $ano)));
-    $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia, $ano)));
+    $hj = $abrevSem[date("D", mktime(0,0,0,$mes,$dia,$ano))];
+    list($hi, $hf) = explode("-",$dia_serv->$hj);
+    $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia,$ano)));
+    $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia,$ano)));
 
 
 ?>
