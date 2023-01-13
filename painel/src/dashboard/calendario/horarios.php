@@ -57,38 +57,34 @@
     <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
-
-
-        <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-            <select name="" id="">
-                <option value="">Um</option>
-                <option value="">Um</option>
-                <option value="">Um</option>
-                <option value="">Um</option>
-            </select>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-        </div>
-
-
-            <button
-                    class="btn btn-secondary busca_data"
-                    ano="<?=$ante_a?>"
-                    mes="<?=$ante_m?>"
-                    dia="<?=$ante_d?>"
-            >
-                <i class="fa-solid fa-angle-left"></i>
-            </button>
-            <span style="font-size:30px; margin-left:10px; margin-right:10px;"><?=$abrevMes[$mes]?></span>
-            <button
-                    class="btn btn-secondary busca_data"
-                    ano="<?=$prox_a?>"
-                    mes="<?=$prox_m?>"
-                    dia="<?=$prox_d?>"
-            >
-                <i class="fa-solid fa-angle-right"></i>
-            </button>
+            <div class="input-group mb-3">
+                <button
+                        class="btn btn-secondary busca_data"
+                        ano="<?=$ante_a?>"
+                        mes="<?=$ante_m?>"
+                        dia="<?=$ante_d?>"
+                >
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <select id="opcMes">
+                    <?php
+                    foreach($abrevMes as $ind => $mes){
+                    ?>
+                    <option value="<?=$ind?>" <?=(($ind == $mes)?'selected':false)?>><?=$mes?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <input type="text" class="form-control" id="opcAno" value="<?=$ano?>" placeholder="" >
+                <button
+                        class="btn btn-secondary busca_data"
+                        ano="<?=$prox_a?>"
+                        mes="<?=$prox_m?>"
+                        dia="<?=$prox_d?>"
+                >
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
         </td>
       </tr>
 <?php
