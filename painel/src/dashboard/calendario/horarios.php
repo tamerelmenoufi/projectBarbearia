@@ -52,7 +52,7 @@
         background-color:red; */
     }
     .calendario td div:hover{
-        background-color:rgb(138, 154, 91, 0.5);
+        background-color:rgb(138, 154, 91, 0.2);
     }
 </style>
 <div class='card'>
