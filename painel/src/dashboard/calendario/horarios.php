@@ -216,6 +216,7 @@ $(function(){
     $("#opcAno").mask("9999")
 
     mudaClandario = (ano, mes, dia)=>{
+
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
 
