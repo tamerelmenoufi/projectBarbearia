@@ -177,12 +177,12 @@
 $(function(){
 
     $(".busca_data").click(function(){
-        alert('xxx')
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
         ano = $(this).attr("ano");
         mes = $(this).attr("mes");
         dia = $(this).attr("dia");
+
         $.ajax({
             type:"POST",
             data:{
@@ -194,6 +194,8 @@ $(function(){
             },
             url:"src/dashboard/calendario/horarios.php",
             success:function(dados){
+                console.log('Chegou até aqui')
+                console.log(dados)
                 $(".horarios").html(dados);
             }
         });
