@@ -70,7 +70,7 @@
                     <?php
                     foreach($abrevMes as $ind => $val){
                     ?>
-                    <option value="<?=$ind?>" <?=(($ind == $val)?'selected':false)?>><?=$val?></option>
+                    <option value="<?=$ind?>" <?=(($ind == $mes)?'selected':false)?>><?=$val?></option>
                     <?php
                     }
                     ?>
