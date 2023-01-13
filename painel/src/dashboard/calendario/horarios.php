@@ -57,16 +57,16 @@
     <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 col">
                 <button
-                        class="btn btn-secondary busca_data"
+                        class="btn btn-secondary busca_data col-3"
                         ano="<?=$ante_a?>"
                         mes="<?=$ante_m?>"
                         dia="<?=$ante_d?>"
                 >
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
-                <select id="opcMes">
+                <select id="opcMes" class="form-control col-3">
                     <?php
                     foreach($abrevMes as $ind => $val){
                     ?>
@@ -75,9 +75,9 @@
                     }
                     ?>
                 </select>
-                <input type="text" class="form-control" id="opcAno" value="<?=$ano?>" placeholder="" >
+                <input type="text" class="form-control col-3" id="opcAno" value="<?=$ano?>" placeholder="" >
                 <button
-                        class="btn btn-secondary busca_data"
+                        class="btn btn-secondary busca_data col-3"
                         ano="<?=$prox_a?>"
                         mes="<?=$prox_m?>"
                         dia="<?=$prox_d?>"
