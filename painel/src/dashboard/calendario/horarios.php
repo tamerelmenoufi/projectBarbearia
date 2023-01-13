@@ -151,7 +151,7 @@
                         // echo "$linha ".$hoje;
                         echo "<div
                                     class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."'
-                                    style='".(($linha == $dia)?'color:background-color:rgb(138, 154, 91, 0.5);':false)."'
+                                    style='".(($linha == $dia)?'color:background-color:rgb(138, 154, 91, 0.5)!important;':false)."'
                                     ano='$ano'
                                     mes='$w'
                                     dia='$linha'
