@@ -235,7 +235,7 @@ $(function(){
                 $(".cadastrarAgenda").attr("agenda",'');
                 $(".cadastrarAgenda span").text('');
                 $(".cadastrarAgenda").addAttr("disabled","disabled");
-                $("span[Titulo]").text('')
+                $("span[Titulo]").text('');
             }
         });
     }
