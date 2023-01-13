@@ -68,9 +68,9 @@
                 </button>
                 <select id="opcMes">
                     <?php
-                    foreach($abrevMes as $ind => $mes){
+                    foreach($abrevMes as $ind => $val){
                     ?>
-                    <option value="<?=$ind?>" <?=(($ind == $mes)?'selected':false)?>><?=$mes?></option>
+                    <option value="<?=$ind?>" <?=(($ind == $val)?'selected':false)?>><?=$val?></option>
                     <?php
                     }
                     ?>
