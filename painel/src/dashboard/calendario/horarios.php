@@ -153,7 +153,7 @@
                                     mes='$w'
                                     dia='$linha'
                                 >
-                            <p class='".(($hoje)?'text-primary':false)."'>{$linha}<br>
+                            <p class='".(($hoje)?'text-primary':false)."'>{$linha}
                             <i class='fa-solid fa-circle'></i></p>
                         </div>";
 
