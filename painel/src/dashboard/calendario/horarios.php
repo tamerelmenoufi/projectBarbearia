@@ -176,6 +176,8 @@
 
 $(function(){
 
+    $("#opcAno").mask("9999")
+
     $(".busca_data").click(function(){
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
