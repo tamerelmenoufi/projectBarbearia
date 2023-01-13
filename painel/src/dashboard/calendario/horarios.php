@@ -218,6 +218,11 @@ $(function(){
     mudaClandario = (ano, mes, dia)=>{
         colaborador = '<?=$_POST['colaborador']?>';
         servico = '<?=$_POST['servico']?>';
+
+        $(".cadastrarAgenda").attr("agenda",'');
+        $(".cadastrarAgenda span").text('');
+        $(".cadastrarAgenda").addAttr("disabled");
+
         $.ajax({
             type:"POST",
             data:{
