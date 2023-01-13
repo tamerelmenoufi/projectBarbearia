@@ -174,8 +174,8 @@
 
     for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
         ?>
-        <button class="btn btn-primary">
-            <?=$s->tempo?>
+        <button class="btn btn-primary mb-1 mt-1">
+            <?=date("d/m/Y H:i",$i)?>
         </button>
         <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
     <?php
