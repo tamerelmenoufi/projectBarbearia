@@ -234,8 +234,9 @@ $(function(){
                 $(".horarios").html(dados);
                 $(".cadastrarAgenda").attr("agenda",'');
                 $(".cadastrarAgenda span").text('');
-                $(".cadastrarAgenda").addAttr("disabled","disabled");
                 $("span[Titulo]").text('');
+                $(".cadastrarAgenda").addAttr("disabled","disabled");
+
             }
         });
     }
