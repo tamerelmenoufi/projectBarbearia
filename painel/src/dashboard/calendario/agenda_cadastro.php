@@ -199,6 +199,8 @@
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             colaborador = $(this).val();
 
+            $("#servico").selectpicker('destroy');
+
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
