@@ -138,7 +138,7 @@
             <div class="row">
                 <?php
 
-                $query = "select * from produtos where situacao = '1' order by tipo desc";
+                $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b where a.situacao = '1' order by a.tipo desc";
                 $result = mysqli_query($con, $query);
                 $titulo = false;
                 while($d = mysqli_fetch_object($result)){
@@ -150,7 +150,7 @@
                   </div>
                 </div>
                 <?php
-                $titulo = $d->categoria;
+                $titulo = $d->categoria_nome;
                 }
                 // for($i=0;$i<20;$i++){
                 ?>
