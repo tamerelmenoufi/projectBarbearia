@@ -214,7 +214,7 @@
     </div>
 </div>
 
-<footer class="text-muted py-5 bg-secondary">
+<footer class="text-muted py-5" style="background-color:#2f2e2e">
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
