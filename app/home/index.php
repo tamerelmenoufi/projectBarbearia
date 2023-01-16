@@ -35,7 +35,7 @@
 
 <div class="d-flex flex-row justify-content-between" style="background-color:#2f2e2e; height:70px; position:fixed; left:0; top:0; width:100%; z-index:9;">
   <div></div>
-  <div class="m-3" style="width:100px; height:100px; padding:5px; background-color:#eee; border-solid 2px #fff; border-radius:100%; z-index:10; position:relative;">
+  <div class="m-3" style="width:100px; height:100px; padding:5px; background-color:#2f2e2e; border-solid 2px #fff; border-radius:100%; z-index:10; position:relative;">
     <img id="profile-img" style="width:90px;" class="profile-img-card" src="img/icone.png" />
   </div>
   <div></div>
