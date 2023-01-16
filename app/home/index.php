@@ -237,14 +237,16 @@
 <footer class="text-muted py-5" style="background-color:#2f2e2e; color:#fff!important;">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="#">TOPO</a>
+      <a href="#" style="color:#fff!important; font-size:25px;">
+        <i class="fa-solid fa-circle-up"></i>
+      </a>
     </p>
     <h3>Os Manos Barbearia</h3>
     <p class="mb-1">Av. Djalma Batista, 370 - Chapada</p>
-    <p class="float-end mb-0 text-white" style="font-size:25px; color:#fff!important;">
-      <a href="https://wa.me/5592981423046" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=100089104170088" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/osmanosbarbearia_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <p class="float-end mb-0 text-white" style="font-size:25px;">
+      <a href="https://wa.me/5592981423046" target="_blank" style="color:#fff!important;"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100089104170088" target="_blank" style="color:#fff!important;"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/osmanosbarbearia_/" target="_blank" style="color:#fff!important;"><i class="fa-brands fa-instagram"></i></a>
     </p>
   </div>
 </footer>
