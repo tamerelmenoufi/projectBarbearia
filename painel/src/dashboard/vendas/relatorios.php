@@ -18,7 +18,7 @@
 <script>
     $(function(){
         $(".relatorio").click(function(){
-            $.alert('Relatório não especificado, aguardando informações!');
+            $.alert('Relatório não especificado,<br>aguardando informações!');
         })
     })
 </script>
