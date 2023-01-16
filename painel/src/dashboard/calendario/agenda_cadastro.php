@@ -174,6 +174,13 @@
         $("#servico").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
+            $("div[agendaDia]").html('');
+
+            $(".cadastrarAgenda").attr("agenda",'');
+            $(".cadastrarAgenda span").text('');
+            $("span[Titulo]").text('');
+            $(".cadastrarAgenda").addAttr("disabled","disabled");
+
             if(colaborador && servico){
                 $.ajax({
                     type:"POST",
@@ -193,6 +200,13 @@
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             colaborador = $(this).val();
             $("#servico").selectpicker('destroy');
+            $("div[agendaDia]").html('');
+
+            $(".cadastrarAgenda").attr("agenda",'');
+            $(".cadastrarAgenda span").text('');
+            $("span[Titulo]").text('');
+            $(".cadastrarAgenda").addAttr("disabled","disabled");
+
             if(colaborador){
                 $.ajax({
                     url:"src/dashboard/calendario/agenda_cadastro.php",
