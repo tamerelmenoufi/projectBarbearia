@@ -12,7 +12,7 @@
     ?>
     <style>
         .CorpoApp{
-            background-color:#040706 !important;
+          
         }
     </style>
   </head>
@@ -21,7 +21,7 @@
 <style>
 body {
 
-background: url(img/fundo-bar-pc.jpg) no-repeat center fixed: ;
+background: url(img/fundo-bar-pc.jpg) no-repeat center fixed;
 background-size: auto auto;
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -53,6 +53,7 @@ background-size: cover;
                 }
             });
         })
+
 
 
         //Jconfirm
