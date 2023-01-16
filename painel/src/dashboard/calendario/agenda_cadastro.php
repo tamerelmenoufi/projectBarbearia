@@ -204,6 +204,7 @@
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
             $(".cadastrarAgenda").attr("disabled","disabled");
+            $(".horarios").html('');
 
             if(colaborador){
                 $.ajax({
