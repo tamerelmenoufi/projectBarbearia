@@ -4,6 +4,7 @@
 
     $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
 
+
     if($_POST['acao'] == 'cancelar_agenda'){
 
         mysqli_query($con, "delete from agenda where codigo = '{$_POST['codigo']}'");
@@ -22,8 +23,8 @@
         // $servicos = json_encode($_POST['servico']);
 
         $query = "insert into agenda set
-                                        tipo_cadastro = 'u',
-                                        usuario = '{$_SESSION['ProjectPainel']->codigo}',
+                                        tipo_cadastro = 'c',
+                                        usuario = '{$_POST['cliente']}',
                                         colaborador = '{$_POST['colaborador']}',
                                         cliente = '{$_POST['cliente']}',
                                         servico = '{$_POST['servico']}',
