@@ -137,22 +137,19 @@
 
             <div class="row">
                 <?php
-                for($i=0;$i<20;$i++){
+
+                $query = "select * from produtos where situacao = '1' order by tipo desc";
+                $result = mysqli_query($con, $query);
+                while($d = mysqli_fetch_object($result)){
+
+                // for($i=0;$i<20;$i++){
                 ?>
                     <div class="col-md-3 mb-3">
                       <div class="card h-100">
-                        <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/kreative/catalog/banner-barbearia/banner-barbearia-mod-2041/banner-barbearia-2042/banner-barbearia-2043/banner-barbearia-2043/banner-barbearia-mod-2045/banner-barbearia-mod-2046/banner-barbearia-mod-2045-foto-120190927145845.JPG" class="card-img-top" alt="...">
+                        <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                <?php
-                                for($j=$i;$j<3;$j++){
-                                ?>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                <?php
-                                }
-                                ?>
-                            </p>
+                            <h5 class="card-title"><?=$d->produto?></h5>
+                            <p class="card-text"><?=$d->descricao?></p>
 
                         </div>
                         <div class="card-footer">
@@ -163,7 +160,7 @@
                                     data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasDireita"
                                     aria-controls="offcanvasDireita"
-                                >Go somewhere</a>
+                                >R$ <?=number_format($d->valor, 2,',','.')?> Agendar</a>
                             </small>
                         </div>
                       </div>
