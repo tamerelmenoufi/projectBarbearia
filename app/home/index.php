@@ -168,7 +168,7 @@
                             <small>
                                 <a
                                     href="#"
-                                    class="btn btn-warning"
+                                    class="btn btn-warning agenda"
                                     data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasDireita"
                                     aria-controls="offcanvasDireita"
@@ -266,6 +266,16 @@
 <script>
     $(function(){
         Carregando('none');
+
+        $(".agenda").click(function(){
+          $.ajax({
+                url:"src/dashboard/calendario/agenda_consulta.php",
+                type:"POST",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
 
     })
 </script>
