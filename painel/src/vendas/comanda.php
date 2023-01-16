@@ -240,7 +240,7 @@
         </div>
     </div>
 
-    <p style="text-align:center; font-size:12px; color:#a1a1a1;">A compra será entregue para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($v->local_entrega)?"({$v->endereco})":(($v->retirada_estabelecimento)?' (Retirada no estabelecimento)':false))?></p>
+    <p style="text-align:center; font-size:12px; color:#a1a1a1;">Atendimento / Pedido para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($v->local_entrega)?"({$v->endereco})":(($v->retirada_estabelecimento)?' (Retirada no estabelecimento)':false))?></p>
 </div>
 
 
