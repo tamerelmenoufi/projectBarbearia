@@ -28,7 +28,7 @@
   <style>
 body {
 
-    background: url(img/fundo-bar2.jpg);
+    background: url(img/fundo-bar.jpg);
     no-repeat center fixed: ;
     background-size: auto auto;
     -webkit-background-size: cover;
@@ -53,7 +53,6 @@ body {
     --bs-btn-disabled-bg: #4a3019;
     --bs-btn-disabled-border-color: #4a3019;
 }
-
 
 </style>
 
