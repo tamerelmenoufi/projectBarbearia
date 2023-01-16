@@ -167,8 +167,8 @@
                     agenda_dia
                 },
                 success:function(dados){
-                    $.alert('Agenda confirmada!')
-                    Carregando('none')
+                    $("div[agendaDia]").html(dados);
+                    $("div[agendaDia]").css("opacity",1);
                 }
             });
         })

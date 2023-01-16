@@ -258,7 +258,8 @@
                     acao:'nova_agenda'
                 },
                 success:function(dados){
-                    $("div[agendaDia]").html(dados);
+                    $.alert('Agenda confirmada!')
+                    Carregando('none')
                     let myOffCanvas = document.getElementById('offcanvasDireita');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.hide();
