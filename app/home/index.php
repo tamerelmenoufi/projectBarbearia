@@ -158,7 +158,7 @@
                             <small>
                                 <a
                                     href="#"
-                                    class="btn btn-outline-secondary"
+                                    class="btn btn-warning"
                                     data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasDireita"
                                     aria-controls="offcanvasDireita"
