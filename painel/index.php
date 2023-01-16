@@ -28,8 +28,7 @@
   <style>
 body {
 
-    background: url(img/fundo-bar.jpg);
-    no-repeat center fixed: ;
+    background: url(img/fundo-bar.jpg) no-repeat center fixed: ;
     background-size: auto auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
