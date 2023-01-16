@@ -140,8 +140,17 @@
 
                 $query = "select * from produtos where situacao = '1' order by tipo desc";
                 $result = mysqli_query($con, $query);
+                $titulo = false;
                 while($d = mysqli_fetch_object($result)){
-
+                if($titulo != $d->categoria){
+                ?>
+                <div class="row">
+                  <div class="col">
+                  <h3 class="text-white"><?=$d->categoria?></h3>
+                  </div>
+                </div>
+                <?php
+                }
                 // for($i=0;$i<20;$i++){
                 ?>
                     <div class="col-md-3 mb-3">
