@@ -185,7 +185,7 @@
                   <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="card-img" alt="...">
                   <div class="card-img-overlay">
                     <div class="d-flex align-items-end h-100">
-                      <div class="w-100 p-3" style="background-color:rgb(0,0,0,0.5);">
+                      <div class="w-100 p-3" style="background-color:rgb(0,0,0,0.7); border-radius:5px;">
                         <h3 class="card-title"><?=$d->nome?></h3>
                         <p class="card-text"><?=$d->especialidade?></p>
                         <!-- <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
