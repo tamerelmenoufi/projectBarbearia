@@ -242,6 +242,7 @@
     <h3>Os Manos Barbearia</h3>
     <p class="mb-1">Av. Djalma Batista, 370 - Chapada</p>
     <p class="float-end mb-0 text-white">
+      <i class="fa-brands fa-whatsapp"></i>
       <i class="fa-brands fa-square-facebook"></i>
       <i class="fa-brands fa-square-twitter"></i>
       <i class="fa-brands fa-square-whatsapp"></i>
