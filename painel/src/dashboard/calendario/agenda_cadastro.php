@@ -65,7 +65,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>"><span Titulo><?=dataBr($data_agenda)?></span></h4>
+<h4 class="Titulo<?=$md5?>">Agenda <span Titulo><?=dataBr($data_agenda)?></span></h4>
 
 <?php
 /*
