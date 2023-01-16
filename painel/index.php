@@ -37,22 +37,7 @@ body {
     background-size: cover;
 }
 
-.btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #4a3019;
-    --bs-btn-border-color: #4a3019;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #4a3019;
-    --bs-btn-hover-border-color: #4a3019;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #4a3019;
-    --bs-btn-active-border-color: #4a3019;
-    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #4a3019;
-    --bs-btn-disabled-border-color: #4a3019;
-}
+
 
 </style>
 
