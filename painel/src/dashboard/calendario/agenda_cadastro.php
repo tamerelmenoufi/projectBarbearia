@@ -200,6 +200,7 @@
             colaborador = $(this).val();
 
             $("#servico").val('');
+            $("#servico").selectpicker('render');
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
