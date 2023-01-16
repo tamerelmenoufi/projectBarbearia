@@ -216,6 +216,7 @@
                         acao:'filto_servicos'
                     },
                     success:function(dados){
+                        console.log('passado')
                         $("#servico").html(dados);
                         $("#servico").selectpicker('render');
                     }
