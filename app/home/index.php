@@ -182,6 +182,12 @@
                 ?>
             </div>
 
+
+            <div class="row">
+              <div class="col">
+              <h3 class="text-white">Os Manos</h3>
+              </div>
+            </div>
             <div class="row">
               <?php
               $query = "select * from colaboradores where codigo > 1 order by rand()";
