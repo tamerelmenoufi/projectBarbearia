@@ -2,7 +2,9 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?>
 <style>
-
+    .relatorio{
+        cursor: pointer;
+    }
 </style>
 <h6>Relatórios Gerais</h6>
 <ul class="list-group">
