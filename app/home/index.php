@@ -244,7 +244,7 @@
     <h3>Os Manos Barbearia</h3>
     <p class="mb-1">Av. Djalma Batista, 370 - Chapada</p>
     <p class="float-end mb-0 text-white" style="font-size:25px;">
-      <span style="margin-right:20px;">A barbearia que faltava para você! Siga nossas redes sociais</span>
+      <span style="margin-right:20px; font-size:12px;">A barbearia que faltava para você! Siga nossas redes sociais</span>
       <a href="https://wa.me/5592981423046" target="_blank" style="color:#fff!important;"><i class="fa-brands fa-whatsapp"></i></a>
       <a href="https://www.facebook.com/profile.php?id=100089104170088" target="_blank" style="color:#fff!important;"><i class="fa-brands fa-facebook"></i></a>
       <a href="https://www.instagram.com/osmanosbarbearia_/" target="_blank" style="color:#fff!important;"><i class="fa-brands fa-instagram"></i></a>
