@@ -151,7 +151,7 @@
 </div>
 <div class="row mb-2">
     <div class="col-12">
-        <label for="exampleInputEmail1" class="form-label">Observações </label>
+        <label for="observacao" class="form-label">Observações </label>
         <textarea name="observacao" id="observacao" class="form-control" rows="5"></textarea>
     </div>
 </div>
