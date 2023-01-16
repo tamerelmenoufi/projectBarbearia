@@ -237,10 +237,15 @@
 <footer class="text-muted py-5" style="background-color:#2f2e2e; color:#fff!important;">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="#">Back to top</a>
+      <a href="#">TOPO</a>
     </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
+    <h3>Os Manos Barbearia</h3>
+    <p class="mb-1">Av. Djalma Batista, 370 - Chapada</p>
+    <p class="float-end mb-0 text-white">
+      <i class="fa-brands fa-square-facebook"></i>
+      <i class="fa-brands fa-square-twitter"></i>
+      <i class="fa-brands fa-square-whatsapp"></i>
+    </p>
   </div>
 </footer>
 
