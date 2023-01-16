@@ -39,6 +39,14 @@
     </div>
 </div>
 
+<div style="padding:20px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card p-1 mb-3 element" vendasRelatorios></div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     $(function(){
@@ -55,6 +63,13 @@
             url:"src/dashboard/calendario/agenda_dia.php",
             success:function(dados){
                 $("div[agendaDia]").html(dados);
+            }
+        });
+
+        $.ajax({
+            url:"src/dashboard/vendas/relatorios.php",
+            success:function(dados){
+                $("div[vendasRelatorios]").html(dados);
             }
         });
 
