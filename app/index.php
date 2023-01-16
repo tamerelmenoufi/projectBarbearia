@@ -12,7 +12,7 @@
     ?>
     <style>
         .CorpoApp{
-            background-color:#2f2e2e !important;
+            background-color:#040706 !important;
         }
     </style>
   </head>
