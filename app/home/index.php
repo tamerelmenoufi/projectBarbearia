@@ -144,7 +144,7 @@
 
                 // for($i=0;$i<20;$i++){
                 ?>
-                    <div class="col-md-3 mb-3 bg-body-secondary">
+                    <div class="col-md-3 mb-3 bg-secondary">
                       <div class="card h-100">
                         <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top w-80" alt="...">
                         <!-- <div class="card-body">
