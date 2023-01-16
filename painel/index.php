@@ -19,11 +19,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/icone.png">
-    <title>Project</title>
+    <title>Barbearia Os Manos</title>
     <?php
     include("lib/header.php");
     ?>
   </head>
+
+  <style>
+body {
+
+    background: url(img/fundo-bar.jpg);
+    no-repeat center fixed: ;
+    background-size: auto auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+}
+
+</style>
+
   <body>
 
     <div class="Carregando">
