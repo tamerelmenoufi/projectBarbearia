@@ -13,6 +13,10 @@
   <li class="list-group-item relatorio">Clientes Cadastrados</li>
   <li class="list-group-item relatorio">Vendas por produtos</li>
   <li class="list-group-item relatorio">Mapa de vendas</li>
+  <li class="list-group-item relatorio">Mapa das Agendas</li>
+  <li class="list-group-item relatorio">Agendas anuladas</li>
+  <li class="list-group-item relatorio">Agendas Canceladas </li>
+  <li class="list-group-item relatorio">Vendas Canceladas </li>
 </ul>
 
 <script>
