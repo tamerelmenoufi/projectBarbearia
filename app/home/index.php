@@ -146,7 +146,7 @@
                 ?>
                     <div class="col-md-3 mb-3 bg-body-secondary">
                       <div class="card h-100">
-                        <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top" alt="...">
+                        <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top w-80" alt="...">
                         <!-- <div class="card-body">
                             <h5 class="card-title"><?=$d->produto?></h5>
                             <p class="card-text"><?=$d->descricao?></p>
