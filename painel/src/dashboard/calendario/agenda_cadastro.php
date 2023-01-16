@@ -174,7 +174,6 @@
         $("#servico").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
-            $("div[agendaDia]").html('');
 
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
@@ -200,7 +199,6 @@
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             colaborador = $(this).val();
             $("#servico").selectpicker('destroy');
-            $("div[agendaDia]").html('');
 
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
