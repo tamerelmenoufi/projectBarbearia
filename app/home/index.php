@@ -138,7 +138,7 @@
             <div class="row">
                 <?php
 
-                $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b where a.situacao = '1' order by a.tipo desc";
+                $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by a.tipo desc";
                 $result = mysqli_query($con, $query);
                 $titulo = false;
                 while($d = mysqli_fetch_object($result)){
