@@ -55,10 +55,10 @@
     <div class="carousel-item active" data-bs-interval="10000">
     <img src="img/banner_site.jpg" class="w-100 d-none d-md-block" >
     <img src="img/banner_mobile.jpg" class="w-100 d-block d-sm-none" >
-      <div class="carousel-caption d-none d-md-block">
+      <!-- <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
-      </div>
+      </div> -->
     </div>
 
   </div>
