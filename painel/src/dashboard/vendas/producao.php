@@ -33,7 +33,7 @@
                             b.nome as cliente_nome
                         from vendas a
                         left join clientes b on a.cliente = b.codigo
-                        where a.situacao = 'p'";
+                        where a.situacao = 'p' order by data_pedido desc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
             ?>
