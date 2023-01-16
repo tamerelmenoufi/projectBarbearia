@@ -150,6 +150,7 @@
                   </div>
                 </div>
                 <?php
+                $titulo = $d->categoria;
                 }
                 // for($i=0;$i<20;$i++){
                 ?>
