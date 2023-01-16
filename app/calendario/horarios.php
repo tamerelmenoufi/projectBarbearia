@@ -3,7 +3,9 @@
 
     $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['servico']}'"));
 
-    $dia_serv = json_decode($_SESSION['PeriodoLoja']->dias_horas_atendimento);
+    $PeriodoLoja = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
+
+    $dia_serv = json_decode($PeriodoLoja->dias_horas_atendimento);
 
 	if($_POST['ano'] and $_POST['mes']){
 		$ano = $_POST['ano'];
