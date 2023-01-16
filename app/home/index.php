@@ -146,11 +146,11 @@
                 ?>
                 <div class="row">
                   <div class="col">
-                  <h3 class="text-white"><?=$d->categoria?></h3>
+                  <h3 class="text-white"><?=$d->categoria_nome?></h3>
                   </div>
                 </div>
                 <?php
-                $titulo = $d->categoria_nome;
+                $titulo = $d->categoria;
                 }
                 // for($i=0;$i<20;$i++){
                 ?>
