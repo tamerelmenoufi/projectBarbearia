@@ -178,7 +178,7 @@
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
-            $(".cadastrarAgenda").addAttr("disabled","disabled");
+            $(".cadastrarAgenda").attr("disabled","disabled");
 
             if(colaborador && servico){
                 $.ajax({
@@ -203,7 +203,7 @@
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
-            $(".cadastrarAgenda").addAttr("disabled","disabled");
+            $(".cadastrarAgenda").attr("disabled","disabled");
 
             if(colaborador){
                 $.ajax({
