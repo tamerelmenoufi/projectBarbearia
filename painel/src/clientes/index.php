@@ -154,6 +154,7 @@
             $.confirm({
                 content:"Deseja realmente excluir o cadastro ?",
                 title:false,
+                type:'red',
                 buttons:{
                     'SIM':function(){
                         $.ajax({
