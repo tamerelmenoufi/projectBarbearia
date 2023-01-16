@@ -53,26 +53,14 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="https://angelbarber.com.br/wp-content/uploads/2022/11/4481117-copiar-Large-1536x863.jpg" class="d-block w-100"  style="height:500px;">
+    <img src="img/banner_site.jpg" class="w-100 d-none d-md-block" >
+    <img src="img/banner_mobile.jpg" class="w-100 d-block d-sm-none" >
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/barber-shop-banner-design-template-52465bab1b3737e87cf03a6c289c2d93_screen.jpg?ts=1648232423" class="d-block w-100"  style="height:500px;">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://www.barbabrava.com.br/wp-content/uploads/2020/10/como-escolher-barbearia-800x300.png" class="d-block w-100" style="height:500px;">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
