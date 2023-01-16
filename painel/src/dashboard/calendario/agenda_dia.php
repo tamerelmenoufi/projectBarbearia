@@ -82,7 +82,7 @@
             data="<?=$hora?>"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
         <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
-            $query = "select
+            echo $query = "select
                             a.*,
                             b.nome as cliente_nome,
                             c.nome as colaborador_nome
