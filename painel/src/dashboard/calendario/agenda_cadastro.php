@@ -200,7 +200,6 @@
             colaborador = $(this).val();
 
             $("#servico").selectpicker('destroy');
-
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
@@ -219,6 +218,9 @@
                         $("#servico").selectpicker('render');
                     }
                 });
+            }else{
+                        $("#servico").html('<option value="">Selecionar</value>');
+                        $("#servico").selectpicker('render');
             }
         });
 
