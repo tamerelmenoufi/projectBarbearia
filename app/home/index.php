@@ -147,12 +147,14 @@
                     <div class="col-md-3 mb-3">
                       <div class="card h-100">
                         <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <!-- <div class="card-body">
                             <h5 class="card-title"><?=$d->produto?></h5>
                             <p class="card-text"><?=$d->descricao?></p>
 
-                        </div>
+                        </div> -->
                         <div class="card-footer">
+                            <h5 class="card-title"><?=$d->produto?></h5>
+                            <p class="card-text"><?=$d->descricao?></p>
                             <small class="text-muted">
                                 <a
                                     href="#"
