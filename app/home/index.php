@@ -182,7 +182,7 @@
               ?>
               <div class="col-md-4">
                 <div class="card text-bg-dark mb-3">
-                  <img src="https://media.istockphoto.com/id/1281247301/pt/vetorial/the-barber-avatar-icon-barbershop-and-hairdresser-haircutter-symbol-flat-icon-illustration.jpg?s=1024x1024&w=is&k=20&c=yWhDjdlYMHLLlKmVhlA6wlHvOjIbNG0Q5KUsDdffFmY=" class="card-img" alt="...">
+                  <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="card-img" alt="...">
                   <div class="card-img-overlay">
                     <div class="d-flex align-items-end h-100">
                       <div>
