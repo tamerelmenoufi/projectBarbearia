@@ -7,11 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/icone.png">
     <title>Os Manos Barbearia</title>
-    <style>
-        body{
-            background-color:#2f2e2e;
-        }
-    </style>
     <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/header.php");
     ?>
