@@ -41,7 +41,7 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
                   <th scope="col" style="width:50%">E-mail</th>
-                  <th scope="col">Vendas</th>
+                  <th scope="col">Compras</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
@@ -82,13 +82,13 @@
                       Editar
                     </button>
                     <?php
-                    if($d->codigo != 1){
+                    // if($d->codigo != 1){
                     ?>
                     <button class="btn btn-danger" <?=(($d->vendas)?'disabled':'delete="'.$d->codigo.'"')?>>
                       Excluir
                     </button>
                     <?php
-                    }
+                    // }
                     ?>
                   </td>
                 </tr>
