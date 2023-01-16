@@ -17,6 +17,9 @@
   <li class="list-group-item relatorio">Agendas anuladas</li>
   <li class="list-group-item relatorio">Agendas Canceladas </li>
   <li class="list-group-item relatorio">Vendas Canceladas </li>
+  <li class="list-group-item relatorio">Produtos Cadastrados </li>
+  <li class="list-group-item relatorio">Estoque de produtos</li>
+  <li class="list-group-item relatorio">Estatísticas dos produtos</li>
 </ul>
 
 <script>
