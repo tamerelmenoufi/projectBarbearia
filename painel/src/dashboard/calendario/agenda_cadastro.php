@@ -174,35 +174,39 @@
         $("#servico").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
-            $.ajax({
-                type:"POST",
-                data:{
-                    colaborador,
-                    servico,
-                },
-                url:"src/dashboard/calendario/horarios.php",
-                success:function(dados){
-                    $(".horarios").html(dados);
-                }
-            });
+            if(colaborador && servico){
+                $.ajax({
+                    type:"POST",
+                    data:{
+                        colaborador,
+                        servico,
+                    },
+                    url:"src/dashboard/calendario/horarios.php",
+                    success:function(dados){
+                        $(".horarios").html(dados);
+                    }
+                });
+            }
         });
 
 
         $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             colaborador = $(this).val();
             $("#servico").selectpicker('destroy');
-            $.ajax({
-                url:"src/dashboard/calendario/agenda_cadastro.php",
-                type:"POST",
-                data:{
-                    colaborador,
-                    acao:'filto_servicos'
-                },
-                success:function(dados){
-                    $("#servico").html(dados);
-                    $("#servico").selectpicker('render');
-                }
-            });
+            if(colaborador){
+                $.ajax({
+                    url:"src/dashboard/calendario/agenda_cadastro.php",
+                    type:"POST",
+                    data:{
+                        colaborador,
+                        acao:'filto_servicos'
+                    },
+                    success:function(dados){
+                        $("#servico").html(dados);
+                        $("#servico").selectpicker('render');
+                    }
+                });
+            }
         });
 
 
