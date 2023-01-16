@@ -269,7 +269,7 @@
 
         $(".agenda").click(function(){
           $.ajax({
-                url:"calendario/agenda_consulta.php",
+                url:"calendario/agenda_cadastro.php",
                 type:"POST",
                 success:function(dados){
                     $(".LateralDireita").html(dados);

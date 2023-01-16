@@ -1,6 +1,5 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
-    vl(['ProjectPainel']);
 
     $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
 
