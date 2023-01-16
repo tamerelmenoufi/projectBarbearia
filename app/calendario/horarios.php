@@ -230,7 +230,7 @@ $(function(){
                 mes,
                 dia
             },
-            url:"src/dashboard/calendario/horarios.php",
+            url:"calendario/horarios.php",
             success:function(dados){
                 $(".horarios").html(dados);
                 $(".cadastrarAgenda").attr("agenda",'');

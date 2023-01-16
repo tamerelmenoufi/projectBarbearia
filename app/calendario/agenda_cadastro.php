@@ -187,7 +187,7 @@
                         colaborador,
                         servico,
                     },
-                    url:"src/dashboard/calendario/horarios.php",
+                    url:"calendario/horarios.php",
                     success:function(dados){
                         $(".horarios").html(dados);
                     }
@@ -208,7 +208,7 @@
 
             if(colaborador){
                 $.ajax({
-                    url:"src/dashboard/calendario/agenda_cadastro.php",
+                    url:"calendario/agenda_cadastro.php",
                     type:"POST",
                     data:{
                         colaborador,
@@ -247,7 +247,7 @@
 
             Carregando();
             $.ajax({
-                url:"src/dashboard/calendario/agenda_dia.php",
+                url:"calendario/agenda_dia.php",
                 type:"POST",
                 data:{
                     cliente,

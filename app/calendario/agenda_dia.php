@@ -130,7 +130,7 @@
             codigo = $(this).attr("codigo");
             hora = $(this).attr("hora");
             $.ajax({
-                url:"src/dashboard/calendario/agenda_consulta.php",
+                url:"calendario/agenda_consulta.php",
                 type:"POST",
                 data:{
                     codigo,
@@ -145,7 +145,7 @@
         $(".nova_agenda").click(function(){
             data = $(this).attr("data");
             $.ajax({
-                url:"src/dashboard/calendario/agenda_cadastro.php",
+                url:"calendario/agenda_cadastro.php",
                 type:"POST",
                 data:{
                     data,
@@ -160,7 +160,7 @@
             agenda_dia = $(this).val();
             $("div[agendaDia]").css("opacity",0.2);
             $.ajax({
-                url:"src/dashboard/calendario/agenda_dia.php",
+                url:"calendario/agenda_dia.php",
                 type:"POST",
                 data:{
                     agenda_dia
