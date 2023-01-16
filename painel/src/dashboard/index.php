@@ -42,7 +42,7 @@
 <div style="padding:20px;">
     <div class="row">
         <div class="col-md-12">
-            <div class="card p-1 mb-3 element" vendasRelatorios></div>
+            <div class="p-1 mb-3" vendasRelatorios></div>
         </div>
     </div>
 </div>
