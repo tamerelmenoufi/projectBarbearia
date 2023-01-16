@@ -68,7 +68,8 @@
 <h4 class="Titulo<?=$md5?>"><span Titulo><?=dataBr($data_agenda)?></span></h4>
 
 <?php
-// if($blq){
+/*
+    if($blq){
 ?>
 <!-- <div class="row">
     <div class="col-12">
@@ -78,7 +79,8 @@
     </div>
 </div> -->
 <?php
-// }else{
+ }else{
+//*/
 ?>
 <div class="row mb-2">
     <div class="col-12">
