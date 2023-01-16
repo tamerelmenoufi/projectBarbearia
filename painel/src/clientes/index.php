@@ -5,6 +5,9 @@
     if($_POST['delete']){
       $query = "delete from clientes where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
+
+      $query = "delete from clientes_enderecos where cliente = '{$_POST['delete']}'";
+      mysqli_query($con, $query);
     }
 
     if($_POST['situacao']){
