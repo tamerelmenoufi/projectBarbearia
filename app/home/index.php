@@ -1,4 +1,6 @@
-<div
+<?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
+?><div
     class="offcanvas offcanvas-end"
     data-bs-backdrop="static"
     tabindex="-1"
@@ -173,7 +175,10 @@
 
             <div class="row">
               <?php
-              for($i = 0;$i < 6; $i++){
+              $query = "select * from colaboradores order by rand()";
+              $result = mysqli_query($con, $query);
+              while($d = mysqli_fetch_object($result)){
+              // for($i = 0;$i < 6; $i++){
               ?>
               <div class="col-md-4">
                 <div class="card text-bg-dark mb-3">
