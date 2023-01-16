@@ -44,15 +44,15 @@
     }
 
 
-    $agora = mktime(date("H"), date("m"), date("s"), date("m"), date("d"), date("Y"));
-    $dt = explode("-",$_SESSION['agenda_dia']);
-    $hs = explode(":",$_POST['data']);
-    $agenda = mktime($hs[0], $hs[1], date("s"), $dt[1], $dt[2], $dt[0]);
+    // $agora = mktime(date("H"), date("m"), date("s"), date("m"), date("d"), date("Y"));
+    // $dt = explode("-",$_SESSION['agenda_dia']);
+    // $hs = explode(":",$_POST['data']);
+    // $agenda = mktime($hs[0], $hs[1], date("s"), $dt[1], $dt[2], $dt[0]);
 
-    $blq = false;
-    if($agenda <= $agora){
-        $blq = true;
-    }
+    // $blq = false;
+    // if($agenda <= $agora){
+    //     $blq = true;
+    // }
 
 
 ?>
@@ -68,17 +68,17 @@
 <h4 class="Titulo<?=$md5?>"><span Titulo><?=dataBr($data_agenda)?></span></h4>
 
 <?php
-if($blq){
+// if($blq){
 ?>
-<div class="row">
+<!-- <div class="row">
     <div class="col-12">
         <div style="width:100%; height:300px; color:#a1a1a1; opacity:0.5; padding-top:80px; text-align:center;">
             <h1><i class="fa-solid fa-ban"></i><br>Data não autorizada</h1>
         </div>
     </div>
-</div>
+</div> -->
 <?php
-}else{
+// }else{
 ?>
 <div class="row mb-2">
     <div class="col-12">
@@ -160,7 +160,7 @@ if($blq){
     </div>
 </div>
 <?php
-}
+// }
 ?>
 <script>
     $(function(){
