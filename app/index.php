@@ -10,6 +10,11 @@
     <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/header.php");
     ?>
+    <style>
+        .CorpoApp{
+            background-color:#2f2e2e !important;
+        }
+    </style>
   </head>
   <body>
 
