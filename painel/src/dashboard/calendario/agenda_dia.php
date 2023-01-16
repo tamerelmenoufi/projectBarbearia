@@ -67,8 +67,8 @@
 
     <ul class="list-group">
     <?php
-    for($i=0;$i<24;$i++){
-        $j = [0,10,15,20,25,30,40,45,50];
+    for($i=9;$i<=20;$i++){
+        $j = [0,5,10,15,20,25,30,35,40,45,50,55];
         foreach($j as $ind => $h){
             $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($h , 2 , '0' , STR_PAD_LEFT);
     ?>
