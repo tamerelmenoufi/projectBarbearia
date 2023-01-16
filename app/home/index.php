@@ -152,10 +152,10 @@
                             <p class="card-text"><?=$d->descricao?></p>
 
                         </div> -->
-                        <div class="card-footer bg-dark">
+                        <div class="card-footer bg-dark text-white">
                             <h5 class="card-title"><?=$d->produto?></h5>
                             <p class="card-text"><?=$d->descricao?></p>
-                            <small class="text-white">
+                            <small>
                                 <a
                                     href="#"
                                     class="btn btn-outline-secondary"
