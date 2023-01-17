@@ -195,9 +195,9 @@
                         <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img" style="border:1px red solid" alt="...">
                         <div class="card-img-overlay w-100">
                           <div class="d-flex align-items-end h-100">
-                            <div class="w-100">
+                            <div class="w-100" style="background-color:rgb(0,0,0,0.7);">
                               <h3 class="card-title text-center text-white w-100"><?=$d->produto?></h3>
-                              <p class="card-text p-3 text-center text-white w-100" style="background-color:rgb(0,0,0,0.7);">R$ <?=number_format($d->valor, 2,',','.')?></p>
+                              <p class="card-text p-3 text-center text-white w-100">R$ <?=number_format($d->valor, 2,',','.')?></p>
                               <!-- <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
                             </div>
                           </div>
