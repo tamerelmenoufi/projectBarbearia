@@ -163,6 +163,9 @@
                             <h5 class="card-title"><?=$d->produto?></h5>
                             <p class="card-text"><?=$d->descricao?></p>
                             <small>
+                              <?php
+                                if($d->tipo == 's'){
+                              ?>
                                 <a
                                     href="#"
                                     class="btn btn-warning agenda"
@@ -170,6 +173,19 @@
                                     data-bs-target="#offcanvasDireita"
                                     aria-controls="offcanvasDireita"
                                 >R$ <?=number_format($d->valor, 2,',','.')?> Agendar</a>
+                              <?php
+                                }else{
+                              ?>
+                                <a
+                                    href="#"
+                                    class="btn btn-warning agenda"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasDireita"
+                                    aria-controls="offcanvasDireita"
+                                >R$ <?=number_format($d->valor, 2,',','.')?> Comprar</a>
+                              <?php
+                                }
+                              ?>
                             </small>
                         </div>
                       </div>
