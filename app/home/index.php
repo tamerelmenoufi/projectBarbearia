@@ -47,10 +47,7 @@
 <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid d-flex flex-row justify-content-between">
     <img id="profile-img" style="width:90px;" class="profile-img-card" src="img/icone.png" />
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+
   </div>
 </nav>
 
