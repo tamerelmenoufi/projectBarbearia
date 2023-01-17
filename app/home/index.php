@@ -35,13 +35,25 @@
 
 </script>
 
-<div class="d-flex flex-row justify-content-between" style="background-color:#583b1e; height:70px; position:fixed; left:0; top:0; width:100%; z-index:9;">
+<!-- <div class="d-flex flex-row justify-content-between" style="background-color:#583b1e; height:70px; position:fixed; left:0; top:0; width:100%; z-index:9;">
   <div></div>
   <div class="m-3" style="width:100px; height:100px; padding:5px; background-color:#6a4a2b; border-solid 2px #fff; border-radius:100%; z-index:10; position:relative;">
     <img id="profile-img" style="width:90px;" class="profile-img-card" src="img/icone.png" />
   </div>
   <div></div>
-</div>
+</div> -->
+
+
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid d-flex flex-row justify-content-between">
+    <img id="profile-img" style="width:90px;" class="profile-img-card" src="img/icone.png" />
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 
 
 
