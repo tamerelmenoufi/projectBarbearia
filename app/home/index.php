@@ -151,12 +151,10 @@
                 }
                 // for($i=0;$i<20;$i++){
                 ?>
-                    <div class="col-md-3 mb-3">
+                    <!-- <div class="col-md-3 mb-3">
                       <div class="card h-100" style="background-color:#e9ecef">
                         <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top w-80" alt="...">
                         <div class="card-body">
-                            <!-- <h5 class="card-title"><?=$d->produto?></h5>
-                            <p class="card-text"><?=$d->descricao?></p> -->
 
                         </div>
                         <div class="card-footer bg-dark text-white">
@@ -189,7 +187,25 @@
                             </small>
                         </div>
                       </div>
+                    </div> -->
+
+
+                    <div class="col-md-4">
+                      <div class="card text-bg-dark mb-3">
+                        <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                          <div class="d-flex align-items-end h-100">
+                            <div class="w-100 p-3">
+                              <h3 class="card-title text-center text-white w-100"><?=$d->produto?></h3>
+                              <p class="card-text p-3 text-center text-white w-100" style="background-color:rgb(0,0,0,0.7);">R$ <?=number_format($d->valor, 2,',','.')?></p>
+                              <!-- <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+
+
                 <?php
                 }
                 ?>
