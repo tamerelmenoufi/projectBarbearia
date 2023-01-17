@@ -193,7 +193,7 @@
                     <div class="col-md-4">
                       <div class="card mb-3">
                         <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img" style="border:1px red solid" alt="...">
-                        <div class="card-img-overlay" style="margin:0;">
+                        <div class="card-img-overlay w-100" style="position:absolute; bottom:0;">
                           <div class="d-flex align-items-end h-100">
                             <div class="w-100">
                               <h3 class="card-title text-center text-white w-100"><?=$d->produto?></h3>
