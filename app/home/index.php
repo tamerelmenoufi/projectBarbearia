@@ -47,7 +47,7 @@
 <nav class="navbar bg-body-tertiary fixed-top" style="background-color:#583b1e; height:70px; left:0; top:0; width:100%; z-index:9;">
   <div class="container-fluid d-flex flex-row justify-content-between">
     <img id="profile-img" style="width:90px;" class="profile-img-card" src="img/icone.png" />
-
+    <span>Nome teste</span>
   </div>
 </nav>
 
