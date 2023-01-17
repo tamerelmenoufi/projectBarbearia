@@ -71,8 +71,8 @@
                 </button>
                 <select
                     id="opcMes"
-                    ano="<?=$ante_a?>"
-                    dia="<?=$ante_d?>"
+                    ano="<?=$ano?>"
+                    dia="<?=$mes?>"
                     class="form-control col-3 text-center">
                     <?php
                     foreach($abrevMes as $ind => $val){
@@ -84,8 +84,8 @@
                 </select>
                 <input
                     type="text"
-                    mes="<?=$ante_m?>"
-                    dia="<?=$ante_d?>"
+                    mes="<?=$mes?>"
+                    dia="<?=$dia?>"
                     class="form-control col-3 text-center"
                     id="opcAno"
                     value="<?=$ano?>">
