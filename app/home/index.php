@@ -192,7 +192,7 @@
 
                     <div class="col-md-4">
                       <div class="card mb-3" style="--bs-card-img-overlay-padding:0;">
-                        <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img" style="border:1px red solid" alt="...">
+                        <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img" alt="...">
                         <div class="card-img-overlay w-100">
                           <div class="d-flex align-items-end h-100">
                             <div class="w-100" style="background-color:rgb(0,0,0,0.7);">
