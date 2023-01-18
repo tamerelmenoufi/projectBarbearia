@@ -39,6 +39,14 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+
+<!-- Bootstrap Select -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
+
+
+
   <!-- =======================================================
   * Template Name: HeroBiz - v2.1.0
   * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
@@ -164,6 +172,10 @@ if( navigator.userAgent.match(/Android/i)
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/js.js"></script>
+
+<!-- Bootstrap Select -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
 
 
