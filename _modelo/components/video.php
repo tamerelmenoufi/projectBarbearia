@@ -24,7 +24,7 @@
                           aria-controls="offcanvasDireita"
               ><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
 
-              <a href="#" class="read-more align-self-start agenda" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More XX</span><i class="bi bi-arrow-right"></i></a>
+              <a href="#" class="read-more align-self-start agenda" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
 
             </div>
@@ -43,11 +43,10 @@
                 url:"calendario/teste.php",
                 type:"POST",
                 success:function(dados){
-                  alert('passou')
-                    $(".LateralDireita").html(dados);
+                  $(".LateralDireita").html(dados);
                 },
                 error:function(){
-                  alert('passou')
+
                 }
             });
         });
