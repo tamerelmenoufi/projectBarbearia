@@ -123,7 +123,7 @@ if( navigator.userAgent.match(/Android/i)
         // 'mais_noticias',
         // 'noticias_detalhes',
         // 'produtos_servicos',
-        'clientes',
+        // 'clientes',
         // 'destaque',
 
         // 'solucoes',
