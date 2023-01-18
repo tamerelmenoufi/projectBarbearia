@@ -120,7 +120,6 @@
 
 ?>
 
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
 
 
 </main><!-- End #main -->
