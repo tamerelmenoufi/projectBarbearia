@@ -20,7 +20,7 @@
               </ul>
               <a href="#" class="read-more align-self-start"
                           data-bs-toggle="offcanvas"
-                          data-bs-target="#offcanvasDireita"
+                          data-bs-target="#offcanvasRight"
                           aria-controls="offcanvasDireita"
               ><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
