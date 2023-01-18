@@ -8,15 +8,14 @@
           </div>
           <div class="col-lg-6">
             <div class="content d-flex flex-column justify-content-center h-100">
-              <h3>Voluptatem dignissimos provident quasi corporis</h3>
+              <h3>Os Manos Barbearia</h3>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+                A barbearia que faltava para você!.
               </p>
               <ul>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i class="bi bi-check-circle"></i> Funcionamos de segunda a sábado, de 9h às 20h.</li>
+                <li><i class="bi bi-check-circle"></i> Aqui tem Barba Feita + Cerveja Gelada.</li>
+                <li><i class="bi bi-check-circle"></i> Agende seu horário agora mesmo.</li>
               </ul>
               <!-- <a href="#" class="read-more align-self-start"
                           data-bs-toggle="offcanvas"
@@ -24,7 +23,7 @@
                           aria-controls="offcanvasDireita"
               ><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
 
-              <a href="#" class="read-more align-self-start agenda" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="#" class="read-more align-self-start agenda" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Agendar aqui</span><i class="bi bi-arrow-right"></i></a>
 
 
             </div>
