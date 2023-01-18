@@ -65,6 +65,7 @@
             position: { lat: <?=(($coordenada[0])?:0)?>, lng: <?=(($coordenada[1])?:0)?> },
             map:map<?=$md5?>,
             title: "Hello World!",
+            icon:"http://146.190.52.49:8081/app/projectBarbearia/_modelo/assets/img/logo.png",
             draggable:false,
         });
 
