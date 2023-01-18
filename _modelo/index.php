@@ -124,7 +124,8 @@ if( navigator.userAgent.match(/Android/i)
         // 'noticias_detalhes',
         // 'produtos_servicos',
         // 'clientes',
-        // 'destaque',
+
+        'destaque',
 
         // 'solucoes',
         // 'produtos_servicos2',
