@@ -122,7 +122,7 @@ if( navigator.userAgent.match(/Android/i)
         // 'pagina_interna2',
         // 'mais_noticias',
         // 'noticias_detalhes',
-        // 'produtos_servicos',
+        'produtos_servicos',
         // 'clientes',
 
         // 'destaque',
