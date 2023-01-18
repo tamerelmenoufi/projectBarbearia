@@ -39,16 +39,17 @@
         Carregando('none');
 
         $(".agenda").click(function(){
-          $.ajax({
-                url:"calendario/teste.php",
-                type:"POST",
-                success:function(dados){
-                  $(".LateralDireita").html(dados);
-                },
-                error:function(){
+          alert('teste')
+          // $.ajax({
+          //       url:"calendario/teste.php",
+          //       type:"POST",
+          //       success:function(dados){
+          //         $(".LateralDireita").html(dados);
+          //       },
+          //       error:function(){
 
-                }
-            });
+          //       }
+          //   });
         });
 
     })
