@@ -1,19 +1,10 @@
-<style>
-.logTop {
-  position:fixed;
-  left:20px;
-  height:80px;
-  top:10px;
-}
-</style>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="index.php" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" class="logTop" alt="">
+        <img src="assets/img/logo.png" alt="">
       </a>
 
       <nav id="navbar" class="navbar">
