@@ -214,6 +214,8 @@ section {
   box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1);
 }
 .header .logo img {
+  position:fixed;
+  margin: 10px;
   max-height: 80px;
   margin-right: 6px;
 }
