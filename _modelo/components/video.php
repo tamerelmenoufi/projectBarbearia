@@ -40,7 +40,7 @@
 
         $(".agenda").click(function(){
           $.ajax({
-                url:"calendario/agenda_cadastro.php",
+                url:"calendario/teste.php",
                 type:"POST",
                 success:function(dados){
                   alert('passou')
