@@ -1,6 +1,9 @@
 <style>
-.header .logo img {
-  height:150px !important;
+.logTop {
+  position:fixed;
+  left:20px;
+  height:80px;
+  top:10px;
 }
 </style>
 
@@ -10,7 +13,7 @@
 
       <a href="index.php" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="">
+        <img src="assets/img/logo.png" class="logTop" alt="">
       </a>
 
       <nav id="navbar" class="navbar">
