@@ -133,7 +133,7 @@ if( navigator.userAgent.match(/Android/i)
         // 'faq',
 
 
-        'time',
+        // 'time',
         'contato',
         'rodape',
 

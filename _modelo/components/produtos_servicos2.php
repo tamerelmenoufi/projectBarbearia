@@ -3,12 +3,11 @@
 
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="team" class="services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Our Services</h2>
-          <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+          <h2>Time</h2>
         </div>
 
         <div class="row gy-5">
