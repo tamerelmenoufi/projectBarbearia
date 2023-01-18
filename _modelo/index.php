@@ -127,7 +127,7 @@ if( navigator.userAgent.match(/Android/i)
 
         // 'destaque',
 
-        'solucoes',
+        // 'solucoes',
         'produtos_servicos2',
         // 'planos',
         // 'faq',
