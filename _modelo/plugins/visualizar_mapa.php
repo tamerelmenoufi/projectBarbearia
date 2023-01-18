@@ -5,7 +5,7 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
+    $endereco =  "Av. Djalma Batista, 370 - Chapada";
 
     $coordenada = json_decode($d->coordenadas);
     if($coordenada[0] and $coordenada[1]){
