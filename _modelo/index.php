@@ -84,7 +84,7 @@
         // 'banner_principal3',
         // 'sobre',
         // 'noticias',
-        // 'galeria',
+        'galeria',
         // 'banner_depoimentos',
 
         // 'pagina_interna',
@@ -92,7 +92,7 @@
         // 'mais_noticias',
         // 'noticias_detalhes',
         // 'produtos_servicos',
-        'clientes',
+        // 'clientes',
         // 'destaque',
 
         // 'solucoes',
