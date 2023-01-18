@@ -10,7 +10,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.php#services">Serviços</a></li>
+          <li><a class="nav-link scrollto" href="index.php#servicos">Serviços</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Time</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>
