@@ -12,17 +12,15 @@ Nossa equipe é formada por profissionais comprometidos com excelência nas real
 
 
         <?php
-            $query = "select * from time where situacao = '1' order by codigo desc";
-            $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
-
-              $midias = json_decode($d->canais_contatos);
-
+              $query = "select * from colaboradores where codigo > 1 order by rand()";
+              $result = mysqli_query($con, $query);
+              while($d = mysqli_fetch_object($result)){
+              // for($i = 0;$i < 6; $i++){
         ?>
           <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="<?=$localPainel?>src/volume/time/<?=$d->imagem?>" class="img-fluid" alt="">
+                <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <div class="social">
@@ -49,7 +47,7 @@ Nossa equipe é formada por profissionais comprometidos com excelência nas real
                   <a href=""><i class="bi bi-linkedin"></i></a> -->
                 </div>
                 <h4><?=$d->nome?></h4>
-                <span><?=$d->cargo?></span>
+                <span><?=$d->especialidade?></span>
               </div>
             </div>
           </div>
