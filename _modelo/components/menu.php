@@ -1,31 +1,3 @@
-<?php
-  function MontaMenu($v){
-    global $con;
-    global $_SESSION;
-    $query = "select a.*, (select count(*) from menus where vinculo = a.codigo) as qt from menus a where a.vinculo = '{$v}' and a.situacao = '1' order by a.ordem asc";
-    $result = mysqli_query($con, $query);
-    if(mysqli_num_rows($result)){
-?>
-      <ul>
-<?php
-    while($d = mysqli_fetch_object($result)){
-?>
-        <li <?=(($d->qt)?'class="dropdown"':false)?>>
-            <a href="<?=$d->url?>" <?=((!$d->qt and !$v)?'class="nav-link scrollto"':false)?>><?=(($d->qt)?'<span>'.$d->titulo.'</span> <i class="bi bi-chevron-down dropdown-indicator"></i>':$d->titulo)?></a>
-            <?php
-            MontaMenu($d->codigo);
-            ?>
-        </li>
-<?php
-    }
-?>
-      </ul>
-<?php
-    }
-  }
-
-?>
-
 <style>
 .header .logo h1 span {
   color: #0dacad!important;
@@ -44,10 +16,7 @@
       </a>
 
       <nav id="navbar" class="navbar">
-      <?php
-      /*
-      ?>
-      <!-- <ul>
+      <ul>
 
           <li class="dropdown">
             <a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -110,12 +79,8 @@
         </ul>
 
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
-       -->
+
       <!-- .navbar -->
-      <?php
-      //*/
-      MontaMenu(0);
-      ?>
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav>
       <!-- <a class="btn-getstarted scrollto" href="index.php#about"><i class="fa-regular fa-hand-pointer"></i> Iniciar</a> -->
