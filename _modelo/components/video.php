@@ -40,11 +40,10 @@
 
         $(".agenda").click(function(){
           $.ajax({
-                url:"calendario/teste.php",
+                url:"calendario/agenda_cadastro.php",
                 type:"POST",
                 success:function(dados){
                   $(".LateralDireita").html(dados);
-                  alert('erro')
                 },
                 error:function(){
                   alert('erro')
