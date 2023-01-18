@@ -101,8 +101,8 @@
         // 'faq',
 
 
-        // 'time',
-        'contato',
+        'time',
+        // 'contato',
         'rodape',
 
 
