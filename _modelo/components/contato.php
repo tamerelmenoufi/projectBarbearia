@@ -3,6 +3,9 @@
     $query = "select * from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
+
+    $c = json_decode($d->contato);
+
 ?><!-- ======= Contact Section ======= -->
     <style>
       .contact .php-email-form textarea {
@@ -41,7 +44,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4>E-mail:</h4>
-                  <p><?=$d->email?></p>
+                  <p><?=$c['email']?></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -49,7 +52,7 @@
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
                   <h4>Telefone:</h4>
-                  <p><?=$d->telefone?></p>
+                  <p><?=$c['telefone']?></p>
                 </div>
               </div><!-- End Info Item -->
 
