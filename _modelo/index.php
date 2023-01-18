@@ -66,11 +66,6 @@
 
 <body>
 
-<!-- <div class="popup">
-    <span><i class="bi bi-x"></i></span>
-    <div class="body"></div>
-</div> -->
-
 <main id="main">
 <?php
 
