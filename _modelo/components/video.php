@@ -18,7 +18,7 @@
                 <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
                 <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
               </ul>
-              <a href="#" class="btn btn-warning"
+              <a href="#" class="read-more align-self-start"
                           data-bs-toggle="offcanvas"
                           data-bs-target="#offcanvasDireita"
                           aria-controls="offcanvasDireita"
