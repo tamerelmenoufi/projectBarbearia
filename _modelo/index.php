@@ -125,10 +125,10 @@ if( navigator.userAgent.match(/Android/i)
         // 'produtos_servicos',
         // 'clientes',
 
-        'destaque',
+        // 'destaque',
 
-        // 'solucoes',
-        // 'produtos_servicos2',
+        'solucoes',
+        'produtos_servicos2',
         // 'planos',
         // 'faq',
 
