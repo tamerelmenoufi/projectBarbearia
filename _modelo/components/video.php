@@ -24,7 +24,7 @@
                           aria-controls="offcanvasDireita"
               ><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
 
-              <button class="read-more align-self-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More</span><i class="bi bi-arrow-right"></i></button>
+              <a href="#" class="read-more align-self-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
 
             </div>
