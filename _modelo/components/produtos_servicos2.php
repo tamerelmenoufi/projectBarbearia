@@ -23,7 +23,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
-                <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="img-fluid" alt="">
+                <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="img-fluid" alt="" style="width:100%;">
               </div>
               <div class="details position-relative">
                 <div class="icon">
