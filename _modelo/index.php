@@ -115,7 +115,7 @@ if( navigator.userAgent.match(/Android/i)
         // 'banner_principal3',
         // 'sobre',
         // 'noticias',
-        'galeria',
+        // 'galeria',
         // 'banner_depoimentos',
 
         // 'pagina_interna',
