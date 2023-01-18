@@ -33,24 +33,3 @@
 
       </div>
     </section><!-- End On Focus Section -->
-
-    <script>
-    $(function(){
-        Carregando('none');
-
-        $(".agenda").click(function(){
-          alert('teste')
-          // $.ajax({
-          //       url:"calendario/teste.php",
-          //       type:"POST",
-          //       success:function(dados){
-          //         $(".LateralDireita").html(dados);
-          //       },
-          //       error:function(){
-
-          //       }
-          //   });
-        });
-
-    })
-</script>

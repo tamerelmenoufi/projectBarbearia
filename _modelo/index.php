@@ -164,6 +164,29 @@ if( navigator.userAgent.match(/Android/i)
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/js.js"></script>
+
+
+  <script>
+    $(function(){
+        Carregando('none');
+
+        $(".agenda").click(function(){
+          $.ajax({
+                url:"calendario/teste.php",
+                type:"POST",
+                success:function(dados){
+                  $(".LateralDireita").html(dados);
+                  alert('erro')
+                },
+                error:function(){
+                  alert('erro')
+                }
+            });
+        });
+
+    })
+</script>
+
 </body>
 
 </html>
