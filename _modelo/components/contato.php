@@ -44,7 +44,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4>E-mail:</h4>
-                  <p><?=$c['email']?></p>
+                  <p><?=$c->email?></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -52,7 +52,7 @@
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
                   <h4>Telefone:</h4>
-                  <p><?=$c['telefone']?></p>
+                  <p><?=$c->telefone?></p>
                 </div>
               </div><!-- End Info Item -->
 
