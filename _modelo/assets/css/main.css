@@ -206,7 +206,7 @@ section {
 --------------------------------------------------------------*/
 .header {
   padding: 15px 0;
-  min-height: 40px;
+  min-height: 80px;
   transition: all 0.5s;
   z-index: 997;
 }
