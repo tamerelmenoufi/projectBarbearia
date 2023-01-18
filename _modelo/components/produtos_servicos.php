@@ -1,7 +1,9 @@
 <!-- ======= Featured Services Section ======= -->
 <section id="servicos" class="featured-services">
       <div class="container">
-
+        <div class="section-header">
+          <h2>Serviços</h2>
+        </div>
         <div class="row gy-4">
         <?php
               $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by a.tipo desc";
