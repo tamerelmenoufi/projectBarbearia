@@ -24,7 +24,7 @@
                           aria-controls="offcanvasDireita"
               ><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
 
-              <a href="#" class="read-more align-self-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="#" class="read-more align-self-start agenda" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
 
             </div>
@@ -33,3 +33,20 @@
 
       </div>
     </section><!-- End On Focus Section -->
+
+    <script>
+    $(function(){
+        Carregando('none');
+
+        $(".agenda").click(function(){
+          $.ajax({
+                url:"calendario/agenda_cadastro.php",
+                type:"POST",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
+
+    })
+</script>
