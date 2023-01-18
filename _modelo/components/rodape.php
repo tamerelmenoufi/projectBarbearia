@@ -1,4 +1,4 @@
-  
+
   <style>
 
 .footer .footer-legal {
@@ -6,24 +6,25 @@
   background: #16999a!important;
 }
   </style>
-  
+
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
-   
+
     <div class="footer-legal text-center">
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>Project</span></strong>. Todos os direitos reservados
+            &copy; Copyright <strong><span>Os Manos Barbearia</span></strong>. Todos os direitos reservados
           </div>
           <div class="credits">
+            <p>Av. Djalma Batista, 370 - Chapada</p>
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-          
+
           </div>
         </div>
 
