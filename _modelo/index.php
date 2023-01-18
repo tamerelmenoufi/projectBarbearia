@@ -86,10 +86,10 @@ if( navigator.userAgent.match(/Android/i)
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)
  ){
-    $("#offcanvasRight").css("--bs-offcanvas-width","100%")
+    $("#offcanvasRight").css("width","100%")
   }
  else {
-    $("#offcanvasRight").css("--bs-offcanvas-width","600px")
+    $("#offcanvasRight").css("width","600px")
   }
 
 </script>
