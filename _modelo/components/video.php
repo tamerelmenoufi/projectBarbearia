@@ -1,6 +1,6 @@
     <!-- ======= On Focus Section ======= -->
-    <section id="onfocus" class="onfocus">
-      <div class="container-fluid" data-aos="fade-up">
+    <section id="onfocus" class="hero-animated">
+      <div class="container-fluid p-0" data-aos="fade-up">
 
         <div class="row g-0">
           <div class="col-lg-6 video-play position-relative">
