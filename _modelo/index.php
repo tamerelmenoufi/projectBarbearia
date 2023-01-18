@@ -66,10 +66,10 @@
 
 <body>
 
-<div class="popup">
+<!-- <div class="popup">
     <span><i class="bi bi-x"></i></span>
     <div class="body"></div>
-</div>
+</div> -->
 
 <main id="main">
 <?php
