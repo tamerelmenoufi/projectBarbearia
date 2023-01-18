@@ -16,7 +16,7 @@
                 <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt="">
                 <span style="color:#a1a1a1; font-weight:bold;">R$ <?=number_format($d->valor,2,',','.')?></span>
               </div>
-              <h4><a href="#" class="stretched-link agenda_servico"><?=$d->produto?></a></h4>
+              <h4><a href="#servicos" class="stretched-link agenda_servico" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><?=$d->produto?></a></h4>
               <p></p>
             </div>
           </div><!-- End Service Item -->
