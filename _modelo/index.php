@@ -103,7 +103,7 @@
 
         'time',
         'contato',
-        // 'rodape',
+        'rodape',
 
 
     ];
