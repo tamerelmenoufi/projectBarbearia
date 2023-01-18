@@ -169,9 +169,9 @@ if( navigator.userAgent.match(/Android/i)
   <script>
     $(function(){
 
-      alert('olá')
-        Carregando('none');
 
+        Carregando('none');
+      alert('olá')
         $(".agenda").click(function(){
           $.ajax({
                 url:"calendario/teste.php",
