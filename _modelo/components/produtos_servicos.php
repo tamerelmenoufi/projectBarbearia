@@ -15,7 +15,7 @@
             <div class="service-item position-relative w-100">
               <div class="icon d-flex justify-content-between">
                 <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt="">
-                <span>R$ <?=number_format($d->produto,2,',','.')?></span>
+                <span>R$ <?=number_format($d->valor,2,',','.')?></span>
               </div>
               <h4><a href="" class="stretched-link"><?=$d->produto?></a></h4>
               <p></p>
