@@ -206,7 +206,6 @@ section {
 --------------------------------------------------------------*/
 .header {
   padding: 15px 0;
-  min-height: 80px;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -215,10 +214,8 @@ section {
   box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1);
 }
 .header .logo img {
-  position:fixed;
-  top: 10px;
-  left:10px;
-  max-height: 80px;
+  max-height: 40px;
+  margin-right: 6px;
 }
 .header .logo h1 {
   font-size: 32px;
