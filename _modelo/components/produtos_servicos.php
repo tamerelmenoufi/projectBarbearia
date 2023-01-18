@@ -10,7 +10,7 @@
               while($d = mysqli_fetch_object($result)){
             ?>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
-            <div class="service-item position-relative">
+            <div class="service-item position-relative w-100">
               <div class="icon">
               <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt="">
                 <!-- <i class="bi bi-activity icon"></i> -->
