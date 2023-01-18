@@ -21,11 +21,11 @@
             <li data-filter=".filter-branding">Branding</li>
             <li data-filter=".filter-books">Books</li> -->
             <?php
-            $query = "select * from portifolio_categorias where situacao = '1' order by titulo";
+            $query = "select * from produtos_categorias where situacao = '1' order by categoria";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
             ?>
-            <li data-filter=".filter-app<?=$d->codigo?>"><?=$d->titulo?></li>
+            <li data-filter=".filter-app<?=$d->codigo?>"><?=$d->categoria?></li>
             <?php
             }
             ?>
@@ -34,15 +34,16 @@
           <div class="row g-0 portfolio-container">
 
             <?php
-            $query = "select a.* from portifolio a left join portifolio_categorias b on a.categoria = b.codigo where a.situacao = '1' and b.situacao = '1' order by b.titulo, a.titulo";
-            $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
+              $query = "select a.*, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' order by a.tipo desc";
+              $result = mysqli_query($con, $query);
+              $titulo = false;
+              while($d = mysqli_fetch_object($result)){
             ?>
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app<?=$d->categoria?>">
-              <img src="<?=$localPainel?>src/volume/portifolio/<?=$d->imagem?>" class="img-fluid" alt="">
+              <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><?=$d->titulo?></h4>
-                <a href="<?=$localPainel?>src/volume/portifolio/<?=$d->imagem?>" title="<?=$d->titulo?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <h4><?=$d->produto?></h4>
+                <a href="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" title="<?=$d->produto?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="servico.php?cod=<?=$d->codigo?>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -163,5 +164,5 @@
         </div>
 
 
-       
+
     </section><!-- End Portfolio Section -->
