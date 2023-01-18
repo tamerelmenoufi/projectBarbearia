@@ -1,5 +1,5 @@
 <style>
-.header .logo {
+.header .logo img {
   height:150px !important;
 }
 </style>
