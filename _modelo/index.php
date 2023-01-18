@@ -75,7 +75,7 @@
 <?php
 
     $componentes = [
-        // 'menu',
+         'menu',
 
         'video',
         // 'banner_principal',
@@ -84,7 +84,7 @@
         // 'banner_principal3',
         // 'sobre',
         // 'noticias',
-        'galeria',
+        // 'galeria',
         // 'banner_depoimentos',
 
         // 'pagina_interna',
