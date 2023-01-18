@@ -177,7 +177,16 @@ if( navigator.userAgent.match(/Android/i)
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
+<script>
 
+        //Jconfirm
+        jconfirm.defaults = {
+            typeAnimated: true,
+            type: "blue",
+            smoothContent: true,
+        }
+
+</script>
 
 </body>
 

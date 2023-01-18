@@ -12,7 +12,7 @@
     ?>
     <style>
         .CorpoApp{
-          
+
         }
     </style>
   </head>
@@ -30,7 +30,7 @@ background-size: cover;
 }
 
     </style>
-  
+
   <body>
 
     <div class="Carregando">

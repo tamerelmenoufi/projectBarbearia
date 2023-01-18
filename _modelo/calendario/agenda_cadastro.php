@@ -258,7 +258,7 @@
                 },
                 success:function(dados){
                     $.alert('Agenda confirmada!')
-                    let myOffCanvas = document.getElementById('offcanvasDireita');
+                    let myOffCanvas = document.getElementById('offcanvasRight');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.hide();
                 }
