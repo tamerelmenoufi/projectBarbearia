@@ -215,9 +215,9 @@ section {
 }
 .header .logo img {
   position:fixed;
-  margin: 10px;
+  top: 10px;
+  left:10px;
   max-height: 80px;
-  margin-right: 6px;
 }
 .header .logo h1 {
   font-size: 32px;
