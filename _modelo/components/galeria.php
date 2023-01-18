@@ -15,7 +15,7 @@
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
           <ul class="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter="*" class="filter-active">Todos</li>
             <!-- <li data-filter=".filter-app">App</li>
             <li data-filter=".filter-product">Product</li>
             <li data-filter=".filter-branding">Branding</li>
@@ -40,7 +40,7 @@
               while($d = mysqli_fetch_object($result)){
             ?>
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app<?=$d->categoria?>">
-              <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid" alt="">
+              <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:300px;" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><?=$d->produto?></h4>
                 <a href="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" title="<?=$d->produto?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
