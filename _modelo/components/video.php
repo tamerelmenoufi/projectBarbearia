@@ -43,6 +43,7 @@
                 url:"calendario/agenda_cadastro.php",
                 type:"POST",
                 success:function(dados){
+                  alert('passou')
                     $(".LateralDireita").html(dados);
                 }
             });
