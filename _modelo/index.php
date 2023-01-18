@@ -168,6 +168,8 @@ if( navigator.userAgent.match(/Android/i)
 
   <script>
     $(function(){
+
+      alert('olá')
         Carregando('none');
 
         $(".agenda").click(function(){
