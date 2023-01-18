@@ -245,7 +245,6 @@
                 return false;
             }
 
-            Carregando();
             $.ajax({
                 url:"calendario/agenda_dia.php",
                 type:"POST",
@@ -259,7 +258,6 @@
                 },
                 success:function(dados){
                     $.alert('Agenda confirmada!')
-                    Carregando('none')
                     let myOffCanvas = document.getElementById('offcanvasDireita');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.hide();
