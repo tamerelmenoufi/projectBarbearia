@@ -14,6 +14,7 @@
               <div class="icon">
               <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt="">
                 <!-- <i class="bi bi-activity icon"></i> -->
+                <span>R$ 12,00</span>
               </div>
               <h4><a href="" class="stretched-link"><?=$d->produto?></a></h4>
               <p></p>
