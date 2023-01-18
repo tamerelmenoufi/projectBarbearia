@@ -92,7 +92,7 @@
         // 'mais_noticias',
         // 'noticias_detalhes',
         // 'produtos_servicos',
-        // 'clientes',
+        'clientes',
         // 'destaque',
 
         // 'solucoes',
@@ -101,7 +101,7 @@
         // 'faq',
 
 
-        'time',
+        // 'time',
         'contato',
         'rodape',
 
