@@ -1,5 +1,5 @@
     <!-- ======= On Focus Section ======= -->
-    <section id="onfocus" class="hero-animated">
+    <section id="onfocus" class="onfocus" style="margin-top:60px;">
       <div class="container-fluid p-0" data-aos="fade-up">
 
         <div class="row g-0">
