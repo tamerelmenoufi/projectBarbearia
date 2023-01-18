@@ -45,6 +45,9 @@
                 success:function(dados){
                   alert('passou')
                     $(".LateralDireita").html(dados);
+                },
+                error:function(){
+                  alert('passou')
                 }
             });
         });
