@@ -114,6 +114,29 @@ element.style {
     border-color: #ffffff!important;
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #482e15;
+    border-color: #ffffff;
+}
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #fff;
+    background-color: #8b5018;
+    border-color: #7e4e1f;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #482e15;
+    border-color: #ffffff;
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #8b5018;
+    border-color: #854f1d;
+}
+
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
 
