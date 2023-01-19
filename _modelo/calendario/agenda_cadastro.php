@@ -88,7 +88,7 @@
    
 }
 </style>
-<h4 class="Titulo<?=$md5?>">Agenda <span Titulo></span></h4>
+<h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
 
 <?php
 /*
@@ -131,8 +131,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="colaborador" class="form-label"> <i class="fa-duotone fa-user-tie-hair"></i>
-        Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
+        <label for="colaborador" class="form-label"> <i class="fa-duotone fa-user-tie-hair"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
         <select
                 name="colaborador"
                 id="colaborador"
@@ -156,7 +155,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="servico" class="form-label"> <i class="fa-regular fa-scissors"></i> Serviço</label>
+        <label for="servico" class="form-label"> <i class="fa fa-scissors"></i> Serviço</label>
         <select
                 name="servico"
                 id="servico"
