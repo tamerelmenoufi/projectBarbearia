@@ -1459,11 +1459,12 @@ section {
   border: 2px solid var(--color-primary);
 }
 .services .service-item:hover .details .icon i {
-  color: var(--color-primary);
+  color:#3f2914;
 }
 .services .service-item:hover .img img {
   transform: scale(1.2);
 }
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
