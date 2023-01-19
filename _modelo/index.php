@@ -72,7 +72,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#a9a299">
 
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
