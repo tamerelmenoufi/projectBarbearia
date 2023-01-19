@@ -93,6 +93,27 @@
     background-color: #6e4a28;
 }
 
+element.style {
+}
+.bootstrap-select .dropdown-menu li a {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #492f16;
+}
+
+.btn-outline-primary:hover {
+    color: #482e15!important;
+    background-color: #e3deda!important;
+    border-color: #ffffff!important;
+}
+
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
 

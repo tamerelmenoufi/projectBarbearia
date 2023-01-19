@@ -55,11 +55,7 @@
     .nova_agenda{
         cursor:pointer;
     }
-    .btn-outline-primary:hover {
-    color: #482e15!important;
-    background-color: #e3deda!important;
-    border-color: #ffffff!important;
-}
+  
 
 
 </style>
