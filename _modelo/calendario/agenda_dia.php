@@ -58,23 +58,23 @@
 
     .text-success {
     --bs-text-opacity: 1;
-    color: #6e4a28;
+    color: #6e4a28!important;
 }
 
 .text-primary {
     --bs-text-opacity: 1;
-    color: #27891b;
+    color: #27891b!important;
 }
 
 .btn-outline-primary {
-    color: #f9fafb;
-    border-color: #ffffff;
+    color: #f9fafb!important;
+    border-color: #ffffff!important;
 }
 
 
 .btn-outline-primary:hover {
-    color: #3f2914;
-    border-color: #3f2914;
+    color: #3f2914!important;
+    border-color: #3f2914!important;
 }
 </style>
 
