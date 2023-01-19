@@ -87,6 +87,18 @@
     background: #6e4a28;
    
 }
+
+btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #3f2914;
+    border-color: #3f2914;
+}
+btn-primary {
+    color: #fff;
+    background-color: #3f2914;
+    border-color: #3f2914;
+}
+
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
 
