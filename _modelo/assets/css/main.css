@@ -1994,7 +1994,7 @@ section {
 }
 .contact .info-item i {
   font-size: 24px;
-  color: var(--color-primary);
+  color:#392419;
   transition: all 0.3s ease-in-out;
   margin-right: 20px;
 }
@@ -2072,7 +2072,7 @@ section {
   height: 290px;
 }
 .contact .php-email-form button[type=submit] {
-  background: var(--color-primary);
+  background:#392419;
   border: 0;
   padding: 13px 50px;
   color: var(--color-white);
@@ -2080,7 +2080,7 @@ section {
   border-radius: 0;
 }
 .contact .php-email-form button[type=submit]:hover {
-  background: rgba(var(--color-primary-rgb), 0.85);
+  background: #5a3f21;
 }
 @-webkit-keyframes animate-loading {
   0% {
@@ -2772,6 +2772,6 @@ section {
   transition: 0.3s;
 }
 .footer .footer-legal .social-links a:hover {
-  background: var(--color-primary);
+  background: #392419;
   text-decoration: none;
 }

@@ -3,7 +3,7 @@
 
 .footer .footer-legal {
   padding: 30px 0;
-  background: #16999a!important;
+  background: #3f2914!important;
 }
   </style>
 
