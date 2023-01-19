@@ -1233,7 +1233,7 @@ section {
 .onfocus .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--color-primary) 50%, rgba(var(--color-primary-rgb), 0.4) 52%);
+  background:radial-gradient(#5a3f21 50%, rgba(var(--color-primary-rgb), 0.4) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
