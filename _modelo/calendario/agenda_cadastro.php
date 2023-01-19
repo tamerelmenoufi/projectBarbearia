@@ -78,6 +78,15 @@
     color: #f9fafb;
     border-color: #ffffff;
 }
+
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    background: #6e4a28;
+   
+}
 </style>
 <h4 class="Titulo<?=$md5?>">Agenda <span Titulo></span></h4>
 
@@ -98,7 +107,7 @@
 ?>
 <div class="row mb-2">
     <div class="col-12">
-        <label for="cliente" class="form-label">Cliente *</label>
+        <label for="cliente" class="form-label"><i class="fa-regular fa-user"></i> Cliente </label>
         <select
                 name="cliente"
                 id="cliente"
@@ -122,7 +131,8 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="colaborador" class="form-label">Colaborador (Atendente) *<br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
+        <label for="colaborador" class="form-label"> <i class="fa-duotone fa-user-tie-hair"></i>
+        Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
         <select
                 name="colaborador"
                 id="colaborador"
@@ -146,7 +156,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="servico" class="form-label">Serviço *</label>
+        <label for="servico" class="form-label"> <i class="fa-regular fa-scissors"></i> Serviço</label>
         <select
                 name="servico"
                 id="servico"
