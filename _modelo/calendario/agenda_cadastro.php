@@ -88,12 +88,10 @@
    
 }
 
-.dropdown-item.active, .dropdown-item:active {
-    color: #fff;
-    text-decoration: none;
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #ffffff;
     background-color: #6e4a28;
 }
-
 
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>

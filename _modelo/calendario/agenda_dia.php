@@ -56,9 +56,9 @@
         cursor:pointer;
     }
     .btn-outline-primary:hover {
-    color: #482e15;
-    background-color: #e3deda;
-    border-color: #ffffff;
+    color: #482e15!important;
+    background-color: #e3deda!important;
+    border-color: #ffffff!important;
 }
 
 
