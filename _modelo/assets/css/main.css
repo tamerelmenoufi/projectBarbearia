@@ -1215,7 +1215,7 @@ section {
   align-items: center;
   justify-content: center;
   color: var(--color-white);
-  background: var(--color-primary);
+  background: #a6876b!important;
 }
 .onfocus .content .read-more i {
   font-size: 18px;
