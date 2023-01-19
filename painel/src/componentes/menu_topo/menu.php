@@ -20,7 +20,7 @@
     </div>
 
     <div  class="d-none d-sm-block">
-    <img src="img/logo-topo" style="height:40px; margin-right:20px;" >
+    <img src="img/logo-topo.png" style="height:40px; margin-right:20px;" >
 </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
