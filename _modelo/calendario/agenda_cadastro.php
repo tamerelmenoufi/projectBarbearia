@@ -88,6 +88,12 @@
    
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #6e4a28;
+}
+
 
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
@@ -171,7 +177,7 @@
 
 <div class="row mb-2">
     <div class="col-12 horarios">
-            Horarios:
+            <b style="color:#fff">Horarios:</b>
     </div>
 </div>
 <div class="row mb-2">
