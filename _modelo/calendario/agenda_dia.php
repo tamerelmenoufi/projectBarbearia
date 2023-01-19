@@ -71,6 +71,7 @@
     border-color: #ffffff;
 }
 
+
 .btn-outline-primary:hover {
     color: #3f2914;
     border-color: #3f2914;
