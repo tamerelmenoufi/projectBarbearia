@@ -56,26 +56,8 @@
         cursor:pointer;
     }
 
-    .text-success {
-    --bs-text-opacity: 1;
-    color: #6e4a28!important;
-}
-
-.text-primary {
-    --bs-text-opacity: 1;
-    color: #27891b!important;
-}
-
-.btn-outline-primary {
-    color: #f9fafb!important;
-    border-color: #ffffff!important;
-}
 
 
-.btn-outline-primary:hover {
-    color: #3f2914!important;
-    border-color: #3f2914!important;
-}
 </style>
 
 <div class="p-1" style="font-size:12px;">
