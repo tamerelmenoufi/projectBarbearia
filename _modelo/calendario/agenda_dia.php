@@ -55,6 +55,26 @@
     .nova_agenda{
         cursor:pointer;
     }
+
+    .text-success {
+    --bs-text-opacity: 1;
+    color: #6e4a28;
+}
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: #27891b;
+}
+
+.btn-outline-primary {
+    color: #f9fafb;
+    border-color: #ffffff;
+}
+
+.btn-outline-primary:hover {
+    color: #3f2914;
+    border-color: #3f2914;
+}
 </style>
 
 <div class="p-1" style="font-size:12px;">
