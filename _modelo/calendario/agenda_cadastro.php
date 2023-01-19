@@ -74,40 +74,9 @@
     margin-bottom: 0.5rem;
     color: #fff;
 }
-.btn-outline-primary {
-    color: #f9fafb;
-    border-color: #ffffff;
-}
-
-.offcanvas-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    background: #6e4a28;
-   
-}
 
 
 
-.form-control {
-    display: block;
-    width: 100%;
-    /* padding: 0.375rem 0.75rem; */
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #fff;
-    background-color: #482e1500;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    height: 85px;
-}
 
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
