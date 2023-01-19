@@ -63,6 +63,21 @@
         top:8px;
         z-index:0;
     }
+    .offcanvas-body {
+    flex-grow: 1;
+    padding: 1rem 1rem;
+    overflow-y: auto;
+    background: url(http://146.190.52.49:8081/app/projectBarbearia/_modelo/assets/img/onfocus-video-bg-agenda.jpg);
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.btn-outline-primary {
+    color: #f9fafb;
+    border-color: #ffffff;
+}
 </style>
 <h4 class="Titulo<?=$md5?>">Agenda <span Titulo></span></h4>
 
