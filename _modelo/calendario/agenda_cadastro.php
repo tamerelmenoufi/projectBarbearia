@@ -88,16 +88,7 @@
    
 }
 
-btn-primary.disabled, .btn-primary:disabled {
-    color: #fff;
-    background-color: #3f2914;
-    border-color: #3f2914;
-}
-btn-primary {
-    color: #fff;
-    background-color: #3f2914;
-    border-color: #3f2914;
-}
+
 
 .form-control {
     display: block;
