@@ -1425,7 +1425,7 @@ section {
   margin: 0;
   width: 72px;
   height: 72px;
-  background: var(--color-primary);
+  background: #3f2914;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -1452,11 +1452,11 @@ section {
   margin-bottom: 0;
 }
 .services .service-item:hover .details h3 {
-  color: var(--color-primary);
+  color: #392419;
 }
 .services .service-item:hover .details .icon {
   background: var(--color-white);
-  border: 2px solid var(--color-primary);
+  border: 2px solid #392419;
 }
 .services .service-item:hover .details .icon i {
   color:#3f2914;
