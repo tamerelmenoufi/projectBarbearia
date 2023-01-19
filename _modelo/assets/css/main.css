@@ -173,7 +173,7 @@ section {
   right: 15px;
   bottom: 15px;
   z-index: 995;
-  background: var(--color-primary);
+  background:#392419;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -185,7 +185,7 @@ section {
   line-height: 0;
 }
 .scroll-top:hover {
-  background: rgba(var(--color-primary-rgb), 0.85);
+  background: #5a3f21;
   color: var(--color-white);
 }
 .scroll-top.active {
