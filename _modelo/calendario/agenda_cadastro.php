@@ -136,6 +136,25 @@ element.style {
     background-color: #8b5018;
     border-color: #854f1d;
 }
+.btn-check:active+.btn-outline-primary:focus, .btn-check:checked+.btn-outline-primary:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus, .btn-outline-primary:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(96 61 28);
+}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgb(106 71 38);
+}
+
+element.style {
+}
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #8b5018;
+    border-color: #9b591a;
+    box-shadow: 0 0 0 0.25rem rgb(80 46 14);
+}
+
 
 </style>
 <h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
