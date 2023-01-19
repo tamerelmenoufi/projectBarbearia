@@ -13,9 +13,9 @@
                 A barbearia que faltava para você!.
               </p>
               <ul>
-                <li><i class="bi bi-check-circle"></i> Funcionamos de segunda a sábado, de 9h às 20h.</li>
-                <li><i class="bi bi-check-circle"></i> Aqui tem Barba Feita + Cerveja Gelada.</li>
-                <li><i class="bi bi-check-circle"></i> Agende sua visita pelo nosso aplicativo, no dia e horário de sua preferência.</li>
+                <li><i class="bi bi-check-circle" style="color:#a6876b!important"></i> Funcionamos de segunda a sábado, de 9h às 20h.</li>
+                <li><i class="bi bi-check-circle" style="color:#a6876b!important"></i> Aqui tem Barba Feita + Cerveja Gelada.</li>
+                <li><i class="bi bi-check-circle" style="color:#a6876b!important"></i> Agende sua visita pelo nosso aplicativo, no dia e horário de sua preferência.</li>
               </ul>
               <!-- <a href="#" class="read-more align-self-start"
                           data-bs-toggle="offcanvas"
