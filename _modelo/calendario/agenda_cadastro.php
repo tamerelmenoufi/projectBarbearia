@@ -69,6 +69,12 @@
     background-color: #9f9f9f;
 }
    
+.offcanvas-body {
+    flex-grow: 1;
+    padding: 1rem 1rem;
+    overflow-y: auto;
+    background: #dbdbdb;
+}
 
 </style>
 <h4 class="Titulo<?=$md5?>"><d style="color:#918d87">Agenda <span Titulo></span></d></h4>
