@@ -150,7 +150,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="colaborador" class="form-label"> <i class="fa fa-people-group"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
+        <label for="colaborador" class="form-label"> <i class="fa fa-people-group"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:13px;">Colaboradores desativados estão com agenda indisponível.</small></label>
         <select
                 name="colaborador"
                 id="colaborador"
@@ -188,7 +188,7 @@
 
 <div class="row mb-2">
     <div class="col-12 horarios">
-            <b style="color:#fff">Horarios:</b>
+            <!--<b style="color:#fff">Horarios:</b>-->
     </div>
 </div>
 <div class="row mb-2">
@@ -300,7 +300,7 @@
                     acao:'nova_agenda'
                 },
                 success:function(dados){
-                    $.alert('Agenda confirmada!')
+                    $.alert('Seu Agendamento foi confirmada!')
                     let myOffCanvas = document.getElementById('offcanvasRight');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.hide();
