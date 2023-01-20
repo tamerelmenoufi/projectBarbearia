@@ -57,6 +57,23 @@
     .calendario td div:hover{
         background-color:rgb(138, 154, 91, 0.2);
     }
+
+    .btn-secondary {
+    color: #fff;
+    background-color: #fa9160;
+    border-color: #fa9160;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #e58051;
+    border-color: #e58051;
+}
+.btn-secondary.active, .btn-secondary:active, .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #e58051;
+    border-color: #e58051;
+}
 </style>
 <div class='card'>
     <table class='table calendario' cellpadding="5" cellspacing="0">
