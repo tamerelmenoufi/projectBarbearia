@@ -63,10 +63,15 @@
         top:8px;
         z-index:0;
     }
+    .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #9f9f9f;
+}
    
 
 </style>
-<h4 class="Titulo<?=$md5?>"><b style="color:#fff">Agenda <span Titulo></span></b></h4>
+<h4 class="Titulo<?=$md5?>"><d style="color:#918d87">Agenda <span Titulo></span></d></h4>
 
 <?php
 /*
@@ -109,7 +114,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="colaborador" class="form-label"> <i class="fa-duotone fa-user-tie-hair"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
+        <label for="colaborador" class="form-label"> <i class="fa-regular fa-people-group"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:10px;">Colaboradores desativados estão com agenda indisponível.</small></label>
         <select
                 name="colaborador"
                 id="colaborador"
