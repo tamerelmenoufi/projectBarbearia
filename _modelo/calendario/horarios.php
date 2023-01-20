@@ -74,6 +74,10 @@
     background-color: #e58051;
     border-color: #e58051;
 }
+.text-success {
+    --bs-text-opacity: 1;
+    color: #241f1f;
+}
 </style>
 <div class='card'>
     <table class='table calendario' cellpadding="5" cellspacing="0">
@@ -171,7 +175,7 @@
                         // echo "$linha ".$hoje;
                         echo "<div
                                     class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."'
-                                    style='".(($linha == $dia)?'background-color:rgb(138, 154, 91, 0.5)!important;':false)."'
+                                    style='".(($linha == $dia)?'background-color:rgb(250 145 96 / 29%)!important':false)."'
                                     ano='$ano'
                                     mes='$w'
                                     dia='$linha'
