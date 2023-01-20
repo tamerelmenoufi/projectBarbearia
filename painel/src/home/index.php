@@ -3,7 +3,7 @@
         vl(['ProjectPainel']);
 ?>
 
-<div class="background:#eee" >
+<div style="background:#eee!important" >
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
 <div id="paginaHomeLateralDireita"></div>
