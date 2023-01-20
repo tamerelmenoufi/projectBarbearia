@@ -78,6 +78,22 @@
     --bs-text-opacity: 1;
     color: #241f1f;
 }
+
+.btn-outline-primary {
+    color: #393a3c;
+    border-color: #515252;
+}
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #ff8146;
+    border-color: #ff8146;
+    box-shadow: 0px 0px 4px #2c201a;
+}
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #fff;
+    background-color: #ff8146;
+    border-color: #ff8146;
+}
 </style>
 <div class='card'>
     <table class='table calendario' cellpadding="5" cellspacing="0">
