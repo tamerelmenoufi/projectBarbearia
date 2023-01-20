@@ -219,7 +219,7 @@
             ?>
 	</table>
 </div>
-<h6 class="mt-2"><?="{$dia}/{$mes}/{$ano}"?></h6>
+<h6 class="mt-2" style="background: #fb8650;color: #fff;padding: 10px;text-align: center;font-size: 22px;border-radius: 7px;"><?="{$dia}/{$mes}/{$ano}"?></h6>
 <?php
 
 
