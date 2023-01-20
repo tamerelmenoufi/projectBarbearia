@@ -9,7 +9,7 @@
 <div id="paginaHomeLateralDireita"></div>
 <div id="paginaHome"></div>
 
-
+</div>
 <script>
 
     function Abrir(u, l){
@@ -39,5 +39,3 @@
 
     })
 </script>
-
-</div>
