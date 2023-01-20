@@ -75,6 +75,26 @@
     overflow-y: auto;
     background: #e5e5e5;
 }
+.btn-primary:hover {
+    color: #fff;
+    background-color: #291a0e;
+    border-color: #291a0e;
+}
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #291a0e;
+    border-color: #291a0e;
+    box-shadow: 0 0 0 0.25rem rgb(76 62 51);
+}
+
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #664830;
+    border-color: #664830;
+}
+
 
 </style>
 <h4 class="Titulo<?=$md5?>"><d style="color:#918d87">Agenda <span Titulo></span></d></h4>
