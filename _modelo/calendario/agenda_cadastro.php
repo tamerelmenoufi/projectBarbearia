@@ -73,7 +73,7 @@
     flex-grow: 1;
     padding: 1rem 1rem;
     overflow-y: auto;
-    background: #dbdbdb;
+    background: #e5e5e5;
 }
 
 </style>
