@@ -76,7 +76,7 @@
 }
 .text-success {
     --bs-text-opacity: 1;
-    color: #241f1f;
+    color: #241f1f!important;
 }
 
 .btn-outline-primary {
@@ -87,12 +87,16 @@
     color: #fff;
     background-color: #ff8146;
     border-color: #ff8146;
-    box-shadow: 0px 0px 4px #2c201a;
+  
 }
 .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
     color: #fff;
     background-color: #ff8146;
     border-color: #ff8146;
+}
+
+.btn-check:active+.btn-outline-primary:focus, .btn-check:checked+.btn-outline-primary:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus, .btn-outline-primary:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(255 129 70);
 }
 </style>
 <div class='card'>
