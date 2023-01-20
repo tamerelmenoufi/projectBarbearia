@@ -2,10 +2,14 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
         vl(['ProjectPainel']);
 ?>
+
+<div class="background:#eee" >
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
 <div id="paginaHomeLateralDireita"></div>
 <div id="paginaHome"></div>
+
+</div>
 <script>
 
     function Abrir(u, l){
