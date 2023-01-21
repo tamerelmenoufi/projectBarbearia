@@ -157,8 +157,18 @@
     --bs-btn-disabled-bg: #4a3019;
     --bs-btn-disabled-border-color: #4a3019;
 }
-</style>
 
+body {
+
+    background: url(img/fundo-bar.jpg) no-repeat center fixed;
+    background-size: auto auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+</style>
 <div class="">
     <div class="container">
         <div class="card card-container">

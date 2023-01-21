@@ -10,6 +10,17 @@
 <div id="paginaHome"></div>
 
 </div>
+
+<style>
+body {
+
+    background: #eee;
+}
+
+
+
+</style>
+
 <script>
 
     function Abrir(u, l){
