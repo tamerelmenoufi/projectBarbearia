@@ -7,8 +7,8 @@
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/";
     $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/";
 
-    $localPainel = "http://146.190.52.49:8081/app/projectBarbearia/painel/";
-    $localSite = "http://146.190.52.49:8081/app/projectBarbearia/_modelo/";
+    $localPainel = "https://app.osmanosbarbearia.com.br/";
+    $localSite = "https://osmanosbarbearia.com.br/";
 
     include("/appinc/connect.php");
     $con = AppConnect($cBarb['banco']['DATABASE']);
