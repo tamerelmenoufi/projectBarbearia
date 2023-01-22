@@ -4,8 +4,8 @@
     include("/appinc/cBarb.php");
     $md5 = md5(date("YmdHis"));
 
-    $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/app/projectBarbearia/painel/";
-    $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/app/projectBarbearia/site/";
+    $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/";
+    $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/";
 
     include("/appinc/connect.php");
     $con = AppConnect($cBarb['banco']['DATABASE']);
