@@ -7,7 +7,7 @@
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/";
     $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/";
 
-    $localPainel = "https://app.osmanosbarbearia.com.br/";
+    $localPainel = "https://painel.osmanosbarbearia.com.br/";
     $localSite = "https://osmanosbarbearia.com.br/";
 
     include("/appinc/connect.php");
