@@ -14,7 +14,7 @@
             <div class="service-item position-relative w-100"
 
               style="
-                  background-image: url(<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>);
+                  background-image: url(assets/img/foto_fundo.png);
                   background-size:contain;
                   background-repeat:no-repeat;
                   background-position:center center;
