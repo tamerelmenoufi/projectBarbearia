@@ -64,7 +64,7 @@
                 type:"POST",
                 success:function(dados){
 
-                    if(dados == 'sucesso'){
+                    if(dados.trim() == 'sucesso'){
                         $.ajax({
                             url:"calendario/chave.php",
                             data:{
