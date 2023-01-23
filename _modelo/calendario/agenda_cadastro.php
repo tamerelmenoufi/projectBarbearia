@@ -204,22 +204,7 @@
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
-        colaborador = $("#colaborador").val();
-        servico = $("#servico").val();
 
-        if(colaborador && servico){
-            $.ajax({
-                type:"POST",
-                data:{
-                    colaborador,
-                    servico,
-                },
-                url:"calendario/horarios.php",
-                success:function(dados){
-                    $(".horarios").html(dados);
-                }
-            });
-        }
 
 
 
@@ -270,6 +255,24 @@
                     success:function(dados){
                         $("#servico").html(dados);
                         $("#servico").selectpicker('render');
+
+                        servico = dados;
+
+                        if(colaborador && servico){
+                            $.ajax({
+                                type:"POST",
+                                data:{
+                                    colaborador,
+                                    servico,
+                                },
+                                url:"calendario/horarios.php",
+                                success:function(dados){
+                                    $(".horarios").html(dados);
+                                }
+                            });
+                        }
+
+
                     }
                 });
             }else{
