@@ -1,16 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
-    if($_POST['acao'] == 'login'){
+    if($_POST['acao'] == 'chave'){
 
-        $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
+        $query = "select * from clientes where telefone = '{$_POST['telefone']}' and chave = '{$_POST['chave']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
         if($d->codigo){
-            $characters = '0123456789';
-            $chave = substr(str_shuffle($characters), 0, 4);
-            mysqli_query($con, "update cliente set chave = '{$chave}' where codigo = '{$d->codigo}'");
-            SendWapp($d->telefone, "Os Manos Barbearia: Para logar na sua conta, digite o código *{$chave}*");
+            $_SESSION['cliente'] = $d->codigo;
             $result = 'sucesso';
         }else{
             $result = 'erro';
@@ -30,17 +27,18 @@
         <div class="col">
             <div class="card p-3">
 
-
-
                 <div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" aria-describedby="telefoneHelp">
-                        <div id="telefoneHelp" class="form-text">Informe o número de telefone cadastrado.</div>
+                        <div class="form-control"><?=$d->telefone?></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Chave</label>
+                        <input type="text" class="form-control" id="chave" aria-describedby="chaveHelp">
+                        <div id="chaveHelp" class="form-text">Enviamos um código chave no seu número WhatsApp. Digite no campo acima.</div>
                     </div>
                     <button type="button" class="btn btn-primary logar">Entrar</button>
                 </div>
-                <p class="m-3"><a href="#login" novoCadastro>Não tem cadastro, clique aqui</a></p>
 
             </div>
         </div>
@@ -51,26 +49,23 @@
 
     $(function(){
 
-        $("#telefone").mask("(99) 99999-9999");
+        $("#chave").mask("9999");
 
         $(".logar").click(function(){
-            telefone = $("#telefone").val();
+            chave = $("#chave").val();
             $.ajax({
                 url:"calendario/login.php",
                 data:{
-                    telefone,
-                    acao:'login'
+                    chave,
+                    telefone:'<?=$_POST['telefone']?>',
+                    acao:'chave'
                 },
                 type:"POST",
                 success:function(dados){
 
                     if(dados == 'sucesso'){
                         $.ajax({
-                            url:"calendario/chave.php",
-                            data:{
-                                telefone,
-                            },
-                            type:"POST",
+                            url:"calendario/home.php",
                             success:function(dados){
                                 $(".LateralDireita").html(dados);
                             }
