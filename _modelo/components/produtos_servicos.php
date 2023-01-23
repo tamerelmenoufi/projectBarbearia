@@ -91,7 +91,7 @@
         $(".agenda_servico").click(function(){
           servico = $(this).attr("servico");
           $.ajax({
-                url:"calendario/agenda_cadastro.php",
+                url:"calendario/home.php",
                 type:"POST",
                 data:{
                   servico
