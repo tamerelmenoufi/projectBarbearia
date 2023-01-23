@@ -15,7 +15,7 @@
     <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
       <i class="fa-solid fa-bars"></i>
     </div>
-    <div class="d-none d-sm-block mh-2">
+    <div class="d-none d-sm-block ms-2">
     <img src="img/logo-topo.png" style="height:40px; margin-right:20px;" >
 </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
