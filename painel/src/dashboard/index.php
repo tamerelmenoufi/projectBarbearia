@@ -14,8 +14,8 @@
     }
 
     .element::-webkit-scrollbar {
-        width: 7px;
-        height: 3px; /* A altura só é vista quando a rolagem é horizontal */
+        width: 8px;
+        height: 5px; /* A altura só é vista quando a rolagem é horizontal */
     }
 
     .element::-webkit-scrollbar-track {
