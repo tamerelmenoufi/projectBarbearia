@@ -3,7 +3,7 @@
 
     if($_POST['acao'] == 'login'){
 
-        $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
+        echo $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
         if($d->codigo){
@@ -68,7 +68,7 @@
                             }
                         });
                     }else{
-                        $.alert("O login não pode ser realizado.<br>Dados incorretos ou usuários não cadastrado.");
+                        $.alert(dados+" O login não pode ser realizado.<br>Dados incorretos ou usuários não cadastrado.");
                         return false;
                     }
 
