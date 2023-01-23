@@ -181,7 +181,7 @@
                     </button>
                 </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content text-bg-light" id="myTabContent">
                 <div class="tab-pane fade show active produtos_lista p-3" id="painel-vendas" role="tabpanel" aria-labelledby="home-tab" tabindex="0"></div>
             </div>
         </div>
