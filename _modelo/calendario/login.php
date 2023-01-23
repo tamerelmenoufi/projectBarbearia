@@ -59,16 +59,7 @@
                     acao:'login'
                 },
                 success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            });
-        });
 
-
-        $("a[novoCadastro]").click(function(){
-            $.ajax({
-                url:"clientes/form.php",
-                success:function(dados){
                     if(dados == 'sucesso'){
                         $.ajax({
                             url:"calendario/home.php",
@@ -80,6 +71,18 @@
                         $.alert("O login não pode ser realizado.<br>Dados incorretos ou usuários não cadastrado.");
                         return false;
                     }
+
+
+                }
+            });
+        });
+
+
+        $("a[novoCadastro]").click(function(){
+            $.ajax({
+                url:"clientes/form.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
                 }
             });
         });
