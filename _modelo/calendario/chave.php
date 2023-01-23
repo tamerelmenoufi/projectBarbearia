@@ -3,7 +3,7 @@
 
     if($_POST['acao'] == 'chave'){
 
-        $query = "select * from clientes where telefone = '{$_POST['telefone']}' and chave = '{$_POST['chave']}'";
+        echo $query = "select * from clientes where telefone = '{$_POST['telefone']}' and chave = '{$_POST['chave']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
         if($d->codigo){
