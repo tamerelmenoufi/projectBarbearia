@@ -20,7 +20,7 @@
                   background-position:center center;
                  "
             >
-              <div class="icon d-flex justify-content-between">
+              <div class="d-flex justify-content-between">
                 <!-- <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt=""> -->
                 <span style="color:orange">
                   <i class="fa fa-calendar"></i> Agendar
