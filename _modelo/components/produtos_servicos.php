@@ -15,7 +15,7 @@
 
               style="
                   background-image: url(assets/img/foto_fundo.png);
-                  background-size:contain;
+                  background-size:100% 100%;
                   background-repeat:no-repeat;
                   background-position:center center;
                  "
