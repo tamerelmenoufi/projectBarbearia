@@ -123,6 +123,7 @@
                                 url:"clientes/index.php",
                                 type:"POST",
                                 success:function(dados){
+                                    $(".LateralDireita").html(dados);
                                     // $("#paginaHome").html(dados);
                                     // let myOffCanvas = document.getElementById('offcanvasDireita');
                                     // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
