@@ -50,14 +50,38 @@
 
         $("#telefone").mask("(99) 99999-9999");
 
-        $("a[novoCadastro]").click(function(){
+        $(".logar").click(function(){
+            telefone = $("#telefone").val();
             $.ajax({
-            url:"clientes/form.php",
-            success:function(dados){
-                $(".LateralDireita").html(dados);
-            }
+                url:"calendario/login.php",
+                data:{
+                    telefone,
+                    acao:'login'
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
         });
 
+
+        $("a[novoCadastro]").click(function(){
+            $.ajax({
+                url:"clientes/form.php",
+                success:function(dados){
+                    if(dados == 'sucesso'){
+                        $.ajax({
+                            url:"calendario/home.php",
+                            success:function(dados){
+                                $(".LateralDireita").html(dados);
+                            }
+                        });
+                    }else{
+                        $.alert("O login não pode ser realizado.<br>Dados incorretos ou usuários não cadastrado.");
+                        return false;
+                    }
+                }
+            });
         });
     })
 
