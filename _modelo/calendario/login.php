@@ -29,17 +29,36 @@
 
 
 
-                <form>
+                <div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
                         <input type="text" class="form-control" id="telefone" aria-describedby="telefoneHelp">
                         <div id="telefoneHelp" class="form-text">Informe o número de telefone cadastrado.</div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <button type="button" class="btn btn-primary logar">Entrar</button>
+                </div>
                 <p class="m-3"><a href="#login" novoCadastro>Não tem cadastro, clique aqui</a></p>
 
             </div>
         </div>
     </div>
 </div>
+
+<script>
+
+    $(function(){
+
+        $("#telefone").mask("(99) 99999-9999");
+
+        $("a[novoCadastro]").click(function(){
+            $.ajax({
+            url:"calendario/cadastro_cliente.php",
+            success:function(dados){
+                $(".LateralDireita").html(dados);
+            }
+        });
+
+        });
+    })
+
+</script>
