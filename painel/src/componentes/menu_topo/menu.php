@@ -13,13 +13,9 @@
 <nav class="navbar navbar-expand bg-light">
   <div class="container-fluid">
     <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-     
-
-
       <i class="fa-solid fa-bars"></i>
     </div>
-
-    <div  class="d-none d-sm-block">
+    <div class="d-none d-sm-block mh-2">
     <img src="img/logo-topo.png" style="height:40px; margin-right:20px;" >
 </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,9 +38,9 @@
  <a class="nav-link dropdown-toggle d-block d-sm-none" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    <i class="fa-solid fa-user"></i>
                 </a>
-                
+
             <li class="nav-item dropdown">
-                
+
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                     <li class="MenuLogin">
                       <ul class="list-group  list-group-flush">
