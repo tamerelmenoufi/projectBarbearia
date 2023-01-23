@@ -254,8 +254,8 @@
                         $("#servico").selectpicker('render');
 
                         servico = '<?=$_SESSION['servico']?>';
-                        // console.log(`Servicos ${servico}`)
-                        // console.log(`colaborador ${colaborador}`)
+                        console.log(`Servicos ${servico}`)
+                        console.log(`colaborador ${colaborador}`)
                         if(colaborador && servico){
                             $.ajax({
                                 type:"POST",
