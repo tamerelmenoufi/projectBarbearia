@@ -84,6 +84,7 @@
             <div class="col">
                 <div style="display:flex; justify-content:end">
                     <button type="submit" class="btn btn-success btn-ms">Salvar</button>
+                    <button cancelar type="button" class="btn btn-danger btn-ms">Cancelar</button>
                     <input type="hidden" id="codigo" value="<?=$_SESSION['cliente']?>" />
                 </div>
             </div>
@@ -139,6 +140,17 @@
                     }
                 });
 
+            });
+
+
+            $("button[cancelar]").click(function(){
+                $.ajax({
+                    url:"calendario/home.php",
+                    type:"POST",
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+                    }
+                });
             });
 
         })
