@@ -20,10 +20,10 @@
                   background-position:center center;
                  "
             >
-              <div class="icon d-flex justify-content-end">
+              <div class="icon d-flex justify-content-between">
                 <!-- <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt=""> -->
                 <button class="btn btn-danger btn-sm">
-                  <i class="fa fa-agenda"></i> Agendar
+                  <i class="fa fa-calendar"></i> Agendar
                 </button>
                 <span style="color:#a1a1a1; font-weight:bold;">R$ <?=number_format($d->valor,2,',','.')?></span>
               </div>
