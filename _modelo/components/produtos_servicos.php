@@ -21,7 +21,14 @@
                   "
               >
 
-              <h4><a href="#servicos" class="stretched-link agenda_servico" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><?=$d->produto?></a></h4>
+              <h4><a
+                      href="#servicos"
+                      class="stretched-link agenda_servico"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasRight"
+                      aria-controls="offcanvasRight"
+                      servico="<?=$d->codigo?>"
+                  ><?=$d->produto?></a></h4>
 
 
               <div class="d-flex justify-content-between">
@@ -82,9 +89,13 @@
 
       $(function(){
         $(".agenda_servico").click(function(){
+          servico = $(this).attr("servico");
           $.ajax({
                 url:"calendario/agenda_cadastro.php",
                 type:"POST",
+                data:{
+                  servico
+                },
                 success:function(dados){
                   $(".LateralDireita").html(dados);
                 },

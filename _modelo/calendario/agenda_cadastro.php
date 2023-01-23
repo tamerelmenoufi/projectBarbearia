@@ -5,11 +5,15 @@
 
     $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
 
+    if($_POST['servico']) $_SESSION['servico'] = $_POST['servico'];
+
 
     $hoje = $abrevSem[date("D")];
 
     function filtroServicoColaborador($c){
         global $con;
+        global $_SESSION;
+
         $query = "select
                         a.*,
                         b.produto as produto_nome,
@@ -31,7 +35,7 @@
                 }
                 echo "<optgroup label='{$d->categoria_nome}'>";
             }
-            echo "<option value='{$d->produto}'>{$d->produto_nome}</option>";
+            echo "<option value='{$d->produto}' ".(($_SESSION['servico'] == $d->produto)?'selected':false).">{$d->produto_nome}</option>";
             $grupo = $d->categoria_nome;
         }
         echo "</optgroup>";
@@ -68,7 +72,7 @@
     text-decoration: none;
     background-color: #9f9f9f;
 }
-   
+
 .offcanvas-body {
     flex-grow: 1;
     padding: 1rem 1rem;
