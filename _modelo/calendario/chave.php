@@ -54,7 +54,7 @@
         $(".logar").click(function(){
             chave = $("#chave").val();
             $.ajax({
-                url:"calendario/login.php",
+                url:"calendario/chave.php",
                 data:{
                     chave,
                     telefone:'<?=$_POST['telefone']?>',
