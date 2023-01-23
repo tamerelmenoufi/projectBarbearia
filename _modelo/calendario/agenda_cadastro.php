@@ -5,8 +5,6 @@
 
     $data_agenda = $_SESSION['agenda_dia'].' '.$_POST['data'];
 
-    if($_POST['servico']) $_SESSION['servico'] = $_POST['servico'];
-
 
     $hoje = $abrevSem[date("D")];
 
