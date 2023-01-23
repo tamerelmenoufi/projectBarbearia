@@ -3,7 +3,7 @@
 
     if($_POST['acao'] == 'chave'){
 
-        echo $query = "select * from clientes where telefone = '{$_POST['telefone']}' and chave = '{$_POST['chave']}'";
+        $query = "select * from clientes where telefone = '{$_POST['telefone']}' and chave = '{$_POST['chave']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
         if($d->codigo){
@@ -33,9 +33,9 @@
                         <div class="form-control"><?=$_POST['telefone']?></div>
                     </div>
                     <div class="mb-3">
-                        <label for="telefone" class="form-label">Chave</label>
+                        <label for="chave" class="form-label">Chave</label>
                         <input type="text" class="form-control" id="chave" aria-describedby="chaveHelp">
-                        <div id="chaveHelp" class="form-text">Enviamos um código chave no seu número WhatsApp. Digite no campo acima.</div>
+                        <div id="chaveHelp" class="form-text">Enviamos um código chave no seu número WhatsApp.<br>Digite no campo acima.</div>
                     </div>
                     <button type="button" class="btn btn-primary logar">Entrar</button>
                 </div>
@@ -63,7 +63,7 @@
                 type:"POST",
                 success:function(dados){
 
-                    if(dados == 'sucesso'){
+                    if(dados.trim() == 'sucesso'){
                         $.ajax({
                             url:"calendario/home.php",
                             success:function(dados){
