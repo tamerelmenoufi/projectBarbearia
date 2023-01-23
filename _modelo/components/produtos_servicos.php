@@ -19,7 +19,7 @@
                   background-repeat:no-repeat;
                  "
             >
-              <div class="icon d-flex justify-content-between">
+              <div class="icon d-flex justify-content-end">
                 <!-- <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt=""> -->
                 <span style="color:#a1a1a1; font-weight:bold;">R$ <?=number_format($d->valor,2,',','.')?></span>
               </div>
