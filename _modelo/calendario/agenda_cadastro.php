@@ -205,9 +205,6 @@
         $("#servico").selectpicker();
 
 
-
-
-
         $("#servico").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
@@ -257,7 +254,8 @@
                         $("#servico").selectpicker('render');
 
                         servico = dados;
-
+                        console.log(`Servicos ${servico}`)
+                        console.log(`colaborador ${colaborador}`)
                         if(colaborador && servico){
                             $.ajax({
                                 type:"POST",
