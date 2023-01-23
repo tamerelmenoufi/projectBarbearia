@@ -26,7 +26,20 @@
     <div class="row">
         <div class="col">
             <div class="card p-3">
-                Informe o número de telefone cadastrado
+
+
+
+                <form>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" aria-describedby="telefoneHelp">
+                        <div id="telefoneHelp" class="form-text">Informe o número de telefone cadastrado.</div>
+                    </div>
+                    <a novoCadastro>Não tem cadastro, clique aqui</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
             </div>
         </div>
     </div>
