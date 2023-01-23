@@ -204,6 +204,25 @@
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
+        colaborador = $("#colaborador").val();
+        servico = $("#servico").val();
+
+        if(colaborador && servico){
+            $.ajax({
+                type:"POST",
+                data:{
+                    colaborador,
+                    servico,
+                },
+                url:"calendario/horarios.php",
+                success:function(dados){
+                    $(".horarios").html(dados);
+                }
+            });
+        }
+
+
+
         $("#servico").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
