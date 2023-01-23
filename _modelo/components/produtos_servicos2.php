@@ -28,9 +28,9 @@
                   background-repeat:no-repeat;
                  "
             >
-              <div class="img">
+              <!-- <div class="img">
                 <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="img-fluid" alt="" style="width:100%;">
-              </div>
+              </div> -->
               <div class="details position-relative">
                 <div class="icon">
                   <i class="bi bi-activity"></i>
