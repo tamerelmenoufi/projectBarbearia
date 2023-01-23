@@ -253,7 +253,7 @@
                         $("#servico").html(dados);
                         $("#servico").selectpicker('render');
 
-                        servico = '<?=$_SESSION['servico']?>';
+                        servico = $("#servico").val();
                         console.log(`Servicos ${servico}`)
                         console.log(`colaborador ${colaborador}`)
                         if(colaborador && servico){
