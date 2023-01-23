@@ -204,7 +204,7 @@
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
-        $("#servico").change(function(){
+        $("#servico, #colaborador").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
 
