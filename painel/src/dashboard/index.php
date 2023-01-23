@@ -9,12 +9,12 @@
         overflow:auto;
         width:100%;
         clear:both;
-        scrollbar-width: 15px;
+        scrollbar-width: thin;
         scrollbar-color: black transparent;
     }
 
     .element::-webkit-scrollbar {
-        width: 3px;
+        width: 7px;
         height: 3px; /* A altura só é vista quando a rolagem é horizontal */
     }
 
