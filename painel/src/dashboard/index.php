@@ -9,7 +9,7 @@
         overflow:auto;
         width:100%;
         clear:both;
-        scrollbar-width: thin;
+        scrollbar-width: 15px;
         scrollbar-color: black transparent;
     }
 
