@@ -22,6 +22,9 @@
             >
               <div class="icon d-flex justify-content-end">
                 <!-- <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt=""> -->
+                <button class="btn btn-danger btn-sm">
+                  <i class="fa fa-agenda"></i> Agendar
+                </button>
                 <span style="color:#a1a1a1; font-weight:bold;">R$ <?=number_format($d->valor,2,',','.')?></span>
               </div>
               <h4><a href="#servicos" class="stretched-link agenda_servico" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><?=$d->produto?></a></h4>
