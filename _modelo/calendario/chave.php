@@ -30,7 +30,7 @@
                 <div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
-                        <div class="form-control"><?=$d->telefone?></div>
+                        <div class="form-control"><?=$_POST['telefone']?></div>
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Chave</label>
