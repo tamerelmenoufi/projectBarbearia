@@ -35,10 +35,9 @@
                         <input type="text" class="form-control" id="telefone" aria-describedby="telefoneHelp">
                         <div id="telefoneHelp" class="form-text">Informe o número de telefone cadastrado.</div>
                     </div>
-                    <p><a href="#" novoCadastro>Não tem cadastro, clique aqui</a></p>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-
+                <p><a href="#" novoCadastro>Não tem cadastro, clique aqui</a></p>
 
             </div>
         </div>
