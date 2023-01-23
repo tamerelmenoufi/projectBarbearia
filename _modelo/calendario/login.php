@@ -58,6 +58,7 @@
                     telefone,
                     acao:'login'
                 },
+                type:"POST",
                 success:function(dados){
 
                     if(dados == 'sucesso'){
