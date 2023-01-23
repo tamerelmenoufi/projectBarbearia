@@ -129,24 +129,13 @@
 <div class="row mb-2">
     <div class="col-12">
         <label for="cliente" class="form-label"><i class="fa-regular fa-user"></i> Cliente </label>
-        <select
-                name="cliente"
-                id="cliente"
-                data-live-search="true"
-                data-none-selected-text="Selecione"
-                class="form-control">
-            <option value="">Selecione</option>
         <?php
-            $query = "select * from clientes order by nome";
+            $query = "select * from clientes where codigo = '{$_SESSION['cliente']}'";
             $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
-
+            $d = mysqli_fetch_object($result);
         ?>
-            <option value="<?=$d->codigo?>"><?=$d->nome?></option>
-        <?php
-            }
-        ?>
-        </select>
+        <div class="form-control"><?=$d->nome?></div>
+        <input type="hidden" id="cliente" name="cliente" value="<?=$d->codigo?>" />
     </div>
 </div>
 
