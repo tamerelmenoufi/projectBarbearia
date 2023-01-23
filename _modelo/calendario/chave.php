@@ -71,7 +71,7 @@
                             }
                         });
                     }else{
-                        $.alert(" O login não pode ser realizado.<br>Dados incorretos ou usuários não cadastrado.");
+                        $.alert(dados + " O login não pode ser realizado.<br>Dados incorretos ou usuários não cadastrado.");
                         return false;
                     }
 
