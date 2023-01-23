@@ -52,7 +52,7 @@
 
         $("a[novoCadastro]").click(function(){
             $.ajax({
-            url:"calendario/cadastro_cliente.php",
+            url:"clientes/form.php",
             success:function(dados){
                 $(".LateralDireita").html(dados);
             }
