@@ -17,6 +17,7 @@
                   background-image: url(<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>);
                   background-size:contain;
                   background-repeat:no-repeat;
+                  background-position:center center;
                  "
             >
               <div class="icon d-flex justify-content-end">
