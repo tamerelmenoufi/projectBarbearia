@@ -9,7 +9,7 @@
         if($d->codigo){
             $characters = '0123456789';
             $chave = substr(str_shuffle($characters), 0, 4);
-            mysqli_query($con, "update cliente set chave = '{$chave}' where codigo = '{$d->codigo}'");
+            mysqli_query($con, "update clientes set chave = '{$chave}' where codigo = '{$d->codigo}'");
             SendWapp($d->telefone, "Os Manos Barbearia: Para logar na sua conta, digite o código *{$chave}*");
             $result = 'sucesso';
         }else{
