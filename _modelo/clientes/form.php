@@ -28,7 +28,7 @@
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
-
+        $_SESSION['cliente'] = $d->codigo;
         $retorno = [
             'status' => true,
             'codigo' => $cod
@@ -120,7 +120,7 @@
                     success:function(dados){
                         // if(dados.status){
                             $.ajax({
-                                url:"clientes/index.php",
+                                url:"calendario/home.php",
                                 type:"POST",
                                 success:function(dados){
                                     $(".LateralDireita").html(dados);
