@@ -66,7 +66,7 @@
                     <label for="cpf">CPF*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" id="data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=$d->data_nascimento?>">
+                    <input type="date" id="data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=$d->data_nascimento?>">
                     <label for="cpf">Data de Nascimento*</label>
                 </div>
                 <div class="form-floating mb-3">
