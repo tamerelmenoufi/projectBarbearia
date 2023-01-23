@@ -37,7 +37,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <p><a href="#" novoCadastro>Não tem cadastro, clique aqui</a></p>
+                <p class="m-3"><a href="#login" novoCadastro>Não tem cadastro, clique aqui</a></p>
 
             </div>
         </div>
