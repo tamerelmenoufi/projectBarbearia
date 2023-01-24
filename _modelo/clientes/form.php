@@ -121,7 +121,7 @@
 
                         // console.log(dados);
                         // console.log(dados.status);
-                        return;
+
                         if(dados.status){
                             $.alert('Cadastro realizado com sucesso!');
                             $.ajax({
@@ -150,13 +150,18 @@
 
 
             $("button[cancelar]").click(function(){
-                $.ajax({
-                    url:"calendario/home.php",
-                    type:"POST",
-                    success:function(dados){
-                        $(".LateralDireita").html(dados);
-                    }
-                });
+                // $.ajax({
+                //     url:"calendario/home.php",
+                //     type:"POST",
+                //     success:function(dados){
+                //         $(".LateralDireita").html(dados);
+                //     }
+                // });
+
+                let myOffCanvas = document.getElementById('offcanvasDireita');
+                let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                openedCanvas.hide();
+
             });
 
         })
