@@ -195,6 +195,7 @@
 						echo "<td>";
 
                         // echo "$linha ".$hoje;
+                        if($diaSemana != 'Sun'){
                         echo "<div
                                     class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."'
                                     style='".(($linha == $dia)?'background-color:rgb(250 145 96 / 29%)!important':false)."'
@@ -205,7 +206,9 @@
                             <p class='".(($hoje)?'text-primary':false)."'>{$linha} {$diaSemana}
                             <i class='fa-solid fa-circle'></i></p>
                         </div>";
-
+                        }else{
+                            echo "{$linha}";
+                        }
                         echo "</td>";
 					    // Se Sábado desce uma linha
                         if (date('w',$d1) == 6) {
