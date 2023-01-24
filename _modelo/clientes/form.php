@@ -28,7 +28,7 @@
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
-        $_SESSION['cliente'] = $d->codigo;
+        $_SESSION['cliente'] = $cod;
         $retorno = [
             'status' => true,
             'codigo' => $cod
@@ -132,7 +132,7 @@
                                 }
                             });
                         }else{
-                            $.alert('Ocorreu um erro no cadastro.<br><h6>Quais motivos?</h6><li>Você pode ter um cadastro. Para confirmar, tente fazer o seu login, digitando o numero WhatsApp para receber o código de acesso.</li><li>Ocorreu um erro de conexão com o banco de dados. Tente acessar mais tarde.</li>');
+                            $.alert('Ocorreu um erro no cadastro.<br><h5>Quais motivos?</h5><li>Você pode já ter um cadastro conosco. Para confirmar, tente fazer o seu login, digitando o numero WhatsApp para receber o código de acesso.</li><li>Ou pode ter ocorrido um erro de conexão com o banco de dados. Neste caso, tente o cadastro mais tarde.</li>');
                         }
                     },
                     error:function(erro){
