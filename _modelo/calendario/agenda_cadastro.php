@@ -311,6 +311,7 @@
                     acao:'nova_agenda'
                 },
                 success:function(dados){
+                    console.log(dados)
                     $.alert('Seu Agendamento foi confirmada!')
                     let myOffCanvas = document.getElementById('offcanvasRight');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
