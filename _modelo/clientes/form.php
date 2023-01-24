@@ -119,8 +119,8 @@
                     data: campos,
                     success:function(dados){
 
-                        console.log(dados);
-                        console.log(dados.status);
+                        // console.log(dados);
+                        // console.log(dados.status);
                         return;
                         if(dados.status){
                             $.alert('Cadastro realizado com sucesso!');
