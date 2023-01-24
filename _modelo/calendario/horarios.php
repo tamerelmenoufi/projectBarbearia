@@ -33,6 +33,15 @@
         list($hi, $hf) = explode("-",$dia_serv->$hj);
         $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia,$ano)));
         $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia,$ano)));
+
+
+        $q = "select *, hour(data_agenda) as h, minute(data_agenda) as i from agenda where data_agenda like '%{$ano}-{$mes}-{$dia}%' and colaborador = '{$_POST['colaborador']}' and servico = {$_POST['servico']}";
+        $r = mysqli_query($con, $q);
+        $ag = [];
+        while($h = mysql_fetch_row($r)){
+            $ag[] = "{$h->h}:{$h->i}";
+        }
+
     }
 
 ?>
@@ -234,6 +243,9 @@
     // echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
 if($dia_serv->$hj){
     for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
+
+        if(!in_array(date("H:i",$i),$ag)){
+
         ?>
 
         <input
@@ -253,6 +265,7 @@ if($dia_serv->$hj){
         </button> -->
         <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
     <?php
+        }
     }
 }
 
