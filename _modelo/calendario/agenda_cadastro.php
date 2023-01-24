@@ -167,13 +167,13 @@
     <div class="col-12">
         <label for="servico" class="form-label"> <i class="fa fa-scissors"></i> Serviço</label>
         <select
-                name="servico"
-                id="servico"
-                data-live-search="true"
-                data-none-selected-text="Selecione"
-                class="selectpicker form-control"
-                data-actions-box="true"
-                ></select>
+            name="servico"
+            id="servico"
+            data-live-search="true"
+            data-none-selected-text="Selecione"
+            class="selectpicker form-control"
+            data-actions-box="true"
+        ></select>
     </div>
 </div>
 
