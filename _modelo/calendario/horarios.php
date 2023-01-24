@@ -103,6 +103,9 @@
 }
 </style>
 <div class='card'>
+
+<?=$dia_serv->$hj?>
+
     <table class='table calendario' cellpadding="5" cellspacing="0">
       <tr>
         <td colspan="7" align="center" class="titulo">
