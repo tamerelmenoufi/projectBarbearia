@@ -34,7 +34,7 @@
             'codigo' => $cod
         ];
 
-        echo json_encode($retorno);
+        echo trim(json_encode($retorno));
 
         exit();
     }
