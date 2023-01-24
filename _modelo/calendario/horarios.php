@@ -87,7 +87,7 @@
     color: #fff;
     background-color: #ff8146;
     border-color: #ff8146;
-  
+
 }
 .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
     color: #fff;
@@ -151,6 +151,7 @@
 			 $d1 = mktime(0,0,0, $w, 1, $ano); //verifica o primeiro dia do mes
 			 $diaSem = date('w',$d1); //verifica a quantidade de dias da semana para o primeiro dia do mes
 
+
 ?>
 
 			  <tr align='center' class='dias_semana'>
@@ -173,9 +174,10 @@
 
                     //Enquanto houver dias
 
-                        for ($i = 2; $i < 33; $i++) {
-							$linha = date('d',$d1);
+                for ($i = 2; $i < 33; $i++) {
+					$linha = date('d',$d1);
 
+                    $diaSemana = date("D", mktime(0,0,0, $w, $linha, $ano));
 
                     //verifica o dia atual
 
@@ -200,7 +202,7 @@
                                     mes='$w'
                                     dia='$linha'
                                 >
-                            <p class='".(($hoje)?'text-primary':false)."'>{$linha}
+                            <p class='".(($hoje)?'text-primary':false)."'>{$linha} {$diaSemana}
                             <i class='fa-solid fa-circle'></i></p>
                         </div>";
 
