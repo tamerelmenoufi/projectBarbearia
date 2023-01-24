@@ -30,7 +30,7 @@
         <div class="col">
             <div class="card p-3">
 
-
+                <p>Para fazer o login, digite no campo abaixo o número de telefone cadastrado para receber a sua chave de acesso.</p>
 
                 <div>
                     <div class="mb-3">

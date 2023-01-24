@@ -118,7 +118,8 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        // if(dados.status){
+                        if(dados.status){
+                            $.alert('Cadastro realizado com sucesso!');
                             $.ajax({
                                 url:"calendario/home.php",
                                 type:"POST",
@@ -130,7 +131,9 @@
                                     // openedCanvas.hide();
                                 }
                             });
-                        // }
+                        }else{
+                            $.alert('Ocorreu um erro no cadastro.<br><h6>Quais motivos?</h6><li>Você pode ter um cadastro. Para confirmar, tente fazer o seu login, digitando o numero WhatsApp para receber o código de acesso.</li><li>Ocorreu um erro de conexão com o banco de dados. Tente acessar mais tarde.</li>');
+                        }
                     },
                     error:function(erro){
 
