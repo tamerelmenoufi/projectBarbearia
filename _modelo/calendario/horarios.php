@@ -38,7 +38,7 @@
         $q = "select *, hour(data_agenda) as h, minute(data_agenda) as i from agenda where data_agenda like '%{$ano}-{$mes}-{$dia}%' and colaborador = '{$_POST['colaborador']}' and servico = {$_POST['servico']}";
         $r = mysqli_query($con, $q);
         $ag = [];
-        while($h = mysql_fetch_row($r)){
+        while($h = mysqli_fetch_object($r)){
             $ag[] = "{$h->h}:{$h->i}";
         }
 
