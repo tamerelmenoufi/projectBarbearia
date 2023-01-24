@@ -1,4 +1,5 @@
 <?php
+
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
     $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['servico']}'"));
@@ -28,13 +29,15 @@
 
 
     $hj = $abrevSem[date("D", mktime(0,0,0,$mes,$dia,$ano))];
-    list($hi, $hf) = explode("-",$dia_serv->$hj);
-    $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia,$ano)));
-    $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia,$ano)));
-
+    if($dia_serv->$hj){
+        list($hi, $hf) = explode("-",$dia_serv->$hj);
+        $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia,$ano)));
+        $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia,$ano)));
+    }
 
 ?>
 <style>
+
     .calendario{
         width:100%;
         font-size:12px;
@@ -203,7 +206,7 @@
                                     mes='$w'
                                     dia='$linha'
                                 >
-                            <p class='".(($hoje)?'text-primary':false)."'>{$linha} {$diaSemana}
+                            <p class='".(($hoje)?'text-primary':false)."'>{$linha}
                             <i class='fa-solid fa-circle'></i></p>
                         </div>";
                         }else{
