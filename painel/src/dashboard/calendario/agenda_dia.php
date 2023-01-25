@@ -70,7 +70,14 @@
                     <input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" />
                     <button class="btn btn-primary buscarDataAgenda">Buscar</button>
                     <!-- <label class="input-group-text">Agenda do dia <?=$hoje?></label> -->
-                    <button class="btn btn-success nova_agenda" data="">Agendar</button>
+                    <button
+                            class="btn btn-success nova_agenda"
+                            data=""
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"
+                    >Agendar</button>
                 </div>
 
 
