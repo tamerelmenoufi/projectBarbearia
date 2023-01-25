@@ -62,9 +62,17 @@
         <div class="row" style="margin:0; padding:0;">
             <div class="col text-start"><h6>Agenda do dia <?=$hoje?></h6></div>
             <div class="col text-end">
-                <input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" />
+                <!-- <input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" />
                 <button class="btn btn-primary">Buscar</button>
-                <button class="btn btn-success">Agendar</button>
+                <button class="btn btn-success">Agendar</button> -->
+
+                <div class="input-group mb-3">
+                    <input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" />
+                    <label class="input-group-text">Agenda do dia <?=$hoje?></label>
+                    <button class="btn btn-success">Agendar</button>
+                </div>
+
+
             </div>
         </div>
     </div>
