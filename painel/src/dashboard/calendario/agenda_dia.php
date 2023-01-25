@@ -72,7 +72,6 @@
                     <!-- <label class="input-group-text">Agenda do dia <?=$hoje?></label> -->
                     <button
                             class="btn btn-success nova_agenda"
-                            data=""
                             data-bs-toggle="offcanvas"
                             href="#offcanvasDireita"
                             role="button"
@@ -158,13 +157,13 @@
         });
 
         $(".nova_agenda").click(function(){
-            data = $(this).attr("data");
+            // data = $(this).attr("data");
             $.ajax({
-                url:"src/dashboard/calendario/agenda_cadastro.php",
-                type:"POST",
-                data:{
-                    data,
-                },
+                url:"src/dashboard/calendario/home.php",
+                // type:"POST",
+                // data:{
+                //     data,
+                // },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
