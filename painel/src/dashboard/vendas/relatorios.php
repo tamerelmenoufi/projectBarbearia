@@ -23,10 +23,8 @@
 
     <div class="accordion accordion-flush" id="accordionFlushExample">
 
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOneXXXX">
+    <div class="accordion-item m-3">
         Total de Vendas
-        </h2>
     </div>
 
     <div class="accordion-item">
