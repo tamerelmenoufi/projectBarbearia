@@ -21,7 +21,7 @@
     <li class="list-group-item relatorio p-3">Estatísticas dos produtos</li>
 </ul> -->
 
-    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion accordion-flush" id="accordionFlushExample" style="background-color:#fff">
 
     <div class="accordion-item m-3">
         Total de Vendas
