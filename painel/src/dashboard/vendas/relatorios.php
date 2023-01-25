@@ -24,8 +24,10 @@
     <div class="accordion accordion-flush" id="accordionFlushExample">
 
     <div class="accordion-item p-3">
-        <div class="col text-start">Total de Vendas</div>
-        <div class="col text-end">232</div>
+        <div class="d-flex justify-content-between">
+            <div class="col text-start">Total de Vendas</div>
+            <div class="col text-end">232</div>
+        </div>
     </div>
 
     <div class="accordion-item">
