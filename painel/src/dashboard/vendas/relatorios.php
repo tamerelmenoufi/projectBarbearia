@@ -7,24 +7,30 @@
     }
 </style>
 <h6>Relatórios Gerais</h6>
-<ul class="list-group">
-    <li class="list-group-item relatorio p-3">Vendas Realizadas</li>
-    <li class="list-group-item relatorio">Vendas por colaborador</li>
-    <li class="list-group-item relatorio">Clientes Cadastrados</li>
-    <li class="list-group-item relatorio">Vendas por produtos</li>
-    <li class="list-group-item relatorio">Mapa de vendas</li>
-    <li class="list-group-item relatorio">Mapa das Agendas</li>
-    <li class="list-group-item relatorio">Agendas anuladas</li>
-    <li class="list-group-item relatorio">Agendas Canceladas </li>
-    <li class="list-group-item relatorio">Vendas Canceladas </li>
-    <li class="list-group-item relatorio">Produtos Cadastrados </li>
-    <li class="list-group-item relatorio">Estoque de produtos</li>
+<!-- <ul class="list-group">
+    <li class="list-group-item relatorio p-3">Total de agendas</li>
+    <li class="list-group-item relatorio p-3">Agendas atendidas</li>
+    <li class="list-group-item relatorio p-3">Agendas não atendidas</li>
+    <li class="list-group-item relatorio p-3">Total de vendas</li>
+    <li class="list-group-item relatorio p-3">Vendas por serviços</li>
+    <li class="list-group-item relatorio p-3"></li>
+    <li class="list-group-item relatorio p-3"></li>
+    <li class="list-group-item relatorio p-3"></li>
+    <li class="list-group-item relatorio p-3"></li>
+    <li class="list-group-item relatorio p-3"></li>
     <li class="list-group-item relatorio p-3">Estatísticas dos produtos</li>
-
-
-
+</ul> -->
 
     <div class="accordion accordion-flush" id="accordionFlushExample">
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" >
+            Total de Vendas
+        </button>
+        </h2>
+    </div>
+
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -57,7 +63,7 @@
     </div>
     </div>
 
-</ul>
+
 <script>
     $(function(){
         $(".relatorio").click(function(){
