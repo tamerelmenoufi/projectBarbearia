@@ -25,9 +25,7 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOneXXXX">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOneXXXX" aria-expanded="false" aria-controls="flush-collapseOne">
-            Total de Vendas
-        </button>
+        Total de Vendas
         </h2>
     </div>
 
