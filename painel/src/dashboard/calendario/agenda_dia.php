@@ -68,7 +68,8 @@
 
                 <div class="input-group mb-3">
                     <input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" />
-                    <label class="input-group-text">Agenda do dia <?=$hoje?></label>
+                    <button class="btn btn-primary">Buscar</button>
+                    <!-- <label class="input-group-text">Agenda do dia <?=$hoje?></label> -->
                     <button class="btn btn-success">Agendar</button>
                 </div>
 
