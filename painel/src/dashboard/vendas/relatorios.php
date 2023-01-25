@@ -34,7 +34,7 @@
         <h2 class="accordion-header" id="flush-headingOne">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
 
-            <div class="d-flex justify-content-between w-100 mr-3">
+            <div class="d-flex justify-content-between w-100 me-3">
                 <div class="col text-start">Accordion Item #1</div>
                 <div class="col text-end">232</div>
             </div>
