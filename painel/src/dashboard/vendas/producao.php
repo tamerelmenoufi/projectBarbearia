@@ -23,7 +23,7 @@
                 <th scope="col">Cliente</th>
                 <th scope="col">Data</th>
                 <th scope="col">Valor</th>
-                <th scope="col">Ações</th>
+                <!-- <th scope="col">Ações</th> -->
             </tr>
         </thead>
         <tbody>
@@ -42,10 +42,10 @@
                 <td><?=$d->cliente_nome?></td>
                 <td><?=$d->data_pedido?></td>
                 <td>R$ <?=number_format($d->valor, 2, ",",".")?></td>
-                <td>
+                <!-- <td>
                     <i class="fa-solid fa-motorcycle solicitar_entrega"></i>
                     <i class="fa-solid fa-ban ms-3 cancelar_pedido"></i>
-                </td>
+                </td> -->
             </tr>
             <?php
                 // Dados para calculo das somas totais e das comissões
