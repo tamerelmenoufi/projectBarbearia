@@ -68,9 +68,9 @@
 
                 <div class="input-group">
                     <input type="date" id="dataAgenda" class="form-control form-control-sm" value="<?=$_SESSION['agenda_dia']?>" />
-                    <button class="btn btn-primary">Buscar</button>
+                    <button class="btn btn-primary buscarDataAgenda">Buscar</button>
                     <!-- <label class="input-group-text">Agenda do dia <?=$hoje?></label> -->
-                    <button class="btn btn-success">Agendar</button>
+                    <button class="btn btn-success nova_agenda" data="">Agendar</button>
                 </div>
 
 
@@ -86,13 +86,7 @@
             $hora = str_pad($i , 2 , '0' , STR_PAD_LEFT).":".str_pad($h , 2 , '0' , STR_PAD_LEFT);
     ?>
     <li class="list-group-item">
-        <span
-            data-bs-toggle="offcanvas"
-            href="#offcanvasDireita"
-            role="button"
-            aria-controls="offcanvasDireita"
-            class="nova_agenda"
-            data="<?=$hora?>"><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
+        <span><i class="fa-solid fa-calendar-plus"></i> <?=$hora?></span>
         <div agendamento style="position:absolute; left:70px; right:10px; height:auto; top:4px;" >
             <?php
             $query = "select
@@ -170,8 +164,8 @@
             });
         })
 
-        $("#dataAgenda").blur(function(){
-            agenda_dia = $(this).val();
+        $(".buscarDataAgenda").click(function(){
+            agenda_dia = $("#dataAgenda").val();
             $("div[agendaDia]").css("opacity",0.2);
             $.ajax({
                 url:"src/dashboard/calendario/agenda_dia.php",
