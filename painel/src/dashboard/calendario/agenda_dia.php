@@ -159,7 +159,7 @@
         $(".nova_agenda").click(function(){
             // data = $(this).attr("data");
             $.ajax({
-                url:"src/dashboard/calendario/home.php",
+                url:"src/dashboard/calendario/agenda_cadastro.php",
                 // type:"POST",
                 // data:{
                 //     data,
