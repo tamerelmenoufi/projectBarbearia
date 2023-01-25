@@ -25,7 +25,7 @@
 
     <div class="accordion-item">
         <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" >
+        <button class="accordion-button" type="button">
             Total de Vendas
         </button>
         </h2>
