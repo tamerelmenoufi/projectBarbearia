@@ -6,6 +6,16 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
+<style>
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+</style>
+
+<h4 class="Titulo<?=$md5?>"><d style="color:#918d87">Agenda <span Titulo></span></d></h4>
 
 <div class="container">
     <div class="row">
