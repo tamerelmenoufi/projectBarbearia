@@ -29,7 +29,13 @@
                 <div class="icon">
                   <i class="bi bi-activity"></i>
                 </div>
-                <a href="#" class="stretched-link ver_produto" cod="<?=$d->codigo?>">
+                <a  href="#XXX"
+                    class="stretched-link ver_produto"
+                    cod="<?=$d->codigo?>"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                >
                   <h3><?=$d->nome?></h3>
                 </a>
                 <p><?=$d->especialidade?></p>
