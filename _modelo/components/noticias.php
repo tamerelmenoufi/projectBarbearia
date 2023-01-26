@@ -16,7 +16,7 @@
           while($d = mysqli_fetch_object($result)){
           ?>
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 mb-3" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
               <div class="post-img"><img src="<?=$localPainel?>src/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
               <!-- <div class="meta">
