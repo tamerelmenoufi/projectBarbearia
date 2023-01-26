@@ -25,7 +25,7 @@
         <div class="card-body">
             <h5 class="card-title"><?=$d->produto?></h5>
             <p class="card-text"><?=$d->descrcao?></p>
-            <a href="#" class="btn btn-primary">R$ <?=number_format($d->valor,2,',','.')?></a>
+            <p class="text-end" style="font-size:40px;">R$ <?=number_format($d->valor,2,',','.')?></p>
         </div>
     </div>
 
