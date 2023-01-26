@@ -1,7 +1,5 @@
 
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/portal/site/assets/lib/includes.php");
-
 
     $query = "select * from noticias where codigo = '{$_GET['cod']}'";
     $result = mysqli_query($con, $query);
