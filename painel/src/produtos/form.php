@@ -109,7 +109,7 @@
         <div class="form-floating mb-3">
           <div class="input-group">
             <span class="input-group-text">Tempo de Atendimento</span>
-            <input type="number" class="form-control" value="<?=(($d->tempo > 0)?:15)?>" id="tempo" name="tempo" min="15" max="120" step=".00">
+            <input type="number" class="form-control" value="<?=(($d->tempo >= 15)?:15)?>" id="tempo" name="tempo" min="15" max="120" step=".00">
             <span class="input-group-text">Especificar em Minuto</span>
           </div>
         </div>
