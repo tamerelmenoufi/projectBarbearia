@@ -126,6 +126,15 @@
       </div>
 
 
+      <div class="form-floating mb-3">
+        <!-- <textarea id="descricao" name="materia"><?=$d->descricao?></textarea> -->
+        <!-- <label for="descricao">Matéria</label> -->
+        <!-- <div class="form-text">Digite o conteúdo da Matéria.</div> -->
+        <textarea id="descricao" name="descricao"><?=$d->descricao?></textarea>
+
+      </div>
+
+
       <div class="grupo_nota" style="display:<?=(($d->tipo == 'p')?'inline':'none')?>">
 
         <div class="form-floating mb-3">
@@ -181,14 +190,14 @@
 
 <script>
 
-    // ClassicEditor
-    // .create( document.querySelector( '#materia' ) )
-    // .then( editor => {
-    //     console.log( editor );
-    // } )
-    // .catch( error => {
-    //     console.error( error );
-    // } );
+    ClassicEditor
+    .create( document.querySelector( '#descricao' ) )
+    .then( editor => {
+        console.log( editor );
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
 
 // console.log(editor);
 
