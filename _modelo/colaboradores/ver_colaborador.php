@@ -17,16 +17,11 @@
 
 <h4 class="Titulo<?=$md5?>"><d style="color:#918d87"><?=$d->nome?></d></h4>
 
-<div class="container">
-    <div class="row">
 
-    <div class="card">
-        <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="card-img-top" >
-        <div class="card-body">
-            <h5 class="card-title"><?=$d->especialidade?></h5>
-            <p class="card-text"><?=$d->curriculo?></p>
-        </div>
-    </div>
-
+<div class="card">
+    <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="card-img-top" >
+    <div class="card-body">
+        <h5 class="card-title"><?=$d->especialidade?></h5>
+        <p class="card-text"><?=$d->curriculo?></p>
     </div>
 </div>
