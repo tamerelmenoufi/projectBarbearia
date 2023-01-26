@@ -58,7 +58,7 @@
 
 
     if($_POST['cod']){
-      $query = "select a.*, (select count(*) from vendas where produto = a.codigo limit 1) as vendas from produtos a where a.codigo = '{$_POST['cod']}'";
+      $query = "select a.*, if(a.tempo < 15, 15, a.tempo) as tempo (select count(*) from vendas where produto = a.codigo limit 1) as vendas from produtos a where a.codigo = '{$_POST['cod']}'";
       $result = mysqli_query($con, $query);
       $d = mysqli_fetch_object($result);
     }
@@ -109,7 +109,7 @@
         <div class="form-floating mb-3">
           <div class="input-group">
             <span class="input-group-text">Tempo de Atendimento</span>
-            <input type="number" class="form-control" value="<?=(($d->tempo >= 15)?:"15")?>" id="tempo" name="tempo" min="15" max="120" step=".00">
+            <input type="number" class="form-control" value="<?=$d->tempo?>" id="tempo" name="tempo" min="15" max="120" step=".00">
             <span class="input-group-text">Especificar em Minuto</span>
           </div>
         </div>
