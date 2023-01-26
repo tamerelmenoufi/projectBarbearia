@@ -114,7 +114,6 @@ if( navigator.userAgent.match(/Android/i)
         // 'banner_principal2',
         // 'banner_principal3',
         // 'sobre',
-        // 'noticias',
         // 'galeria',
         // 'banner_depoimentos',
 
@@ -131,7 +130,7 @@ if( navigator.userAgent.match(/Android/i)
         'produtos_servicos2',
         // 'planos',
         // 'faq',
-
+        'noticias',
 
         // 'time',
         'contato',
