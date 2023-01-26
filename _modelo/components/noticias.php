@@ -17,7 +17,7 @@
           ?>
 
           <div class="col-lg-4 mb-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
+            <div class="post-box mb-3">
               <div class="post-img"><img src="<?=$localPainel?>src/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
               <!-- <div class="meta">
                 <span class="post-date">Tue, December 12</span>
