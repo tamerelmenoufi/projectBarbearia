@@ -24,7 +24,7 @@
         <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="card-img-top" >
         <div class="card-body">
             <h5 class="card-title"><?=$d->produto?></h5>
-            <p class="card-text"><?=$d->descrcao?></p>
+            <p class="card-text"><?=$d->descricao?></p>
             <p class="text-end" style="font-size:40px;">R$ <?=number_format($d->valor,2,',','.')?></p>
         </div>
     </div>
