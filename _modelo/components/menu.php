@@ -13,6 +13,7 @@
           <li><a class="nav-link scrollto" href="index.php#servicos">Serviços</a></li>
           <li><a class="nav-link scrollto" href="index.php#produtos">Produtos</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Time</a></li>
+          <li><a class="nav-link scrollto" href="index.php#eventos">Eventos</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contatos</a></li>
         </ul>
 

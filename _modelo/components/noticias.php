@@ -1,5 +1,5 @@
     <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-blog-posts" class="recent-blog-posts">
+    <section id="eventos" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
