@@ -1,4 +1,4 @@
-    
+
     <style>
 
 .botaoazul{
@@ -11,14 +11,14 @@ border-radius: 0;
 }
 
 </style>
-    
+
     <!-- ======= Breadcrumbs ======= -->
     <div style="font-weight:450;background:#0ca3a4;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style="">Titulo da Noticia</h2>
-          
+          <h2 style="">Evento - Título</h2>
+
         </div>
 
       </div>
@@ -278,14 +278,14 @@ border-radius: 0;
               <!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title">Ultimas noticias</h3>
+                <h3 class="sidebar-title">Ultimos eventos</h3>
 
                 <div class="mt-3">
 
                   <div class="post-item mt-3">
                     <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
                     <div>
-                      <h4><a href="blog-post.html">Nihil blanditiis at in nihil autem</a></h4>
+                      <h4><a href="noticia.php">Nihil blanditiis at in nihil autem</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
@@ -293,7 +293,7 @@ border-radius: 0;
                   <div class="post-item">
                     <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
                     <div>
-                      <h4><a href="blog-post.html">Quidem autem et impedit</a></h4>
+                      <h4><a href="noticia.php">Quidem autem et impedit</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
@@ -301,7 +301,7 @@ border-radius: 0;
                   <div class="post-item">
                     <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
                     <div>
-                      <h4><a href="blog-post.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                      <h4><a href="noticia.php">Id quia et et ut maxime similique occaecati ut</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
@@ -309,7 +309,7 @@ border-radius: 0;
                   <div class="post-item">
                     <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
                     <div>
-                      <h4><a href="blog-post.html">Laborum corporis quo dara net para</a></h4>
+                      <h4><a href=noticia.php">Laborum corporis quo dara net para</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
@@ -317,13 +317,13 @@ border-radius: 0;
                   <div class="post-item">
                     <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
                     <div>
-                      <h4><a href="blog-post.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                      <h4><a href="noticia.php">Et dolores corrupti quae illo quod dolor</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
 
                 </div>
-               <center style="margin-top:20px"> <button type="button" class="btn btn-outline-info">Mais Noticias</button></center>
+               <center style="margin-top:20px"> <a href="noticia_categoria.php" class="btn btn-outline-info">Mais Noticias</button></center>
               </div><!-- End sidebar recent posts-->
 
               <!-- <div class="sidebar-item tags">
@@ -350,18 +350,17 @@ border-radius: 0;
         </div>
 
         <div class="col-lg-12">
-    
+
     <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
                  <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
  </div>
- 
+
 
 
       </div>
     </section><!-- End Blog Details Section -->
 
 
-  
 
 
-              
+
