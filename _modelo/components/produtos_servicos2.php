@@ -29,15 +29,8 @@
                 <div class="icon">
                   <i class="bi bi-activity"></i>
                 </div>
-                <a  href="#XXX"
-                    class="stretched-link ver_produto"
-                    cod="<?=$d->codigo?>"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight"
-                >
+                <a href="#" class="stretched-link">
                   <h3><?=$d->nome?></h3>
-
                 </a>
                 <p><?=$d->especialidade?></p>
               </div>
@@ -52,26 +45,3 @@
 
       </div>
     </section><!-- End Services Section -->
-
-
-    <script>
-
-$(function(){
-  $(".ver_produto").click(function(){
-    cod = $(this).attr("cod");
-    $.ajax({
-          url:"produtos/ver_produto.php",
-          type:"POST",
-          data:{
-            cod
-          },
-          success:function(dados){
-            $(".LateralDireita").html(dados);
-          },
-          error:function(){
-            alert('erro')
-          }
-      });
-  });
-})
-</script>

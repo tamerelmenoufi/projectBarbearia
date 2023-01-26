@@ -70,7 +70,14 @@
                 <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt="">
                 <span style="color:#a1a1a1; font-weight:bold;">R$ <?=number_format($d->valor,2,',','.')?></span>
               </div>
-              <h4><a href="#produtos" class="stretched-link"><?=$d->produto?></a></h4>
+              <h4><a
+                    href="#XXX"
+                    class="stretched-link ver_produto"
+                    cod="<?=$d->codigo?>"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                    ><?=$d->produto?></a></h4>
               <p></p>
             </div>
           </div><!-- End Service Item -->
@@ -85,7 +92,7 @@
 
 
 
-    <script>
+<script>
 
       $(function(){
         $(".agenda_servico").click(function(){
@@ -104,6 +111,22 @@
                 }
             });
         });
-      })
 
-    </script>
+        $(".ver_produto").click(function(){
+          cod = $(this).attr("cod");
+          $.ajax({
+                url:"produtos/ver_produto.php",
+                type:"POST",
+                data:{
+                  cod
+                },
+                success:function(dados){
+                  $(".LateralDireita").html(dados);
+                },
+                error:function(){
+                  alert('erro')
+                }
+            });
+        });
+      })
+</script>
