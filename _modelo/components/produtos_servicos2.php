@@ -29,7 +29,7 @@
                 <div class="icon">
                   <i class="bi bi-activity"></i>
                 </div>
-                <a href="#" class="stretched-link">
+                <a href="#" class="stretched-link ver_produto" cod="<?=$d->codigo?>">
                   <h3><?=$d->nome?></h3>
                 </a>
                 <p><?=$d->especialidade?></p>
@@ -45,3 +45,26 @@
 
       </div>
     </section><!-- End Services Section -->
+
+
+    <script>
+
+$(function(){
+  $(".ver_produto").click(function(){
+    cod = $(this).attr("cod");
+    $.ajax({
+          url:"produtos/ver_produto.php",
+          type:"POST",
+          data:{
+            cod
+          },
+          success:function(dados){
+            $(".LateralDireita").html(dados);
+          },
+          error:function(){
+            alert('erro')
+          }
+      });
+  });
+})
+</script>
