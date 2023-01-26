@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/portal/site/assets/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 ?><!DOCTYPE html>
 <html lang="en">
 
