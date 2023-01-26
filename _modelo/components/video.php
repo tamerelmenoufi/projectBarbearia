@@ -39,7 +39,7 @@
 
         $(".agenda").click(function(){
           $.ajax({
-                url:"calendario/agenda_cadastro.php",
+                url:"calendario/home.php",
                 type:"POST",
                 success:function(dados){
                   $(".LateralDireita").html(dados);
