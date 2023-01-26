@@ -57,7 +57,7 @@ border-radius: 0;
 
               <div class="content">
                 <p>
-                  <?=$d->descricao?>
+                  <?=$d->materia?>
                 </p>
               </div><!-- End post content -->
 
