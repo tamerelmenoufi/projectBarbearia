@@ -15,7 +15,7 @@
     }
 </style>
 
-<h4 class="Titulo<?=$md5?>"><d style="color:#918d87">Agenda <span Titulo></span></d></h4>
+<h4 class="Titulo<?=$md5?>"><d style="color:#918d87"><?=$d->produto?></d></h4>
 
 <div class="container">
     <div class="row">
