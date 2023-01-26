@@ -4,8 +4,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Novidades</h2>
-          <p>Fique antenado com as novidades no mundo da tecnologia</p>
+          <h2>Eventos</h2>
+          <p>Fique por dentro do que acontece na os manos barbearia</p>
         </div>
 
         <div class="row">
