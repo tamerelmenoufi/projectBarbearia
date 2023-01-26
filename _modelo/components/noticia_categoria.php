@@ -13,14 +13,14 @@ border-radius: 0;
 }
 
 </style>
-    
+
     <!-- ======= Breadcrumbs ======= -->
     <div style="font-weight:450;background:#0ca3a4;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style="">Todas as Noticias</h2>
-          
+          <h2 style="">Todos os Eventos</h2>
+
         </div>
 
       </div>
@@ -80,7 +80,7 @@ border-radius: 0;
         </div>
 
 
-        <center style="margin-top:15px">
+        <!-- <center style="margin-top:15px">
 <nav aria-label="...">
   <ul class="pagination">
     <li class="page-item disabled">
@@ -96,11 +96,11 @@ border-radius: 0;
     </li>
   </ul>
 </nav>
-        </center>
+        </center> -->
 
 
         <div class="col-lg-12" style="padding:10px">
-    
+
     <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
                  <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
  </div>
