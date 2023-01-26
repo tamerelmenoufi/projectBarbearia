@@ -37,6 +37,7 @@
                     aria-controls="offcanvasRight"
                 >
                   <h3><?=$d->nome?></h3>
+
                 </a>
                 <p><?=$d->especialidade?></p>
               </div>
