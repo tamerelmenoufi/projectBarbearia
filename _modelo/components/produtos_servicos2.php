@@ -29,7 +29,13 @@
                 <div class="icon">
                   <i class="bi bi-activity"></i>
                 </div>
-                <a href="#" class="stretched-link">
+                <a
+                    href="#XXXX" class="stretched-link colaborador"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                    colaborador="<?=$d->codigo?>"
+                >
                   <h3><?=$d->nome?></h3>
                 </a>
                 <p><?=$d->especialidade?></p>
@@ -44,3 +50,27 @@
 
       </div>
     </section><!-- End Services Section -->
+
+
+    <script>
+
+$(function(){
+    $(".colaborador").click(function(){
+      colaborador = $(this).attr("colaborador");
+      $.ajax({
+            url:"colaboradores/ver_colaborador.php",
+            type:"POST",
+            data:{
+              colaborador
+            },
+            success:function(dados){
+              $(".LateralDireita").html(dados);
+            },
+            error:function(){
+              alert('erro')
+            }
+        });
+    });
+  })
+
+    </script>
