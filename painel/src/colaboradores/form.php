@@ -106,6 +106,13 @@
                 </div>
 
                 <div class="form-floating mb-3">
+                    <!-- <textarea id="curriculo" name="curriculo"><?=$d->curriculo?></textarea> -->
+                    <!-- <label for="curriculo">Matéria</label> -->
+                    <!-- <div class="form-text">Digite o conteúdo da Matéria.</div> -->
+                    <textarea id="curriculo" name="curriculo"><?=$d->curriculo?></textarea>
+                </div>
+
+                <div class="form-floating mb-3">
                     <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">CPF*</label>
                 </div>
@@ -184,6 +191,17 @@
     </form>
 
     <script>
+
+
+    ClassicEditor
+    .create( document.querySelector( '#curriculo' ) )
+    .then( editor => {
+        console.log( editor );
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
+
         $(function(){
             Carregando('none');
 
