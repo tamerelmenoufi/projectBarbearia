@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col">
                 <div style="display:flex; justify-content:end">
-                    <button type="submit" class="btn btn-success btn-ms">Salvar</button>
+                    <button type="submit" class="btn btn-success btn-ms" style="margin-right:3px">Salvar</button>
                     <button cancelar type="button" class="btn btn-danger btn-ms">Cancelar</button>
                     <input type="hidden" id="codigo" value="<?=$_SESSION['cliente']?>" />
                 </div>
