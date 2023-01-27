@@ -33,7 +33,7 @@
 
               <div class="d-flex justify-content-between">
                   <!-- <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" style="height:80px;" class="img-fluid" alt=""> -->
-                  <span style="color:orange">
+                  <span style="color:#82411d">
                     <i class="fa fa-calendar"></i> Agendar
                   </span>
                   <span style="color:#a1a1a1; font-weight:bold;">R$ <?=number_format($d->valor,2,',','.')?></span>
