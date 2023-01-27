@@ -235,18 +235,32 @@
 
 
 
-
+    <?php
+    /////////////////////////////////////////////////////////////////
+    $query = "select count(*) as qt, sum(total) as valor from vendas where situacao = 'p'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    ?>
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
-            <div class="col text-start">Financeiro Bruto</div>
-            <div class="col text-end">232</div>
+            <div class="col text-start">Financeiro Líquido</div>
+            <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
+            <div class="col text-end">R$ <?=number_format($d->valor,2,',','.')?></div>
         </div>
     </div>
 
+
+    <?php
+    /////////////////////////////////////////////////////////////////
+    $query = "select count(*) as qt, sum(comissao) as valor from vendas where situacao = 'p'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    ?>
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
             <div class="col text-start">Financeiro comissão</div>
-            <div class="col text-end">232</div>
+            <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
+            <div class="col text-end">R$ <?=number_format($d->valor,2,',','.')?></div>
         </div>
     </div>
 
