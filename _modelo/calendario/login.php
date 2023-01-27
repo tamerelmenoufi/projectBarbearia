@@ -36,11 +36,11 @@
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
                         <input type="text" class="form-control" id="telefone" aria-describedby="telefoneHelp">
-                        <div id="telefoneHelp" class="form-text">Informe o número de telefone cadastrado.</div>
+                        <div id="telefoneHelp" class="form-text">(Informe o número de telefone cadastrado.)</div>
                     </div>
-                    <button type="button" class="btn btn-primary logar">Entrar</button>
+                    <button type="button" class="btn btn-secondary logar">Entrar</button>
                 </div>
-                <p class="m-3"><a href="#login" novoCadastro>Não tem cadastro, clique aqui</a></p>
+                <p class="m-3"><a href="#login" style="font-weight:bold;border-bottom: 2px #e9e5e5 solid;" novoCadastro>Não tem cadastro, clique aqui</a></p>
 
             </div>
         </div>
