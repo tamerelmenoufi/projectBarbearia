@@ -106,7 +106,7 @@
                     from vendas_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join vendas c on a.venda = c.codigo
-                    where c.situacao = 'p' group by a.produto order by a.codigo desc";
+                    where c.situacao = 'p' and a.tipo = 's' group by a.produto order by a.codigo desc";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
         ?>
@@ -130,13 +130,38 @@
 
             <div class="d-flex justify-content-between w-100 me-3">
                 <div class="col text-start">Vendas por produtos</div>
-                <div class="col text-end">232</div>
+                <!-- <div class="col text-end">232</div> -->
             </div>
 
         </button>
         </h2>
         <div id="close_vendas_produtos" class="accordion-collapse collapse" aria-labelledby="open_vendas_produtos" data-bs-parent="#relatoriosEstatisticas">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        <div class="accordion-body">
+            <ul class="list-group">
+            <?php
+            /////////////////////////////////////////////////////////////////
+            $query = "select
+                            a.*,
+                            sum(a.valor) as valor_total,
+                            b.produto as nome_produto,
+                            count(*) as qt
+                        from vendas_produtos a
+                            left join produtos b on a.produto = b.codigo
+                            left join vendas c on a.venda = c.codigo
+                        where c.situacao = 'p' and a.tipo = 'p' group by a.produto order by a.codigo desc";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+            ?>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <?=$d->nome_produto?>
+                    <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
+                    <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->valor_total,2,',','.')?></span>
+                </li>
+            <?php
+            }
+            ?>
+            </ul>
+        </div>
         </div>
     </div>
 
