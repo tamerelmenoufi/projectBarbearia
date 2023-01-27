@@ -100,6 +100,7 @@
         /////////////////////////////////////////////////////////////////
         $query = "select
                         a.*,
+                        sum(a.valor) as valor_total
                         b.produto as nome_produto
                     from vendas_produtos a
                         left join produtos b on a.produto = b.codigo
@@ -110,7 +111,7 @@
         ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?=$d->nome_produto?>
-                <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->nome_produto,2,',','.')?></span>
+                <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->valor_total,2,',','.')?></span>
             </li>
         <?php
         }
