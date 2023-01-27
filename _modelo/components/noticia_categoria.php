@@ -4,10 +4,7 @@
     <style>
 
 
-a:hover {
-    color: #fa9160!important;
-    text-decoration: none;
-}
+
 .btn-outline-info:hover {
     color: #fffefe;
     background-color:#bd9169!important;
