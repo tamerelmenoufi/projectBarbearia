@@ -58,23 +58,23 @@
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" <?=(($d->vendas)?'disabled':'name="nome"')?> class="form-control" id="nome" placeholder="Nome completo" value="<?=$d->nome?>">
-                    <label for="nome"> <i class="fa fa-user"> </i>Nome*</label>
+                    <label for="nome"> <i class="fa fa-user">   </i>Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" <?=(($d->vendas)?'disabled':'name="cpf"')?> id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
-                    <label for="cpf">CPF*</label>
+                    <label for="cpf">  <i class="fa fa-file"></i>   CPF*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=$d->data_nascimento?>">
-                    <label for="cpf">Data de Nascimento*</label>
+                    <label for="cpf"> <i class="fa fa-calendar-days"></i>   Data de Nascimento*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
-                    <label for="telefone">Telefone*</label>
+                    <label for="telefone"><i class="fa fa-mobile-screen"></i>   Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                    <label for="email">E-mail</label>
+                    <label for="email"> <i class="fa fa-envelope"></i>    E-mail</label>
                 </div>
 
             </div>
