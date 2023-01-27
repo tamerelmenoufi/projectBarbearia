@@ -68,14 +68,15 @@
 
     <?php
     /////////////////////////////////////////////////////////////////
-    $query = "select count(*) as qt from vendas where situacao = 'p'";
+    $query = "select count(*) as qt, sum(valor) as valor from vendas where situacao = 'p'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
     ?>
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
             <div class="col text-start">Total de vendas</div>
-            <div class="col text-end"><?=$d->qt?></div>
+            <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
+            <div class="col text-end">R$ <?=number_format($d->valor,2,',','.')?></div>
         </div>
     </div>
 
