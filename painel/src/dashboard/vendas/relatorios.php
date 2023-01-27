@@ -98,7 +98,13 @@
         <ul class="list-group">
         <?php
         /////////////////////////////////////////////////////////////////
-        $query = "select a.*, b.produto as nome_produto from vendas_produtos a left join produto b on a.produto = b.codigo where a.situacao = 'p' order by a.codigo desc";
+        $query = "select
+                        a.*,
+                        b.produto as nome_produto
+                    from vendas_produtos a
+                        left join produtos b on a.produto = b.codigo
+                        left join vendas c on a.venda = c.codigo
+                    where c.situacao = 'p' order by a.codigo desc";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
         ?>
