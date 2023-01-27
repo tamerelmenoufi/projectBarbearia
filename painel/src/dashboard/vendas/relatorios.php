@@ -111,6 +111,7 @@
         ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?=$d->nome_produto?>
+                <div>Quantidade</div>
                 <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->valor_total,2,',','.')?></span>
             </li>
         <?php
