@@ -104,7 +104,7 @@ border-radius: 0;
         <div class="col-lg-12" style="padding:10px">
 
         
-        <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
+        <button style="margin-top:10px"  type="button"  class="float-end  botaomarrom">
                  <a style="color:#fff" href="index.php#eventos">Voltar</a></button>
  </div>
 </div>
