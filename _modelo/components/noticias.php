@@ -1,4 +1,19 @@
     <!-- ======= Recent Blog Posts Section ======= -->
+    <style>
+
+.btn-outline-info:hover {
+    color: #fffefe;
+    background-color: #a6876b!important;
+    border-color: #a6876b!important;
+}
+
+.btn-outline-info {
+    color: #fffefe;
+    background-color: #a6876b!important;
+    border-color: #a6876b!important;
+}
+    </style>
+    
     <section id="eventos" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
@@ -64,7 +79,7 @@
         <center style="margin-top:20px">
           <a href="noticia_categoria.php">
          <button type="button" class="btn btn-outline-info">
-          Outras Noticias
+          Outros Eventos
         </button></a>
       </center>
       </div>
