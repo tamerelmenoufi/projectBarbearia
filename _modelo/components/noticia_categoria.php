@@ -112,7 +112,8 @@ a:hover {
 
         <div class="col-lg-12" style="padding:10px">
 
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
+        
+    <button style="margin-top:10px" type="button" class="btn btn-outline-info">
                  <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
  </div>
 </div>
