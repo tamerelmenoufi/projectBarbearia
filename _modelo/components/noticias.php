@@ -3,9 +3,13 @@
 
 .btn-outline-info:hover {
     color: #fffefe;
-    background-color: #a6876b!important;
-    border-color: #a6876b!important;
+    background-color:#bd9169!important;
+    border-color:#bd9169!important;
 }
+
+
+.btn-check:active+.btn-outline-info:focus, .btn-check:checked+.btn-outline-info:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus, .btn-outline-info:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(166 135 107);}
 
 .btn-outline-info {
     color: #fffefe;
