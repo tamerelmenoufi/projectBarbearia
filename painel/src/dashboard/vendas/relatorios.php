@@ -101,7 +101,8 @@
         $query = "select
                         a.*,
                         sum(a.valor) as valor_total,
-                        b.produto as nome_produto
+                        b.produto as nome_produto,
+                        count(*) as qt
                     from vendas_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join vendas c on a.venda = c.codigo
@@ -111,7 +112,7 @@
         ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?=$d->nome_produto?>
-                <div>Quantidade</div>
+                <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
                 <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->valor_total,2,',','.')?></span>
             </li>
         <?php
