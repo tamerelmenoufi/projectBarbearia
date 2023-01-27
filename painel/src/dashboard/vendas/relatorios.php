@@ -121,7 +121,7 @@
         if(!$n){
         ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <h4>CATEGORIA SEM REGISTROS</h4>
+                <h4 style="text-align:center; color:#a1a1a1;">CATEGORIA SEM REGISTROS</h4>
             </li>
         <?php
         }
