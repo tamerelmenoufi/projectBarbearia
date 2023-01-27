@@ -105,7 +105,7 @@
                     from vendas_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join vendas c on a.venda = c.codigo
-                    where c.situacao = 'p' order by a.codigo desc";
+                    where c.situacao = 'p' group by a.produto order by a.codigo desc";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
         ?>
