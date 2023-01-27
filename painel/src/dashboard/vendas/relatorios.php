@@ -108,12 +108,20 @@
                         left join vendas c on a.venda = c.codigo
                     where c.situacao = 'p' and a.produto_tipo = 's' group by a.produto order by a.codigo desc";
         $result = mysqli_query($con, $query);
+        $n = mysqli_num_rows($result);
         while($d = mysqli_fetch_object($result)){
         ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?=$d->nome_produto?>
                 <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
                 <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->valor_total,2,',','.')?></span>
+            </li>
+        <?php
+        }
+        if(!$n){
+        ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <h4>CATEGORIA SEM REGISTROS</h4>
             </li>
         <?php
         }
@@ -150,12 +158,20 @@
                             left join vendas c on a.venda = c.codigo
                         where c.situacao = 'p' and a.produto_tipo = 'p' group by a.produto order by a.codigo desc";
             $result = mysqli_query($con, $query);
+            $n = mysqli_num_rows($result);
             while($d = mysqli_fetch_object($result)){
             ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <?=$d->nome_produto?>
                     <div><?=$d->qt.(($d->qt > 1)?' Itens':' Item')?></div>
                     <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->valor_total,2,',','.')?></span>
+                </li>
+            <?php
+            }
+            if(!$n){
+            ?>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h4>CATEGORIA SEM REGISTROS</h4>
                 </li>
             <?php
             }
