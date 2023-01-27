@@ -7,8 +7,8 @@
 
 ?><style>
 
-.botaoazul{
-  background: var(--color-primary);
+.botaomarrom{
+  background:#a6876b!important;
 border: 0;
 padding: 10px 35px;
 color: #fff;

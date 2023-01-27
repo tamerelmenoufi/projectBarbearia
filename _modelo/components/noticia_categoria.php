@@ -5,20 +5,13 @@
 
 
 
-.btn-outline-info:hover {
-    color: #fffefe;
-    background-color:#bd9169!important;
-    border-color:#bd9169!important;
-}
-
-
-.btn-check:active+.btn-outline-info:focus, .btn-check:checked+.btn-outline-info:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus, .btn-outline-info:active:focus {
-    box-shadow: 0 0 0 0.25rem rgb(166 135 107);}
-
-.btn-outline-info {
-    color: #fffefe;
-    background-color: #a6876b!important;
-    border-color: #a6876b!important;
+.botaomarrom{
+  background:#a6876b!important;
+border: 0;
+padding: 10px 35px;
+color: #fff;
+transition: 0.4s;
+border-radius: 0;
 }
 
 </style>
@@ -111,8 +104,8 @@
         <div class="col-lg-12" style="padding:10px">
 
         
-    <button style="margin-top:10px" type="button" class="btn btn-outline-info">
-                 <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
+        <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
+                 <a style="color:#fff" href="index.php#eventos">Voltar</a></button>
  </div>
 </div>
 
