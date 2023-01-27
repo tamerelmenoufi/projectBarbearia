@@ -272,7 +272,7 @@ border-radius: 0;
                 ?>
 
                 </div>
-               <center style="margin-top:20px"> <a href="noticia_categoria.php" class="btn btn-outline-info">Mais Noticias</a></center>
+               <center style="margin-top:20px"> <a href="noticia_categoria.php" class="btn btn-outline-info">Mais Eventos</a></center>
               </div><!-- End sidebar recent posts-->
 
               <!-- <div class="sidebar-item tags">
