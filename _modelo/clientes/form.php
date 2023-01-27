@@ -58,7 +58,7 @@
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" <?=(($d->vendas)?'disabled':'name="nome"')?> class="form-control" id="nome" placeholder="Nome completo" value="<?=$d->nome?>">
-                    <label for="nome"> <i class="fa fa-user">   </i>Nome*</label>
+                    <label for="nome"> <i class="fa fa-user"></i>   Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" <?=(($d->vendas)?'disabled':'name="cpf"')?> id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
