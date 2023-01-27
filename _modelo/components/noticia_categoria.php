@@ -3,19 +3,30 @@
 
     <style>
 
-.botaoazul{
-  background: var(--color-primary);
-border: 0;
-padding: 10px 35px;
-color: #fff;
-transition: 0.4s;
-border-radius: 0;
+
+a:hover {
+    color: var(--color-links-hover);
+    text-decoration: none;
+}
+.btn-outline-info:hover {
+    color: #fffefe;
+    background-color:#bd9169!important;
+    border-color:#bd9169!important;
 }
 
+
+.btn-check:active+.btn-outline-info:focus, .btn-check:checked+.btn-outline-info:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus, .btn-outline-info:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(166 135 107);}
+
+.btn-outline-info {
+    color: #fffefe;
+    background-color: #a6876b!important;
+    border-color: #a6876b!important;
+}
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;background:#0ca3a4;color:#fff" class="breadcrumbs">
+    <div style="font-weight:450;#a6876b!important;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
