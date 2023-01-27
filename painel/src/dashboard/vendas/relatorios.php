@@ -23,29 +23,59 @@
 
 <div class="accordion accordion-flush" id="relatoriosEstatisticas">
 
-    <div class="accordion-item p-3">
-        <div class="d-flex justify-content-between">
-            <div class="col text-start">Total de Agendas</div>
-            <div class="col text-end">232</div>
-        </div>
-    </div>
-    <div class="accordion-item p-3">
-        <div class="d-flex justify-content-between">
-            <div class="col text-start">Agendas Atendidas</div>
-            <div class="col text-end">232</div>
-        </div>
-    </div>
-    <div class="accordion-item p-3">
-        <div class="d-flex justify-content-between">
-            <div class="col text-start">Agendas não Atendidas</div>
-            <div class="col text-end">232</div>
-        </div>
-    </div>
+    <?php
+    /////////////////////////////////////////////////////////////////
+    $query = "select count(*) as qt from agenda and data_agenda >= NOW()";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    ?>
 
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
+            <div class="col text-start">Total de Agendas</div>
+            <div class="col text-end"><?=$d->qt?></div>
+        </div>
+    </div>
+
+
+    <?php
+    /////////////////////////////////////////////////////////////////
+    $query = "select count(*) as qt from agenda where situacao = 'c'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    ?>
+    <div class="accordion-item p-3">
+        <div class="d-flex justify-content-between">
+            <div class="col text-start">Agendas Atendidas</div>
+            <div class="col text-end"><?=$d->qt?></div>
+        </div>
+    </div>
+
+
+    <?php
+    /////////////////////////////////////////////////////////////////
+    $query = "select count(*) as qt from agenda where situacao = 'n' and data_agenda < NOW()";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    ?>
+    <div class="accordion-item p-3">
+        <div class="d-flex justify-content-between">
+            <div class="col text-start">Agendas não Atendidas</div>
+            <div class="col text-end"><?=$d->qt?></div>
+        </div>
+    </div>
+
+
+    <?php
+    /////////////////////////////////////////////////////////////////
+    $query = "select count(*) as qt from vendas where situacao = 'p'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    ?>
+    <div class="accordion-item p-3">
+        <div class="d-flex justify-content-between">
             <div class="col text-start">Total de vendas</div>
-            <div class="col text-end">232</div>
+            <div class="col text-end"><?=$d->qt?></div>
         </div>
     </div>
 
@@ -57,13 +87,30 @@
 
             <div class="d-flex justify-content-between w-100 me-3">
                 <div class="col text-start">Vendas por serviços</div>
-                <div class="col text-end">232</div>
+                <!-- <div class="col text-end">232</div> -->
             </div>
 
         </button>
         </h2>
         <div id="close_venda_servico" class="accordion-collapse collapse" aria-labelledby="open_venda_servico" data-bs-parent="#relatoriosEstatisticas">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        <div class="accordion-body">
+
+        <ul class="list-group">
+        <?php
+        /////////////////////////////////////////////////////////////////
+        $query = "select a.*, b.produto as nome_produto from vendas_produtos a left join produto b on a.produto = b.codigo where a.situacao = 'p' order by a.codigo desc";
+        $result = mysqli_query($con, $query);
+        while($d = mysqli_fetch_object($result)){
+        ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <?=$d->nome_produto?>
+                <span class="badge bg-primary rounded-pill">R$ <?=number_format($d->nome_produto,2,',','.')?></span>
+            </li>
+        <?php
+        }
+        ?>
+        </ul>
+        </div>
         </div>
     </div>
 
@@ -98,7 +145,9 @@
         </button>
         </h2>
         <div id="close_vendas_colaborador" class="accordion-collapse collapse" aria-labelledby="open_vendas_colaborador" data-bs-parent="#relatoriosEstatisticas">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        <div class="accordion-body">
+
+        </div>
         </div>
     </div>
 
