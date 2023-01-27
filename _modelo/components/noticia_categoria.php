@@ -5,7 +5,7 @@
 
 
 a:hover {
-    color: var(--color-links-hover);
+    color: #fa9160!important;
     text-decoration: none;
 }
 .btn-outline-info:hover {
