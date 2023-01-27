@@ -100,7 +100,7 @@
         /////////////////////////////////////////////////////////////////
         $query = "select
                         a.*,
-                        sum(a.valor) as valor_total
+                        sum(a.valor) as valor_total,
                         b.produto as nome_produto
                     from vendas_produtos a
                         left join produtos b on a.produto = b.codigo
