@@ -27,7 +27,7 @@ a:hover {
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;#a6876b!important;color:#fff" class="breadcrumbs">
+    <div style="font-weight:450;background:#a6876b!important;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
