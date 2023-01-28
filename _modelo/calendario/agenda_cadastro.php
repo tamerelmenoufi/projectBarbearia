@@ -109,7 +109,14 @@
 }
 
 </style>
-<h4 class="Titulo<?=$md5?>"><d style="color:#918d87">Agenda <span Titulo></span></d></h4>
+<h4 class="Titulo<?=$md5?> d-flex justify-content-between" >
+    <div class="col text-start">
+        <d style="color:#918d87">Agenda <span Titulo></span></d>
+    </div>
+    <div class="col text-end">
+        <button class="btn btn-warning btn-sm sair"><i class="fa fa-close"></i> Sair</button>
+    </div>
+</h4>
 
 <?php
 /*
@@ -317,6 +324,21 @@
                     openedCanvas.hide();
                 }
             });
+        });
+
+        $(".sair").click(function(){
+
+            $.ajax({
+                url:"calendario/home.php",
+                type:"POST",
+                data:{
+                    sair:'1',
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+
         });
 
 
