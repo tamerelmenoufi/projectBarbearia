@@ -64,6 +64,7 @@
         left:60px;
         top:8px;
         z-index:0;
+        width:calc(100% - 80px);
     }
     .dropdown-item.active, .dropdown-item:active {
     color: #fff;
