@@ -15,7 +15,7 @@
           <li><a class="nav-link scrollto" href="index.php#team">Time</a></li>
           <li><a class="nav-link scrollto" href="index.php#eventos">Eventos</a></li>
           <li><a
-                class="nav-link scrollto"
+                class="nav-link scrollto agendaMenu"
                 href="#"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasRight"
@@ -31,3 +31,23 @@
 
     </div>
   </header><!-- End Header -->
+
+  <script>
+
+    $(function(){
+
+      $(".agendaMenu").click(function(){
+          $.ajax({
+                url:"calendario/home.php",
+                type:"POST",
+                success:function(dados){
+                  $(".LateralDireita").html(dados);
+                },
+                error:function(){
+                  alert('erro')
+                }
+            });
+        });
+
+    })
+  </script>
