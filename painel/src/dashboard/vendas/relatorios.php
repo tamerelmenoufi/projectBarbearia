@@ -33,7 +33,7 @@
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
             <div class="col text-start">Total de Agendas</div>
-            <div class="col text-end"><?=$d->qt?></div>
+            <div class="col text-end"><?=$d->qt.(($d->qt>1)?' Itens':' Item')?></div>
         </div>
     </div>
 
@@ -47,7 +47,7 @@
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
             <div class="col text-start">Agendas Atendidas</div>
-            <div class="col text-end"><?=$d->qt?></div>
+            <div class="col text-end"><?=$d->qt.(($d->qt>1)?' Itens':' Item')?></div>
         </div>
     </div>
 
@@ -61,7 +61,7 @@
     <div class="accordion-item p-3">
         <div class="d-flex justify-content-between">
             <div class="col text-start">Agendas não Atendidas</div>
-            <div class="col text-end"><?=$d->qt?></div>
+            <div class="col text-end"><?=$d->qt.(($d->qt>1)?' Itens':' Item')?></div>
         </div>
     </div>
 
