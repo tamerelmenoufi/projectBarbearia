@@ -14,6 +14,13 @@
           <li><a class="nav-link scrollto" href="index.php#produtos">Produtos</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Time</a></li>
           <li><a class="nav-link scrollto" href="index.php#eventos">Eventos</a></li>
+          <li><a
+                class="nav-link scrollto"
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              >Agenda</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contatos</a></li>
         </ul>
 
