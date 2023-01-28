@@ -28,10 +28,10 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Variables CSS Files. Uncomment your preferred color scheme -->
-  <link href="assets/css/variables.css" rel="stylesheet"> <!-- -->
+  <!-- <link href="assets/css/variables.css" rel="stylesheet">  -->
   <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
   <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
+  <link href="assets/css/variables-orange.css" rel="stylesheet">
   <!-- <link href="assets/css/variables-purple.css" rel="stylesheet"> -->
   <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
   <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
@@ -66,10 +66,7 @@
 
 <body>
 
-<div class="popup">
-    <span><i class="bi bi-x"></i></span>
-    <div class="body"></div>
-</div>
+
 
 <main id="main">
 <?php
