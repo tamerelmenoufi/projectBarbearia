@@ -37,9 +37,6 @@
             <div class="info">
               <h3>Entre em contato</h3>
 
-
-
-
               <div class="info-item d-flex">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
