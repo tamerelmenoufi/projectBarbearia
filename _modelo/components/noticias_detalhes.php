@@ -7,8 +7,8 @@
 
 ?><style>
 
-.botaoazul{
-  background: var(--color-primary);
+.botaomarrom{
+  background:#a6876b!important;
 border: 0;
 padding: 10px 35px;
 color: #fff;
@@ -16,10 +16,29 @@ transition: 0.4s;
 border-radius: 0;
 }
 
+.btn-outline-info {
+    color: #a6876b;
+    border-color: #a6876b;
+}
+
+.btn-outline-info:hover {
+    color: #fff;
+    background-color: #c59b75;
+    border-color: #c59b75;
+}
+.btn-check:active+.btn-outline-info, .btn-check:checked+.btn-outline-info, .btn-outline-info.active, .btn-outline-info.dropdown-toggle.show, .btn-outline-info:active {
+  color: #fff;
+    background-color: #c59b75;
+    border-color: #c59b75;
+}
+.btn-check:active+.btn-outline-info:focus, .btn-check:checked+.btn-outline-info:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus, .btn-outline-info:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(166 135 107);
+}
+
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;background:#0ca3a4;color:#fff" class="breadcrumbs">
+    <div style="font-weight:450;background:#a6876b!important;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -272,7 +291,7 @@ border-radius: 0;
                 ?>
 
                 </div>
-               <center style="margin-top:20px"> <a href="noticia_categoria.php" class="btn btn-outline-info">Mais Noticias</a></center>
+               <center style="margin-top:20px"> <a href="noticia_categoria.php" class="btn btn-outline-info">Mais Eventos</a></center>
               </div><!-- End sidebar recent posts-->
 
               <!-- <div class="sidebar-item tags">
@@ -300,7 +319,7 @@ border-radius: 0;
 
         <div class="col-lg-12">
 
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
+    <button style="margin-top:10px"  type="button"  class="float-end  botaomarrom">
                  <a style="color:#fff" href="index.php#eventos">Voltar</a></button>
  </div>
 

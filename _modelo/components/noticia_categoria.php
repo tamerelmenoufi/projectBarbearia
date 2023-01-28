@@ -3,8 +3,10 @@
 
     <style>
 
-.botaoazul{
-  background: var(--color-primary);
+
+
+.botaomarrom{
+  background:#a6876b!important;
 border: 0;
 padding: 10px 35px;
 color: #fff;
@@ -15,7 +17,7 @@ border-radius: 0;
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;background:#0ca3a4;color:#fff" class="breadcrumbs">
+    <div style="font-weight:450;background:#a6876b!important;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -43,7 +45,7 @@ border-radius: 0;
               </div> -->
               <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
               <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
-              <a href="noticia.php?cod=<?=$d->codigo?>" class="readmore stretched-link"><span>Leia Mais</span><i class="bi bi-arrow-right"></i></a>
+              <a href="noticia.php?cod=<?=$d->codigo?>" class="readmore stretched-link" style="color:#ff590b"><span>Leia Mais</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -101,8 +103,9 @@ border-radius: 0;
 
         <div class="col-lg-12" style="padding:10px">
 
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
-                 <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
+        
+        <button style="margin-top:10px"  type="button"  class="float-end  botaomarrom">
+                 <a style="color:#fff" href="index.php#eventos">Voltar</a></button>
  </div>
 </div>
 

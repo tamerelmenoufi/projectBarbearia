@@ -1,4 +1,23 @@
     <!-- ======= Recent Blog Posts Section ======= -->
+    <style>
+
+.btn-outline-info:hover {
+    color: #fffefe;
+    background-color:#bd9169!important;
+    border-color:#bd9169!important;
+}
+
+
+.btn-check:active+.btn-outline-info:focus, .btn-check:checked+.btn-outline-info:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus, .btn-outline-info:active:focus {
+    box-shadow: 0 0 0 0.25rem rgb(166 135 107);}
+
+.btn-outline-info {
+    color: #fffefe;
+    background-color: #a6876b!important;
+    border-color: #a6876b!important;
+}
+    </style>
+    
     <section id="eventos" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
@@ -25,13 +44,15 @@
               </div> -->
               <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
               <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
-              <a href="noticia.php?cod=<?=$d->codigo?>" class="readmore stretched-link"><span>Leia Mais</span><i class="bi bi-arrow-right"></i></a>
+              <a href="noticia.php?cod=<?=$d->codigo?>" class="readmore stretched-link" ><span>Leia Mais</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
           <?php
           }
           ?>
+
+
 
           <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="post-box">
@@ -64,7 +85,7 @@
         <center style="margin-top:20px">
           <a href="noticia_categoria.php">
          <button type="button" class="btn btn-outline-info">
-          Outras Noticias
+          Outros Eventos
         </button></a>
       </center>
       </div>
