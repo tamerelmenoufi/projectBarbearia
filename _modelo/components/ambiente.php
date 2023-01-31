@@ -1,112 +1,68 @@
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-blog-posts" class="recent-blog-posts">
-
-    <style>
-
-
-
-.botaomarrom{
-  background:#a6876b!important;
-border: 0;
-padding: 10px 35px;
-color: #fff;
-transition: 0.4s;
-border-radius: 0;
+<?php
+if($_GET['cod']){
+  $query = "select * from banners where codigo = '{$_GET['cod']}'";
+}else{
+  $query = "select * from banners where situacao = '1' limit 2";
 }
-
-</style>
-
-    <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;background:#a6876b!important;color:#fff" class="breadcrumbs">
+  $result = mysqli_query($con, $query);
+?>
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <?php
+    $active = true;
+    while($d = mysqli_fetch_object($result)){
+    ?>
+    <div class="carousel-item <?=(($active)?'active':false)?>">
+            <img src="<?=$localPainel?>src/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100">
+    </div><!-- End Carousel Item -->
+    <?php
+    $active = false;
+    }
+    ?>
+    <!-- <div class="carousel-item">
       <div class="container">
+        <div class="row justify-content-center gy-6">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2 style="">Conheça nosso ambiente</h2>
-
-        </div>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
- <div class="container aos-init aos-animate">
-        <div class="row">
-
-          <?php
-          $query = "select * from noticias where situacao = '1'";
-          $result = mysqli_query($con, $query);
-          while($d = mysqli_fetch_object($result)){
-          ?>
-
-          <div style="margin-top:15px" class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <div class="post-img"><img src="<?=$localPainel?>src/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
-              <!-- <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div> -->
-          
-            </div>
+          <div class="col-lg-5 col-md-8">
+            <img src="assets/img/hero-carousel/hero-carousel-2.svg" alt="" class="img-fluid img">
           </div>
 
-          <?php
-          }
-          ?>
-
-          <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis aliquid necessitatibus tempora consectetur doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
+          <div class="col-lg-9 text-center">
+            <h2>At vero eos et accusamus</h2>
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
           </div>
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
-              </div>
-              <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam veritatis dicta nihil...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+
+          <div class="col-lg-5 col-md-8">
+            <img src="assets/img/hero-carousel/hero-carousel-3.svg" alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center">
+            <h2>Temporibus autem quibusdam</h2>
+            <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
+            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
+          </div>
 
         </div>
-
-
-        <!-- <center style="margin-top:15px">
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Proximo</a>
-    </li>
-  </ul>
-</nav>
-        </center> -->
-
-
-        <div class="col-lg-12" style="padding:10px">
-
-        
-        <button style="margin-top:10px"  type="button"  class="float-end  botaomarrom">
-                 <a style="color:#fff" href="index.php#eventos">Voltar</a></button>
- </div>
-</div>
-
       </div>
+    </div> -->
 
-    </section><!-- End Recent Blog Posts Section -->
+    <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+
+    <ol class="carousel-indicators" style="margin-bottom:2rem !important;"></ol>
+
+  </section><!-- End Hero Section -->
