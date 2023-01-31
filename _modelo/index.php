@@ -128,6 +128,7 @@ if( navigator.userAgent.match(/Android/i)
 
         // 'solucoes',
         'produtos_servicos2',
+        'ambiente',
         // 'planos',
         // 'faq',
         'noticias',
