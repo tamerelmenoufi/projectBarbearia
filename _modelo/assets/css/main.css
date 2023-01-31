@@ -218,7 +218,7 @@ section {
   position:fixed;
   top: 10px;
   left:10px;
-  max-height: 80px;
+  max-height: 150px;
 }
 .header .logo h1 {
   font-size: 32px;
