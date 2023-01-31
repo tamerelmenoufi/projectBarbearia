@@ -128,7 +128,7 @@ if( navigator.userAgent.match(/Android/i)
 
         // 'solucoes',
         'produtos_servicos2',
-        'ambiente',
+        'ambiente-home',
         // 'planos',
         // 'faq',
         'noticias',
