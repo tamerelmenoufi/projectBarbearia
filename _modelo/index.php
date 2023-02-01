@@ -124,10 +124,10 @@ if( navigator.userAgent.match(/Android/i)
         // 'produtos_servicos',
         'produtos',
 
+        'video',
+
         'servicos',
 
-
-        'video',
         // 'clientes',
 
         // 'destaque',
