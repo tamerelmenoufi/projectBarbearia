@@ -12,9 +12,14 @@ if($_GET['cod']){
     $active = true;
     while($d = mysqli_fetch_object($result)){
     ?>
-    <div class="carousel-item <?=(($active)?'active':false)?>">
+    <div class="carousel-item <?=(($active)?'active':false)?> d-none d-md-block">
             <img src="<?=$localPainel?>src/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100">
-    </div><!-- End Carousel Item -->
+    </div>
+
+    <div class="carousel-item <?=(($active)?'active':false)?> d-block d-md-none">
+            <img src="<?=$localPainel?>src/volume/banners/<?=$d->imagem_mb?>" alt="" class="d-block w-100">
+    </div>
+    <!-- End Carousel Item -->
     <?php
     $active = false;
     }
