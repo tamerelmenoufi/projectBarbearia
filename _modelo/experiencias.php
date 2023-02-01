@@ -88,7 +88,7 @@
         //'noticias_detalhes',
         //'noticia_categoria',
           //'ambiente',
-          //'experiencias',
+          'experiencias',
         // 'produtos_servicos',
         // 'clientes',
         // 'destaque',
