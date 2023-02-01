@@ -14,8 +14,9 @@
             $end = substr($name,0,1);
             if($end == '_'){
                 $endereco[] = substr($name,1,strlen($name)) ." = '" . addslashes($value) . "'";
+            }else{
+                $attr[] = "{$name} = '" . addslashes($value) . "'";
             }
-            $attr[] = "{$name} = '" . addslashes($value) . "'";
         }
         if($_POST['senha']){
             $attr[] = "senha = '" . md5($_POST['senha']) . "'";
