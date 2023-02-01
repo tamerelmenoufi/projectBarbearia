@@ -60,10 +60,10 @@
                     <input type="text" <?=(($d->vendas)?'disabled':'name="nome"')?> class="form-control" id="nome" placeholder="Nome completo" value="<?=$d->nome?>">
                     <label for="nome"> <i class="fa fa-user"></i>   Nome*</label>
                 </div>
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <input type="text" <?=(($d->vendas)?'disabled':'name="cpf"')?> id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">  <i class="fa fa-file"></i>   CPF*</label>
-                </div>
+                </div> -->
                 <div class="form-floating mb-3">
                     <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=$d->data_nascimento?>">
                     <label for="cpf"> <i class="fa fa-calendar-days"></i>   Data de Nascimento*</label>
