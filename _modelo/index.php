@@ -108,7 +108,7 @@ if( navigator.userAgent.match(/Android/i)
     $componentes = [
          'menu',
         'ambiente-home',
-        
+
         // 'banner_principal',
         // 'banner_principal_scroll',
         // 'banner_principal2',
@@ -121,15 +121,20 @@ if( navigator.userAgent.match(/Android/i)
         // 'pagina_interna2',
         // 'mais_noticias',
         // 'noticias_detalhes',
-        'produtos_servicos',
+        // 'produtos_servicos',
+        'servicos',
+
         'video',
+
+        'produtos',
+
         // 'clientes',
 
         // 'destaque',
 
         // 'solucoes',
         'produtos_servicos2',
-      
+
         // 'planos',
         // 'faq',
         'experiencias-home',
