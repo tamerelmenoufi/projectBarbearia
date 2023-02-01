@@ -67,6 +67,7 @@
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
+                <h6>Dados de Identificação</h6>
                 <div class="form-floating mb-3">
                     <input type="text" <?=(($d->vendas)?'disabled':'name="nome"')?> class="form-control" id="nome" placeholder="Nome completo" value="<?=$d->nome?>">
                     <label for="nome"> <i class="fa fa-user"></i>   Nome*</label>
@@ -92,13 +93,13 @@
 
 
 
-
+                <h6>Endereço</h6>
                 <!-- Endereço -->
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="titulo" name="_titulo" placeholder="Título da Página" value="<?=$d->titulo?>">
                     <label for="titulo">Título do Endereço</label>
                     <div class="form-text">Digite o nome de identificação do endereço.</div>
-                </div>
+                </div> -->
 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="cep" name="_cep" placeholder="Título da Página" value="<?=$d->cep?>">
