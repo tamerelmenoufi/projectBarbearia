@@ -69,6 +69,25 @@
       </div>
     </div>
 
+
+
+    <div class="row mb-1 menu-cinza">
+      <div class="col">
+        <a url="src/banners/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+           <i class="fa-solid fa-panorama"></i> Banners
+        </a>
+      </div>
+    </div>
+
+
+    <div class="row  mb-1 menu-cinza">
+      <div class="col">
+        <a url="src/portifolio/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+         <i class="fa-solid fa-box-open"></i> Experiências
+        </a>
+      </div>
+    </div>
+
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="src/noticias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
