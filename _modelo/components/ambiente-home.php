@@ -7,7 +7,7 @@ if($_GET['cod']){
   $result = mysqli_query($con, $query);
 ?>
 <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <section id="ambiente-home" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
     <?php
     $active = true;
     while($d = mysqli_fetch_object($result)){
