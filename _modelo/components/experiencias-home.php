@@ -1,5 +1,5 @@
     <!-- ======= Portfolio Section ======= -->
-    <section id="experiencias" class="portfolio" data-aos="fade-up">
+    <section id="experiencias-home" class="portfolio" data-aos="fade-up">
 
       <div class="container">
 
