@@ -15,7 +15,7 @@
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
           <ul class="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter="*" class="filter-active">Todos</li>
             <!-- <li data-filter=".filter-app">App</li>
             <li data-filter=".filter-product">Product</li>
             <li data-filter=".filter-branding">Branding</li>
@@ -43,7 +43,7 @@
               <div class="portfolio-info">
                 <h4><?=$d->titulo?></h4>
                 <a href="<?=$localPainel?>src/volume/portifolio/<?=$d->imagem?>" title="<?=$d->titulo?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="servico.php?cod=<?=$d->codigo?>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                
               </div>
             </div><!-- End Portfolio Item -->
             <?php

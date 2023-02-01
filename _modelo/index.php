@@ -137,7 +137,7 @@ if( navigator.userAgent.match(/Android/i)
 
         // 'planos',
         // 'faq',
-        'experiencias',
+        'experiencias-home',
         'noticias',
 
         // 'time',
