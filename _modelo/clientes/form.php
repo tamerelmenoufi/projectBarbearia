@@ -9,8 +9,12 @@
         unset($data['codigo']);
         unset($data['acao']);
         unset($data['senha']);
-
+        $endereco = [];
         foreach ($data as $name => $value) {
+            $end = substr($name,0,1);
+            if($end == '_'){
+                $endereco[] = substr($name,1,strlen($name)) ." = '" . addslashes($value) . "'";
+            }
             $attr[] = "{$name} = '" . addslashes($value) . "'";
         }
         if($_POST['senha']){
@@ -18,6 +22,7 @@
         }
 
         $attr = implode(', ', $attr);
+
 
         if($_POST['codigo']){
             $query = "update clientes set {$attr} where codigo = '{$_POST['codigo']}'";
@@ -28,6 +33,12 @@
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
+        // titulo = '{$_POST['titulo']}', cliente = '{$_POST['cliente']}', data_cadastro = NOW()
+        $endereco[] = "titulo = 'Novo', cliente = '" . $cod . "', data_cadastro = NOW()";
+        $endereco = implode(', ', $endereco);
+        $query = "INSERT INTO clientes_enderecos set {$endereco}";
+        mysqli_query($con, $query);
+
         $_SESSION['cliente'] = $cod;
         $retorno = [
             'status' => true,
@@ -76,6 +87,56 @@
                     <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
                     <label for="email"> <i class="fa fa-envelope"></i>    E-mail</label>
                 </div>
+
+
+
+
+
+
+                <!-- Endereço -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="titulo" name="_titulo" placeholder="Título da Página" value="<?=$d->titulo?>">
+                    <label for="titulo">Título do Endereço</label>
+                    <div class="form-text">Digite o nome de identificação do endereço.</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="cep" name="_cep" placeholder="Título da Página" value="<?=$d->cep?>">
+                    <label for="cep">CEP</label>
+                    <div class="form-text">Digite o CEP do endereço</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="rua" name="_rua" placeholder="Título da Página" value="<?=$d->rua?>">
+                    <label for="rua">Rua</label>
+                    <div class="form-text">Digite o nome da Rua</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="numero" name="_numero" placeholder="Título da Página" value="<?=$d->numero?>">
+                    <label for="numero">Número</label>
+                    <div class="form-text">Informe o número da Casa / condomínio</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="bairro" name="_bairro" placeholder="Título da Página" value="<?=$d->bairro?>">
+                    <label for="bairro">Bairro</label>
+                    <div class="form-text">Informe o nome do Bairro</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="complemento" name="_complemento" placeholder="Título da Página" value="<?=$d->complemento?>">
+                    <label for="complemento">Complemento</label>
+                    <div class="form-text">Quadra, bloco, apartamento, ect</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="referencia" name="_referencia" placeholder="Título da Página" value="<?=$d->referencia?>">
+                    <label for="referencia">Ponto de Referência</label>
+                    <div class="form-text">Informe um local de referência para o seu endereço</div>
+                </div>
+                <!-- Endereco -->
+
 
             </div>
         </div>
