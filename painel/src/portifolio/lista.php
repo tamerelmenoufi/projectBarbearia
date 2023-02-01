@@ -35,7 +35,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Serviços - <?=$_SESSION['categoria_nome']?></h5>
+          <h5 class="card-header">Experiências - <?=$_SESSION['categoria_nome']?></h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button

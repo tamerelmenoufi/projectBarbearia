@@ -71,7 +71,7 @@
   }
 </style>
 
-<h3 class="titulo<?=$md5?>">Categorias de Serviços</h3>
+<h3 class="titulo<?=$md5?>">Categorias de Experiências</h3>
 
     <form id="acaoMenu">
 

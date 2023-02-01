@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Categoria de Serviços</h5>
+          <h5 class="card-header">Categoria de Experiências</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button

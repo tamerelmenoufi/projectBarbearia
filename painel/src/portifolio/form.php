@@ -71,7 +71,7 @@
   }
 </style>
 
-<h3 class="titulo<?=$md5?>">Gerenciamento de Serviços</h3>
+<h3 class="titulo<?=$md5?>">Gerenciamento de Experiências</h3>
 
     <form id="acaoMenu">
       <h5><?=$_SESSION['categoria_nome']?></h5>
