@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+ 
   <title>Os Manos Barbearia</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -39,14 +39,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-
-<!-- Bootstrap Select -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
-
-
-
-
   <!-- =======================================================
   * Template Name: HeroBiz - v2.1.0
   * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
@@ -72,69 +64,41 @@
 
 </head>
 
-<body style="background-color:#f8f8f8">
+<body>
 
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body LateralDireita">
-    ...
-  </div>
-</div>
-<script>
-
-if( navigator.userAgent.match(/Android/i)
- || navigator.userAgent.match(/webOS/i)
- || navigator.userAgent.match(/iPhone/i)
- || navigator.userAgent.match(/iPad/i)
- || navigator.userAgent.match(/iPod/i)
- || navigator.userAgent.match(/BlackBerry/i)
- || navigator.userAgent.match(/Windows Phone/i)
- ){
-    $("#offcanvasRight").css("width","100%")
-  }
- else {
-    $("#offcanvasRight").css("width","600px")
-  }
-
-</script>
 
 
 <main id="main">
 <?php
 
     $componentes = [
-         'menu',
-
-        'video',
+        'menu',
         // 'banner_principal',
         // 'banner_principal_scroll',
         // 'banner_principal2',
         // 'banner_principal3',
         // 'sobre',
+        // 'noticias',
         // 'galeria',
         // 'banner_depoimentos',
 
         // 'pagina_interna',
         // 'pagina_interna2',
         // 'mais_noticias',
-        // 'noticias_detalhes',
-        'produtos_servicos',
+        //'noticias_detalhes',
+        //'noticia_categoria',
+          //'ambiente',
+          //'experiencias',
+        // 'produtos_servicos',
         // 'clientes',
-
         // 'destaque',
-
+        // 'video',
         // 'solucoes',
-        'produtos_servicos2',
-       // 'ambiente-home',
+        // 'produtos_servicos2',
         // 'planos',
         // 'faq',
-        'noticias',
-
         // 'time',
-        'contato',
+        // 'contato',
         'rodape',
 
 
@@ -145,9 +109,6 @@ if( navigator.userAgent.match(/Android/i)
     }
 
 ?>
-
-
-
 </main><!-- End #main -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -172,22 +133,6 @@ if( navigator.userAgent.match(/Android/i)
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/js.js"></script>
-
-<!-- Bootstrap Select -->
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
-
-<script>
-
-        //Jconfirm
-        jconfirm.defaults = {
-            typeAnimated: true,
-            type: "blue",
-            smoothContent: true,
-        }
-
-</script>
-
 </body>
 
 </html>

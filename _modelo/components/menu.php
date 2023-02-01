@@ -4,7 +4,7 @@
 
       <a href="index.php" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="">
+        <img src="assets/img/logobarb.png" alt="">
       </a>
 
       <nav id="navbar" class="navbar">
@@ -12,7 +12,9 @@
           <li><a class="nav-link scrollto" href="index.php">Principal</a></li>
           <li><a class="nav-link scrollto" href="index.php#servicos">Serviços</a></li>
           <li><a class="nav-link scrollto" href="index.php#produtos">Produtos</a></li>
+          <li><a class="nav-link scrollto" href="index.php#ambiente">Ambiente</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Time</a></li>
+          <li><a class="nav-link scrollto" href="index.php#experiencias">Experiências</a></li>
           <li><a class="nav-link scrollto" href="index.php#eventos">Eventos</a></li>
           <li><a
                 class="nav-link scrollto agendaMenu"
