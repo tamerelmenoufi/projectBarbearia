@@ -1,96 +1,68 @@
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <style>
-
-.btn-outline-info:hover {
-    color: #fffefe;
-    background-color:#bd9169!important;
-    border-color:#bd9169!important;
+<?php
+if($_GET['cod']){
+  $query = "select * from banners where codigo = '{$_GET['cod']}'";
+}else{
+  $query = "select * from banners where situacao = '1' limit 2";
 }
+  $result = mysqli_query($con, $query);
+?>
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <?php
+    $active = true;
+    while($d = mysqli_fetch_object($result)){
+    ?>
+    <div class="carousel-item <?=(($active)?'active':false)?>">
+            <img src="<?=$localPainel?>src/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100">
+    </div><!-- End Carousel Item -->
+    <?php
+    $active = false;
+    }
+    ?>
+    <!-- <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
 
-
-.btn-check:active+.btn-outline-info:focus, .btn-check:checked+.btn-outline-info:focus, .btn-outline-info.active:focus, .btn-outline-info.dropdown-toggle.show:focus, .btn-outline-info:active:focus {
-    box-shadow: 0 0 0 0.25rem rgb(166 135 107);}
-
-.btn-outline-info {
-    color: #fffefe;
-    background-color: #a6876b!important;
-    border-color: #a6876b!important;
-}
-    </style>
-    
-    <section id="eventos" class="recent-blog-posts">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Eventos</h2>
-          <p>Fique por dentro do que acontece na os manos barbearia</p>
-        </div>
-
-        <div class="row">
-
-          <?php
-          $query = "select * from noticias where situacao = '1'";
-          $result = mysqli_query($con, $query);
-          while($d = mysqli_fetch_object($result)){
-          ?>
-
-          <div class="col-lg-4 mb-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box mb-3">
-              <div class="post-img"><img src="<?=$localPainel?>src/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
-              <!-- <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div> -->
-              <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
-              <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
-              <a href="noticia.php?cod=<?=$d->codigo?>" class="readmore stretched-link" ><span>Leia Mais</span><i class="bi bi-arrow-right"></i></a>
-            </div>
+          <div class="col-lg-5 col-md-8">
+            <img src="assets/img/hero-carousel/hero-carousel-2.svg" alt="" class="img-fluid img">
           </div>
 
-          <?php
-          }
-          ?>
-
-
-
-          <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis aliquid necessitatibus tempora consectetur doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
+          <div class="col-lg-9 text-center">
+            <h2>At vero eos et accusamus</h2>
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
           </div>
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
-              </div>
-              <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam veritatis dicta nihil...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+
+          <div class="col-lg-5 col-md-8">
+            <img src="assets/img/hero-carousel/hero-carousel-3.svg" alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center">
+            <h2>Temporibus autem quibusdam</h2>
+            <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
+            <a href="#featured-services" class="btn-get-started scrollto ">Get Started</a>
+          </div>
 
         </div>
-
-        <center style="margin-top:20px">
-          <a href="noticia_categoria.php">
-         <button type="button" class="btn btn-outline-info">
-          Outros Eventos
-        </button></a>
-      </center>
       </div>
+    </div> -->
 
+    <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
 
-      </div>
+    <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
 
-    </section><!-- End Recent Blog Posts Section -->
+    <ol class="carousel-indicators" style="margin-bottom:2rem !important;"></ol>
+
+  </section><!-- End Hero Section -->
