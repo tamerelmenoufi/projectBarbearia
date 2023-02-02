@@ -113,7 +113,11 @@
         <div class="form-text">Informe a quantidade de itens.</div>
       </div>
 
-
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" value="<?=$d->custo_unitario?>" id="custo_unitario" name="custo_unitario" min="0" max="10000" step=".01">
+        <label for="produto">Custo Unitário</label>
+        <div class="form-text">Digite o custo unitário do produto.</div>
+      </div>
 
       <div showImage class="form-floating" style="display:<?=(($d->nota)?'block':'none')?>">
         <!-- <img src="<?=$localPainel?>src/volume/estoque/<?=$d->nota?>" class="img-fluid mt-3 mb-3" alt="" /> -->
