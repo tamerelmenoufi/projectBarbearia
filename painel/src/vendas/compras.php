@@ -79,8 +79,8 @@
 
 ?>
 <style>
-    td{
-        white-space: nowrap;
+    td, th{
+        white-space: nowrap !important;
     }
 </style>
 <h5>Carrinho de compras</h5>
