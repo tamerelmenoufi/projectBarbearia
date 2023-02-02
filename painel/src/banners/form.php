@@ -24,11 +24,34 @@
         $base64 = explode('base64,', $_POST['base64']);
         $img = base64_decode($base64[1]);
         $ext = substr($_POST['imagem_nome'], strripos($_POST['imagem_nome'],'.'), strlen($_POST['imagem_nome']));
-        $nome = md5($_POST['base64'].$_POST['imagem_tipo'].$_POST['imagem_nome']).$ext;
+        $nome = md5($_POST['base64'].$_POST['imagem_tipo'].$_POST['imagem_nome'].date("YmdHis")).$ext;
 
         if(!is_dir("../volume/banners")) mkdir("../volume/banners");
         if(file_put_contents("../volume/banners/".$nome, $img)){
           $dados['imagem'] = $nome;
+        }
+      }
+      //Fim da Verificação da Imagem
+
+
+      //Imagem
+      $img = false;
+      unset($dados['base64_mb']);
+      unset($dados['imagem_tipo_mb']);
+      unset($dados['imagem_nome_mb']);
+
+      if($_POST['base64_mb'] and $_POST['imagem_tipo_mb'] and $_POST['imagem_nome_mb']){
+
+        if($_POST['imagem_mb']) unlink("../volume/banners/{$_POST['imagem_mb']}");
+
+        $base64 = explode('base64,', $_POST['base64_mb']);
+        $img = base64_decode($base64[1]);
+        $ext = substr($_POST['imagem_nome_mb'], strripos($_POST['imagem_nome_mb'],'.'), strlen($_POST['imagem_nome_mb']));
+        $nome = md5($_POST['base64_mb'].$_POST['imagem_tipo_mb'].$_POST['imagem_nome_mb']).date("YmdHis").$ext;
+
+        if(!is_dir("../volume/banners")) mkdir("../volume/banners");
+        if(file_put_contents("../volume/banners/".$nome, $img)){
+          $dados['imagem_mb'] = $nome;
         }
       }
       //Fim da Verificação da Imagem
@@ -100,7 +123,7 @@
       </div>
 
       <!-- <div class="form-floating"> -->
-        <input type="file" class="form-control" placeholder="Banner">
+        <input type="file" opc="pc" class="form-control" placeholder="Banner">
         <input type="hidden" id="base64" name="base64" value="" />
         <input type="hidden" id="imagem_tipo" name="imagem_tipo" value="" />
         <input type="hidden" id="imagem_nome" name="imagem_nome" value="" />
@@ -108,6 +131,25 @@
         <!-- <label for="url">Banner</label> -->
         <div class="form-text mb-3">Selecione a imagem para o Banner</div>
       <!-- </div> -->
+
+
+
+
+      <div showImage_mb class="form-floating" style="display:<?=(($d->imagem_mb)?'block':'none')?>">
+        <img src="<?=$localPainel?>src/volume/banners/<?=$d->imagem_mb?>" class="img-fluid mt-3 mb-3" alt="" />
+      </div>
+
+      <!-- <div class="form-floating"> -->
+        <input type="file" opc="mb" class="form-control" placeholder="Banner">
+        <input type="hidden" id="base64_mb" name="base64_mb" value="" />
+        <input type="hidden" id="imagem_tipo_mb" name="imagem_tipo_mb" value="" />
+        <input type="hidden" id="imagem_nome_mb" name="imagem_nome_mb" value="" />
+        <input type="hidden" id="imagem_mb" name="imagem_mb" value="<?=$d->imagem_mb?>" />
+        <!-- <label for="url">Banner</label> -->
+        <div class="form-text mb-3">Selecione a imagem para o Banner (Versão Mobile)</div>
+      <!-- </div> -->
+
+
 
       <div class="form-floating">
         <select id="situacao" name="situacao" class="form-control" placeholder="Situação">
@@ -184,6 +226,7 @@
 
             if ($(this).val()) {
                 var files = $(this).prop("files");
+                opc = $(this).attr("opc");
                 for (var i = 0; i < files.length; i++) {
                     (function (file) {
                         var fileReader = new FileReader();
@@ -247,12 +290,22 @@
                         var type = file.type;
                         var name = file.name;
 
-                        $("#base64").val(Base64);
-                        $("#imagem_tipo").val(type);
-                        $("#imagem_nome").val(name);
+                        if(opc == 'mb'){
+                          $("#base64_mb").val(Base64);
+                          $("#imagem_tipo_mb").val(type);
+                          $("#imagem_nome_mb").val(name);
 
-                        $("div[showImage] img").attr("src",Base64);
-                        $("div[showImage]").css("display",'block');
+                          $("div[showImage_mb] img").attr("src",Base64);
+                          $("div[showImage_mb]").css("display",'block');
+                        }else{
+                          $("#base64").val(Base64);
+                          $("#imagem_tipo").val(type);
+                          $("#imagem_nome").val(name);
+
+                          $("div[showImage] img").attr("src",Base64);
+                          $("div[showImage]").css("display",'block');
+                        }
+
 
 
 
