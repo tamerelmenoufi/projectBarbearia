@@ -71,6 +71,7 @@
                   <!-- <th scope="col" style="width:50%">Produto</th> -->
                   <th scope="col" style="width:100%">Título</th>
                   <th scope="col">Data</th>
+                  <th scope="col">Custo Unitário</th>
                   <th scope="col">Entrada</th>
                   <th scope="col">Comprovante</th>
                   <!-- <th scope="col">Situação</th> -->
@@ -87,6 +88,7 @@
                   <!-- <td style="white-space: nowrap;"><?=$d->produto?></td> -->
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
                   <td style="white-space: nowrap;"><?=dataBr($d->nota_data)?></td>
+                  <td style="white-space: nowrap;">R$ <?=number_format($d->custo_unitario,2,',','.')?></td>
                                                    <!-- <i class="fa-solid fa-plug-circle-check"></i> -->
                                                    <!-- <i class="fa-solid fa-plug-circle-xmark"></i> -->
                   <td style="white-space: nowrap;"><i
