@@ -484,7 +484,7 @@
         })
 
 
-        $(".opc_colaborador").click(function(){
+        $(".ativar_colaborador").click(function(){
             codigo = $(this).attr("codigo");
             produto = $(this).attr("produto");
             colaborador = $(this).attr("colaborador");
