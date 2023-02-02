@@ -156,10 +156,12 @@
                         while($c = mysqli_fetch_object($result1)){
                     ?>
                         <li><a
-                                class="dropdown-item <?=(($d->colaborador == $c->codigo)?'active':false)?>"
+                                class="dropdown-item <?=(($d->colaborador == $c->codigo)?'active':false)?> ativar_colaborador"
                                 codigo="<?=$c->codigo?>"
                                 href="#"
-                                produto = "<?=$d->cod_produto?>"
+                                codigo = "<?=$d->cod_produto?>"
+                                produto = "<?=$d->produto_nome?>"
+                                colaborador = "<?=$c->codigo?>"
                             ><?=$c->nome?></a></li>
                     <?php
                         }
@@ -480,6 +482,37 @@
             });
 
         })
+
+
+        $(".opc_colaborador").click(function(){
+            codigo = $(this).attr("codigo");
+            produto = $(this).attr("produto");
+            colaborador = $(this).attr("colaborador");
+            // nome = $(this).html();
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    codigo,
+                    produto,
+                    colaborador,
+                    acao:'colaborador'
+                },
+                url:"src/vendas/compras.php",
+                success:function(dados){
+                    // Carregando('none');
+                    $(".produtos_lista").html(dados);
+                }
+            });
+
+            // $(".dados_profissionais").attr("codigo", codigo);
+            // $(".dados_profissionais").html(nome);
+
+            // let myOffCanvas = document.getElementById('offcanvasDireita');
+            // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+            // openedCanvas.hide();
+
+        });
 
 
     })
