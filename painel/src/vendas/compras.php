@@ -143,9 +143,9 @@
                     ><i class="fa-solid fa-clipboard-user"></i></button> -->
 
 
-
+                    <div class="btn-group" role="group" aria-label="Basic example">
                     <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-clipboard-user"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark">
@@ -165,6 +165,7 @@
                         }
                     ?>
                     </ul>
+                    </div>
                     </div>
                     <button type="button" class="btn btn-sm btn-danger excluir" codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
