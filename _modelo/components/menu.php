@@ -12,7 +12,7 @@
           <li><a class="nav-link scrollto" href="index.php">Principal</a></li>
           <li><a class="nav-link scrollto" href="index.php#servicos">Serviços</a></li>
           <li><a class="nav-link scrollto" href="index.php#produtos">Produtos</a></li>
-          
+          <li><a class="nav-link scrollto" href="index.php#osmanos">Osmanos</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Time</a></li>
           <li><a class="nav-link scrollto" href="index.php#experiencias-home">Experiências</a></li>
           <li><a class="nav-link scrollto" href="index.php#eventos">Eventos</a></li>
