@@ -103,11 +103,13 @@
                             p.tipo,
                             p.codigo as cod_produto,
                             p.produto as produto_nome,
+                            d.nome as colaborador_nome,
                             if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
                             c.categoria as categoria_nome
                         from vendas_produtos a
                             left join produtos p on a.produto = p.codigo
                             left join produtos_categorias c on p.categoria = c.codigo
+                            left join colaboradores d on a.colaborador = d.codigo
                         where a.venda = '{$_SESSION['codVenda']}'";
             $result = mysqli_query($con, $query);
             $n = mysqli_num_rows($result);
@@ -129,7 +131,7 @@
                 <td><?=$d->valor_unitario?></td>
                 <td><?=$d->valor?></td>
                 <td>
-                    <button
+                    <!-- <button
                         type="button"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
@@ -138,7 +140,32 @@
                         class="btn btn-sm btn-<?=(($d->colaborador)?'success':'secondary')?> colaborador"
                         codigo = "<?=$d->codigo?>"
                         produto = "<?=$d->cod_produto?>"
-                    ><i class="fa-solid fa-clipboard-user"></i></button>
+                    ><i class="fa-solid fa-clipboard-user"></i></button> -->
+
+
+
+                    <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-clipboard-user"></i> <?=$d->colaborador_nome?>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                    <?php
+
+                        $query1 = "select * from colaboradores where situacao = '1' order by nome asc";
+                        $result1 = mysqli_query($con, $query1);
+                        while($c = mysqli_fetch_object($result1)){
+                    ?>
+                        <li><a
+                                class="dropdown-item <?=(($d->colaborador == $c->codigo)?'active':false)?>"
+                                codigo="<?=$c->codigo?>"
+                                href="#"
+                                produto = "<?=$d->cod_produto?>"
+                            ><?=$c->nome?></a></li>
+                    <?php
+                        }
+                    ?>
+                    </ul>
+                    </div>
                     <button type="button" class="btn btn-sm btn-danger excluir" codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
