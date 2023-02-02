@@ -148,7 +148,7 @@
                     <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-clipboard-user"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                     <?php
 
                         $query1 = "select * from colaboradores where situacao = '1' order by nome asc";
