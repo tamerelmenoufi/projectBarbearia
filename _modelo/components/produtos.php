@@ -6,7 +6,7 @@
         </div>
         <div class="row gy-4">
         <?php
-              $query = "select a.*, (saldo - vendas) as saldo, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' and a.tipo='p' order by a.tipo desc";
+              $query = "select a.*, (estoque - vendas) as saldo, b.categoria as categoria_nome from produtos a left join produtos_categorias b on a.categoria = b.codigo where a.situacao = '1' and a.tipo='p' order by a.tipo desc";
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
         ?>
