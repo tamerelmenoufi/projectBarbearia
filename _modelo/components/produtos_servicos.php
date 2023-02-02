@@ -1,5 +1,5 @@
 <!-- ======= Servicos ======= -->
-<section id="servicos" class="featured-services">
+<section style="padding : 5px!important" id="servicos" class="featured-services">
   <div class="container">
     <div class="section-header">
       <h2>Serviços</h2>
