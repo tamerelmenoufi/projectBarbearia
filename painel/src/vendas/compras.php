@@ -8,6 +8,11 @@
         mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
+    if($_POST['acao'] == 'comanda'){
+        $q = "update vendas set comanda = '{$_POST['comanda']}' where codigo = '{$_SESSION['codVenda']}'";
+        mysqli_query($con, $q);
+    }
+
     if($_POST['acao'] == 'acrescimo'){
         $q = "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
@@ -209,6 +214,16 @@
 
 ?>
 <div class="row">
+
+    <div class="col-md-2">
+        <label for="desconto" class="form-label">Comanda</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa-solid fa-ticket"></i></span>
+            <input type="text" id="comanda" class="form-control" value="<?=$d->comanda?>" />
+            <button class="btn btn-outline-secondary" type="button" id="button-comanda"><i class="fa-regular fa-floppy-disk"></i></button>
+        </div>
+    </div>
+
     <div class="col-md-2 offset-md-2">
         <label for="valor" class="form-label">Valor</label>
         <div class="input-group mb-3">
@@ -216,6 +231,8 @@
             <div type="number" class="form-control"><?=$d->valor?></div>
         </div>
     </div>
+
+
     <?php
     if($tipo_produtos){
 
@@ -243,6 +260,7 @@
     <?php
     }
     ?>
+
     <div class="col-md-2">
         <label for="acrescimo" class="form-label">Acrescimo</label>
         <div class="input-group mb-3">
@@ -362,6 +380,22 @@
             });
         })
 
+
+        $("#button-comanda").click(function(){
+            comanda = $("#comanda").val();
+            Carregando();
+            $.ajax({
+                type:"POST",
+                data:{
+                    comanda,
+                    acao:'comanda'
+                },
+                url:"src/vendas/compras.php",
+                success:function(dados){
+                    $(".produtos_lista").html(dados);
+                }
+            });
+        });
 
         $("#button-acrescimo").click(function(){
             acrescimo = $("#acrescimo").val();
