@@ -159,8 +159,8 @@
                                 class="dropdown-item <?=(($d->colaborador == $c->codigo)?'active':false)?> ativar_colaborador"
                                 codigo="<?=$c->codigo?>"
                                 href="#"
-                                codigo = "<?=$d->cod_produto?>"
-                                produto = "<?=$d->produto_nome?>"
+                                codigo = "<?=$d->codigo?>"
+                                produto = "<?=$d->cod_produto?>"
                                 colaborador = "<?=$c->codigo?>"
                             ><?=$c->nome?></a></li>
                     <?php
