@@ -157,7 +157,6 @@
                     ?>
                         <li><a
                                 class="dropdown-item <?=(($d->colaborador == $c->codigo)?'active':false)?> ativar_colaborador"
-                                codigo="<?=$c->codigo?>"
                                 href="#"
                                 codigo = "<?=$d->codigo?>"
                                 produto = "<?=$d->cod_produto?>"
