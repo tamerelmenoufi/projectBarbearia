@@ -172,6 +172,7 @@
             data-none-selected-text="Selecione"
             class="selectpicker form-control"
             data-actions-box="true"
+            multiple
         >
         <?php
         $q = "select * from produtos where tipo = 's' and situacao = '1' order by produto";
