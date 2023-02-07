@@ -144,6 +144,34 @@
         <?php
             $grupo = $d->produto_nome;
         }
+        ?>
+<script>
+$(function(){
+
+    $(document).on("click", ".opcHoras", function() {
+
+    alert('opc');
+
+    // ano = $(this).attr("ano");
+    // mes = $(this).attr("mes");
+    // dia = $(this).attr("dia");
+    // hora = $(this).val();
+
+    // agenda = `${ano}-${mes}-${dia} ${hora}`;
+    // rotulo = `${dia}/${mes}/${ano} ${hora}`;
+
+    // $(".cadastrarAgenda").attr("agenda",agenda);
+    // $(".cadastrarAgenda span").text(rotulo);
+    // $(".cadastrarAgenda").removeAttr("disabled");
+    // $("span[Titulo]").text(rotulo);
+
+    });
+})
+</script>
+
+
+        <?php
+
     }
 
     if($_POST['acao'] == 'filto_servicos'){
@@ -337,24 +365,7 @@
         $("#servico").selectpicker();
 
 
-        $(document).on("click", ".opcHoras", function() {
 
-            alert('opc');
-
-            // ano = $(this).attr("ano");
-            // mes = $(this).attr("mes");
-            // dia = $(this).attr("dia");
-            // hora = $(this).val();
-
-            // agenda = `${ano}-${mes}-${dia} ${hora}`;
-            // rotulo = `${dia}/${mes}/${ano} ${hora}`;
-
-            // $(".cadastrarAgenda").attr("agenda",agenda);
-            // $(".cadastrarAgenda span").text(rotulo);
-            // $(".cadastrarAgenda").removeAttr("disabled");
-            // $("span[Titulo]").text(rotulo);
-
-        });
 
 
         $("#colaborador").change(function(){
