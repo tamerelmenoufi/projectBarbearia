@@ -295,14 +295,14 @@
                         $("#colaborador").html(dados);
                         $("#colaborador").selectpicker('render');
 
-                        // colaborador = $("#colaborador").val();
-                        // console.log(`Servicos ${servico}`)
-                        // console.log(`colaborador ${colaborador}`)
+                        colaborador = $("#colaborador").val();
+                        console.log(`Servicos ${servico}`)
+                        console.log(`colaborador ${colaborador}`)
                         if(colaborador && servico){
                             $.ajax({
                                 type:"POST",
                                 data:{
-                                    // colaborador,
+                                    colaborador,
                                     servico,
                                 },
                                 url:"calendario/horarios.php",
