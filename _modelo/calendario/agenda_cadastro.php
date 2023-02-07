@@ -21,7 +21,7 @@
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
-                        left join colaboradores d on b.colaborador = d.codigo
+                        left join colaboradores d on a.colaborador = d.codigo
                     where a.produto = '{$c}' and b.tipo = 's' and a.situacao = '1' order by c.categoria, b.produto";
 
         $result = mysqli_query($con, $query);
