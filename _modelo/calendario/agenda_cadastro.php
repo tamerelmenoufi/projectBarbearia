@@ -190,6 +190,11 @@
     </div>
 </div>
 
+<div class="row mb-2">
+    <div class="col-12 horarios">
+            <!--<b style="color:#fff">Horarios:</b>-->
+    </div>
+</div>
 
 <div class="row mb-2">
     <div class="col-12">
@@ -218,11 +223,7 @@
 
 
 
-<div class="row mb-2">
-    <div class="col-12 horarios">
-            <!--<b style="color:#fff">Horarios:</b>-->
-    </div>
-</div>
+
 <div class="row mb-2">
     <div class="col-12">
         <label for="observacao" class="form-label">Observações </label>
@@ -294,14 +295,14 @@
                         $("#colaborador").html(dados);
                         $("#colaborador").selectpicker('render');
 
-                        colaborador = $("#colaborador").val();
+                        // colaborador = $("#colaborador").val();
                         console.log(`Servicos ${servico}`)
                         console.log(`colaborador ${colaborador}`)
-                        if(colaborador && servico){
+                        // if(colaborador && servico){
                             $.ajax({
                                 type:"POST",
                                 data:{
-                                    colaborador,
+                                    // colaborador,
                                     servico,
                                 },
                                 url:"calendario/horarios.php",
@@ -309,7 +310,7 @@
                                     $(".horarios").html(dados);
                                 }
                             });
-                        }
+                        // }
 
 
                     }
