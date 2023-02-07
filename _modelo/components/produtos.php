@@ -21,7 +21,7 @@
                     class="stretched-link <?=(($d->saldo > 0)?'ver_produto':false)?>"
                     cod="<?=$d->codigo?>"
                     data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRight"
+                    data-bs-target="<?=(($d->saldo > 0)?'#offcanvasRight':false)?>"
                     aria-controls="offcanvasRight"
                     ><?=$d->produto?></a></h4>
               <p></p>
