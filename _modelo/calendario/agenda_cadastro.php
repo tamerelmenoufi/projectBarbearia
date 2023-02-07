@@ -330,14 +330,14 @@
 // }
 ?>
 <script>
-    $(function(){
+    $(document).ready(function() {
 
         $("#cliente").selectpicker();
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
 
-        $(document).on("change", ".opcHoras", function() {
+        $(document).on("click", ".opcHoras", function() {
             alert('opc');
             // ano = $(this).attr("ano");
             // mes = $(this).attr("mes");
