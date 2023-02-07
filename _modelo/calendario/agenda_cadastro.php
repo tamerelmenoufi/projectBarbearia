@@ -106,7 +106,7 @@
 
         ?>
 
-                <input
+                <!-- <input
                     type="radio"
                     class="btn-check mb-1 mt-1 opcHoras"
                     name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
@@ -123,10 +123,11 @@
                     class="btn btn-outline-primary mb-1 mt-1"
                     for="option<?=$i?>"
 
-                ><?=date("H:i",$i)?></label>
-                <!-- <button class="btn btn-primary">
+                ><?=date("H:i",$i)?></label> -->
+
+                <button class="btn btn-primary opcHoras">
                     <?=date("H:i",$i)?>
-                </button> -->
+                </button>
                 <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
         <?php
                 }
