@@ -13,7 +13,7 @@
         global $localPainel;
         global $_SESSION;
 
-        $query = "select
+        echo $query = "select
                         a.*,
                         b.produto as produto_nome,
                         c.categoria as categoria_nome,
