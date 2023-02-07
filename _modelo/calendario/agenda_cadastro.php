@@ -108,7 +108,7 @@
 
                 <input
                     type="radio"
-                    class="btn-check mb-1 mt-1 opcHoras"
+                    class="btn-check mb-1 mt-1 opcHorasXXX"
                     name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
                     colaborador="<?=$d->colaborador?>"
                     servico="<?=$d->produto?>"
@@ -148,7 +148,7 @@
 <script>
 $(function(){
 
-    $(".opcHoras").click(function() {
+    $(".opcHorasXXX").click(function() {
 
     alert('opc');
 
