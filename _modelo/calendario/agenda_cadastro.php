@@ -11,6 +11,7 @@
     function filtroServicoColaborador($c){
         global $con;
         global $localPainel;
+        global $abrevSem;
         global $_SESSION;
 
         $c = implode(", ",$c);
