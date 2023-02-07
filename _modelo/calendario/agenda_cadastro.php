@@ -452,7 +452,7 @@
         });
 
 
-        $(documento).on("click", ".opcHoras", function(){
+        $(document).on("click", ".opcHoras", function(){
 
             ano = $(this).attr("ano");
             mes = $(this).attr("mes");
