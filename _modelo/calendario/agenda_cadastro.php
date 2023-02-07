@@ -298,7 +298,7 @@
                         colaborador = $("#colaborador").val();
                         console.log(`Servicos ${servico}`)
                         console.log(`colaborador ${colaborador}`)
-                        if(colaborador && servico){
+                        // if(colaborador && servico){
                             $.ajax({
                                 type:"POST",
                                 data:{
@@ -310,7 +310,7 @@
                                     $(".horarios").html(dados);
                                 }
                             });
-                        }
+                        // }
 
 
                     }
