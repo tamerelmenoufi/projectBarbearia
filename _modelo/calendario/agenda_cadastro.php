@@ -93,7 +93,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><b><?=$d->produto_nome?></b> <i>com:</i><br><?=$d->colaborador_nome?></h5>
-        <p class="card-text opcHoras">
+        <p class="card-text">
 
         <?php
 
@@ -125,7 +125,7 @@
 
                 ><?=date("H:i",$i)?></label> -->
 
-                <button class="btn btn-primary">
+                <button class="btn btn-primary opcHoras">
                     <?=date("H:i",$i)?>
                 </button>
                 <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
