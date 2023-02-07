@@ -125,7 +125,18 @@
 
                 ><?=date("H:i",$i)?></label> -->
 
-                <button class="btn btn-outline-primary mb-1 mt-1 opcHoras">
+                <button
+                        class="btn btn-outline-primary mb-1 mt-1 opcHoras"7
+                        name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
+                        colaborador="<?=$d->colaborador?>"
+                        servico="<?=$d->produto?>"
+                        id="option<?="{$d->colaborador}{$d->produto}"?>"
+                        ano="<?=date("Y",$i)?>"
+                        mes="<?=date("m",$i)?>"
+                        dia="<?=date("d",$i)?>"
+                        value="<?=date("H:i",$i)?>"
+
+                >
                     <?=date("H:i",$i)?>
                 </button>
                 <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
