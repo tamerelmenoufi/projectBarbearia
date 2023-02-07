@@ -94,7 +94,7 @@
       <div class="card-body">
         <h5 class="card-title"><b><?=$d->produto_nome?></b> <i>com:</i><br><?=$d->colaborador_nome?></h5>
         <p class="card-text">
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
         <?php
 
 
@@ -139,7 +139,6 @@
             // echo ($inter_fim - $inter_ini);
         ?>
 
-        </div>
         </p>
       </div>
     </div>
@@ -152,8 +151,8 @@
 
 <script>
     $(function(){
-alert('opc');
-        $(".opcHoras").click(function() {
+
+        $(".opcHoras").change(function() {
 
 alert('dentro');
 
