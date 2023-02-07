@@ -452,7 +452,7 @@
         });
 
 
-        $(document).on("click", ".opcHoras", function(){
+        $(document).on("click", ".opcHoras", function() {
             alert('opc');
             // ano = $(this).attr("ano");
             // mes = $(this).attr("mes");
