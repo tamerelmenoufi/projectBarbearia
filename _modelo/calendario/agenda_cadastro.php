@@ -94,7 +94,7 @@
       <div class="card-body">
         <h5 class="card-title"><b><?=$d->produto_nome?></b> <i>com:</i><br><?=$d->colaborador_nome?></h5>
         <p class="card-text">
-
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
         <?php
 
 
@@ -119,7 +119,11 @@
                     dia="<?=date("d",$i)?>"
                     value="<?=date("H:i",$i)?>"
                 >
-                <label class="btn btn-outline-primary mb-1 mt-1" for="option<?=$i?>"><?=date("H:i",$i)?></label>
+                <label
+                    class="btn btn-outline-primary mb-1 mt-1"
+                    for="option<?=$i?>"
+
+                ><?=date("H:i",$i)?></label>
                 <!-- <button class="btn btn-primary">
                     <?=date("H:i",$i)?>
                 </button> -->
@@ -135,7 +139,7 @@
             // echo ($inter_fim - $inter_ini);
         ?>
 
-
+        </div>
         </p>
       </div>
     </div>
