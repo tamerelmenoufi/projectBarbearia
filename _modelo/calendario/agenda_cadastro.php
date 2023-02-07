@@ -337,6 +337,24 @@
         $("#servico").selectpicker();
 
 
+        $(document).on("click", ".opcHoras", function() {
+            alert('opc');
+            // ano = $(this).attr("ano");
+            // mes = $(this).attr("mes");
+            // dia = $(this).attr("dia");
+            // hora = $(this).val();
+
+            // agenda = `${ano}-${mes}-${dia} ${hora}`;
+            // rotulo = `${dia}/${mes}/${ano} ${hora}`;
+
+            // $(".cadastrarAgenda").attr("agenda",agenda);
+            // $(".cadastrarAgenda span").text(rotulo);
+            // $(".cadastrarAgenda").removeAttr("disabled");
+            // $("span[Titulo]").text(rotulo);
+
+        });
+
+
         $("#colaborador").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
@@ -452,22 +470,7 @@
         });
 
 
-        $(document).on("click", ".opcHoras", function() {
-            alert('opc');
-            // ano = $(this).attr("ano");
-            // mes = $(this).attr("mes");
-            // dia = $(this).attr("dia");
-            // hora = $(this).val();
 
-            // agenda = `${ano}-${mes}-${dia} ${hora}`;
-            // rotulo = `${dia}/${mes}/${ano} ${hora}`;
-
-            // $(".cadastrarAgenda").attr("agenda",agenda);
-            // $(".cadastrarAgenda span").text(rotulo);
-            // $(".cadastrarAgenda").removeAttr("disabled");
-            // $("span[Titulo]").text(rotulo);
-
-        });
 
 
         $(".sair").click(function(){
