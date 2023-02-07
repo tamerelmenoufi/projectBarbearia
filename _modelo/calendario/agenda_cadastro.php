@@ -108,7 +108,7 @@
 
                 <input
                     type="radio"
-                    class="btn-check mb-1 mt-1 opcHorasXXX"
+                    class="btn-check mb-1 mt-1 opcHoras"
                     name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
                     colaborador="<?=$d->colaborador?>"
                     servico="<?=$d->produto?>"
@@ -145,32 +145,33 @@
             $grupo = $d->produto_nome;
         }
         ?>
+
 <script>
-$(function(){
+    $(function(){
+alert('opc');
+        $(".opcHoras").click(function() {
 
-    $(".opcHorasXXX").click(function() {
 
-    alert('opc');
 
-    // ano = $(this).attr("ano");
-    // mes = $(this).attr("mes");
-    // dia = $(this).attr("dia");
-    // hora = $(this).val();
+        // ano = $(this).attr("ano");
+        // mes = $(this).attr("mes");
+        // dia = $(this).attr("dia");
+        // hora = $(this).val();
 
-    // agenda = `${ano}-${mes}-${dia} ${hora}`;
-    // rotulo = `${dia}/${mes}/${ano} ${hora}`;
+        // agenda = `${ano}-${mes}-${dia} ${hora}`;
+        // rotulo = `${dia}/${mes}/${ano} ${hora}`;
 
-    // $(".cadastrarAgenda").attr("agenda",agenda);
-    // $(".cadastrarAgenda span").text(rotulo);
-    // $(".cadastrarAgenda").removeAttr("disabled");
-    // $("span[Titulo]").text(rotulo);
+        // $(".cadastrarAgenda").attr("agenda",agenda);
+        // $(".cadastrarAgenda span").text(rotulo);
+        // $(".cadastrarAgenda").removeAttr("disabled");
+        // $("span[Titulo]").text(rotulo);
 
-    });
-})
+        });
+    })
 </script>
 
 
-        <?php
+<?php
 
     }
 
