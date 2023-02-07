@@ -125,7 +125,7 @@
 
                 ><?=date("H:i",$i)?></label> -->
 
-                <button class="btn btn-primary opcHoras">
+                <button class="btn btn-outline-primary mb-1 mt-1">
                     <?=date("H:i",$i)?>
                 </button>
                 <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
