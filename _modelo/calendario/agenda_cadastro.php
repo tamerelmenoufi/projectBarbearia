@@ -109,7 +109,7 @@
                 <input
                     type="radio"
                     class="btn-check mb-1 mt-1 opcHoras"
-                    name="opcHoras"
+                    name="<?="opcHoras_{$d->colaborador}_{$d->produto}"?>"
                     id="option<?=$i?>"
                     autocomplete="off"
                     ano="<?=date("Y",$i)?>"
@@ -448,6 +448,25 @@
                 }
             });
         });
+
+
+        $(".opcHoras").click(function(){
+
+            ano = $(this).attr("ano");
+            mes = $(this).attr("mes");
+            dia = $(this).attr("dia");
+            hora = $(this).val();
+
+            agenda = `${ano}-${mes}-${dia} ${hora}`;
+            rotulo = `${dia}/${mes}/${ano} ${hora}`;
+
+            $(".cadastrarAgenda").attr("agenda",agenda);
+            $(".cadastrarAgenda span").text(rotulo);
+            $(".cadastrarAgenda").removeAttr("disabled");
+            $("span[Titulo]").text(rotulo);
+
+        });
+
 
         $(".sair").click(function(){
 
