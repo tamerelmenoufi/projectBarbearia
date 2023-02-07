@@ -13,6 +13,8 @@
         global $localPainel;
         global $_SESSION;
 
+        $c = implode(", ",$c);
+
         echo $query = "select
                         a.*,
                         b.produto as produto_nome,
@@ -24,7 +26,7 @@
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
                         left join colaboradores d on a.colaborador = d.codigo
-                    where a.produto = '{$c}' and b.tipo = 's' and a.situacao = '1' order by b.produto, d.nome";
+                    where a.produto in ({$c}) and b.tipo = 's' and a.situacao = '1' order by b.produto, d.nome";
 
         $result = mysqli_query($con, $query);
         $grupo = false;
