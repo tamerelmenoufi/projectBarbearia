@@ -20,7 +20,7 @@
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
-                    where a.colaborador = '{$c}' and b.tipo = 's' and a.situacao = '1' order by c.categoria, b.produto";
+                    where a.produto = '{$c}' and b.tipo = 's' and a.situacao = '1' order by c.categoria, b.produto";
 
         $result = mysqli_query($con, $query);
         $grupo = false;
@@ -40,7 +40,7 @@
     }
 
     if($_POST['acao'] == 'filto_servicos'){
-        filtroServicoColaborador($_POST['colaborador']);
+        filtroServicoColaborador($_POST['servico']);
         exit();
     }
 
@@ -227,7 +227,7 @@
         $("#servico").selectpicker();
 
 
-        $("#servico").change(function(){
+        $("#colaborador").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
 
@@ -269,7 +269,7 @@
                     type:"POST",
                     data:{
                         servico,
-                        acao:'filto_colaborador'
+                        acao:'filto_servicos'
                     },
                     success:function(dados){
                         $("#colaborador").html(dados);
