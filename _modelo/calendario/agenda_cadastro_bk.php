@@ -146,33 +146,6 @@
     </div>
 </div>
 
-
-<div class="row mb-2">
-    <div class="col-12">
-        <label for="servico" class="form-label"> <i class="fa fa-scissors"></i> Serviço</label>
-        <select
-            name="servico"
-            id="servico"
-            data-live-search="true"
-            data-none-selected-text="Selecione"
-            class="selectpicker form-control"
-            data-actions-box="true"
-        >
-        <?php
-        $q = "select * from produtos where tipo = 's' and situacao = '1' order by produto";
-        $r = mysqli_query($con, $q);
-        while($s = mysqli_fetch_object($r)){
-        ?>
-            <option value="<?=$s->codigo?>" <?=(($_SESSION['servico'] == $s->codigo)?'selected':false)?>><?=$s->produto?></option>
-        <?php
-        }
-        ?>
-
-        </select>
-    </div>
-</div>
-
-
 <div class="row mb-2">
     <div class="col-12">
         <label for="colaborador" class="form-label"> <i class="fa fa-people-group"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:13px;">Colaboradores desativados estão com agenda indisponível.</small></label>
@@ -197,7 +170,19 @@
 </div>
 
 
-
+<div class="row mb-2">
+    <div class="col-12">
+        <label for="servico" class="form-label"> <i class="fa fa-scissors"></i> Serviço</label>
+        <select
+            name="servico"
+            id="servico"
+            data-live-search="true"
+            data-none-selected-text="Selecione"
+            class="selectpicker form-control"
+            data-actions-box="true"
+        ></select>
+    </div>
+</div>
 
 <div class="row mb-2">
     <div class="col-12 horarios">
@@ -253,29 +238,29 @@
         });
 
 
-        $('#servico').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-            servico = $(this).val();
+        $('#colaborador').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            colaborador = $(this).val();
 
-            $("#colaborador").selectpicker('destroy');
+            $("#servico").selectpicker('destroy');
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
             $(".cadastrarAgenda").attr("disabled","disabled");
             $(".horarios").html('');
 
-            if(servico){
+            if(colaborador){
                 $.ajax({
                     url:"calendario/agenda_cadastro.php",
                     type:"POST",
                     data:{
-                        servico,
-                        acao:'filto_colaborador'
+                        colaborador,
+                        acao:'filto_servicos'
                     },
                     success:function(dados){
-                        $("#colaborador").html(dados);
-                        $("#colaborador").selectpicker('render');
+                        $("#servico").html(dados);
+                        $("#servico").selectpicker('render');
 
-                        colaborador = $("#colaborador").val();
+                        servico = $("#servico").val();
                         console.log(`Servicos ${servico}`)
                         console.log(`colaborador ${colaborador}`)
                         if(colaborador && servico){
@@ -296,8 +281,8 @@
                     }
                 });
             }else{
-                        $("#colaborador").html('<option value="">Selecionar</value>');
-                        $("#colaborador").selectpicker('render');
+                        $("#servico").html('<option value="">Selecionar</value>');
+                        $("#servico").selectpicker('render');
             }
         });
 
