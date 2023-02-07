@@ -92,7 +92,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><b><?=$d->produto_nome?></b> <i>com:</i> <?=$d->colaborador_nome?></h5>
+        <h5 class="card-title"><b><?=$d->produto_nome?></b> <i>com:</i><br><?=$d->colaborador_nome?></h5>
         <p class="card-text">
 
         <?php
