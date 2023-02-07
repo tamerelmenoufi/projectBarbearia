@@ -283,7 +283,7 @@
             $(".cadastrarAgenda").attr("disabled","disabled");
             $(".horarios").html('');
 
-            if(servico){
+            if(servico.length){
                 $.ajax({
                     url:"calendario/agenda_cadastro.php",
                     type:"POST",
