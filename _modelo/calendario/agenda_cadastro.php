@@ -10,6 +10,7 @@
 
     function filtroServicoColaborador($c){
         global $con;
+        global $localPainel;
         global $_SESSION;
 
         $query = "select
