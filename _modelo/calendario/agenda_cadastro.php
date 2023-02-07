@@ -337,7 +337,7 @@
         $("#servico").selectpicker();
 
 
-        $(document).on("click", ".opcHoras", function() {
+        $(document).on("change", ".opcHoras", function() {
             alert('opc');
             // ano = $(this).attr("ano");
             // mes = $(this).attr("mes");
