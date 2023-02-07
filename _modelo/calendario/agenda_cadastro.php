@@ -148,7 +148,7 @@
 <script>
 $(function(){
 
-    $(document).on("click", ".opcHoras", function() {
+    $(".opcHoras").click(function() {
 
     alert('opc');
 
