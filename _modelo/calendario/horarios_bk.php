@@ -237,7 +237,7 @@
 	</table>
 </div>
 <h6 class="mt-2" style="background: #fb8650;color: #fff;padding: 10px;text-align: center;font-size: 22px;border-radius: 7px;"><?="{$dia}/{$mes}/{$ano}"?></h6>
-<div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
 <?php
 
 
@@ -248,7 +248,18 @@ if($dia_serv->$hj){
         if(!in_array(date("H:i",$i),$ag)){
 
         ?>
-
+        <button
+            class="btn btn-warning mb-1 mt-1 opcHoras"
+            name="opcHoras"
+            id="option<?=$i?>"
+            autocomplete="off"
+            ano="<?=date("Y",$i)?>"
+            mes="<?=date("m",$i)?>"
+            dia="<?=date("d",$i)?>"
+            value="<?=date("H:i",$i)?>"
+        >
+            <?=date("H:i",$i)?>
+        </button>
         <input
             type="checkbox"
             class="btn-check mb-1 mt-1 opcHoras"
@@ -275,7 +286,7 @@ if($dia_serv->$hj){
     // echo "<p>{$inter_ini} até {$inter_fim}</p>";
     // echo ($inter_fim - $inter_ini);
 ?>
-</div>
+
 <script>
 
 $(function(){
