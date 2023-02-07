@@ -2,6 +2,8 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
+    $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$_POST['servico']}'"));
+
     $PeriodoLoja = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
 
     $dia_serv = json_decode($PeriodoLoja->dias_horas_atendimento);
@@ -31,6 +33,14 @@
         list($hi, $hf) = explode("-",$dia_serv->$hj);
         $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia,$ano)));
         $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia,$ano)));
+
+
+        $q = "select *, hour(data_agenda) as h, minute(data_agenda) as i from agenda where data_agenda like '%{$ano}-{$mes}-{$dia}%' and colaborador = '{$_POST['colaborador']}' and servico = {$_POST['servico']}";
+        $r = mysqli_query($con, $q);
+        $ag = [];
+        while($h = mysqli_fetch_object($r)){
+            $ag[] = "{$h->h}:{$h->i}";
+        }
 
     }
 
@@ -226,7 +236,44 @@
             ?>
 	</table>
 </div>
+<h6 class="mt-2" style="background: #fb8650;color: #fff;padding: 10px;text-align: center;font-size: 22px;border-radius: 7px;"><?="{$dia}/{$mes}/{$ano}"?></h6>
+<?php
 
+
+    // echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
+if($dia_serv->$hj){
+    for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
+
+        if(!in_array(date("H:i",$i),$ag)){
+
+        ?>
+
+        <input
+            type="radio"
+            class="btn-check mb-1 mt-1 opcHoras"
+            name="opcHoras"
+            id="option<?=$i?>"
+            autocomplete="off"
+            ano="<?=date("Y",$i)?>"
+            mes="<?=date("m",$i)?>"
+            dia="<?=date("d",$i)?>"
+            value="<?=date("H:i",$i)?>"
+        >
+        <label class="btn btn-outline-primary mb-1 mt-1" for="option<?=$i?>"><?=date("H:i",$i)?></label>
+        <!-- <button class="btn btn-primary">
+            <?=date("H:i",$i)?>
+        </button> -->
+        <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
+    <?php
+        }
+    }
+}
+
+    // $inter_ini = strtotime(date("Y-m-d 10:00:00"));
+    // $inter_fim = strtotime(date("Y-m-d 10:01:00"));
+    // echo "<p>{$inter_ini} até {$inter_fim}</p>";
+    // echo ($inter_fim - $inter_ini);
+?>
 
 <script>
 
@@ -283,6 +330,22 @@ $(function(){
             mudaClandario(ano, mes, dia);
         }
 
+    });
+
+    $(".opcHoras").click(function(){
+
+        ano = $(this).attr("ano");
+        mes = $(this).attr("mes");
+        dia = $(this).attr("dia");
+        hora = $(this).val();
+
+        agenda = `${ano}-${mes}-${dia} ${hora}`;
+        rotulo = `${dia}/${mes}/${ano} ${hora}`;
+
+        $(".cadastrarAgenda").attr("agenda",agenda);
+        $(".cadastrarAgenda span").text(rotulo);
+        $(".cadastrarAgenda").removeAttr("disabled");
+        $("span[Titulo]").text(rotulo);
     });
 
 
