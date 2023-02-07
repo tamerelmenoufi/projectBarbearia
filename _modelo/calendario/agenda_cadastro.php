@@ -16,29 +16,41 @@
                         a.*,
                         b.produto as produto_nome,
                         c.categoria as categoria_nome,
-                        d.nome as colaborador_nome
+                        d.nome as colaborador_nome,
+                        d.foto
                     from
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
                         left join colaboradores d on a.colaborador = d.codigo
-                    where a.produto = '{$c}' and b.tipo = 's' and a.situacao = '1' order by c.categoria, b.produto";
+                    where a.produto = '{$c}' and b.tipo = 's' and a.situacao = '1' order by b.produto, d.nome";
 
         $result = mysqli_query($con, $query);
         $grupo = false;
         echo "<option value=''>Selecione</option>";
         while($d = mysqli_fetch_object($result)){
 
-            if($grupo != $d->categoria_nome){
-                if($grupo != false){
-                    echo "</optgroup>";
-                }
-                echo "<optgroup label='{$d->categoria_nome}'>";
+            if($grupo != $d->produto_nome){
+                echo "<h4>$d->produto_nome</h4>";
             }
-            echo "<option value='{$d->colaborador}' >{$d->colaborador_nome}</option>";
-            $grupo = $d->categoria_nome;
+        ?>
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="<?=$localPainel?>src/volume/colaboradores/<?=$d->foto?>" class="img-fluid rounded-start" >
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?=$d->colaborador_nome?></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+        <?php
+            $grupo = $d->produto_nome;
         }
-        echo "</optgroup>";
     }
 
     if($_POST['acao'] == 'filto_servicos'){
@@ -177,8 +189,9 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <label for="colaborador" class="form-label"> <i class="fa fa-people-group"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:13px;">Colaboradores desativados estão com agenda indisponível.</small></label>
-        <select
+        <!-- <label for="colaborador" class="form-label"> <i class="fa fa-people-group"></i> Colaborador (Atendente) <br><small style="color:#a1a1a1; font-size:13px;">Colaboradores desativados estão com agenda indisponível.</small></label> -->
+        <div id="colaborador"></div>
+        <!-- <select
                 name="colaborador"
                 id="colaborador"
                 data-live-search="true"
@@ -194,7 +207,7 @@
         <?php
             }
         ?>
-        </select>
+        </select> -->
     </div>
 </div>
 
