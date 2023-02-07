@@ -15,11 +15,13 @@
         $query = "select
                         a.*,
                         b.produto as produto_nome,
-                        c.categoria as categoria_nome
+                        c.categoria as categoria_nome,
+                        d.nome as colaborador_nome
                     from
                         colaboradores_produtos a
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
+                        left join colaboradores d on b.colaborador = d.codigo
                     where a.produto = '{$c}' and b.tipo = 's' and a.situacao = '1' order by c.categoria, b.produto";
 
         $result = mysqli_query($con, $query);
@@ -33,7 +35,7 @@
                 }
                 echo "<optgroup label='{$d->categoria_nome}'>";
             }
-            echo "<option value='{$d->produto}' ".(($_SESSION['servico'] == $d->produto)?'selected':false).">{$d->produto_nome}</option>";
+            echo "<option value='{$d->colaborador}' >{$d->colaborador_nome}</option>";
             $grupo = $d->categoria_nome;
         }
         echo "</optgroup>";
