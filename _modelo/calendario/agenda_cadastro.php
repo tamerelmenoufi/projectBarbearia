@@ -15,7 +15,35 @@
 
         $c = implode(", ",$c);
 
-        echo $query = "select
+        ////////////////////DEFINIR HORARIOS//////////////////////////////////////
+        $PeriodoLoja = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
+
+        $dia_serv = json_decode($PeriodoLoja->dias_horas_atendimento);
+
+        if($_POST['ano'] and $_POST['mes']){
+            $ano = $_POST['ano'];
+            $mes = $_POST['mes'];
+            $dia = (($_POST['dia'])?:date("d"));
+        }else{
+            $ano = date(Y);
+            $mes = date(m);
+            $dia = date(d);
+        }
+
+
+        $prox_a = date("Y", mktime(0,0,0,$mes+1,$dia, $ano));
+        $prox_m = date("m", mktime(0,0,0,$mes+1,$dia, $ano));
+        $prox_d = date("d", mktime(0,0,0,$mes+1,$dia, $ano));
+
+        $ante_a = date("Y", mktime(0,0,0,$mes-1,$dia, $ano));
+        $ante_m = date("m", mktime(0,0,0,$mes-1,$dia, $ano));
+        $ante_d = date("d", mktime(0,0,0,$mes-1,$dia, $ano));
+
+
+
+        ////////////////////DEFINIR HORARIOS//////////////////////////////////////
+
+        $query = "select
                         a.*,
                         b.produto as produto_nome,
                         c.categoria as categoria_nome,
@@ -33,6 +61,25 @@
         echo "<option value=''>Selecione</option>";
         while($d = mysqli_fetch_object($result)){
 
+
+            $hj = $abrevSem[date("D", mktime(0,0,0,$mes,$dia,$ano))];
+            if($dia_serv->$hj){
+                list($hi, $hf) = explode("-",$dia_serv->$hj);
+                $inter_ini = strtotime(date("Y-m-d {$hi}:00", mktime(0,0,0,$mes,$dia,$ano)));
+                $inter_fim = strtotime(date("Y-m-d {$hf}:00", mktime(0,0,0,$mes,$dia,$ano)));
+
+                $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$d->produto}'"));
+
+                $q = "select *, hour(data_agenda) as h, minute(data_agenda) as i from agenda where data_agenda like '%{$ano}-{$mes}-{$dia}%' and colaborador = '{$d->colaborador}' and servico = {$d->produto}";
+                $r = mysqli_query($con, $q);
+                $ag = [];
+                while($h = mysqli_fetch_object($r)){
+                    $ag[] = "{$h->h}:{$h->i}";
+                }
+
+            }
+
+
             if($grupo != $d->produto_nome){
                 echo "<h4>$d->produto_nome</h4>";
             }
@@ -45,8 +92,48 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><?=$d->colaborador_nome?></h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <p class="card-text">
+
+        <?php
+
+
+            // echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
+            if($dia_serv->$hj){
+            for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
+
+                if(!in_array(date("H:i",$i),$ag)){
+
+        ?>
+
+                <input
+                    type="radio"
+                    class="btn-check mb-1 mt-1 opcHoras"
+                    name="opcHoras"
+                    id="option<?=$i?>"
+                    autocomplete="off"
+                    ano="<?=date("Y",$i)?>"
+                    mes="<?=date("m",$i)?>"
+                    dia="<?=date("d",$i)?>"
+                    value="<?=date("H:i",$i)?>"
+                >
+                <label class="btn btn-outline-primary mb-1 mt-1" for="option<?=$i?>"><?=date("H:i",$i)?></label>
+                <!-- <button class="btn btn-primary">
+                    <?=date("H:i",$i)?>
+                </button> -->
+                <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
+        <?php
+                }
+            }
+            }
+
+            // $inter_ini = strtotime(date("Y-m-d 10:00:00"));
+            // $inter_fim = strtotime(date("Y-m-d 10:01:00"));
+            // echo "<p>{$inter_ini} até {$inter_fim}</p>";
+            // echo ($inter_fim - $inter_ini);
+        ?>
+
+
+        </p>
       </div>
     </div>
   </div>
