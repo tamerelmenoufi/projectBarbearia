@@ -109,10 +109,10 @@
                 <input
                     type="radio"
                     class="btn-check mb-1 mt-1 opcHoras"
-                    name="<?="opcHoras_{$d->colaborador}-{$d->produto}"?>"
+                    name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
                     colaborador="<?=$d->colaborador?>"
                     servico="<?=$d->produto?>"
-                    id="option<?="{$d->colaborador}-{$d->produto}"?>"
+                    id="option<?="{$d->colaborador}{$d->produto}"?>"
                     autocomplete="off"
                     ano="<?=date("Y",$i)?>"
                     mes="<?=date("m",$i)?>"
