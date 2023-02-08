@@ -192,12 +192,12 @@
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
             // console.log(`#agenda${servico}${colaborador}`)
 
-            obj = $(`.opcAgenda`);
-            obj.attr("ano",'');
-            obj.attr("mes",'');
-            obj.attr("dia",'');
-            obj.attr("colaborador",'');
-            obj.attr("hora",'');
+            // obj = $(`.opcAgenda`);
+            // obj.attr("ano",'');
+            // obj.attr("mes",'');
+            // obj.attr("dia",'');
+            // obj.attr("colaborador",'');
+            // obj.attr("hora",'');
 
             obj = $(`.opcAgenda[servico='${servico}']`);
             obj.attr("ano",ano);
