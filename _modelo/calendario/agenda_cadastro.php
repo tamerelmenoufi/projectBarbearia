@@ -558,12 +558,13 @@
                     acao:'nova_agenda'
                 },
                 success:function(dados){
-                    $.alert(dados)
-                    return;
+                    // $.alert(dados)
+                    // return;
                     $.alert('Seu Agendamento foi confirmada!')
                     let myOffCanvas = document.getElementById('offcanvasRight');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.hide();
+                    $(".LateralDireita").html('');
                 }
             });
         });
