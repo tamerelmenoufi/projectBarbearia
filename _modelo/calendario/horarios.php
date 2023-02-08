@@ -256,6 +256,19 @@ $(function(){
                 $("span[Titulo]").text('');
                 $(".cadastrarAgenda").attr("disabled","disabled");
 
+
+                $.ajax({
+                    type:"POST",
+                    data:{
+                        colaborador,
+                        servico,
+                    },
+                    url:"calendario/horarios.php",
+                    success:function(dados){
+                        $(".horarios").html(dados);
+                    }
+                });
+
             }
         });
     }
