@@ -83,6 +83,15 @@
 
             if($grupo != $d->produto_nome){
                 echo "<h4>$d->produto_nome</h4>";
+                echo "<input
+                            type='hidden'
+                            class='opcAgenda'
+                            colaborador=''
+                            ano=''
+                            mes=''
+                            dia=''
+                            horario=''
+                            servico='{$d->produto}' />";
             }
         ?>
 <div class="card mb-3">
@@ -182,6 +191,21 @@
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
             // console.log(`#agenda${servico}${colaborador}`)
+
+            obj = $(`.opcAgenda`);
+            obj.attr("ano",'');
+            obj.attr("mes",'');
+            obj.attr("dia",'');
+            obj.attr("colaborador",'');
+            obj.attr("hora",'');
+
+            obj = $(`.opcAgenda[servico='${servico}']`);
+            obj.attr("ano",ano);
+            obj.attr("mes",mes);
+            obj.attr("dia",dia);
+            obj.attr("colaborador",colaborador);
+            obj.attr("hora",hora);
+
             $(`.agenda${servico}`).text('');
             $(`#agenda${servico}${colaborador}`).text(rotulo);
 
@@ -468,14 +492,33 @@
         $(".cadastrarAgenda").click(function(){
 
             cliente = $("#cliente").val();
+
+
+
             colaborador = $("#colaborador").val();
             servico = $("#servico").val();
             observacao = $("#observacao").val();
             data_agenda = $(this).attr("agenda");
 
-            // return false;
+            dados = [];
 
-            if(!cliente || !colaborador || !servico || !data_agenda){
+            $(".opcAgenda").each(function(){
+                dados.push([
+                    ano:$(this).attr('ano'),
+                    mes:$(this).attr('mes'),
+                    dia:$(this).attr('dia'),
+                    hora:$(this).attr('hora'),
+                    colaborador:$(this).attr('colaborador'),
+                    servico:$(this).attr('servico'),
+                    cliente:$(this).attr('cliente')
+                ])
+            })
+
+            console.log(dados);
+
+            return false;
+
+            if(!cliente || !colaborador || !servico.lngth || !data_agenda){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
                     type:'red',
