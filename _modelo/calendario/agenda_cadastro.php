@@ -182,7 +182,7 @@
             $(".cadastrarAgenda").attr("agenda",agenda);
             $(".cadastrarAgenda span").text(rotulo);
             $(".cadastrarAgenda").removeAttr("disabled");
-            $("span[Titulo]").text(rotulo);
+            // $("span[Titulo]").text(rotulo);
 
         });
     })
@@ -384,9 +384,6 @@
         $("#servico").selectpicker();
 
 
-
-
-
         $("#colaborador").change(function(){
             colaborador = $("#colaborador").val();
             servico = $(this).val();
@@ -500,8 +497,6 @@
                 }
             });
         });
-
-
 
 
 
