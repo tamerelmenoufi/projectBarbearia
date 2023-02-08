@@ -237,7 +237,7 @@ $(function(){
     mudaClandario = (ano, mes, dia)=>{
 
         colaborador = '<?=$_POST['colaborador']?>';
-        servico = '<?=$_POST['servico']?>';
+        servico = [<?=implode(", ", $_POST['servico'])?>];
 
         $.ajax({
             type:"POST",
