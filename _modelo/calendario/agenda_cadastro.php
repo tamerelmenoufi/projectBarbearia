@@ -176,7 +176,7 @@
 
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
-            console.log(`#agenda${servico}${colaborador}`)
+            // console.log(`#agenda${servico}${colaborador}`)
             $(`#agenda${servico}${colaborador}`).text(rotulo);
 
             $(".cadastrarAgenda").attr("agenda",agenda);
