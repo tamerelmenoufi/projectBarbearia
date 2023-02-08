@@ -30,7 +30,7 @@
                                         cliente = '{$_POST['data'][0]['cliente']}',
                                         servico = '{$_POST['data'][0]['servico']}',
                                         observacao = '{$_POST['data'][0]['observacao']}',
-                                        data_agenda = '{$_POST['data'][0]['data_agenda']}',
+                                        data_agenda = '{$_POST['data'][0]['ano']}-{$_POST['data'][0]['mes']}-{$_POST['data'][0]['dia']} {$_POST['data'][0]['hora']}',
                                         data_cadastro = NOW(),
                                         situacao = 'n'";
         // mysqli_query($con, $query);
