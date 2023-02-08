@@ -433,7 +433,7 @@
                     },
                     success:function(dados){
                         $("#colaborador").html(dados);
-                        $("#colaborador").selectpicker('render');
+                        // $("#colaborador").selectpicker('render');
 
                         colaborador = $("#colaborador").val();
                         console.log(`Servicos ${servico}`)

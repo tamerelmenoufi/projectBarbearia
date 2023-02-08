@@ -260,12 +260,12 @@ $(function(){
                 $.ajax({
                     type:"POST",
                     data:{
-                        colaborador,
                         servico,
+                        acao:'filto_servicos'
                     },
-                    url:"calendario/horarios.php",
+                    url:"calendario/agenda_cadastro.php",
                     success:function(dados){
-                        $(".horarios").html(dados);
+                        $("#colaborador").html(dados);
                     }
                 });
 
