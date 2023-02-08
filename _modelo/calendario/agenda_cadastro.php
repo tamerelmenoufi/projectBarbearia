@@ -510,6 +510,7 @@
                 colaborador = $(this).attr('colaborador');
                 servico = $(this).attr('servico');
                 cliente = $("#cliente").val();
+                observacao = $("#observacao").val();
 
                 if(
                     ano &&
@@ -535,7 +536,7 @@
 
             })
 
-            console.log(data);
+            // console.log(data);
 
             // return false;
 
@@ -553,6 +554,7 @@
                 type:"POST",
                 data:{
                     data,
+                    observacao,
                     acao:'nova_agenda'
                 },
                 success:function(dados){

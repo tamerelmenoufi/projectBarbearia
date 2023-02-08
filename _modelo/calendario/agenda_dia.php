@@ -29,7 +29,7 @@
                                         colaborador = '{$val['colaborador']}',
                                         cliente = '{$val['cliente']}',
                                         servico = '{$val['servico']}',
-                                        observacao = '{$val['observacao']}',
+                                        observacao = '{$_POST['observacao']}',
                                         data_agenda = '{$val['ano']}-{$val['mes']}-{$val['dia']} {$val['hora']}',
                                         data_cadastro = NOW(),
                                         situacao = 'n'";
