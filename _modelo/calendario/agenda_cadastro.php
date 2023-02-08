@@ -503,7 +503,7 @@
             dados = [];
 
             $(".opcAgenda").each(function(){
-                dados.push([
+                dados.push({
                     ano:$(this).attr('ano'),
                     mes:$(this).attr('mes'),
                     dia:$(this).attr('dia'),
@@ -511,7 +511,7 @@
                     colaborador:$(this).attr('colaborador'),
                     servico:$(this).attr('servico'),
                     cliente:$(this).attr('cliente')
-                ])
+                })
             })
 
             console.log(dados);
