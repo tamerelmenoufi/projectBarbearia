@@ -491,34 +491,55 @@
 
         $(".cadastrarAgenda").click(function(){
 
-            cliente = $("#cliente").val();
+            // cliente = $("#cliente").val();
 
 
 
-            colaborador = $("#colaborador").val();
-            servico = $("#servico").val();
-            observacao = $("#observacao").val();
-            data_agenda = $(this).attr("agenda");
+            // colaborador = $("#colaborador").val();
+            // servico = $("#servico").val();
+            // observacao = $("#observacao").val();
+            // data_agenda = $(this).attr("agenda");
 
-            dados = [];
-
+            data = [];
+            error = false;
             $(".opcAgenda").each(function(){
-                dados.push({
-                    ano:$(this).attr('ano'),
-                    mes:$(this).attr('mes'),
-                    dia:$(this).attr('dia'),
-                    hora:$(this).attr('hora'),
-                    colaborador:$(this).attr('colaborador'),
-                    servico:$(this).attr('servico'),
-                    cliente:$("#cliente").val()
-                })
+                ano = $(this).attr('ano');
+                mes = $(this).attr('mes');
+                dia = $(this).attr('dia');
+                hora = $(this).attr('hora');
+                colaborador = $(this).attr('colaborador');
+                servico = $(this).attr('servico');
+                cliente = $("#cliente").val();
+
+                if(
+                    ano &&
+                    mes &&
+                    dia &&
+                    hora &&
+                    colaborador &&
+                    servico &&
+                    cliente
+                ){
+                    data.push({
+                        ano,
+                        mes,
+                        dia,
+                        hora,
+                        colaborador,
+                        servico,
+                        cliente
+                    })
+                }else{
+                    error = true;
+                }
+
             })
 
-            console.log(dados);
+            console.log(data);
 
-            return false;
+            // return false;
 
-            if(!cliente || !colaborador || !servico.lngth || !data_agenda){
+            if(error){
                 $.alert({
                     content:'Favor preencha os dados obrigatórios (*) no formulário!',
                     type:'red',
@@ -530,15 +551,10 @@
             $.ajax({
                 url:"calendario/agenda_dia.php",
                 type:"POST",
-                data:{
-                    cliente,
-                    colaborador,
-                    servico,
-                    observacao,
-                    data_agenda,
-                    acao:'nova_agenda'
-                },
+                data,
                 success:function(dados){
+                    $.alert(dados)
+                    return;
                     $.alert('Seu Agendamento foi confirmada!')
                     let myOffCanvas = document.getElementById('offcanvasRight');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);

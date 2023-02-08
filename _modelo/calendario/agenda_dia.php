@@ -22,17 +22,21 @@
 
         // $servicos = json_encode($_POST['servico']);
 
-        $query = "insert into agenda set
-                                        tipo_cadastro = 'c',
-                                        usuario = '{$_POST['cliente']}',
-                                        colaborador = '{$_POST['colaborador']}',
-                                        cliente = '{$_POST['cliente']}',
-                                        servico = '{$_POST['servico']}',
-                                        observacao = '{$_POST['observacao']}',
-                                        data_agenda = '{$_POST['data_agenda']}',
-                                        data_cadastro = NOW(),
-                                        situacao = 'n'";
-        mysqli_query($con, $query);
+        // $query = "insert into agenda set
+        //                                 tipo_cadastro = 'c',
+        //                                 usuario = '{$_POST['cliente']}',
+        //                                 colaborador = '{$_POST['colaborador']}',
+        //                                 cliente = '{$_POST['cliente']}',
+        //                                 servico = '{$_POST['servico']}',
+        //                                 observacao = '{$_POST['observacao']}',
+        //                                 data_agenda = '{$_POST['data_agenda']}',
+        //                                 data_cadastro = NOW(),
+        //                                 situacao = 'n'";
+        // mysqli_query($con, $query);
+
+        var_dump($_POST);
+
+        exit();
 
     }
 
@@ -55,7 +59,7 @@
     .nova_agenda{
         cursor:pointer;
     }
-  
+
 
 
 </style>
