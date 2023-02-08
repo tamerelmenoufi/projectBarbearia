@@ -510,7 +510,7 @@
                     hora:$(this).attr('hora'),
                     colaborador:$(this).attr('colaborador'),
                     servico:$(this).attr('servico'),
-                    cliente:$(this).attr('cliente')
+                    cliente:$("#cliente").val()
                 })
             })
 
