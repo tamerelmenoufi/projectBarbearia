@@ -34,9 +34,10 @@
                                         data_cadastro = NOW(),
                                         situacao = 'n'";
         // mysqli_query($con, $query);
+        echo "<hr>";
         }
 
-        var_dump($_POST);
+        // var_dump($_POST);
 
         exit();
 
