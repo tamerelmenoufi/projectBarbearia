@@ -171,12 +171,13 @@
             mes = $(this).attr("mes");
             dia = $(this).attr("dia");
             servico = $(this).attr("servico");
+            colaborador = $(this).attr("colaborador");
             hora = $(this).val();
 
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
-
-            $(`#agenda${servico}`).text(rotulo);
+            console.log(`#agenda${servico}${colaborador}`)
+            $(`#agenda${servico}${colaborador}`).text(rotulo);
 
             $(".cadastrarAgenda").attr("agenda",agenda);
             $(".cadastrarAgenda span").text(rotulo);
