@@ -140,7 +140,7 @@
                 ><?=date("H:i",$i)?></label> -->
 
                 <button
-                        class="btn btn-outline-primary mb-1 mt-1 opcHoras"
+                        class="btn btn-outline-primary btn-sm mb-1 mt-1 opcHoras"
                         name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
                         colaborador="<?=$d->colaborador?>"
                         servico="<?=$d->produto?>"
