@@ -22,18 +22,19 @@
 
         // $servicos = json_encode($_POST['servico']);
 
-
+        foreach($_POST['data'] as $ind => $val){
         echo $query = "insert into agenda set
                                         tipo_cadastro = 'c',
-                                        usuario = '{$_POST['data'][0]['cliente']}',
-                                        colaborador = '{$_POST['data'][0]['colaborador']}',
-                                        cliente = '{$_POST['data'][0]['cliente']}',
-                                        servico = '{$_POST['data'][0]['servico']}',
-                                        observacao = '{$_POST['data'][0]['observacao']}',
-                                        data_agenda = '{$_POST['data'][0]['ano']}-{$_POST['data'][0]['mes']}-{$_POST['data'][0]['dia']} {$_POST['data'][0]['hora']}',
+                                        usuario = '{$val['cliente']}',
+                                        colaborador = '{$val['colaborador']}',
+                                        cliente = '{$val['cliente']}',
+                                        servico = '{$val['servico']}',
+                                        observacao = '{$val['observacao']}',
+                                        data_agenda = '{$val['ano']}-{$val['mes']}-{$val['dia']} {$val['hora']}',
                                         data_cadastro = NOW(),
                                         situacao = 'n'";
         // mysqli_query($con, $query);
+        }
 
         var_dump($_POST);
 
