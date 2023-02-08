@@ -551,7 +551,10 @@
             $.ajax({
                 url:"calendario/agenda_dia.php",
                 type:"POST",
-                data,
+                data:{
+                    data,
+                    acao:'nova_agenda'
+                },
                 success:function(dados){
                     $.alert(dados)
                     return;
