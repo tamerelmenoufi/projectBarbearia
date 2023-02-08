@@ -92,7 +92,12 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><b><?=$d->produto_nome?></b> <i>com:</i><br><?=$d->colaborador_nome?><br><span id="agenda<?=$d->produto.$d->colaborador?>"></span></h5>
+        <h5 class="card-title">
+            <b><?=$d->produto_nome?></b>
+            <i>com:</i><br>
+            <?=$d->colaborador_nome?><br>
+            <span class="agenda<?=$d->produto?>" id="agenda<?=$d->produto.$d->colaborador?>"></span>
+        </h5>
         <p class="card-text">
 
         <?php
@@ -126,7 +131,7 @@
                 ><?=date("H:i",$i)?></label> -->
 
                 <button
-                        class="btn btn-outline-primary mb-1 mt-1 opcHoras"7
+                        class="btn btn-outline-primary mb-1 mt-1 opcHoras"
                         name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
                         colaborador="<?=$d->colaborador?>"
                         servico="<?=$d->produto?>"
@@ -177,6 +182,7 @@
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
             // console.log(`#agenda${servico}${colaborador}`)
+            $(`.agenda${servico}`).text('');
             $(`#agenda${servico}${colaborador}`).text(rotulo);
 
             $(".cadastrarAgenda").attr("agenda",agenda);
