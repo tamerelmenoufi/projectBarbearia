@@ -22,16 +22,17 @@
 
         // $servicos = json_encode($_POST['servico']);
 
-        // $query = "insert into agenda set
-        //                                 tipo_cadastro = 'c',
-        //                                 usuario = '{$_POST['cliente']}',
-        //                                 colaborador = '{$_POST['colaborador']}',
-        //                                 cliente = '{$_POST['cliente']}',
-        //                                 servico = '{$_POST['servico']}',
-        //                                 observacao = '{$_POST['observacao']}',
-        //                                 data_agenda = '{$_POST['data_agenda']}',
-        //                                 data_cadastro = NOW(),
-        //                                 situacao = 'n'";
+
+        echo $query = "insert into agenda set
+                                        tipo_cadastro = 'c',
+                                        usuario = '{$_POST['data'][0]['cliente']}',
+                                        colaborador = '{$_POST['data'][0]['colaborador']}',
+                                        cliente = '{$_POST['data'][0]['cliente']}',
+                                        servico = '{$_POST['data'][0]['servico']}',
+                                        observacao = '{$_POST['data'][0]['observacao']}',
+                                        data_agenda = '{$_POST['data'][0]['data_agenda']}',
+                                        data_cadastro = NOW(),
+                                        situacao = 'n'";
         // mysqli_query($con, $query);
 
         var_dump($_POST);
