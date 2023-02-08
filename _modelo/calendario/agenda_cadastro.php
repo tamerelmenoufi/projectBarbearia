@@ -176,7 +176,7 @@
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
 
-            $(`.agenda${servico}`).text(rotulo);
+            $(`#agenda${servico}`).text(rotulo);
 
             $(".cadastrarAgenda").attr("agenda",agenda);
             $(".cadastrarAgenda span").text(rotulo);
