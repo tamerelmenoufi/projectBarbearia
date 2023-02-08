@@ -261,7 +261,10 @@ $(function(){
                     type:"POST",
                     data:{
                         servico,
-                        acao:'filto_servicos'
+                        acao:'filto_servicos',
+                        ano,
+                        mes,
+                        dia
                     },
                     url:"calendario/agenda_cadastro.php",
                     success:function(dados){
