@@ -189,6 +189,8 @@
 <script>
     $(function(){
 
+        $("#servicoXXX").selectpicker();
+
         $(".opcHoras").click(function() {
 
 
@@ -423,7 +425,6 @@
         $("#cliente").selectpicker();
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
-        $("#servicoXXX").selectpicker();
 
         $("#colaborador").change(function(){
             colaborador = $("#colaborador").val();
