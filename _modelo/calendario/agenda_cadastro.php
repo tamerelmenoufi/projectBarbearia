@@ -109,10 +109,10 @@
         </h5>
         <p class="card-text">
         <div class="row">
-        <div class="col-8">
+        <div class="col-6">
         <?=date("d/m/Y",$inter_ini)?>
         </div>
-        <div class="col-4">
+        <div class="col-6">
         <select
             name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
             data-live-search="true"
