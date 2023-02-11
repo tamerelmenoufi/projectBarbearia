@@ -112,19 +112,24 @@
         <?=date("d/m/Y",$inter_ini)?>
 
         <select
-            name="servicoXXX"
-            id="servicoXXX"
+            name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
+            id="opcHoras"
             data-live-search="true"
             data-none-selected-text="Selecione"
-            class="selectpicker form-control"
+            class="selectpicker form-control opcHoras"
             data-actions-box="true"
         >
-
+            <option value="" >::Selecione::</option>
         <?php
 
 
             // echo "<p>Colab.: {$_POST['colaborador']} - Serv.: {$_POST['servico']}</p>";
             if($dia_serv->$hj){
+
+                $ano=date("Y",$inter_ini);
+                $mes=date("m",$inter_ini);
+                $dia=date("d",$inter_ini);
+
             for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
 
                 if(!in_array(date("H:i",$i),$ag)){
@@ -189,16 +194,15 @@
 <script>
     $(function(){
 
-        $("#servicoXXX").selectpicker();
+        $("#opcHoras").selectpicker();
 
-        $(".opcHoras").click(function() {
+        $(".opcHoras").change(function() {
 
-
-            ano = $(this).attr("ano");
-            mes = $(this).attr("mes");
-            dia = $(this).attr("dia");
-            servico = $(this).attr("servico");
-            colaborador = $(this).attr("colaborador");
+            ano = "<?=$ano?>";
+            mes = "<?=$mes?>";
+            dia = "<?=$dia?>";
+            servico = "<?=$d->produto?>";
+            colaborador = "<?=$d->colaborador?>";
             hora = $(this).val();
 
             agenda = `${ano}-${mes}-${dia} ${hora}`;
