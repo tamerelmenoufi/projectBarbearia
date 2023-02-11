@@ -109,7 +109,7 @@
         </h5>
         <p class="card-text">
 
-
+        <?=date("d/m/Y",$inter_ini)?>
 
         <select
             name="servicoXXX"
@@ -149,7 +149,7 @@
                     for="option<?=$i?>"
 
                 ><?=date("H:i",$i)?></label> -->
-                <option value="<?=date("H:i",$i)?>" ><?=date("d/m/Y H:i",$i)?></option>
+                <option value="<?=date("H:i",$i)?>" ><?=date("H:i",$i)?></option>
                 <!-- <button
                         class="btn btn-outline-primary btn-sm mb-1 mt-1 opcHoras"
                         name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
