@@ -423,7 +423,7 @@
         $("#cliente").selectpicker();
         $("#colaborador").selectpicker();
         $("#servico").selectpicker();
-
+        $("#servicoXXX").selectpicker();
 
         $("#colaborador").change(function(){
             colaborador = $("#colaborador").val();
