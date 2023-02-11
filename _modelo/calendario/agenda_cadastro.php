@@ -108,9 +108,11 @@
             <span class="agenda<?=$d->produto?>" id="agenda<?=$d->produto.$d->colaborador?>"></span>
         </h5>
         <p class="card-text">
-
+        <div class="row">
+        <div class="col-8">
         <?=date("d/m/Y",$inter_ini)?>
-
+        </div>
+        <div class="col-4">
         <select
             name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
             data-live-search="true"
@@ -180,6 +182,8 @@
             // echo ($inter_fim - $inter_ini);
         ?>
             </select>
+            </div>
+            </div>
         </p>
       </div>
     </div>
