@@ -113,7 +113,6 @@
 
         <select
             name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
-            id="opcHoras"
             data-live-search="true"
             data-none-selected-text="Selecione"
             class="selectpicker form-control opcHoras"
@@ -194,7 +193,7 @@
 <script>
     $(function(){
 
-        $("#opcHoras").selectpicker();
+        $(".opcHoras").selectpicker();
 
         $(".opcHoras").change(function() {
 
