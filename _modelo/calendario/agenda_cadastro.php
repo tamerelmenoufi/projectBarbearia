@@ -109,6 +109,17 @@
         </h5>
         <p class="card-text">
 
+
+
+        <select
+            name="servicoXXX"
+            id="servicoXXX"
+            data-live-search="true"
+            data-none-selected-text="Selecione"
+            class="selectpicker form-control"
+            data-actions-box="true"
+        >
+
         <?php
 
 
@@ -138,8 +149,8 @@
                     for="option<?=$i?>"
 
                 ><?=date("H:i",$i)?></label> -->
-
-                <button
+                <option value="<?=date("H:i",$i)?>" ><?=date("d/m/Y H:i",$i)?></option>
+                <!-- <button
                         class="btn btn-outline-primary btn-sm mb-1 mt-1 opcHoras"
                         name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
                         colaborador="<?=$d->colaborador?>"
@@ -152,7 +163,7 @@
 
                 >
                     <?=date("H:i",$i)?>
-                </button>
+                </button> -->
                 <!-- echo "<p>".date("d/m/Y H:i",$i)." - ".$s->tempo."</p>"; -->
         <?php
                 }
@@ -164,7 +175,7 @@
             // echo "<p>{$inter_ini} até {$inter_fim}</p>";
             // echo ($inter_fim - $inter_ini);
         ?>
-
+            </select>
         </p>
       </div>
     </div>
