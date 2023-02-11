@@ -120,7 +120,7 @@
             class="selectpicker form-control opcHoras"
             data-actions-box="true"
         >
-            <option value="" >::Selecione::</option>
+            <option value="" >Hora</option>
         <?php
 
 
