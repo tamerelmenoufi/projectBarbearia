@@ -62,8 +62,8 @@
         echo "<option value=''>Selecione</option>";
         while($d = mysqli_fetch_object($result)){
 
-            $servico = "<?=$d->produto?>";
-            $colaborador = "<?=$d->colaborador?>";
+            $servico = $d->produto;
+            $colaborador = $d->colaborador;
 
 
             $hj = $abrevSem[date("D", mktime(0,0,0,$mes,$dia,$ano))];
