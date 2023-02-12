@@ -237,7 +237,7 @@
             $(`.agenda${servico}`).text('');
             $(`#agenda${servico}${colaborador}`).text(rotulo);
 
-            $(document).on(".cadastrarAgenda").attr("agenda",agenda);
+            $(".cadastrarAgenda").attr("agenda", agenda);
             $(".cadastrarAgenda span").text(rotulo);
             $(".cadastrarAgenda").removeAttr("disabled");
 
@@ -439,34 +439,34 @@
 <script>
     $(function(){
 
-        $("#cliente").selectpicker();
-        $("#colaborador").selectpicker();
+        // $("#cliente").selectpicker();
+        // $("#colaborador").selectpicker();
         $("#servico").selectpicker();
 
-        $("#colaborador").change(function(){
-            colaborador = $("#colaborador").val();
-            servico = $(this).val();
+        // $("#colaborador").change(function(){
+        //     colaborador = $("#colaborador").val();
+        //     servico = $(this).val();
 
-            $(".cadastrarAgenda").attr("agenda",'');
-            $(".cadastrarAgenda span").text('');
-            $("span[Titulo]").text('');
-            $(".cadastrarAgenda").attr("disabled","disabled");
-            $(".horarios").html('');
+        //     $(".cadastrarAgenda").attr("agenda",'');
+        //     $(".cadastrarAgenda span").text('');
+        //     $("span[Titulo]").text('');
+        //     $(".cadastrarAgenda").attr("disabled","disabled");
+        //     $(".horarios").html('');
 
-            if(colaborador && servico){
-                $.ajax({
-                    type:"POST",
-                    data:{
-                        colaborador,
-                        servico,
-                    },
-                    url:"calendario/horarios.php",
-                    success:function(dados){
-                        $(".horarios").html(dados);
-                    }
-                });
-            }
-        });
+        //     if(colaborador && servico){
+        //         $.ajax({
+        //             type:"POST",
+        //             data:{
+        //                 colaborador,
+        //                 servico,
+        //             },
+        //             url:"calendario/horarios.php",
+        //             success:function(dados){
+        //                 $(".horarios").html(dados);
+        //             }
+        //         });
+        //     }
+        // });
 
 
         $('#servico').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
