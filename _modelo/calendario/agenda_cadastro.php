@@ -227,7 +227,7 @@
 
             $(`#agenda${servico}${colaborador}`).val('');
             $(this).val(hora);
-            $(".opcHoras").selectpicker();
+            $(".opcHoras").selectpicker('refresh');
 
             obj = $(`.opcAgenda[servico='${servico}']`);
             obj.attr("ano",ano);
