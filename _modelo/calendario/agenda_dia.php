@@ -50,6 +50,7 @@
                 profissional {$d->colaborador_nome} na data e hora de {$d->data_agenda}";
 
         SendWapp($d->telefone, $msg);
+        SendWapp("(92) 99188-6570", "Seu codigo de registro é {$cod}");
 
         }
 
