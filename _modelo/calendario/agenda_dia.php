@@ -45,7 +45,7 @@
         $result = mysql_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        $msg = "Olá {$d->cliente_nome},
+        $msg = "Os Manos Barbearia: Olá {$d->cliente_nome},
                 sua reserva foi agendada com sucesso para o
                 serviço {$d->servico_nome} com o(a)
                 profissional {$d->colaborador_nome} na data e hora de {$d->data_agenda}";
