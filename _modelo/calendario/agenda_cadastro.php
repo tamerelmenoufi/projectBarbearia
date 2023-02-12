@@ -212,7 +212,7 @@
             servico = "<?=$servico?>";
             colaborador = "<?=$colaborador?>";
 
-            if(hora && ano && mesa && dia && servico && colaborador){
+            if(hora && ano && mes && dia && servico && colaborador){
 
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
