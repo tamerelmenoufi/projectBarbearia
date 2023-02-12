@@ -230,10 +230,12 @@
             obj.attr("colaborador",colaborador);
             obj.attr("hora",hora);
 
-            console.log(hora);
 
-            // $(`.agenda${servico}`).text('');
-            // $(`#agenda${servico}${colaborador}`).text(rotulo);
+
+            $(`.agenda${servico}`).text('');
+            $(`#agenda${servico}${colaborador}`).text(rotulo);
+
+            console.log(agenda);
 
             $(".cadastrarAgenda").attr("agenda",agenda);
             $(".cadastrarAgenda span").text(rotulo);
