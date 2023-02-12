@@ -237,7 +237,7 @@
             $(`.agenda${servico}`).text('');
             $(`#agenda${servico}${colaborador}`).text(rotulo);
 
-            $(".cadastrarAgenda").attr("agenda",agenda);
+            $(document).on(".cadastrarAgenda").attr("agenda",agenda);
             $(".cadastrarAgenda span").text(rotulo);
             $(".cadastrarAgenda").removeAttr("disabled");
 
