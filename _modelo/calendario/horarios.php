@@ -191,6 +191,10 @@
 
                     $diaSemana = date("D", mktime(0,0,0, $w, $linha, $ano));
 
+                    $diaHoje = mktime(0,0,0, date(m), date(d), date(Y));
+                    $diaMax = mktime(0,0,0, date(m), date(d)+6, date(Y));
+                    $daVez = mktime(0,0,0, $w, $linha, $ano);
+
                     //verifica o dia atual
 
 					    if(date(Y) == $ano and date(m) == $w and date(d) == $linha){
@@ -207,7 +211,7 @@
 						echo "<td>";
 
                         // echo "$linha ".$hoje;
-                        if($diaSemana != 'Sun'){
+                        if($diaSemana != 'Sun' and ($davez >= $diaHoje and $daVez <= $diaMax)){
                         echo "<div
                                     class='d-flex align-items-center justify-content-center ".(($qtd)?'text-danger':'agenda text-success')."'
                                     style='".(($linha == $dia)?'background-color:rgb(250 145 96 / 29%)!important':false)."'
