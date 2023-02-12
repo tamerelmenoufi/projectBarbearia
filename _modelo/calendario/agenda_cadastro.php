@@ -468,7 +468,7 @@
         });
 
 
-        $('#servico').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+        $('#servicoXXXXXXX').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             servico = $(this).val();
 
             $("#colaborador").selectpicker('destroy');
