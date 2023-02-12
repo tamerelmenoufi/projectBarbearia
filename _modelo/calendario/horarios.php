@@ -6,7 +6,17 @@
 
     $dia_serv = json_decode($PeriodoLoja->dias_horas_atendimento);
 
-	if($_POST['ano'] and $_POST['mes']){
+    if($_POST['ano'] and $_POST['mes'] and $_POST['dia']){
+        $diaS = date("D", mktime(0,0,0, $_POST['mes'], $_POST['dia'], $_POST['ano']));
+    }else{
+        $diaS = date("D", mktime(0,0,0, date(m), date(d), date(Y)));
+    }
+
+	if($diaS == 'Sun'){
+		$ano = date("Y", mktime(0,0,0, date(m), date(d)+1, date(Y)));
+		$mes = date("m", mktime(0,0,0, date(m), date(d)+1, date(Y)));
+		$dia = date("d", mktime(0,0,0, date(m), date(d)+1, date(Y)));
+    }else if($_POST['ano'] and $_POST['mes']){
 		$ano = $_POST['ano'];
 		$mes = $_POST['mes'];
         $dia = (($_POST['dia'])?:date("d"));
