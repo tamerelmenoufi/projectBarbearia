@@ -122,6 +122,10 @@
             data-none-selected-text="Selecione"
             class="selectpicker form-control opcHoras <?="opcHoras{$d->produto}"?>"
             data-colaborador="<?=$d->colaborador?>"
+            data-servico="<?=$d->produto?>"
+            data-ano="<?=date("Y",$inter_ini)?>"
+            data-mes="<?=date("m",$inter_ini)?>"
+            data-dia="<?=date("d",$inter_ini)?>"
             data-actions-box="true"
         >
             <option value="" >Horarios Disponiveis</option>
@@ -207,10 +211,10 @@
 
             hora = $(this).val();
 
-            ano = "<?=$ano?>";
-            mes = "<?=$mes?>";
-            dia = "<?=$dia?>";
-            servico = "<?=$servico?>";
+            ano = $(this).data("ano");
+            mes = $(this).data("mes");
+            dia = $(this).data("dia");
+            servico = $(this).data("servico");
             colaborador = $(this).data("colaborador");
 
             if(hora && ano && mes && dia && servico && colaborador){
