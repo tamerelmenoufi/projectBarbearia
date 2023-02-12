@@ -1,7 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
-
     $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
 
 
@@ -42,7 +41,7 @@
                         left join clientes c on a.cliente = c.codigo
                         left join produtos d on a.servico = d.codigo
                     where a.codigo = '{$cod}'";
-        $result = mysql_query($con, $query);
+        $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
         $msg = "Os Manos Barbearia: Olá {$d->cliente_nome},
