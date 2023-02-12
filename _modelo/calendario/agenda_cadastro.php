@@ -243,6 +243,7 @@
             $(".cadastrarAgenda span").text(rotulo);
             $(".cadastrarAgenda").removeAttr("disabled");
             // $("span[Titulo]").text(rotulo);
+            console.log("Depois:" + agenda);
             }
 
         });
@@ -453,8 +454,6 @@
             $("span[Titulo]").text('');
             $(".cadastrarAgenda").attr("disabled","disabled");
             $(".horarios").html('');
-
-            console.log('estou no colaborador')
 
             if(colaborador && servico){
                 $.ajax({
