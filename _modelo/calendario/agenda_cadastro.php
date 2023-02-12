@@ -497,7 +497,7 @@
                         acao:'filto_servicos'
                     },
                     success:function(dados){
-                        $("#colaborador").html(dados);
+                        // $("#colaborador").html(dados);
                         // $("#colaborador").selectpicker('render');
 
                         colaborador = $("#colaborador").val();
