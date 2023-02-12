@@ -246,7 +246,7 @@
             // $(`#agenda${servico}${colaborador}`).text(rotulo);
 
             $(".cadastrarAgenda").attr("agenda", agenda);
-            $(".cadastrarAgenda span").text(rotulo);
+            // $(".cadastrarAgenda span").text(rotulo);
             $(".cadastrarAgenda").removeAttr("disabled");
 
             // $("span[Titulo]").text(rotulo);
@@ -438,7 +438,7 @@
 
 <div class="row mb-2">
     <div class="col-12">
-        <button class="btn btn-primary cadastrarAgenda" agenda="" disabled><i class="fa-solid fa-calendar-plus"></i> Agenda para <span></span></button>
+        <button class="btn btn-primary cadastrarAgenda" agenda="" disabled><i class="fa-solid fa-calendar-plus"></i> Agendar <span></span></button>
     </div>
 </div>
 <?php
