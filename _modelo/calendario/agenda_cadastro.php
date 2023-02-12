@@ -205,12 +205,14 @@
         $(".opcHoras").change(function() {
 
             hora = $(this).val();
-            if(hora){
+
             ano = "<?=$ano?>";
             mes = "<?=$mes?>";
             dia = "<?=$dia?>";
             servico = "<?=$servico?>";
             colaborador = "<?=$colaborador?>";
+
+            if(hora && ano && mesa && dia && servico && colaborador){
 
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
@@ -478,8 +480,6 @@
             $("span[Titulo]").text('');
             $(".cadastrarAgenda").attr("disabled","disabled");
             $(".horarios").html('');
-
-            console.log('passando por outro lado ')
 
             if(servico.length){
                 $.ajax({
