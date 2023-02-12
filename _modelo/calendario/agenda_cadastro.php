@@ -120,7 +120,7 @@
             name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
             data-live-search="true"
             data-none-selected-text="Selecione"
-            class="selectpicker form-control opcHoras"
+            class="selectpicker form-control opcHoras <?="opcHoras{$d->colaborador}{$d->produto}"?>"
             data-actions-box="true"
         >
             <option value="" >Horarios Disponiveis</option>
@@ -224,6 +224,10 @@
             // obj.attr("dia",'');
             // obj.attr("colaborador",'');
             // obj.attr("hora",'');
+
+            $(`.#agenda${servico}${colaborador}`).val('');
+            $(this).val(hora);
+            $(".opcHoras").selectpicker();
 
             obj = $(`.opcAgenda[servico='${servico}']`);
             obj.attr("ano",ano);
