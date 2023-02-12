@@ -121,6 +121,7 @@
             data-live-search="true"
             data-none-selected-text="Selecione"
             class="selectpicker form-control opcHoras <?="opcHoras{$d->produto}"?>"
+            data-colaborador="<?=$d->colaborador?>"
             data-actions-box="true"
         >
             <option value="" >Horarios Disponiveis</option>
@@ -210,7 +211,7 @@
             mes = "<?=$mes?>";
             dia = "<?=$dia?>";
             servico = "<?=$servico?>";
-            colaborador = "<?=$colaborador?>";
+            colaborador = $(this).data("colaborador");
 
             if(hora && ano && mes && dia && servico && colaborador){
 
