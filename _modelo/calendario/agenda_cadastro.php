@@ -210,7 +210,7 @@
 
             agenda = `${ano}-${mes}-${dia} ${hora}`;
             rotulo = `${dia}/${mes}/${ano} ${hora}`;
-            // console.log(`#agenda${servico}${colaborador}`)
+            console.log(`#agenda${servico}${colaborador}`)
 
             // obj = $(`.opcAgenda`);
             // obj.attr("ano",'');
