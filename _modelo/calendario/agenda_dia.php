@@ -36,7 +36,7 @@
         // echo "<hr>";
         $cod = mysqli_insert_id($con);
 
-        $query = "select a.*, b.nome as colaborador_nome, c.telefone, c.nome as cliente_nome, d.produto as servico_nome from agenda a
+        $query = "select a.*, b.nome as colaborador_nome, DATE_FORMAT(a.data_cadastro, '%d/%m/%Y %H:%i') as telefone, c.nome as cliente_nome, d.produto as servico_nome from agenda a
                         left join colaboradores b on a.colaborador = b.codigo
                         left join clientes c on a.cliente = c.codigo
                         left join produtos d on a.servico = d.codigo
@@ -44,10 +44,10 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        $msg = "Os Manos Barbearia: Olá {$d->cliente_nome}, sua reserva foi agendada com sucesso para o serviço {$d->servico_nome} com o(a) profissional {$d->colaborador_nome} na data e hora de {$d->data_agenda}";
+
+        $msg = "Os Manos Barbearia: Olá *{$d->cliente_nome}*, sua reserva foi agendada com sucesso para o serviço *{$d->servico_nome}* com o(a) profissional *{$d->colaborador_nome}* na data e hora de {$d->data_agenda}";
 
         SendWapp($d->telefone, $msg);
-        SendWapp("(92) 99188-6570", "Seu codigo de registro é {$cod} : {$msg}");
 
         }
 
