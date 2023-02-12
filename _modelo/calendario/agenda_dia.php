@@ -44,13 +44,10 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        $msg = "Os Manos Barbearia: Olá {$d->cliente_nome},
-                sua reserva foi agendada com sucesso para o
-                serviço {$d->servico_nome} com o(a)
-                profissional {$d->colaborador_nome} na data e hora de {$d->data_agenda}";
+        $msg = "Os Manos Barbearia: Olá {$d->cliente_nome}, sua reserva foi agendada com sucesso para o serviço {$d->servico_nome} com o(a) profissional {$d->colaborador_nome} na data e hora de {$d->data_agenda}";
 
         SendWapp($d->telefone, $msg);
-        SendWapp("(92) 99188-6570", "Seu codigo de registro é {$cod}");
+        SendWapp("(92) 99188-6570", "Seu codigo de registro é {$cod} : {$msg}");
 
         }
 
