@@ -37,7 +37,7 @@
         // echo "<hr>";
         $cod = mysqli_insert_id($con);
 
-        $query = "select a.*, b.nome as colaborador_nome, b.telefone, c.nome as cliente_nome, d.produto as servico_nome from agenda a
+        $query = "select a.*, b.nome as colaborador_nome, c.telefone, c.nome as cliente_nome, d.produto as servico_nome from agenda a
                         left join colaboradores b on a.colaborador = b.codigo
                         left join clientes c on a.cliente = c.codigo
                         left join produtos d on a.servico = d.codigo
