@@ -225,7 +225,7 @@
             // obj.attr("colaborador",'');
             // obj.attr("hora",'');
 
-            $(`.#agenda${servico}${colaborador}`).val('');
+            $(`#agenda${servico}${colaborador}`).val('');
             $(this).val(hora);
             $(".opcHoras").selectpicker();
 
