@@ -225,9 +225,8 @@
             // obj.attr("colaborador",'');
             // obj.attr("hora",'');
 
-            $(`#agenda${servico}${colaborador}`).val('');
-            $(this).val(hora);
-            $(".opcHoras").selectpicker('refresh');
+            $(`#agenda${servico}${colaborador}`).selectpicker('val','');
+            $(this).selectpicker('val', hora);
 
             obj = $(`.opcAgenda[servico='${servico}']`);
             obj.attr("ano",ano);
