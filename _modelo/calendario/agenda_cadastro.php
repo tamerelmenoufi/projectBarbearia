@@ -468,10 +468,10 @@
         });
 
 
-        $('#servicoXXXXXXX').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+        $('#servico').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
             servico = $(this).val();
 
-            $("#colaborador").selectpicker('destroy');
+            // $("#colaborador").selectpicker('destroy');
             $(".cadastrarAgenda").attr("agenda",'');
             $(".cadastrarAgenda span").text('');
             $("span[Titulo]").text('');
