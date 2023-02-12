@@ -225,7 +225,7 @@
             // obj.attr("colaborador",'');
             // obj.attr("hora",'');
 
-            $(`#agenda${servico}${colaborador}`).selectpicker('val','');
+            $(`.agenda${servico}${colaborador}`).selectpicker('val','');
             $(this).selectpicker('val', hora);
 
             obj = $(`.opcAgenda[servico='${servico}']`);
@@ -237,8 +237,8 @@
 
 
 
-            $(`.agenda${servico}`).text('');
-            $(`#agenda${servico}${colaborador}`).text(rotulo);
+            // $(`.agenda${servico}`).text('');
+            // $(`#agenda${servico}${colaborador}`).text(rotulo);
 
             $(".cadastrarAgenda").attr("agenda", agenda);
             $(".cadastrarAgenda span").text(rotulo);
