@@ -116,13 +116,12 @@
         <?=date("d/m/Y",$inter_ini)?>
         </div>
         <div class="col-6">
-        <!-- data-live-search="true"
-            data-none-selected-text="Selecione"
-            class="selectpicker form-control opcHoras"
-            data-actions-box="true" -->
         <select
             name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
-            class="form-control opcHoras"
+            data-live-search="true"
+            data-none-selected-text="Selecione"
+            class="selectpicker form-control opcHoras"
+            data-actions-box="true"
         >
             <option value="" >Horarios Disponiveis</option>
         <?php
@@ -201,7 +200,7 @@
 <script>
     $(function(){
 
-        // $(".opcHoras").selectpicker();
+        $(".opcHoras").selectpicker();
 
         $(".opcHoras").change(function() {
 
@@ -238,11 +237,10 @@
             $(`.agenda${servico}`).text('');
             $(`#agenda${servico}${colaborador}`).text(rotulo);
 
-            console.log(agenda);
-
             $(".cadastrarAgenda").attr("agenda",agenda);
             $(".cadastrarAgenda span").text(rotulo);
             $(".cadastrarAgenda").removeAttr("disabled");
+
             // $("span[Titulo]").text(rotulo);
             }
 
