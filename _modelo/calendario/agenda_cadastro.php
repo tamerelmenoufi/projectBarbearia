@@ -120,7 +120,7 @@
             name="<?="opcHoras_{$d->colaborador}{$d->produto}"?>"
             data-live-search="true"
             data-none-selected-text="Selecione"
-            class="selectpicker form-control opcHoras<?=$d->produto.$d->colaborador?>"
+            class="selectpicker form-control opcHoras"
             data-actions-box="true"
         >
             <option value="" >Horarios Disponiveis</option>
@@ -200,9 +200,9 @@
 <script>
     $(function(){
 
-        $(".opcHoras<?=$servico.$colaborador?>").selectpicker();
+        $(".opcHoras").selectpicker();
 
-        $(".opcHoras<?=$servico.$colaborador?>").change(function() {
+        $(".opcHoras").change(function() {
 
             ano = "<?=$ano?>";
             mes = "<?=$mes?>";
