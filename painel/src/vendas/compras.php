@@ -215,7 +215,7 @@
 ?>
 <div class="row">
 
-    <div class="col-md-2 offset-md-1">
+    <div class="col-md-2">
         <label for="desconto" class="form-label">Comanda</label>
         <div class="input-group mb-3">
             <span class="input-group-text"><i class="fa-solid fa-ticket"></i></span>
