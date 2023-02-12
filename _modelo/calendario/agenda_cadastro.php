@@ -386,7 +386,7 @@
         $r = mysqli_query($con, $q);
         while($s = mysqli_fetch_object($r)){
         ?>
-            <option value="<?=$s->codigo?>" <?=(($_SESSION['servico'] == $s->codigo)?'selected':false)?>><?=$s->produto?></option>
+            <option value="<?=$s->codigo?>" <?=(($_SESSION['servico'] == $s->codigo)?'selected':false)?>><?=$s->produto?> (<?=$d->valor?>)</option>
         <?php
         }
         ?>
