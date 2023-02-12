@@ -454,6 +454,8 @@
             $(".cadastrarAgenda").attr("disabled","disabled");
             $(".horarios").html('');
 
+            console.log('estou no colaborador')
+
             if(colaborador && servico){
                 $.ajax({
                     type:"POST",
