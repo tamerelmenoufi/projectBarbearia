@@ -468,8 +468,8 @@
         });
 
 
-        // $('#servico').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-        $('#servico').on('change', function (e, clickedIndex, isSelected, previousValue) {
+        $('#servico').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+        // $('#servico').on('change', function (e, clickedIndex, isSelected, previousValue) {
             servico = $(this).val();
 
             // $("#colaborador").selectpicker('destroy');
@@ -478,6 +478,8 @@
             $("span[Titulo]").text('');
             $(".cadastrarAgenda").attr("disabled","disabled");
             $(".horarios").html('');
+
+            console.log('passando por outro lado ')
 
             if(servico.length){
                 $.ajax({
