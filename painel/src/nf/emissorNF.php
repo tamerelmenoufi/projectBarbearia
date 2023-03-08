@@ -337,7 +337,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 		 * pv.valor_total = (VALOR DE VENDA * QUANTIDADE)
 		 *
 		 */
-		echo $sql = "SELECT pv.*,  p.ncm,  p.cest, p.cfop, p.origem, p.unit, p.icms
+		echo $sql = "SELECT pv.*,  p.nota_ncm, p.nota_cest, p.nota_cfop, p.nota_origem, p.nota_unit, p.nota_icms
 				FROM vendas_produtos as pv
 				LEFT JOIN produtos as p ON REPLACE(JSON_EXTRACT(pv.produto_json, '$.produtos[0].codigo'),'\"','') = p.codigo
 				WHERE pv.venda = '$venda_id' and pv.deletado != '1'";
