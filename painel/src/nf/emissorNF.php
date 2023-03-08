@@ -551,3 +551,5 @@ include("config.php");
 					exit();
 				}
 			}
+
+			// Atualização do sistem de emissão de notas
