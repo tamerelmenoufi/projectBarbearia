@@ -463,7 +463,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 			$response = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $response_server));
 			var_dump($response);
 			if (curl_errno($ch)) {
-				$errValidar = print_r(curl_error($ch), true);
+				echo $errValidar = print_r(curl_error($ch), true);
 				// var_dump(curl_error($ch));
 				$PDO->query("UPDATE vendas SET nf_error='{$errValidar}' where codigo='$venda_id'");
 				die;
@@ -489,7 +489,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 					// echo '</ul>';
 					$errValidar .= '</ul>';
 				}
-
+				echo $errValidar;
 				$PDO->query("UPDATE vendas SET nf_error='{$errValidar}' where codigo='$venda_id'");
 
 
@@ -497,7 +497,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 
 				// echo '<h2>Erro no servidor ao emitir</h2>';
 				$errValidar .= '<h2>Erro no servidor ao emitir</h2>';
-				$errValidar .= print_r($response_server, true);
+				echo $errValidar .= print_r($response_server, true);
 				// var_dump($response_server);
 				$PDO->query("UPDATE vendas SET nf_error='{$errValidar}' where codigo='$venda_id'");
 
@@ -505,7 +505,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 
 				if($response->teste == "ok"){
 					$cont = "tipo=validate&";
-					$errValidar = $endpoint ."danfe/?".$cont."chave=".$response->chave."&logo=".$data_nfe["empresa"]["logo"];
+					echo $errValidar = $endpoint ."danfe/?".$cont."chave=".$response->chave."&logo=".$data_nfe["empresa"]["logo"];
 					// header("location: ".$endpoint ."danfe/?".$cont."chave=".$response->chave."&logo=".$data_nfe["empresa"]["logo"]); exit;
 					$PDO->query("UPDATE vendas SET nf_teste='{$errValidar}' where codigo='$venda_id'");
 					die;
@@ -544,13 +544,13 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 					// echo '<script>window.open('. $endpoint ."danfe/index.php?chave=".$chave."&logo=".$data_nfe["empresa"]["logo"].')</script>';
 					// Redirecionar para imprimir a Nota:
 					// header("location: ". $endpoint ."danfe/index.php?chave=".$chave."&logo=".$data_nfe["empresa"]["logo"]); exit;
-					$errValidar = $endpoint ."danfe/index.php?chave=".$chave."&logo=".$data_nfe["empresa"]["logo"];
+					echo $errValidar = $endpoint ."danfe/index.php?chave=".$chave."&logo=".$data_nfe["empresa"]["logo"];
 					$PDO->query("UPDATE vendas SET nf_pdf='{$errValidar}' where codigo='$venda_id'");
 					exit();
 
 				} else {
 					// echo "Não foi possível aprovar a nota nesse momento: ". $status;
-					$errValidar = "Não foi possível aprovar a nota nesse momento: ". $status;
+					echo $errValidar = "Não foi possível aprovar a nota nesse momento: ". $status;
 					$PDO->query("UPDATE vendas SET nf_error='{$errValidar}' where codigo='$venda_id'");
 					exit();
 				}
