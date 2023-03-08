@@ -337,7 +337,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 		 * pv.valor_total = (VALOR DE VENDA * QUANTIDADE)
 		 *
 		 */
-		echo $sql = "SELECT pv.*,  p.nota_ncm, p.nota_cest, p.nota_cfop, p.nota_origem, p.nota_unit, p.nota_icms
+		$sql = "SELECT pv.*, p.produto_nome,  p.nota_ncm, p.nota_cest, p.nota_cfop, p.nota_origem, p.nota_unit, p.nota_icms
 				FROM vendas_produtos as pv
 				LEFT JOIN produtos as p ON pv.produto = p.codigo
 				WHERE pv.venda = '$venda_id' and pv.deletado != '1'";
@@ -349,30 +349,30 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 
 			//////////////////////////////////////////////////////////
 
-			$pedido = json_decode($row["produto_json"]);
-			$sabores = false;
+			// $pedido = json_decode($row["produto_json"]);
+			// $sabores = false;
 
 
-			$ListaPedido = [];
-			for($i=0; $i < count($pedido->produtos); $i++){
-				$ListaPedido[] = $pedido->produtos[$i]->descricao;
-			}
-			if($ListaPedido) $sabores = implode(', ', $ListaPedido);
+			// $ListaPedido = [];
+			// for($i=0; $i < count($pedido->produtos); $i++){
+			// 	$ListaPedido[] = $pedido->produtos[$i]->descricao;
+			// }
+			// if($ListaPedido) $sabores = implode(', ', $ListaPedido);
 
-			$Prod = [];
-			if(count($pedido->produtos) > 0){
-				foreach($pedido->produtos as $ind => $prod){
-					if(is_array($prod)){
-						foreach($prod as $ind1 => $prod1){
-							$Prod[] = $prod1->descricao;
-						}
-					}else{
-						$Prod[] = $prod->descricao;
-					}
+			// $Prod = [];
+			// if(count($pedido->produtos) > 0){
+			// 	foreach($pedido->produtos as $ind => $prod){
+			// 		if(is_array($prod)){
+			// 			foreach($prod as $ind1 => $prod1){
+			// 				$Prod[] = $prod1->descricao;
+			// 			}
+			// 		}else{
+			// 			$Prod[] = $prod->descricao;
+			// 		}
 
-				}
-				$Prod = (($Prod)?implode(' ',$Prod):false);
-			}
+			// 	}
+			// 	$Prod = (($Prod)?implode(' ',$Prod):false);
+			// }
 
 
 			//////////////////////////////////////////////////////////
@@ -381,13 +381,13 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 
 			$codigo=$row["codigo"];
 			$quatidade = (empty($row["quantidade"])) ? "1" : $row["quantidade"];;
-			$nomeproduto=$pedido->categoria->descricao." ".$Prod." ".$pedido->medida->descricao." ".$row["produto_descricao"]; // NOME DO PRODUTO
-			$ncm=$row["ncm"]; // NCM
-			$cest=$row["cest"]; // CEST
+			$nomeproduto=$row["produto_nome"]; // NOME DO PRODUTO
+			$ncm=$row["nota_ncm"]; // NCM
+			$cest=$row["nota_cest"]; // CEST
 			$unit=(empty($row["unidade"])) ? "UN" : $row["unidade"]; // CODIGO UNIDADE
-			$origem = (empty($row["origem"])) ? "0" : $row["origem"];
-			$cfop = $row["cfop"];
-			$icms = $row["icms"];
+			$origem = (empty($row["nota_origem"])) ? "0" : $row["nota_origem"];
+			$cfop = $row["nota_cfop"];
+			$icms = $row["nota_icms"];
 			$preco = $row["valor_unitario"];
 			$preco_total = $row["valor_total"];
 			$peso = '0.100';
