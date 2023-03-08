@@ -337,7 +337,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 		 * pv.valor_total = (VALOR DE VENDA * QUANTIDADE)
 		 *
 		 */
-		$sql = "SELECT pv.*, p.produto_nome,  p.nota_ncm, p.nota_cest, p.nota_cfop, p.nota_origem, p.nota_unit, p.nota_icms
+		$sql = "SELECT pv.*, p.produto as produto_nome,  p.nota_ncm, p.nota_cest, p.nota_cfop, p.nota_origem, p.nota_unit, p.nota_icms
 				FROM vendas_produtos as pv
 				LEFT JOIN produtos as p ON pv.produto = p.codigo
 				WHERE pv.venda = '$venda_id' and pv.deletado != '1'";
