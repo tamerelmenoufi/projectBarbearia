@@ -447,7 +447,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 
 			print_r($data_nfe);
 
-			exit();
+			// exit();
 
 
 			$fields_string = http_build_query($data_nfe);
