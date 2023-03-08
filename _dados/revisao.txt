@@ -1,0 +1,27 @@
+Conforme reunião realizada no dia de hj, 28/11/2023, segue as alterações requeridas a serem realizadas: 
+
+Barbearia: 
+
+1. Agendamento ->Cadastro->endereço (colocar); ----- ok
+
+2. Limite de agendamento: seis dias; --- ok
+
+3. Enviar comprovante de agendamento para wpp; 
+
+4. Alterar processo de escolha para mais de um serviço, alterar a barra de serviços; (unificar); --- ok
+
+5. Colocar pagamento no agendamento; (opção com desconto).  
+
+6. Aumentar a logo da barbearia; Colocar o nome.  --- ok
+
+7. Acrescentar aba “ambiente” seis (banners); --- ok
+
+8. Acrescentar a aba “experiências” para fotos dos clientes; --- ok
+
+9. Produto: Indisponibilizar o produto para venda qdo o zerar o estoque; --- ok
+
+10. Acrescentar campo de custo unitário do produto (estoque); --- ok
+
+11. Acrescentar no campo “venda” o nome do colaborador ao lado do ícone; --- ok
+
+12. Número da comanda juntamente com nome do cliente campo “vendas” --- ok
