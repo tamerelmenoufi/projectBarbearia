@@ -104,9 +104,6 @@
                     <i class="fa-solid fa-trash-can"></i> Excluir
                     </button>
 
-
-
-
                   </td>
                 </tr>
                 <?php
