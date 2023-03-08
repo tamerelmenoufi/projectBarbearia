@@ -342,7 +342,6 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 				LEFT JOIN produtos as p ON pv.produto = p.codigo
 				WHERE pv.venda = '$venda_id' and pv.deletado != '1'";
 
-exit();
 
 		$stmt = $PDO->query($sql);
 		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -381,7 +380,7 @@ exit();
 
 
 			$codigo=$row["codigo"];
-			$quatidade = (empty($row["quantidade"])) ? "1" : $row["quantidade"];;
+			$quatidade = (empty($row["quantidade"])) ? "1" : $row["quantidade"];
 			$nomeproduto=$row["produto_nome"]; // NOME DO PRODUTO
 			$ncm=$row["nota_ncm"]; // NCM
 			$cest=$row["nota_cest"]; // CEST
@@ -446,7 +445,9 @@ exit();
 			//echo $endpoint."gerador/Emissor.php?".$fields_string;
 			//$data_nfe['teste'] = "ok"; // se desejar emitir em modo de teste, não será enviado para o sefaz
 
-			// print_r($data_nfe);
+			print_r($data_nfe);
+
+			exit();
 
 
 			$fields_string = http_build_query($data_nfe);
