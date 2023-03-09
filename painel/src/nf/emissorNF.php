@@ -461,7 +461,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			$response_server = curl_exec($ch);
 			$response = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $response_server));
-			// var_dump($response);
+			var_dump($response_server);
 			if (curl_errno($ch)) {
 				echo $errValidar = print_r(curl_error($ch), true);
 				// var_dump(curl_error($ch));
