@@ -418,7 +418,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 		}
 
 
-		// print_r($data_nfe);
+		print_r($data_nfe);
 
 			// Tecnico resposavel - opcional e obrigatório para alguns estados
 			// Se for usar são obrigatório: cnpj, contato (nome), email e fone
