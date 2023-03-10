@@ -389,7 +389,7 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 			$cfop = $row["nota_cfop"];
 			$icms = $row["nota_icms"]; // tem allgum valor aqui? 0 nao é do simples nacional? acho que sim 00 nao é do simples, então a api necesita de mais dados, é bom confirmar se é 00 mesmo, senao complica bastante a coisa
 			$preco = $row["valor_unitario"];
-			$preco_total = $row["valor_total"];
+			$preco_total = $row["valor"];
 			$peso = '0.100';
 
 			$data_nfe['produtos'][$x] = array(
