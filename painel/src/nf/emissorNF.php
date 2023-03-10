@@ -498,7 +498,9 @@ if($_GET['id']) $_POST["id"] = $_GET['id'];
 				// echo '<h2>Erro no servidor ao emitir</h2>';
 				$errValidar .= '<h2>Erro no servidor ao emitir</h2>';
 				echo $errValidar .= print_r($response_server, true);
-				// var_dump($response_server);
+				var_dump($response_server);
+				// precisa subir esse? sim, pode subir entao
+
 				$PDO->query("UPDATE vendas SET nf_error='{$errValidar}' where codigo='$venda_id'");
 
 			} else {
