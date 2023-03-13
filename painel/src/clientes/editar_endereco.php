@@ -140,27 +140,6 @@
                     map<?=$md5?>.setZoom(18);
 
                     $(".ConfirmaCoordenadas").attr("coordenada",`[${latitude<?=$md5?>},${longitude<?=$md5?>}]`);
-
-
-                    // Inclusão das corrdendas no banco de forma automática
-                    coordenadas = `[${latitude<?=$md5?>},${longitude<?=$md5?>}]`;
-                    $.ajax({
-                        url:"src/clientes/editar_endereco.php",
-                        type:"POST",
-                        data:{
-                            coordenadas,
-                            validacao:'0',
-                            codigo:'<?=$d->codigo?>',
-                            acao:'coordenadas'
-                        },
-                        success:function(dados){
-
-                        }
-                    });
-                    // Inclusão das corrdendas no banco de forma automática
-
-
-
                 }
             }
         });
