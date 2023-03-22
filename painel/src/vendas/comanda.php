@@ -148,12 +148,12 @@
     ?>
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            ACRESCIMO
+            ACRESCIMO <?=(($v->tipo_acrescimo == 'p')?'%':false)?>
         </div>
 
         <div class="col-2">
             <?=(($v->tipo_acrescimo == 'v')?'R$ '.number_format($v->acrescimo,2,',','.'):false)?>
-            <?=(($v->tipo_acrescimo == 'p')?'R$ '.(number_format(($v->total/100*$v->acrescimo),2,',','.')).' ('.number_format($v->acrescimo,2,',','.').'%)':false)?>
+            <?=(($v->tipo_acrescimo == 'p')?'R$ '.(number_format(($v->total/100*$v->acrescimo),2,',','.')):false)?>
         </div>
     </div>
 
@@ -163,8 +163,8 @@
         </div>
 
         <div class="col-2">
-            <?=(($v->tipo_desconto == 'v')?'R$ ':false)?>
-            <?=number_format($v->desconto,2,',','.')?>
+            <?=(($v->tipo_desconto == 'v')?'R$ '.number_format($v->desconto,2,',','.'):false)?>
+            <?=(($v->tipo_desconto == 'p')?'R$ '.(number_format(($v->total/100*$v->desconto),2,',','.')):false)?>
         </div>
     </div>
 
