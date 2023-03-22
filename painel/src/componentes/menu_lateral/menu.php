@@ -1,6 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
+    $perfil = $_SESSION['ProjectPainel']->perfil;
 ?>
 
 
@@ -48,7 +49,7 @@
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="src/colaboradores/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Usuários/Colaboradores
+          <i class="fa-solid fa-clipboard-list"></i> <?=(($perfil == 'a')?'Usuários/Colaboradores':'Editar seu cadastro')?>
         </a>
       </div>
     </div>
@@ -61,6 +62,9 @@
       </div>
     </div>
 
+    <?php
+    if($perfil == 'a'){
+    ?>
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="src/produtos_categorias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -95,7 +99,9 @@
         </a>
       </div>
     </div>
-
+    <?php
+    }
+    ?>
   </div>
 </div>
 
