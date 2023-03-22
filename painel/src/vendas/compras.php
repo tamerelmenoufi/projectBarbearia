@@ -266,8 +266,8 @@
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">R$</span> -->
             <select tipo<?=$d->codigo?> class="form-control" >
+                <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>R$</option>
                 <option value="p" <?=(($tipo[$d->codigo] == 'p')?'selected':false)?>>%</option>
-                <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>$</option>
             </select>
             <input type="text" data-thousands="" data-decimal="." id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
@@ -279,8 +279,8 @@
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">R$</span> -->
             <select tipo<?=$d->codigo?> class="form-control" >
+                <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>R$</option>
                 <option value="p" <?=(($tipo[$d->codigo] == 'p')?'selected':false)?>>%</option>
-                <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>$</option>
             </select>
             <input type="text" data-thousands="" data-decimal="." id="desconto" class="form-control" value="<?=$d->desconto?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-desconto"><i class="fa-regular fa-floppy-disk"></i></button>
