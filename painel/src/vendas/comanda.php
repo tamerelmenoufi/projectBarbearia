@@ -148,7 +148,7 @@
     ?>
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            ACRESCIMO <?=(($v->tipo_acrescimo == 'p')?'%':false)?>
+            ACRESCIMO <?=(($v->tipo_acrescimo == 'p')?number_format($v->acrescimo,2,',','.').'%':false)?>
         </div>
 
         <div class="col-2">
@@ -159,7 +159,7 @@
 
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            DESCONTO <?=(($v->tipo_desconto == 'p')?'%':false)?>
+            DESCONTO <?=(($v->tipo_desconto == 'p')?number_format($v->desconto,2,',','.').'%':false)?>
         </div>
 
         <div class="col-2">
