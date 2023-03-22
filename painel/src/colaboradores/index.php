@@ -25,6 +25,9 @@
           <h5 class="card-header">Lista de Colaboradores</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
+            <?php
+              if($perfil == 'a'){
+            ?>
                 <button
                     novoCadastro
                     class="btn btn-success"
@@ -33,6 +36,9 @@
                     role="button"
                     aria-controls="offcanvasDireita"
                 >Novo</button>
+            <?php
+              }
+            ?>
             </div>
 
 
