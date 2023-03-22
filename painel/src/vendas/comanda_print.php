@@ -2,35 +2,32 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
 
-    class Certificado {
-        public $nome_para_certificado = '';
-        public $modelo_de_certificado = '';
+    class Certificado
+{
 
-        function __construct($nome, $modelo)
-        {
-            $this->nome_para_certificado = $nome;
-            $this->modelo_de_certificado = $modelo;
-        }
+    public $nome_para_certificado = '';
+    public $modelo_de_certificado = '';
 
-        public function gerar()
-        {
-            header("Content-Type: image/jpeg");
-            $texto = 'Certificamos que ' . $this->nome_para_certificado;
-            $texto1 = 'participou do Evento nos dias 21, 22 e 23 de setembro de 2014 na';
-            $texto2 = 'Universidade Federal da Paraíba - UFPB';
-            $img = imagecreatefromjpeg($this->modelo_de_certificado);
-            $preto = imagecolorallocate($img, 0, 0, 0);
-            $font_path = 'arial.ttf';
-            imagettftext($img, 12, 0, 10, 200, $preto, $font_path, $texto);
-            imagettftext($img, 12, 0, 10, 230, $preto, $font_path, $texto1);
-            imagettftext($img, 12, 0, 10, 250, $preto, $font_path, $texto2);
-            // imagestring($img, 5, 300, 400, $texto, $preto);
-            imagejpeg($img);
-            imagedestroy($img);
-        }
+    function __construct($nome)
+    {
+        $this->nome_para_certificado = $nome;
     }
 
-    $imagem = new Certificado("Edilson Samuel", "modelo.jpg");
+    public function gerar()
+    {
+        header("Content-Type: image/jpeg");
+        $texto = 'Certificamos que ' . $this->nome_para_certificado . ' participou do Evento nos dias 21, 22 e 23 de setembro de 2014 na Universidade Federal da Paraíba - UFPB';
+        $img = imagecreatefromjpeg($this->modelo_de_certificado);
+        $preto = imagecolorallocate($img, 0, 0, 0);
+        $font_path = 'http://meu-site.com/custom/TravelingTypewriter.ttf';
+        imagettftext($img, 50, 0, 10, 20, $preto, $font_path, $texto);
+        // imagestring($img, 5, 300, 400, $texto, $preto);
+        imagejpeg($img);
+        imagedestroy($img);
+    }
+}
+
+    $imagem = new Certificado("Edilson Samuel");
     $imagem->gerar();
 
     exit();
