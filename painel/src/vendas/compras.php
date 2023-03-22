@@ -182,12 +182,14 @@
                 $comissao = $comissao + $d->comissao;
             }
 
-            mysqli_query($con, "update vendas set
+
+            $q = "update vendas set
                                                 valor = '{$valor}',
                                                 comissao = '{$comissao}',
                                                 ".((!$tipo_produtos)?"taxa_entrega = '0', local_entrega = '0', ":false)."
                                                 total = ({$valor}".((!$tipo_produtos)?" + taxa_entrega":false)." + taxa - if(tipo_desconto = 'p', ({$valor}/100*desconto), desconto) + if(tipo_acrescimo = 'p', ({$valor}/100*acrescimo), acrescimo) - {$comissao})
-                        where codigo = '{$_SESSION['codVenda']}'");
+                        where codigo = '{$_SESSION['codVenda']}'";
+            mysqli_query($con, $q);
 
             ?>
         </tbody>
