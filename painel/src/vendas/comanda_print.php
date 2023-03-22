@@ -2,27 +2,6 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
 
-
- //Define a imagem e seu tamanho em pixels
- $image = imagecreate(256, 256);
-
- //Define a paleta de cores
- $black = imagecolorallocate($image, 0, 0, 0);
- $red = imagecolorallocate($image, 255, 0, 0);
-
- //Escreve na tela (imagem, tamanho da fonte, eixo x, eixo y, texto, cor)
- imagestring($image, 7, 55, 110, "Criandobits", $red);
-
- //Define o formato a ser gerado
-imagepng($image);
-
- //Libera variável da memória
-//  imagedestroy($image);
-
-    exit();
-
-
-
     vl(['ProjectPainel']);
 
     if($_POST['acao'] == 'forma_pagamento'){
