@@ -12,6 +12,8 @@
       mysqli_query($con, $query);
       exit();
     }
+
+    $perfil = $_SESSION['ProjectPainel']->perfil;
 ?>
 
 <div class="col">
@@ -47,7 +49,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from colaboradores ".(($_SESSION['ProjectPainel']->perfil == 'c')?" where codigo = '{$_SESSION['ProjectPainel']->codigo}' ":false)." order by nome asc";
+                  $query = "select * from colaboradores ".(($perfil == 'c')?" where codigo = '{$_SESSION['ProjectPainel']->codigo}' ":false)." order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -57,14 +59,20 @@
                   <td style="white-space: nowrap;"><?=$d->telefone?></td>
                   <td style="white-space: nowrap;"><?=$d->email?></td>
                   <td style="white-space: nowrap;">
-
+                    <?php
+                    if($perfil == 'a'){
+                    ?>
                   <div class="form-check form-switch">
                     <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
                   </div>
-
+                    <?php
+                    }
+                    ?>
                   </td>
                   <td style="white-space: nowrap;">
-
+                    <?php
+                    if($perfil == 'a'){
+                    ?>
                     <button
                       class="btn btn-primary"
                       servicos="<?=$d->codigo?>"
@@ -76,7 +84,9 @@
                     >
                       Serviços
                     </button>
-
+                    <?php
+                    }
+                    ?>
                     <button
                       class="btn btn-primary"
                       edit="<?=$d->codigo?>"
@@ -88,7 +98,7 @@
                       Editar
                     </button>
                     <?php
-                    if($d->codigo != 1){
+                    if($d->codigo != 1 and $perfil == 'a'){
                     ?>
                     <button class="btn btn-danger" delete="<?=$d->codigo?>">
                       Excluir
