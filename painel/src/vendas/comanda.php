@@ -159,13 +159,12 @@
 
     <div class="row justify-content-between">
         <div class="col-10 text-end">
-            DESCONTO
+            DESCONTO <?=(($v->tipo_desconto == 'p')?'%':false)?>
         </div>
 
         <div class="col-2">
             <?=(($v->tipo_desconto == 'v')?'R$ ':false)?>
             <?=number_format($v->desconto,2,',','.')?>
-            <?=(($v->tipo_desconto == 'p')?'%':false)?>
         </div>
     </div>
 
