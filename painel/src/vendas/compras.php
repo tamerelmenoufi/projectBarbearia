@@ -122,6 +122,7 @@
             $tipo_produtos = false;
             if($n) $colaborador = true;
             while($d = mysqli_fetch_object($result)){
+
                 if($d->tipo == 'p') $tipo_produtos = true;
                 if(!$d->colaborador) $colaborador = false;
             ?>
@@ -182,7 +183,7 @@
                 $comissao = $comissao + $d->comissao;
             }
 
-            echo $q = "update vendas set
+            $q = "update vendas set
                                                 valor = '{$valor}',
                                                 comissao = '{$comissao}',
                                                 ".((!$tipo_produtos)?"taxa_entrega = '0', local_entrega = '0', ":false)."
@@ -292,7 +293,14 @@
         <label for="total" class="form-label">Total</label>
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
-            <div type="number" class="form-control"><?=($d->valor + $d->taxa_entrega + (($d->tipo_acrescimo == 'p')?($d->valor/100*$d->acrescimo):$d->acrescimo) - (($d->desconto == 'p')?($d->valor/100*$d->desconto):$d->desconto))?></div>
+            <div type="number" class="form-control"><?=(
+                                                            $d->valor +
+                                                            $d->taxa_entrega +
+                                                            (($d->tipo_acrescimo == 'p')?($d->valor/100*$d->acrescimo):$d->acrescimo) -
+                                                            (($d->tipo_desconto == 'p')?($d->valor/100*$d->desconto):$d->desconto) -
+                                                            $d->comissao
+                                                        )
+                                                    ?></div>
             <button
                 data-bs-toggle="offcanvas"
                 href="#offcanvasDireita"
