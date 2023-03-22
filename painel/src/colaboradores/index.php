@@ -22,7 +22,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Colaboradores</h5>
+          <h5 class="card-header"><?=(($perfil == 'a')?'Lista de Colaboradores':'Seu Cadastro')?></h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
             <?php
