@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
-
+    $perfil = $_SESSION['ProjectPainel']->perfil;
     if($_POST['delete']){
       $query = "delete from clientes where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
@@ -85,13 +85,13 @@
                       Editar
                     </button>
                     <?php
-                    // if($d->codigo != 1){
+                    if($perfil == 'a'){
                     ?>
                     <button class="btn btn-danger" <?=(($d->vendas)?'disabled':'delete="'.$d->codigo.'"')?>>
                       Excluir
                     </button>
                     <?php
-                    // }
+                    }
                     ?>
                   </td>
                 </tr>
