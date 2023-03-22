@@ -63,3 +63,18 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    $(function(){
+
+        $("i[comanda]").click(function(){
+            $.ajax({
+                url:"src/vendas/comanda.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
+    })
+</script>
