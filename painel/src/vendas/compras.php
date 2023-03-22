@@ -281,8 +281,8 @@
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">R$</span> -->
             <select tipo_desconto class="form-control" >
-                <option value="v" <?=(($tipo_desconto == 'v')?'selected':false)?>>R$</option>
-                <option value="p" <?=(($tipo_desconto == 'p')?'selected':false)?>>%</option>
+                <option value="v" <?=(($d->tipo_desconto == 'v')?'selected':false)?>>R$</option>
+                <option value="p" <?=(($d->tipo_desconto == 'p')?'selected':false)?>>%</option>
             </select>
             <input type="text" data-thousands="" data-decimal="." id="tipo_desconto" class="form-control" value="<?=$d->desconto?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-tipo_desconto"><i class="fa-regular fa-floppy-disk"></i></button>
