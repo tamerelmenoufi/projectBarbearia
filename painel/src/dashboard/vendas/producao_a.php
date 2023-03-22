@@ -71,7 +71,7 @@
         $("i[comanda]").click(function(){
             comanda = $(this).attr("comanda")
             $.ajax({
-                url:"src/vendas/comanda.php",
+                url:"src/vendas/comanda_print.php",
                 type:"POST",
                 data:{
                     comanda,

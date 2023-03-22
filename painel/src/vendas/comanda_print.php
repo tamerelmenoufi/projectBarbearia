@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
-    vl(['ProjectPainel','codVenda']);
+    vl(['ProjectPainel']);
 
     if($_POST['acao'] == 'forma_pagamento'){
         $query = "insert into vendas_pagamentos set
@@ -32,7 +32,7 @@
                             ) as endereco
                 from vendas a
                      left join clientes_enderecos b on a.local_entrega = b.codigo
-                where a.codigo = '{$_SESSION['codVenda']}'";
+                where a.codigo = '".(($_POST['comanda'])?:$_SESSION['codVenda'])."'";
     $result = mysqli_query($con, $query);
     $v = mysqli_fetch_object($result);
 
