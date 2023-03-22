@@ -7,7 +7,7 @@
 </style>
 
 <div class="d-flex flex-row-reverse mb-3">
-    <button class="btn btn-primary">
+    <button id="novoCliente" class="btn btn-primary">
         <i class="fa fa-user"></i> Novo Cliente
     </button>
 </div>
@@ -30,6 +30,24 @@
 <script>
     $(function(){
         Carregando('none');
+
+
+        $("#novoCliente").click(function(){
+
+            let myOffCanvas = document.getElementById('offcanvasDireita');
+            let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+            openedCanvas.hide();
+
+            $.ajax({
+                url:"src/clientes/index.php",
+                type:"POST",
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
+
+        });
+
         $(".opc_cliente").click(function(){
 
             codigo = $(this).attr("codigo");
