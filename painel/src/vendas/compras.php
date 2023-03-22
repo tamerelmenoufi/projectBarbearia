@@ -269,7 +269,7 @@
                 <option value="v" <?=(($d->tipo_acrescimo == 'v')?'selected':false)?>>R$</option>
                 <option value="p" <?=(($d->tipo_acrescimo == 'p')?'selected':false)?>>%</option>
             </select>
-            <input type="text" data-thousands="" data-decimal="." id="tipo_acrescimo" class="form-control" value="<?=$d->tipo_acrescimo?>" />
+            <input type="text" data-thousands="" data-decimal="." id="tipo_acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-tipo_acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
 
@@ -282,7 +282,7 @@
                 <option value="v" <?=(($tipo_desconto == 'v')?'selected':false)?>>R$</option>
                 <option value="p" <?=(($tipo_desconto == 'p')?'selected':false)?>>%</option>
             </select>
-            <input type="text" data-thousands="" data-decimal="." id="tipo_desconto" class="form-control" value="<?=$d->tipo_desconto?>" />
+            <input type="text" data-thousands="" data-decimal="." id="tipo_desconto" class="form-control" value="<?=$d->desconto?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-tipo_desconto"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
     </div>
