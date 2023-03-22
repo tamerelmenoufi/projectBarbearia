@@ -14,13 +14,13 @@
     }
 
     if($_POST['acao'] == 'acrescimo'){
-        $q = "update vendas set acrescimo = '{$_POST['acrescimo']}' where codigo = '{$_SESSION['codVenda']}'";
+        $q = "update vendas set acrescimo = '{$_POST['acrescimo']}', tipo_acrescimo = '{$_POST['tipo_acrescimo']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
         mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
 
     if($_POST['acao'] == 'desconto'){
-        $q = "update vendas set desconto = '{$_POST['desconto']}' where codigo = '{$_SESSION['codVenda']}'";
+        $q = "update vendas set desconto = '{$_POST['desconto']}', tipo_desconto = '{$_POST['tipo_desconto']}' where codigo = '{$_SESSION['codVenda']}'";
         mysqli_query($con, $q);
         mysqli_query($con, "delete from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'");
     }
@@ -186,7 +186,7 @@
                                                 valor = '{$valor}',
                                                 comissao = '{$comissao}',
                                                 ".((!$tipo_produtos)?"taxa_entrega = '0', local_entrega = '0', ":false)."
-                                                total = ({$valor}".((!$tipo_produtos)?" + taxa_entrega":false)." + taxa - desconto + acrescimo - {$comissao})
+                                                total = ({$valor}".((!$tipo_produtos)?" + taxa_entrega":false)." + taxa - if(tipo_desconto = 'p', ({$valor}/100*desconto), desconto) + if(tipo_acrescimo = 'p', ({$valor}/100*acrescimo), acrescimo) - {$comissao})
                         where codigo = '{$_SESSION['codVenda']}'");
 
             ?>
@@ -262,28 +262,28 @@
     ?>
 
     <div class="col-md-2">
-        <label for="acrescimo" class="form-label">Acrescimo</label>
+        <label for="tipo_acrescimo" class="form-label">Acrescimo</label>
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">R$</span> -->
-            <select tipo<?=$d->codigo?> class="form-control" >
-                <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>R$</option>
-                <option value="p" <?=(($tipo[$d->codigo] == 'p')?'selected':false)?>>%</option>
+            <select tipo_acrescimo> class="form-control" >
+                <option value="v" <?=(($d->tipo_acrescimo == 'v')?'selected':false)?>>R$</option>
+                <option value="p" <?=(($d->tipo_acrescimo == 'p')?'selected':false)?>>%</option>
             </select>
-            <input type="text" data-thousands="" data-decimal="." id="acrescimo" class="form-control" value="<?=$d->acrescimo?>" />
+            <input type="text" data-thousands="" data-decimal="." id="tipo_acrescimo" class="form-control" value="<?=$d->tipo_acrescimo?>" />
             <button class="btn btn-outline-secondary" type="button" id="button-acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
 
     </div>
     <div class="col-md-2">
-        <label for="desconto" class="form-label">Desconto</label>
+        <label for="tipo_desconto" class="form-label">Desconto</label>
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">R$</span> -->
-            <select tipo<?=$d->codigo?> class="form-control" >
-                <option value="v" <?=(($tipo[$d->codigo] == 'v')?'selected':false)?>>R$</option>
-                <option value="p" <?=(($tipo[$d->codigo] == 'p')?'selected':false)?>>%</option>
+            <select tipo_desconto class="form-control" >
+                <option value="v" <?=(($tipo_desconto == 'v')?'selected':false)?>>R$</option>
+                <option value="p" <?=(($tipo_desconto == 'p')?'selected':false)?>>%</option>
             </select>
-            <input type="text" data-thousands="" data-decimal="." id="desconto" class="form-control" value="<?=$d->desconto?>" />
-            <button class="btn btn-outline-secondary" type="button" id="button-desconto"><i class="fa-regular fa-floppy-disk"></i></button>
+            <input type="text" data-thousands="" data-decimal="." id="tipo_desconto" class="form-control" value="<?=$d->tipo_desconto?>" />
+            <button class="btn btn-outline-secondary" type="button" id="button-tipo_desconto"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
     </div>
 
@@ -405,13 +405,15 @@
             });
         });
 
-        $("#button-acrescimo").click(function(){
-            acrescimo = $("#acrescimo").val();
+        $("#button-tipo_acrescimo").click(function(){
+            acrescimo = $("#tipo_acrescimo").val();
+            tipo_acrescimo = $("select[tipo_acrescimo]").val();
             Carregando();
             $.ajax({
                 type:"POST",
                 data:{
                     acrescimo,
+                    tipo_acrescimo,
                     acao:'acrescimo'
                 },
                 url:"src/vendas/compras.php",
@@ -421,13 +423,15 @@
             });
         });
 
-        $("#button-desconto").click(function(){
-            desconto = $("#desconto").val();
+        $("#button-tipo_desconto").click(function(){
+            desconto = $("#tipo_desconto").val();
+            tipo_desconto = $("select[tipo_desconto]").val();
             Carregando();
             $.ajax({
                 type:"POST",
                 data:{
                     desconto,
+                    tipo_desconto,
                     acao:'desconto'
                 },
                 url:"src/vendas/compras.php",
