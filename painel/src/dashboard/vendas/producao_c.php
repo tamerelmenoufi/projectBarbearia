@@ -28,7 +28,7 @@
         </thead>
         <tbody>
             <?php
-            echo $query = "select
+            $query = "select
                             a.*,
                             b.nome as cliente_nome
                         from vendas a
