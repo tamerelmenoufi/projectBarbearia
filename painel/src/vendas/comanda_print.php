@@ -5,7 +5,7 @@
 
     if($_POST['acao'] == 'forma_pagamento'){
         $query = "insert into vendas_pagamentos set
-                                venda = '{$_SESSION['codVenda']}',
+                                venda = '{$_POST['comanda']}',
                                 colaborador = '{$_SESSION['ProjectPainel']->codigo}',
                                 forma_pagamento = '{$_POST['forma_pagamento']}',
                                 valor = '{$_POST['valor']}'";
@@ -18,7 +18,7 @@
     }
 
 
-    // $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_SESSION['codVenda']}'"));
+    // $v = mysqli_fetch_object(mysqli_query($con, "select * from vendas where codigo = '{$_POST['comanda']}'"));
 
 
     $query = "select a.*,
@@ -32,7 +32,7 @@
                             ) as endereco
                 from vendas a
                      left join clientes_enderecos b on a.local_entrega = b.codigo
-                where a.codigo = '".(($_POST['comanda'])?:$_SESSION['codVenda'])."'";
+                where a.codigo = '{$_POST['comanda']}'";
     $result = mysqli_query($con, $query);
     $v = mysqli_fetch_object($result);
 
@@ -81,7 +81,7 @@
                                 left join produtos p on a.produto = p.codigo
                                 left join produtos_categorias c on p.categoria = c.codigo
                                 left join colaboradores d on a.colaborador = d.codigo
-                            where a.venda = '{$_SESSION['codVenda']}'";
+                            where a.venda = '{$_POST['comanda']}'";
                 $result = mysqli_query($con, $query);
                 $n = mysqli_num_rows($result);
                 $valor = $comissao = 0;
@@ -204,7 +204,7 @@
             </div>
             <ul class="list-group">
             <?php
-            $query = "select * from vendas_pagamentos where venda = '{$_SESSION['codVenda']}'";
+            $query = "select * from vendas_pagamentos where venda = '{$_POST['comanda']}'";
             $result = mysqli_query($con, $query);
             $resto = 0;
             $nPagamento = 0;
