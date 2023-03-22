@@ -179,7 +179,7 @@
     </div>
 
 
-            <h5>Formas de pagamento</h5>
+            <p>Formas de pagamento</p>
 
             <?php
             $query = "select * from vendas_pagamentos where venda = '{$_POST['comanda']}'";
