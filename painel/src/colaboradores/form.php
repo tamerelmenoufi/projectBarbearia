@@ -55,7 +55,7 @@
 
         $retorno = [
             'status' => true,
-            'codigo' => $query
+            'codigo' => $cod
         ];
 
         echo json_encode($retorno);
@@ -231,7 +231,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                         console.log(dados)
+                         console.log(dados.status)
                         // if(dados.status){
                             $.ajax({
                                 url:"src/colaboradores/index.php",
