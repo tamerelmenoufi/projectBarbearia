@@ -222,7 +222,7 @@
             </li>
             <?php
             }
-            $resto = number_format(($total - $nPagamento),2,'.',false);
+            $resto = number_format(($v->total - $nPagamento),2,'.',false);
             ?>
             </ul>
 
@@ -277,7 +277,7 @@
         ?>
 
         $(".valor_add").click(function(){
-            total = <?=$total?>;
+            total = <?=$v->total?>;
             resto = <?=$resto?>;
             valor = $('#valor_add').val();
             forma_pagamento = $('#forma_pagamento').val();
