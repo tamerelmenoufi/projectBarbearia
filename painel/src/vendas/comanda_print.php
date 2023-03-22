@@ -54,7 +54,7 @@ MANOS BARBEARIA LTDA<br>
 CNPJ: 20.361.605/0001-15 IE: 053581504<br>
 AV. Djalma Batista, 370 - Chapada<br>
 Manaus-AM Fone (92) 98512-0992<br>
-PEDIDO: #<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?>
+PEDIDO: #<?=str_pad($_POST['pedido'] , 6 , '0' , STR_PAD_LEFT)?>
 <hr>
 </div>
 <div class="p-3" style="font-size:12px;">
