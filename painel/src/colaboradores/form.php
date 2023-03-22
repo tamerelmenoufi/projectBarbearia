@@ -129,9 +129,9 @@
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
-                        <option value="usr" <?=(($d->perfil == 'usr')?'selected':false)?>>Usuário</option>
-                        <option value="adm" <?=(($d->perfil == 'adm')?'selected':false)?>>Administrador</option>
-                        <option value="crd" <?=(($d->perfil == 'crd')?'selected':false)?>>Coordenador</option>
+                        <!-- <option value="usr" <?=(($d->perfil == 'usr')?'selected':false)?>>Usuário</option> -->
+                        <option value="a" <?=(($d->perfil == 'a')?'selected':false)?>>Administrador</option>
+                        <option value="c" <?=(($d->perfil == 'c')?'selected':false)?>>Coordenador</option>
                     </select>
                     <label for="email">Perfil</label>
                 </div>
