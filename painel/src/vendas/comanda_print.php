@@ -2,33 +2,24 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
 
-    class Certificado
-{
+    //Cabeçalho
+ header("Content-Type: image/png");
 
-    public $nome_para_certificado = '';
-    public $modelo_de_certificado = '';
+ //Define a imagem e seu tamanho em pixels
+ $image = imagecreate(256, 256);
 
-    function __construct($nome)
-    {
-        $this->nome_para_certificado = $nome;
-    }
+ //Define a paleta de cores
+ $black = imagecolorallocate($image, 0, 0, 0);
+ $red = imagecolorallocate($image, 255, 0, 0);
 
-    public function gerar()
-    {
-        header("Content-Type: image/jpeg");
-        $texto = 'Certificamos que ' . $this->nome_para_certificado . ' participou do Evento nos dias 21, 22 e 23 de setembro de 2014 na Universidade Federal da Paraíba - UFPB';
-        $img = imagecreatefromjpeg($this->modelo_de_certificado);
-        $preto = imagecolorallocate($img, 0, 0, 0);
-        $font_path = 'http://meu-site.com/custom/TravelingTypewriter.ttf';
-        imagettftext($img, 50, 0, 10, 20, $preto, $font_path, $texto);
-        // imagestring($img, 5, 300, 400, $texto, $preto);
-        imagejpeg($img);
-        imagedestroy($img);
-    }
-}
+ //Escreve na tela (imagem, tamanho da fonte, eixo x, eixo y, texto, cor)
+ imagestring($image, 7, 55, 110, "Criandobits", $red);
 
-    $imagem = new Certificado("Edilson Samuel");
-    $imagem->gerar();
+ //Define o formato a ser gerado
+ imagepng($image);
+
+ //Libera variável da memória
+ imagedestroy($image);
 
     exit();
 
