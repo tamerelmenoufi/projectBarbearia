@@ -5,6 +5,14 @@
 <style>
 
 </style>
+
+<div class="d-flex flex-row-reverse">
+    <button class="btn btn-primary">
+        <i class="fa fa-user"></i> Novo Cliente
+    </button>
+</div>
+
+
 <div class="list-group">
 <?php
 
