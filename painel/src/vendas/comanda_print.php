@@ -49,6 +49,12 @@
 </style>
 
 <h4 class="Titulo<?=$md5?>"><i class="fa-solid fa-receipt"></i> Comanda da compra</h4>
+<div class="text-center">
+MANOS BARBEARIA LTDA<br>
+CNPJ: 20.361.605/0001-15 IE: 053581504<br>
+AV. Djalma Batista, 370 - Chapada<br>
+Manaus-AM Fone (92) 98512-0992<br><hr>
+</div>
 <div class="p-3" style="font-size:12px;">
     <div class="row justify-content-between" style="margin-bottom:10px;">
     <div class="col-2">
