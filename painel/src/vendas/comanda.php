@@ -152,9 +152,8 @@
         </div>
 
         <div class="col-2">
-            <?=(($v->tipo_acrescimo == 'v')?'R$ ':false)?>
-            <?=number_format($v->acrescimo,2,',','.')?>
-            <?=(($v->tipo_acrescimo == 'p')?'%':false)?>
+            <?=(($v->tipo_acrescimo == 'v')?'R$ '.number_format($v->acrescimo,2,',','.'):false)?>
+            <?=(($v->tipo_acrescimo == 'p')?(number_format(($v->total/100*$v->acrescimo),2,',','.')).' ('.number_format($v->acrescimo,2,',','.').'%)':false)?>
         </div>
     </div>
 
