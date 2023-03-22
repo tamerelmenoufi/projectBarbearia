@@ -129,7 +129,7 @@
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
-                        <option value="c" <?=(($d->perfil == 'c')?'selected':false)?>>Coordenador</option>
+                        <option value="c" <?=(($d->perfil == 'c')?'selected':false)?>>Colaborador(a)</option>
                         <option value="a" <?=(($d->perfil == 'a')?'selected':false)?>>Administrador</option>
                     </select>
                     <label for="email">Perfil</label>
@@ -147,6 +147,7 @@
                     <label for="senha">Senha</label>
                 </div>
                 <?php
+                /*
                 if($d->codigo != 1 and $_SESSION['ProjectPainel']->perfil == 'adm' ){
                 ?>
 
@@ -175,6 +176,7 @@
                 </div>
                 <?php
                 }
+                //*/
                 ?>
             </div>
         </div>
