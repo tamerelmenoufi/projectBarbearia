@@ -229,7 +229,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                         $.alert(dados.status)
+                         console.log(dados)
                         // if(dados.status){
                             $.ajax({
                                 url:"src/colaboradores/index.php",
