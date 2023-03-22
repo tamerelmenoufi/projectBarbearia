@@ -45,7 +45,8 @@
                 <td>
                     <!-- <i class="fa-solid fa-motorcycle solicitar_entrega"></i> -->
                     <i
-                        class="fa-solid fa-receipt comanda"
+                        class="fa-solid fa-receipt"
+                        comanda="<?=$d->codigo?>"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
@@ -68,8 +69,13 @@
     $(function(){
 
         $("i[comanda]").click(function(){
+            comanda = $(this).attr("comanda")
             $.ajax({
                 url:"src/vendas/comanda.php",
+                type:"POST",
+                data:{
+                    comanda,
+                },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
