@@ -1,6 +1,42 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
+
+    class Certificado {
+        public $nome_para_certificado = '';
+        public $modelo_de_certificado = '';
+
+        function __construct($nome, $modelo)
+        {
+            $this->nome_para_certificado = $nome;
+            $this->modelo_de_certificado = $modelo;
+        }
+
+        public function gerar()
+        {
+            header("Content-Type: image/jpeg");
+            $texto = 'Certificamos que ' . $this->nome_para_certificado;
+            $texto1 = 'participou do Evento nos dias 21, 22 e 23 de setembro de 2014 na';
+            $texto2 = 'Universidade Federal da Paraíba - UFPB';
+            $img = imagecreatefromjpeg($this->modelo_de_certificado);
+            $preto = imagecolorallocate($img, 0, 0, 0);
+            $font_path = 'arial.ttf';
+            imagettftext($img, 12, 0, 10, 200, $preto, $font_path, $texto);
+            imagettftext($img, 12, 0, 10, 230, $preto, $font_path, $texto1);
+            imagettftext($img, 12, 0, 10, 250, $preto, $font_path, $texto2);
+            // imagestring($img, 5, 300, 400, $texto, $preto);
+            imagejpeg($img);
+            imagedestroy($img);
+        }
+    }
+
+    $imagem = new Certificado("Edilson Samuel", "modelo.jpg");
+    $imagem->gerar();
+
+    exit();
+
+
+
     vl(['ProjectPainel']);
 
     if($_POST['acao'] == 'forma_pagamento'){
