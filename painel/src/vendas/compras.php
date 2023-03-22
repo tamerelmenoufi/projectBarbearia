@@ -182,7 +182,7 @@
                 $comissao = $comissao + $d->comissao;
             }
 
-            $q = "update vendas set
+            echo $q = "update vendas set
                                                 valor = '{$valor}',
                                                 comissao = '{$comissao}',
                                                 ".((!$tipo_produtos)?"taxa_entrega = '0', local_entrega = '0', ":false)."
