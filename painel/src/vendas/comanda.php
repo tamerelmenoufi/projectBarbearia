@@ -239,6 +239,13 @@
         <?php
         }
         ?>
+
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="observacoes" name="observacoes"><?=$d->observacoes?></textarea>
+          <label for="observacoes">Observacoes</label>
+        </div>
+
+
         <div class="col d-grid">
             <button class="btn btn-primary btn-sm"  <?=(($resto == 0)?'concluir_venda':'disabled')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
@@ -326,6 +333,8 @@
 
         $("button[concluir_venda]").click(function(){
 
+            observacoes = $("#observacoes").val();
+
             $.confirm({
                 content:"Esta operação finaliza a sua compra.<br><b>Deseja Realmente Confirmar?</b>",
                 title:"Finalização da Compra",
@@ -339,11 +348,12 @@
                                 type:"POST",
                                 data:{
                                     acao:'fechar_pedido',
+                                    observacoes,
                                 },
                                 url:"src/vendas/caixa.php",
                                 success:function(dados){
-                                    console.log("MEUS DADOS DE FECHAR PEDIDO");
-                                    console.log(dados);
+                                    // console.log("MEUS DADOS DE FECHAR PEDIDO");
+                                    // console.log(dados);
                                     $.ajax({
                                         url:"src/dashboard/index.php",
                                         success:function(dados){

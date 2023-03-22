@@ -5,7 +5,7 @@
     if($_POST['acao'] == 'fechar_pedido'){
         // echo "FECHAR O PEDIDO";
         list($agenda) = mysqli_fetch_row(mysqli_query($con, "select agenda from vendas where codigo = '{$_SESSION['codVenda']}'"));
-        $query = "update vendas set situacao = 'p', data_pedido = NOW() where codigo = '{$_SESSION['codVenda']}'";
+        $query = "update vendas set situacao = 'p', data_pedido = NOW(), observacoes='{$_POST['observacoes']}' where codigo = '{$_SESSION['codVenda']}'";
         $result = mysqli_query($con, $query);
         // echo "Agenda:".$agenda;
         if ($result and $agenda){
