@@ -270,7 +270,7 @@
                 <option value="p" <?=(($d->tipo_acrescimo == 'p')?'selected':false)?>>%</option>
             </select>
             <input type="text" data-thousands="" data-decimal="." id="tipo_acrescimo" class="form-control" value="<?=$d->tipo_acrescimo?>" />
-            <button class="btn btn-outline-secondary" type="button" id="button-acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
+            <button class="btn btn-outline-secondary" type="button" id="button-tipo_acrescimo"><i class="fa-regular fa-floppy-disk"></i></button>
         </div>
 
     </div>
