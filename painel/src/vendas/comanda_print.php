@@ -11,13 +11,13 @@
  $red = imagecolorallocate($image, 255, 0, 0);
 
  //Escreve na tela (imagem, tamanho da fonte, eixo x, eixo y, texto, cor)
- base64_encode(imagestring($image, 7, 55, 110, "Criandobits", $red));
+ imagestring($image, 7, 55, 110, "Criandobits", $red);
 
  //Define o formato a ser gerado
 imagepng($image);
 
  //Libera variável da memória
- imagedestroy($image);
+//  imagedestroy($image);
 
     exit();
 
