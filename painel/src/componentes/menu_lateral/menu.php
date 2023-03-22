@@ -49,7 +49,7 @@
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="src/colaboradores/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> <?=(($perfil == 'a')?'Usuários/Colaboradores':'Editar seu cadastro')?>
+          <i class="fa-solid fa-clipboard-list"></i> <?=(($perfil == 'a')?'Usuários/Colaboradores':'Seu cadastro')?>
         </a>
       </div>
     </div>
