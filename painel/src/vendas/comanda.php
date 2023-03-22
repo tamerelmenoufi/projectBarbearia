@@ -75,10 +75,12 @@
                                 p.codigo as cod_produto,
                                 p.produto as produto_nome,
                                 if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
-                                c.categoria as categoria_nome
+                                c.categoria as categoria_nome,
+                                d.nome as nome_colaborador
                             from vendas_produtos a
                                 left join produtos p on a.produto = p.codigo
                                 left join produtos_categorias c on p.categoria = c.codigo
+                                left join colaboradores d on a.colaborador = d.codigo
                             where a.venda = '{$_SESSION['codVenda']}'";
                 $result = mysqli_query($con, $query);
                 $n = mysqli_num_rows($result);
@@ -94,7 +96,7 @@
             <?=$d->cod_produto?>
         </div>
         <div class="col-10">
-            <?=$d->produto_nome?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
+            <?=$d->produto_nome?> <?=(($d->nome_colaborador)?' (Colaborador: '.$d->nome_colaborador.')':false)?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
         </div>
     </div>
 
