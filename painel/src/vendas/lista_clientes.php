@@ -6,7 +6,7 @@
 
 </style>
 
-<div class="d-flex flex-row-reverse">
+<div class="d-flex flex-row-reverse mb-3">
     <button class="btn btn-primary">
         <i class="fa fa-user"></i> Novo Cliente
     </button>
