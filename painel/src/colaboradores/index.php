@@ -47,7 +47,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from colaboradores order by nome asc";
+                  $query = "select * from colaboradores ".(($_SESSION['ProjectPainel']->perfil == 'c')?" where codigo = '{$_SESSION['ProjectPainel']->codigo}' ":false)." order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
