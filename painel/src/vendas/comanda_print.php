@@ -202,12 +202,16 @@
 
             <?php
             }
+            if(trim($d->observacoes)){
             ?>
 
 
     <div class="row mt-3 mb-3">
         <div class="form-control"><?=$d->observacoes?></div>
     </div>
+            <?php
+            }
+            ?>
 
     <p style="text-align:center; font-size:12px; color:#a1a1a1;">Atendimento / Pedido para: <b><?=$_SESSION['ClienteAtivoNome']?></b> <?=(($v->local_entrega)?"({$v->endereco})":(($v->retirada_estabelecimento)?' (Retirada no estabelecimento)':false))?></p>
 </div>
