@@ -265,7 +265,7 @@
         <label for="tipo_acrescimo" class="form-label">Acrescimo</label>
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">R$</span> -->
-            <select tipo_acrescimo> class="form-control" >
+            <select tipo_acrescimo class="form-control" >
                 <option value="v" <?=(($d->tipo_acrescimo == 'v')?'selected':false)?>>R$</option>
                 <option value="p" <?=(($d->tipo_acrescimo == 'p')?'selected':false)?>>%</option>
             </select>
