@@ -135,10 +135,10 @@
                     <label for="email">Perfil</label>
                 </div>
 
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
                     <label for="login">Login</label>
-                </div>
+                </div> -->
                 <?php
                 }
                 ?>
