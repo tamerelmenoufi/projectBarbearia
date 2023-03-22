@@ -12,7 +12,7 @@ Nossa equipe é formada por profissionais comprometidos com excelência nas real
 
 
         <?php
-              $query = "select * from colaboradores where codigo > 1 order by rand()";
+              $query = "select * from colaboradores where codigo > 1 and time = '1' order by rand()";
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
               // for($i = 0;$i < 6; $i++){
