@@ -136,7 +136,7 @@
       <!-- </div> -->
 
       <div class="form-floating mb-3">
-          <textarea id="observacoes" name="observacoes"><?=$d->observacoes?></textarea>
+          <textarea class="form-control" id="observacoes" name="observacoes"><?=$d->observacoes?></textarea>
       </div>
 
       <button type="submit" data-bs-dismiss="offcanvas" class="btn btn-primary mt-3"> <i class="fa fa-save"></i> Salvar Dados</button>
