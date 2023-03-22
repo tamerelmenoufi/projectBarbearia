@@ -313,8 +313,8 @@
 
         Carregando('none')
 
-        $('#desconto').maskMoney();
-        $('#acrescimo').maskMoney();
+        $('#tipo_desconto').maskMoney();
+        $('#tipo_acrescimo').maskMoney();
 
 
         $('.CarrinhoQt').html(<?=$n?>);
