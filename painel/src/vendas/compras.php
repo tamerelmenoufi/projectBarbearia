@@ -182,7 +182,6 @@
                 $comissao = $comissao + $d->comissao;
             }
 
-
             $q = "update vendas set
                                                 valor = '{$valor}',
                                                 comissao = '{$comissao}',
