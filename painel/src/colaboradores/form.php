@@ -232,18 +232,19 @@
                     data: campos,
                     success:function(dados){
                          console.log(dados.status)
-                        // if(dados.status){
+                        if(dados.status){
                             $.ajax({
                                 url:"src/colaboradores/index.php",
                                 type:"POST",
                                 success:function(dados){
+                                    $.alert('Dados salvos com sucesso!')
                                     $("#paginaHome").html(dados);
                                     let myOffCanvas = document.getElementById('offcanvasDireita');
                                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                                     openedCanvas.hide();
                                 }
                             });
-                        // }
+                        }
                     },
                     error:function(erro){
 
