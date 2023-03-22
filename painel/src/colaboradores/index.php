@@ -43,7 +43,7 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
                   <th scope="col" style="width:50%">E-mail</th>
-                  <th scope="col">Situação</th>
+                  <th scope="col"><?=(($perfil == 'a')?'Situação':false)?></th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
