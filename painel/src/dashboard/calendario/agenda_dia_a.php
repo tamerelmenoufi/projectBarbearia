@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
-
+    $perfil = $_SESSION['ProjectPainel']->perfil;
 
     $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
 
@@ -174,7 +174,7 @@
             agenda_dia = $("#dataAgenda").val();
             $("div[agendaDia]").css("opacity",0.2);
             $.ajax({
-                url:"src/dashboard/calendario/agenda_dia.php",
+                url:"src/dashboard/calendario/agenda_dia_<?=$perfil?>.php",
                 type:"POST",
                 data:{
                     agenda_dia

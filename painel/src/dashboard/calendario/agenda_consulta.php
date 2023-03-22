@@ -1,6 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
-
+    $perfil = $_SESSION['ProjectPainel']->perfil;
     $conf = mysqli_fetch_object(mysqli_query($con, "select * from configuracoes where codigo = '1'"));
 
     vl(['ProjectPainel']);
@@ -173,7 +173,7 @@ while($d = mysqli_fetch_object($result)){
                         btnClass:'btn btn-danger',
                         action:function(){
                             $.ajax({
-                                url:"src/dashboard/calendario/agenda_dia.php",
+                                url:"src/dashboard/calendario/agenda_dia_<?=$perfil?>.php",
                                 type:"POST",
                                 data:{
                                     codigo,

@@ -1,6 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
     vl(['ProjectPainel']);
+    $perfil = $_SESSION['ProjectPainel']->perfil;
 ?>
 
 <style>
@@ -53,21 +54,21 @@
 
         Carregando('none');
         $.ajax({
-            url:"src/dashboard/vendas/producao.php",
+            url:"src/dashboard/vendas/producao_<?=$perfil?>.php",
             success:function(dados){
                 $("div[vendasProducao]").html(dados);
             }
         });
 
         $.ajax({
-            url:"src/dashboard/calendario/agenda_dia.php",
+            url:"src/dashboard/calendario/agenda_dia_<?=$perfil?>.php",
             success:function(dados){
                 $("div[agendaDia]").html(dados);
             }
         });
 
         $.ajax({
-            url:"src/dashboard/vendas/relatorios.php",
+            url:"src/dashboard/vendas/relatorios_<?=$perfil?>.php",
             success:function(dados){
                 $("div[vendasRelatorios]").html(dados);
             }
