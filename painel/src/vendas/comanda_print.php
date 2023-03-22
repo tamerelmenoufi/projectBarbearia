@@ -2,8 +2,6 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
 
-    //Cabeçalho
- header("Content-Type: image/png");
 
  //Define a imagem e seu tamanho em pixels
  $image = imagecreate(256, 256);
@@ -16,7 +14,7 @@
  imagestring($image, 7, 55, 110, "Criandobits", $red);
 
  //Define o formato a ser gerado
- imagepng($image);
+base64_encode(imagepng($image));
 
  //Libera variável da memória
  imagedestroy($image);
