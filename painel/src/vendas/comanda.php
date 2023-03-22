@@ -36,7 +36,7 @@
     $result = mysqli_query($con, $query);
     $v = mysqli_fetch_object($result);
 
-    $total = ($v->valor + $v->taxa_entrega + $v->acrescimo - $v->desconto);
+    // $total = ($v->valor + $v->taxa_entrega + $v->acrescimo - $v->desconto);
 
 ?>
 <style>
@@ -174,7 +174,7 @@
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($total,2,',','.')?></b>
+            <b>R$ <?=number_format($v->total,2,',','.')?></b>
         </div>
     </div>
 
