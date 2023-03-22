@@ -178,8 +178,10 @@
         </div>
     </div>
 
+            <div class="text-end">
+                <p><b><i>Formas de pagamento</i></b></p>
+            </div>
 
-            <p><b><i>Formas de pagamento</i></b></p>
 
             <?php
             $query = "select * from vendas_pagamentos where venda = '{$_POST['comanda']}'";
