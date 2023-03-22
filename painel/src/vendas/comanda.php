@@ -96,7 +96,7 @@
             <?=$d->cod_produto?>
         </div>
         <div class="col-10">
-            <?=$d->produto_nome?> <?=(($d->nome_colaborador)?' (Colaborador: '.$d->nome_colaborador.')':false)?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
+            <?=$d->produto_nome?> <?=(($d->nome_colaborador)?' ('.$d->nome_colaborador.') ':false)?><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small>
         </div>
     </div>
 
