@@ -135,6 +135,14 @@
                     <label for="email">Perfil</label>
                 </div>
 
+                <div class="form-floating mb-3">
+                    <select name="time" class="form-control" id="time">
+                        <option value="0" <?=(($d->time == '0')?'selected':false)?>>Não</option>
+                        <option value="1" <?=(($d->time == '1')?'selected':false)?>>Sim</option>
+                    </select>
+                    <label for="email">Exibir Perfil no Site</label>
+                </div>
+
                 <!-- <div class="form-floating mb-3">
                     <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
                     <label for="login">Login</label>
