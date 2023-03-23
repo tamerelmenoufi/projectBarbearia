@@ -144,7 +144,7 @@
             for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
 
 
-                if(!in_array(date("H:i",$i),$ag) and $now >= $i){
+                if(!in_array(date("H:i",$i),$ag) and $i >= $now){
 
         ?>
 
