@@ -139,9 +139,12 @@
                 $mes=date("m",$inter_ini);
                 $dia=date("d",$inter_ini);
 
+                $now = mktime(date("H"),date("i"),date("s"),date("m"),date("d"),date("Y"));
+
             for($i = $inter_ini; $i <= $inter_fim; $i = (($i + 60*$s->tempo))){
 
-                if(!in_array(date("H:i",$i),$ag)){
+
+                if(!in_array(date("H:i",$i),$ag) and $now >= $i){
 
         ?>
 
