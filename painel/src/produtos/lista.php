@@ -17,6 +17,8 @@
         exit();
       }
 
+      $serv = strtolower($_SESSION['categoriaProdutoNome']);
+
 
 ?>
 <style>
@@ -58,7 +60,7 @@
                   <th scope="col" style="width:100%">Item</th>
                   <th scope="col">Valor</th>
                   <th scope="col servico">Tempo</th>
-                  <th scope="col">Estoque</th>
+                  <?=(($serv != 'serviços')?'<th scope="col">Estoque</th>':false)?>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
@@ -74,8 +76,13 @@
 
                   <td style="white-space: nowrap;">R$ <?=number_format($d->valor,2,',','.')?></td>
                   <td style="white-space: nowrap;"><?=$d->tempo?> min</td>
+                  <?php
+                  if($serv != 'serviços'){
+                  ?>
                   <td style="white-space: nowrap;"><?=$d->estoque?></td>
-
+                  <?php
+                  }
+                  ?>
                   <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
@@ -84,11 +91,15 @@
 
                   </td>
                   <td style="white-space: nowrap;">
-
+                    <?php
+                    if($serv != 'serviços'){
+                    ?>
                     <button class="btn btn-success btn-sm" estoque="<?=$d->codigo?>" produto="<?=$d->produto?>">
                       <i class="fa-solid fa-dolly"></i> Estoque
                     </button>
-
+                    <?php
+                    }
+                    ?>
                     <button
                       class="btn btn-primary btn-sm"
                       edit="<?=$d->codigo?>"
