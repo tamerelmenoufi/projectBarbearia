@@ -42,7 +42,7 @@
               <img src="<?=$localPainel?>src/volume/portifolio/<?=$d->imagem?>" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <!-- <h4><?=$d->titulo?></h4> -->
-                <a href="<?=$localPainel?>src/volume/portifolio/<?=$d->imagem?>" title="<?=$d->titulo?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="<?=$localPainel?>src/volume/portifolio/<?=$d->imagem?>" title="<?=$d->titulo_?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
 
               </div>
             </div><!-- End Portfolio Item -->
