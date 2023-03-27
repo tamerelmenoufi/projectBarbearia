@@ -55,7 +55,14 @@
                         left join produtos b on a.produto = b.codigo
                         left join produtos_categorias c on b.categoria = c.codigo
                         left join colaboradores d on a.colaborador = d.codigo
-                    where a.produto in ({$c}) and b.tipo = 's' and a.situacao = '1' order by b.produto, d.nome";
+                    where
+                            a.produto in ({$c}) and
+                            b.tipo = 's' and
+                            a.situacao = '1' and
+                            d.perfil = 'c' and
+                            d.situacao = '1'
+
+                    order by b.produto, d.nome";
 
         $result = mysqli_query($con, $query);
         $grupo = false;
