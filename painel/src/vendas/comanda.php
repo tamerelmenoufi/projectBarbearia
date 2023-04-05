@@ -8,7 +8,8 @@
                                 venda = '{$_SESSION['codVenda']}',
                                 colaborador = '{$_SESSION['ProjectPainel']->codigo}',
                                 forma_pagamento = '{$_POST['forma_pagamento']}',
-                                valor = '{$_POST['valor']}'";
+                                valor = '{$_POST['valor']}',
+                                troco = '{$_POST['troco']}'";
         mysqli_query($con, $query);
     }
 
@@ -300,12 +301,17 @@
         $(".valor_add").click(function(){
             total = <?=$v->total?>;
             resto = <?=$resto?>;
+            troco = 0;
             valor = $('#valor_add').val();
             forma_pagamento = $('#forma_pagamento').val();
             console.log(`${valor} > ${total} || ${valor} > ${resto}`);
             if( (valor*1) > (total*1) || (valor*1) > (resto*1)){
-                $.alert('O valor pago não pode ser superior ao valor da compra!')
-                return false;
+                if(forma_pagamento == 'dinheiro'){
+                    troco = (total*1 - valor*1);
+                }else{
+                    $.alert('O valor pago não pode ser superior ao valor da compra!')
+                    return false;
+                }
             }
             if(!(valor*1)) return false;
             Carregando();
@@ -313,6 +319,7 @@
                 type:"POST",
                 data:{
                     valor,
+                    troco,
                     forma_pagamento,
                     acao:'forma_pagamento',
                 },
