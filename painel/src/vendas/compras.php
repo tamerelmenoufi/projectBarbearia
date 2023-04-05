@@ -132,14 +132,14 @@
                 <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
                 <td>
                     <button
-                        <?=(($d->estoque > $d->quantidade)?'disabled':"menos=\"{$d->codigo}\"")?>
+                        menos="<?=$d->codigo?>"
                         produto="<?=$d->cod_produto?>"
                         colaborador="<?=$d->colaborador?>"
                         type="button"
                         class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
                     <span qt="<?=$d->codigo?>" class="m-3"><?=$d->quantidade?></span>
                     <button
-                        <?=(($d->estoque > $d->quantidade)?'disabled':"mais=\"{$d->codigo}\"")?>
+                        <?=(($d->estoque <= $d->quantidade)?'disabled':"mais=\"{$d->codigo}\"")?>
                         produto="<?=$d->cod_produto?>"
                         colaborador="<?=$d->colaborador?>"
                         type="button"
