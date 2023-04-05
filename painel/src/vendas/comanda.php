@@ -229,7 +229,10 @@
             <li class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col"><?=$p->forma_pagamento?></div>
-                    <div class="col text-end">R$ <?=number_format($p->valor,2,',','.')?></div>
+                    <div class="col text-end">
+                        R$ <?=number_format($p->valor,2,',','.')?>
+                        <?=(($p->troco)?' (troco R$ '.number_format($p->troco,2,',','.').')':false)?>
+                    </div>
                     <div class="col text-end">
                         <button class="btn btn-danger btn-sm pagamento_del" cod="<?=$p->codigo?>"><i class="fa-solid fa-trash"></i></button>
                     </div>
