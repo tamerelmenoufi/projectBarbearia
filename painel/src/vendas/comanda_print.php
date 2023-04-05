@@ -218,6 +218,7 @@
                 <div class="row justify-content-between">
                     <div class="col-10 text-end">
                     <?=strtoupper($p->forma_pagamento)?>
+                    <?=(($p->troco)?' (troco R$ '.number_format($p->troco,2,',','.').')':false)?>
                     </div>
 
                     <div class="col-2">
