@@ -108,6 +108,7 @@
                             p.tipo,
                             p.codigo as cod_produto,
                             p.produto as produto_nome,
+                            p.estoque,
                             d.nome as colaborador_nome,
                             if(p.tipo = 'p', 'Produto', 'Serviço') as tipo_nome,
                             c.categoria as categoria_nome
@@ -130,9 +131,19 @@
                 <th scope="row"><?=$d->cod_produto?></th>
                 <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
                 <td>
-                    <button menos="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
+                    <button
+                        <?=(($d->estoque > $d->quantidade)?'disabled':"menos=\"{$d->codigo}\"")?>
+                        produto="<?=$d->cod_produto?>"
+                        colaborador="<?=$d->colaborador?>"
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>
                     <span qt="<?=$d->codigo?>" class="m-3"><?=$d->quantidade?></span>
-                    <button mais="<?=$d->codigo?>" produto="<?=$d->cod_produto?>" colaborador="<?=$d->colaborador?>" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
+                    <button
+                        <?=(($d->estoque > $d->quantidade)?'disabled':"mais=\"{$d->codigo}\"")?>
+                        produto="<?=$d->cod_produto?>"
+                        colaborador="<?=$d->colaborador?>"
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
                 </td>
                 <td><?=$d->valor_unitario?></td>
                 <td><?=$d->valor?></td>
