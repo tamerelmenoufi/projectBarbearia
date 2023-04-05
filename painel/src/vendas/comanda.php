@@ -265,7 +265,7 @@
 
 
         <div class="col d-grid">
-            <button class="btn btn-primary btn-sm"  <?=(($resto == 0)?'concluir_venda':'disabled')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
+            <button class="btn btn-primary btn-sm"  <?=(($resto <= 0)?'concluir_venda':'disabled')?>><i class="fa-regular fa-circle-check"></i> Concluir</button>
         </div>
     </div>
 
