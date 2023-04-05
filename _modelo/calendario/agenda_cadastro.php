@@ -81,7 +81,7 @@
 
                 $s = mysqli_fetch_object(mysqli_query($con, "select * from produtos where codigo = '{$d->produto}'"));
 
-                $q = "select *, DATE_FORMAT(`data_agenda`,'%H') as h, DATE_FORMAT(`data_agenda`,'%i') as i from agenda where data_agenda like '%{$ano}-{$mes}-{$dia}%' and colaborador = '{$d->colaborador}' and servico = {$d->produto}";
+                $q = "select *, DATE_FORMAT(`data_agenda`,'%H') as h, DATE_FORMAT(`data_agenda`,'%i') as i from agenda where data_agenda like '%{$ano}-{$mes}-{$dia}%' and colaborador = '{$d->colaborador}'/* and servico = {$d->produto}*/";
                 $r = mysqli_query($con, $q);
                 $ag = [];
                 while($h = mysqli_fetch_object($r)){
