@@ -310,7 +310,7 @@
             console.log(`${valor} > ${total} || ${valor} > ${resto}`);
             if( (valor*1) > (total*1) || (valor*1) > (resto*1)){
                 if(forma_pagamento == 'dinheiro'){
-                    troco = (total*1 - valor*1);
+                    troco = (valor*1 - total*1);
                 }else{
                     $.alert('O valor pago não pode ser superior ao valor da compra!')
                     return false;
