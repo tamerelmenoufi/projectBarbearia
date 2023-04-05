@@ -154,6 +154,13 @@
         <div class="col-2">
             <?=(($v->tipo_acrescimo == 'v')?'R$ '.number_format($v->acrescimo,2,',','.'):false)?>
             <?=(($v->tipo_acrescimo == 'p')?'R$ '.(number_format(($v->valor/100*$v->acrescimo),2,',','.')):false)?>
+            <?php
+                if($v->tipo_acrescimo == 'v'){
+                    $acreescimo = $v->acrescimo;
+                }else if($v->tipo_acrescimo == 'p'){
+                    $acreescimo = ($v->valor/100*$v->acrescimo);
+                }
+            ?>
         </div>
     </div>
 
@@ -165,6 +172,13 @@
         <div class="col-2">
             <?=(($v->tipo_desconto == 'v')?'R$ '.number_format($v->desconto,2,',','.'):false)?>
             <?=(($v->tipo_desconto == 'p')?'R$ '.(number_format(($v->valor/100*$v->desconto),2,',','.')):false)?>
+            <?php
+                if($v->tipo_desconto == 'v'){
+                    $desconto = $v->desconto;
+                }else if($v->tipo_desconto == 'p'){
+                    $desconto = ($v->valor/100*$v->desconto);
+                }
+            ?>
         </div>
     </div>
 
@@ -174,7 +188,7 @@
         </div>
 
         <div class="col-2">
-            <b>R$ <?=number_format($v->total,2,',','.')?></b>
+            <b>R$ <?=number_format(($v->valor + $v->taxa_entrega + $acreescimo - $desconto),2,',','.')?></b>
         </div>
     </div>
 
