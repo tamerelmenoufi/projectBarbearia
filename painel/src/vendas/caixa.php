@@ -4,6 +4,16 @@
 
     if($_POST['acao'] == 'fechar_pedido'){
         // echo "FECHAR O PEDIDO";
+
+        $autoriza = true;
+        $query = "select a.*, (select estoque from produtos where codigo = a.produto) as estoque from vendas_produtos a where a.venda = '{$_SESSION['codVenda']}' and a.categoria = '1'";
+        $result = mysqli_query($con, $query);
+        while($d = mysqli_fetch_object($result)){
+            if($d->quantidade > $d->estoque) $autoriza = false;
+        }
+
+        if(!$autoriza) {echo 'erro'; exit();}
+
         list($agenda) = mysqli_fetch_row(mysqli_query($con, "select agenda from vendas where codigo = '{$_SESSION['codVenda']}'"));
         $query = "update vendas set situacao = 'p', data_pedido = NOW(), observacoes='{$_POST['observacoes']}' where codigo = '{$_SESSION['codVenda']}'";
         $result = mysqli_query($con, $query);
@@ -12,6 +22,7 @@
             mysqli_query($con, "update vendas_produtos set situacao = 'c' where agenda in ($agenda)");
             mysqli_query($con, "update agenda set situacao = 'c' where codigo in ($agenda)");
         }
+
     }
 
 

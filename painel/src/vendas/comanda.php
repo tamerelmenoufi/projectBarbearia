@@ -378,12 +378,17 @@
                                 success:function(dados){
                                     // console.log("MEUS DADOS DE FECHAR PEDIDO");
                                     // console.log(dados);
-                                    $.ajax({
-                                        url:"src/dashboard/index.php",
-                                        success:function(dados){
-                                            $("#paginaHome").html(dados);
-                                        }
-                                    });
+                                    if(dados == 'erro'){
+                                        $.alert('A venda não pode ser concluída. Um ou mais produtos estão sem estoque!');
+                                    }else{
+                                        $.ajax({
+                                            url:"src/dashboard/index.php",
+                                            success:function(dados){
+                                                $("#paginaHome").html(dados);
+                                            }
+                                        });
+                                    }
+
 
                                 }
                             });
