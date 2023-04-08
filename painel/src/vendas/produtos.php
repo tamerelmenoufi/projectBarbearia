@@ -73,7 +73,7 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid rounded-start" width="99" height="99">
+                <img src="<?=$localPainel?>src/volume/produtos/<?=$d->imagem?>" class="img-fluid rounded-start" style="width:99px; height:99px;">
                 </div>
                 <div class="col-md-8">
                 <div class="card-body">
