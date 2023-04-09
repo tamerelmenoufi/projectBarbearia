@@ -10,6 +10,7 @@
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
             if($d->quantidade > $d->estoque) $autoriza = false;
+            $estoque[$d->produto] = $d->quantidade;
         }
 
         if(!$autoriza) {echo 'erro'; exit();}
@@ -21,6 +22,10 @@
         if ($result and $agenda){
             mysqli_query($con, "update vendas_produtos set situacao = 'c' where agenda in ($agenda)");
             mysqli_query($con, "update agenda set situacao = 'c' where codigo in ($agenda)");
+        }
+
+        foreach($estoque as $cod_produto => $quantidade){
+            mysqli_query($con, "update produtos set estoque = (estoque - {$quantidade}) where codigo = {$cod_produto}");
         }
 
     }
