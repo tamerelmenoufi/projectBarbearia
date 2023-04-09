@@ -127,7 +127,7 @@
                 if($d->tipo == 'p') $tipo_produtos = true;
                 if(!$d->colaborador) $colaborador = false;
             ?>
-            <tr <?=(($d->estoque < $d->quantidade)?"style='color:red'":false)?>>
+            <tr <?=(($d->estoque < $d->quantidade and $d->categoria == '1')?"style='color:red'":false)?>>
                 <td scope="row"><?=$d->cod_produto?></td>
                 <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
                 <td>
