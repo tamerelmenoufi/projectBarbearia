@@ -381,7 +381,7 @@
                                     if(dados == 'erro'){
                                         $.alert('A venda não pode ser concluída. Um ou mais produtos estão sem estoque!');
                                         // Carregando('none');
-                                        $(".produtos_lista").load("src/vendas/produtos.php");
+                                        $(".produtos_lista").load("src/vendas/compras.php");
                                     }else{
                                         $.ajax({
                                             url:"src/dashboard/index.php",
