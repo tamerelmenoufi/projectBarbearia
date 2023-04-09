@@ -127,8 +127,8 @@
                 if($d->tipo == 'p') $tipo_produtos = true;
                 if(!$d->colaborador) $colaborador = false;
             ?>
-            <tr>
-                <th scope="row"><?=$d->cod_produto?></th>
+            <tr prod<?=$d->cod_produto?>>
+                <td scope="row"><?=$d->cod_produto?></td>
                 <td><b><?=$d->produto_nome?></b><br><small><?=$d->categoria_nome?> (<?=$d->tipo_nome?>)</small></td>
                 <td>
                     <button
