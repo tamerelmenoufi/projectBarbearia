@@ -380,7 +380,8 @@
                                     // console.log(dados);
                                     if(dados == 'erro'){
                                         $.alert('A venda não pode ser concluída. Um ou mais produtos estão sem estoque!');
-                                        Carregando('none');
+                                        // Carregando('none');
+                                        $("#paginaHome").load("src/vendas/caixa.php");
                                     }else{
                                         $.ajax({
                                             url:"src/dashboard/index.php",
