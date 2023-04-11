@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="valor" value="<?=$d->valor?>">
+                    <input type="text" data-thousands="" data-decimal="." id="valor" class="form-control" value="<?=$d->valor?>" />
                     <label for="valor">Valor*</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -79,6 +79,8 @@
     <script>
         $(function(){
             Carregando('none');
+
+            $('#valor').maskMoney();
 
             $('#form-<?=$md5?>').submit(function (e) {
 
