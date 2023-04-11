@@ -72,6 +72,7 @@
                     >
                       Editar
                     </button>
+
                     <?php
                     if($perfil == 'a'){
                     ?>
@@ -81,6 +82,7 @@
                     <?php
                     }
                     ?>
+
                   </td>
                 </tr>
                 <?php
