@@ -45,6 +45,13 @@
       </div>
     </div>
 
+    <div class="row mb-1  menu-cinza">
+      <div class="col">
+        <a url="src/caixa_saida/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Registro de Saídas
+        </a>
+      </div>
+    </div>
 
     <div class="row mb-1 menu-cinza">
       <div class="col">
