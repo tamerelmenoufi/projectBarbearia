@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" data-thousands="" data-decimal="." id="valor" class="form-control" value="<?=$d->valor?>" />
+                    <input type="text" data-thousands="" data-decimal="." name="valor" id="valor" class="form-control" value="<?=$d->valor?>" />
                     <label for="valor">Valor*</label>
                 </div>
                 <div class="form-floating mb-3">
