@@ -61,7 +61,7 @@
                     <label for="valor">Valor*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea type="text" name="justificativa" id="justificativa" class="form-control" value="<?=$d->justificativa?>"></textarea>
+                    <textarea type="text" name="justificativa" id="justificativa" class="form-control"><?=$d->justificativa?></textarea>
                     <label for="justificativa">Justificativa*</label>
                 </div>
             </div>
