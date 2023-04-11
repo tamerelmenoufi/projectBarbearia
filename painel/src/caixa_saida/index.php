@@ -46,7 +46,7 @@
                 <tr>
                   <td style="white-space: nowrap;"><?=$d->nome_colaborador?></td>
                   <td style="white-space: nowrap;"><?=$d->data?></td>
-                  <td style="white-space: nowrap;"><?=$d->valor?></td>
+                  <td style="white-space: nowrap;"><?=number_format($d->valor,2,'.',false)?></td>
                   <td style="white-space: nowrap;">
 
                     <button
