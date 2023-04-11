@@ -15,6 +15,7 @@
         }
 
         $attr[] = "colaborador = '" . $_SESSION['ProjectPainel']->codigo . "'";
+        $attr[] = "data = NOW()";
 
         $attr = implode(', ', $attr);
 
