@@ -52,18 +52,6 @@
 
                     <button
                       class="btn btn-primary"
-                      cliente="<?=$d->codigo?>"
-                      nome="<?=$d->nome?>"
-                      data-bs-toggle="offcanvas"
-                      href="#offcanvasDireita"
-                      role="button"
-                      aria-controls="offcanvasDireita"
-                    >
-                      Endereços
-                    </button>
-
-                    <button
-                      class="btn btn-primary"
                       edit="<?=$d->codigo?>"
                       data-bs-toggle="offcanvas"
                       href="#offcanvasDireita"
@@ -76,7 +64,7 @@
                     <?php
                     if($perfil == 'a'){
                     ?>
-                    <button class="btn btn-danger" >
+                    <button delete="<?=$d->codigo?>" class="btn btn-danger" >
                       Excluir
                     </button>
                     <?php
