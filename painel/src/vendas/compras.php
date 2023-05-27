@@ -308,8 +308,7 @@
                                                             $d->valor +
                                                             $d->taxa_entrega +
                                                             (($d->tipo_acrescimo == 'p')?($d->valor/100*$d->acrescimo):$d->acrescimo) -
-                                                            (($d->tipo_desconto == 'p')?($d->valor/100*$d->desconto):$d->desconto) -
-                                                            $d->comissao
+                                                            (($d->tipo_desconto == 'p')?($d->valor/100*$d->desconto):$d->desconto)
                                                         )
                                                     ?></div>
             <button
