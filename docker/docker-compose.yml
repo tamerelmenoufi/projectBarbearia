@@ -1,0 +1,36 @@
+version: "2"
+services:
+  app:
+    build: .
+    ports:
+      - "8081:80"
+    environment:
+      - TZ=America/Manaus
+    volumes:
+      - ./www:/var/www/html
+      - ./conf/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - /appinc:/appinc
+    networks:
+      - rede_app
+    depends_on:
+      - app-db
+    links:
+      - app-db
+    restart: always
+  app-db:
+    image: tamerelmenoufi/mysql57
+    command: mysqld --sql_mode=""
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - rede_app
+    environment:
+      - TZ=America/Manaus
+      - MYSQL_ROOT_PASSWORD=SenhaDoBanco
+      - MYSQL_DATABASE=app
+      - MYSQL_ROOT_HOST=%
+    restart: always
+    ports:
+      - "3306:3306"
+networks:
+  rede_app:
